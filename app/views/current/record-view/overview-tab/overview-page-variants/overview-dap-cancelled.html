@@ -33,8 +33,8 @@ Winter Fuel Payments
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
-               <span class="govuk-visually-hidden">Warning</span>
-               The death arrears payee does not want to receive a payment. The <a href="/current/record-view/overview-tab/overview-page-variants/death-arrears-task-1-dap-name" class="govuk-link">payment can be made</a> if something changes.
+                <span class="govuk-warning-text__assistive">Warning</span>
+               This person's death arrears payment for winter 2020 to 2021 has been cancelled. You can still <a href="/current/tasks/pay-death-arrears/death-arrears-task-1" class="govuk-link">make this payment</a> until 13 December 2021.
               </strong>
             </div>
         
@@ -159,7 +159,9 @@ Winter Fuel Payments
             </a>
 
       </div>
-      
+      <div class="govuk-grid-column-one-third">
+        {% include 'current/includes/_history.html' %}
+      </div>
     </div>
 
   </div>

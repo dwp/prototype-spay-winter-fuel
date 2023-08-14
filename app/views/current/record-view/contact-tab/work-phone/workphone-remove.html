@@ -22,6 +22,9 @@ Winter Fuel Payments
 
             {% include 'current/includes/_bar.html' %}
 
+
+            <br>
+            <br>
             <h1 class="govuk-heading-l">Are you sure that you want to remove this phone number?</h1>
             <p><strong>Work phone:</strong> {{data.worknumber}}</p>
 
@@ -30,7 +33,7 @@ Winter Fuel Payments
                       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                         </legend>
-                        <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios govuk-radios--inline">
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="workphone-change-yes" name="workphone-remove" type="radio" value="yes">
                             <label class="govuk-label govuk-radios__label" for="changed-workphone-1">

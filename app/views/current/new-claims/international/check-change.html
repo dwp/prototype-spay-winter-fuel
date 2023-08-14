@@ -23,17 +23,23 @@ Winter Fuel Payments
 
         {% include 'current/includes/_bar.html' %} 
 
+<style>
+  .govuk-accordion__icon {
+  display:none;
+  }
+</style>
+
+
+
+        <br>
+        <br>
         <h1 class="govuk-heading-xl">Application summary</h1>
 
-         <p>Ask the citizen if they need to change any answers they've given.<br><br>You do not need to read the answers back.</p>
-        
-<br>
+        {% if data['phone-post'] === 'phone' %}
+          <div class="govuk-inset-text"><span style="font-weight: bold">Ask the citizen if they need to change any answers they've given.<br><br>You do not need to read the answers back.</span></div>
+        {% endif %}
 
         <form method="post" action="declaration">
-
-          <button class="govuk-button" data-module="govuk-button">
-            Continue to declaration
-          </button>
 
           <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
             <div class="govuk-accordion__section ">
@@ -79,7 +85,7 @@ Winter Fuel Payments
                       Address
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      Piazza Giuseppe Garibaldi 76<br>
+                      iazza Giuseppe Garibaldi 76<br>
                               Parma<br>
                               43010<br>
                               Italia
@@ -90,7 +96,7 @@ Winter Fuel Payments
                   </div>
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      When did you move in?
+                      When did you move into that address?
                     </dt>
                     <dd class="govuk-summary-list__value">
                       12 October 1992
@@ -563,6 +569,10 @@ Winter Fuel Payments
               </div>
             </div>
           </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue to declaration
+          </button>
 
         </form>
 

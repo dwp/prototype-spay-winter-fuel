@@ -13,15 +13,17 @@ Winter Fuel Payments
 
 
 <div class="govuk-width-container">
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.go(-1)"
-  }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
       <form method="post">
+
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
 
               {% if data['mark-as-dlo']=='yes'%}
                {% include 'current/includes/_bar-dlo.html' %}
@@ -30,13 +32,8 @@ Winter Fuel Payments
              {% endif %}
 
             <form method="post">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                    <h1 class="govuk-fieldset__heading">
-                      Can you confirm your full address?
-                    </h1>
-                  </legend>
+
+              <h2 class="govuk-heading-xl">Can you confirm your full address?</h2>
 
               <p><b>{% if data['postcode'] === 'NE65 0AB' %}20
                   {% else %}1  {% endif %}
@@ -50,6 +47,8 @@ Winter Fuel Payments
                                                 NE65 0LZ
                                                 {% endif %}"</b></p>
 
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="address" name="address-change" type="radio" value="27 Kent Street, Amble, NE65 0LZ">

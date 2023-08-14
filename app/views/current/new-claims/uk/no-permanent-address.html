@@ -11,36 +11,29 @@ Winter Fuel Payments
 
 
 <div class="govuk-width-container">
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.go(-1)"
-  }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+      <form method="post">
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
 
             <form method="post">
 
-              {% if data['mark-as-dlo']=='yes'%}
-              {% include 'current/includes/_bar-dlo.html' %}
-            {% else %}
-              {% include 'current/includes/_bar.html' %}
-            {% endif %}
-
               <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                    <h1 class="govuk-fieldset__heading">
-                      Do you have an address we can send letters to?
-                    </h1>
-                  </legend><br>
-                
+                <h1 class="govuk-heading-xl">Do you have an address we can send letters to?</h1>
 
                 <div class="govuk-warning-text">
                   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                   <strong class="govuk-warning-text__text">
-                   <span class="govuk-visually-hidden">Warning</span>
+                    <span class="govuk-warning-text__assistive">Warning</span>
                     You cannot claim a Winter Fuel Payment without a correspondence address.
                   </strong>
                 </div>
@@ -51,8 +44,10 @@ Winter Fuel Payments
                   <li>a hostel you're staying at</li>
                   <li>your local Jobcentre</li>
                 </ul>
-                
-                  <div class="govuk-radios govuk-radios">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="address-for-letters-yes" name="address-for-letters" type="radio" value="yes">
                       <label class="govuk-label govuk-radios__label" for="address-for-letters-1">
@@ -69,11 +64,10 @@ Winter Fuel Payments
                 </fieldset>
               </div>
 
-              <div class="govuk-button-group">
-              <button type="submit" class="govuk-button" data-module="govuk-button">
+              <button type="submit" class="govuk-button">
                 Continue
               </button>
-<a class="govuk-link" href="next-task">Return this case to the queue</a></div>
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
             </form>
 
       </div>
@@ -84,12 +78,5 @@ Winter Fuel Payments
 
   </main>
   </div>
-
-  <script>
-    nextPageRoutes = {
-        'yes': 'address-for-letters.html',
-        'no': 'move-date.html',
-      }
-</script>
 
   {% endblock %}

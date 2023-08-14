@@ -8,7 +8,6 @@
 Winter Fuel Payments
 {% endblock %}
 
-
 {% block content %}
 
 {{ govukBackLink({
@@ -21,70 +20,60 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-       
-        {% include 'current/includes/_bar.html' %}
+      <form method="post" action="confirm-account">
 
-        <h1 class="govuk-heading-l">
-          
-          Which type of bank account should the payment go into?
-        </h1>
-        
-      
-        <form class="govuk-form" action="" method="post">
+          {% include 'current/includes/_bar.html' %}
 
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                </legend>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="bank-type" name="bank-type" type="radio" value="UK bank or building society account">
-                    <label class="govuk-label govuk-radios__label" for="new-address-uk">
-                      UK bank or building society account
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="bank-type" name="bank-type" type="radio" value="EEA or Swiss bank account">
-                    <label class="govuk-label govuk-radios__label" for="new-address-int">
-                      EEA or Swiss bank account
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="bank-type" name="bank-type" type="radio" value="Countries in the Beneficiary Database">
-                    <label class="govuk-label govuk-radios__label" for="new-address-ben">
-                      Countries in the Beneficiary Database
-                    </label>
-                  </div>
-                  
-              
-                </div>
-              </fieldset>
-            </div>
-       
+            
 
-        <button class="govuk-button" type="submit">
-          Continue
-        </button>
+            <br>
+            <br>
 
+            <h1 class="govuk-heading-l">What are your bank or building society account details?</h1>
+            <p>This is the account we'll pay your Winter Fuel Payment into.</p>
+            <form method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                  Name on the account
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="accountholder" name="accountholder" type="text">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sortcode">
+                  Sort code
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="sortcode" name="sortcode" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                  Account number
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="accountnumber" name="accountnumber" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="rollnumber">
+                  Building society roll number (if there is one)
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="rollnumber" name="rollnumber" type="text">
+              </div>
+
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+            </form>
 
       </div>
 
-      </form>
+    </div>
 
+  </div>
 
+  </main>
+  </div>
 
-</div>
-
-</div>
-
-</main>
-</div>
-
-<script>
-nextPageRoutes = {
-  'UK bank or building society account': 'change-account-details-uk',
-  'EEA or Swiss bank account': 'change-account-details-int',
-  'Countries in the Beneficiary Database': 'change-account-details-ben',}
-</script>
-
-
-{% endblock %}
+  {% endblock %}

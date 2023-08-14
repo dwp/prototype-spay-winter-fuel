@@ -12,7 +12,6 @@ Winter Fuel Payments
 {% block content %}
 
 
-
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -107,7 +106,7 @@ Winter Fuel Payments
               <fieldset class="govuk-fieldset" aria-describedby="dap-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                   <h1 class="govuk-fieldset__heading">
-                Do you have payment details for the death arrears payee?
+                Do you have payment details for a death arrears payee?
                   </h1>
                 </legend>
                 <div id="dap-hint" class="govuk-hint">
@@ -115,34 +114,34 @@ Winter Fuel Payments
                 </div>
                 <div class="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dap" name="payee-details" type="radio" value="Yes">
+                    <input class="govuk-radios__input" id="dap" name="dap" type="radio" value="yes">
                     <label class="govuk-label govuk-radios__label" for="dap">
                     Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dap-2" name="payee-details" type="radio" value="No">
+                    <input class="govuk-radios__input" id="dap-2" name="dap" type="radio" value="no">
                     <label class="govuk-label govuk-radios__label" for="dap-2">
                     No
                     </label>
                   </div>
+                  <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dap-3" name="payee-details" type="radio" value="no-payment">
-                    <label class="govuk-label govuk-radios__label" for="dap-3">
-                    The death arrears payee does not want to receive a payment
+                    <input class="govuk-radios__input" id="dap-3" name="dap" type="radio" value="cancel">
+                    <label class="govuk-label govuk-radios__label" for="dap-2">
+                    Cancel this payment
                     </label>
                   </div>
-                  
+                </div>
               </fieldset>
             </div>
 
+<p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
 <br>
+
             <button type="submit" class="govuk-button">
               Continue
             </button>
-
-            <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
-
 
 
 
@@ -160,9 +159,9 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'Yes': '/current/tasks/pay-death-arrears/death-arrears-task-1-dap-name.html',
-        'No': '/current/tasks/pay-death-arrears/death-arrears-task-1-nok.html',
-        'no-payment': '/current/tasks/pay-death-arrears/death-arrears-task-1-cancel-check-v1.html',
+        'yes': '/current/tasks/pay-death-arrears/death-arrears-task-1-dap-name.html',
+        'no': '/current/tasks/pay-death-arrears/death-arrears-task-1-nok.html',
+        'cancel': '/current/tasks/pay-death-arrears/death-arrears-task-1-cancel-check.html',
     }
   </script>
 

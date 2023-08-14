@@ -11,10 +11,6 @@ Winter Fuel Payments
 
 {% block content %}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -22,14 +18,26 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
 
-        <form method="post" action="death-arrears-task-1-dap-bank-details">
+        <form method="post">
 
-         {% include 'current/includes/_bar-dead.html' %}
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  XX 62 31 26 C<br>
+                  <span class="govuk-body-l">
+                    Meera Rudd
+                  </span>
+              </div>
 
-         <span class="govuk-caption-l">Death arrears</span>    <h2 class="govuk-heading-l">
+            </div>
+          </div>
+
+
+          <form method="post">
+
+                              <h2 class="govuk-heading-l">
 Address of the death arrears payee</h2>
-
-  <fieldset class="govuk-fieldset">
 
   <fieldset class="govuk-fieldset">
 
@@ -81,8 +89,7 @@ Address of the death arrears payee</h2>
             <button type="submit" class="govuk-button">
               Continue
             </button>
-<p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
-
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
           </form>
 
       </div>

@@ -30,28 +30,31 @@ Winter Fuel Payments
                     <div class="govuk-form-group">
                       <fieldset class="govuk-fieldset" aria-describedby="property-conditional-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                          <h1 class="govuk-fieldset__heading">
+                          <h2 class="govuk-fieldset__heading">
                             Do you own property in the UK?
-                          </h1>
+                          </h2>
                         </legend>
                         <br>
-                        <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="property-conditional" name="property" type="radio" value="yes" data-aria-controls="conditional-property-conditional">
                             <label class="govuk-label govuk-radios__label" for="property-conditional">
                               Yes
                             </label>
                           </div>
+
                           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-property-conditional">
                             <div class="govuk-form-group">
-                               <label class="govuk-label" for="more-detail">
-                                <b>Addresses</b> of all property owned in the UK.
+                              <p>We need the <b>addresses of all property owned in the UK</b>.</p>
+                              <label class="govuk-label" for="more-detail">
+                                Details
                               </label>
-                              <textarea class="govuk-textarea" id="property" name="property" rows="6" aria-describedby="more-detail-hint"></textarea>
+                              <textarea class="govuk-textarea" id="property" name="property" rows="10" aria-describedby="more-detail-hint"></textarea>
                             </div>
                           </div>
-                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="property-conditional-2" name="property" type="radio" value="no">
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="property-conditional-2" name="property" type="radio" value="no" data-aria-controls="conditional-property-conditional-2">
                             <label class="govuk-label govuk-radios__label" for="property-conditional-2">
                               No
                             </label>
@@ -60,7 +63,6 @@ Winter Fuel Payments
                       </fieldset>
                     </div>
 
-                    
 
           <button class="govuk-button" data-module="govuk-button">
             Continue

@@ -21,13 +21,16 @@ Winter Fuel Payments
       <div class="govuk-grid-column-two-thirds">
 
       {% if data ['update-details'] == 'yes' %}
-         <form method="post" action="/current/record-view/contact-tab/contact-details">
+         <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
       {% else %}
         <form method="post" action="/current/record-view/contact-tab/contact-details">
       {% endif %}
 
             {% include 'current/includes/_bar.html' %}
 
+
+            <br>
+            <br>
 
             <h1 class="govuk-heading-l">Are you sure that you want to remove this phone number?</h1>
             <p><strong>Mobile phone:</strong> {{data['mobilenumber']}}</p>
@@ -37,7 +40,7 @@ Winter Fuel Payments
               <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 </legend>
-                <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios govuk-radios--inline">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="changed-name-1" name="mobilephone-remove" type="radio" value="yes">
                     <label class="govuk-label govuk-radios__label" for="changed-name-1">

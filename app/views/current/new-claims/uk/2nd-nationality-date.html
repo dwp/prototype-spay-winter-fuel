@@ -15,10 +15,6 @@ Winter Fuel Payments
 
 
 <div class="govuk-width-container">
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.go(-1)"
-  }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -26,7 +22,10 @@ Winter Fuel Payments
         <form method="post">
 
 
-         
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
 
           <br>
           <br>

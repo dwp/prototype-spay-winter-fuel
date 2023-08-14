@@ -33,10 +33,8 @@ Winter Fuel Payments
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
-               <span class="govuk-visually-hidden">Warning</span>
-                <span style="padding-bottom:10px; display:inline-block">This person qualified for a Winter Fuel payment of £150</span><br>
-                <a href="" class="govuk-link" style="padding-bottom:10px; display:inline-block">Enter death arrears payee information</a>
-                <br><a href="/current/record-view/overview-tab/death-arrears/death-arrears-task-1-cancel-check-v1" class="govuk-link">Death arrears payee does not want to be paid</a>
+                <span class="govuk-warning-text__assistive">Warning</span>
+                <span style="padding-bottom:10px; display:inline-block">This person qualified for a Winter Fuel payment of £150</span><br><a href="/current/tasks/pay-death-arrears/death-arrears-task-1-dap-name" class="govuk-link" style="padding-bottom:10px; display:inline-block">Enter death arrears payee information</a>{% if data['001-sent']=='no'%}<br><a href="dap-send-wfpf001" class="govuk-link">Mark that WFPF001 and WFPL004 have been sent</a>{% endif %}
               </strong>
             </div>
         
@@ -161,9 +159,9 @@ Winter Fuel Payments
             </a>
 
       </div>
-      <!-- <div class="govuk-grid-column-one-third">
+      <div class="govuk-grid-column-one-third">
         {% include 'current/includes/_history.html' %}
-      </div> -->
+      </div>
     </div>
 
   </div>

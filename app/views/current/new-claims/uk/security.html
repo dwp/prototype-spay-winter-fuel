@@ -13,33 +13,29 @@ Winter Fuel Payments
 {% block content %}
 
 
+{% if data['mark-as-dlo']=='yes'%}
+ {% include 'current/includes/_bar-dlo.html' %}
+{% else %}
+ {% include 'current/includes/_bar.html' %}
+{% endif %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-
         <form method="post" action="address">
-
-          {% if data['mark-as-dlo']=='yes'%}
-          {% include 'current/includes/_bar-dlo.html' %}
-         {% else %}
-          {% include 'current/includes/_bar.html' %}
-         {% endif %}
 
                   <h1 class="govuk-heading-xl">Security questions</h1>
 
                   <div class="govuk-inset-text"><span style="font-weight: bold">If you need to ask security questions to verify the caller's identity, do it now before continuing.</span></div>
 
+                  <p><a href="type-of-application" class="govuk-link">Start again</a></p>
+                  <br>
 
-          <div class="govuk-button-group">
-            <button type="submit" class="govuk-button" data-module="govuk-button">
-              Continue
-            </button>
-            <a class="govuk-link" href="type-of-application">Start again</a>
-          </div>
-
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
 
   <br>
 

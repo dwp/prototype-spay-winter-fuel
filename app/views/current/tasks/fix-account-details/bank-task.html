@@ -65,10 +65,8 @@ Winter Fuel Payments
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">Occupancy</th>
-                  <td class="govuk-table__cell">Other eligible people they live with:
-                    <br>
-                     <br>Under 80: 0
-                       <br>80 and over: 0</td>
+                  <td class="govuk-table__cell">Lives with someone else who gets Winter Fuel Payment<br><br>
+                    Since 12 July 2019</td>
                 </tr>
               </thead>
               <thead class="govuk-table__head">
@@ -100,13 +98,13 @@ Winter Fuel Payments
                 <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header">BIC or SWIFT code</th>
-                  <td class="govuk-table__cell">9425</td>
+                  <td class="govuk-table__cell">SBININBB425</td>
                 </tr>
                 </thead>
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">IBAN</th>
-                    <td class="govuk-table__cell">12345864</td>
+                    <td class="govuk-table__cell">AT483200000012345864</td>
                   </tr>
                 </thead>
               {% endif %}
@@ -140,7 +138,7 @@ Winter Fuel Payments
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="bank-details" name="bank-details" type="radio" value="remove">
                     <label class="govuk-label govuk-radios__label" for="bank-details-3">
-                      International payment approved - remove from queue
+                      International payment approved
                     </label>
                   </div>
                   <div class="govuk-radios__item">
@@ -149,16 +147,21 @@ Winter Fuel Payments
                       Citizen is ineligible for payment - remove from queue
                     </label>
                   </div>
-                 
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="bank-details" name="bank-details" type="radio" value="manual">
+                    <label class="govuk-label govuk-radios__label" for="bank-details-4">
+                      Request manual payment
+                    </label>
+                  </div>
                 </div>
               </fieldset>
             </div>
 
+<p><a href="/current/tasks/fix-account-details/case-returned.html">Return this case to the queue</a></p>
+<br>
             <button type="submit" class="govuk-button">
               Continue
             </button>
-
-            <p><a href="/current/tasks/fix-account-details/case-returned.html">Return this case to the queue</a></p>
 
           </form>
 
@@ -173,7 +176,7 @@ Winter Fuel Payments
 
 <script>
     nextPageRoutes = {
-        'add': 'new-bank-type.html',
+        'add': 'bank-details.html',
         'return': 'case-returned.html',
         'remove': 'get-next-task.html',
         'ineligible': 'confirm-remove.html',

@@ -11,18 +11,17 @@ Winter Fuel Payments
 {% block content %}
 
 
-<div class="govuk-width-container">
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.go(-1)"
-  }) }}
+<div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-
-        <form method="post" action="bank-details">
+        <form method="post" action="need-alternative-format">
 
          {% if data['mark-as-dlo']=='yes'%}
           {% include 'current/includes/_bar-dlo.html' %}
@@ -31,9 +30,15 @@ Winter Fuel Payments
         {% endif %}
 
 
+
+
+          <br>
+          <br>
+
+
             <h1 class="govuk-heading-xl">What are your contact details?</h1>
 
-            <p class="govuk-body">We need <b>at least one phone number.</b> For international numbers include the country code.</p>
+            <p>We need at least one phone number.</p>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="telephone-number">
@@ -58,10 +63,9 @@ Winter Fuel Payments
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="telephone-number">
-
-                Email address (optional)
+                Email address
               </label>
-              <input class="govuk-input govuk-input--width-20" id="email" name="email" type="tel" autocomplete="tel">
+              <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
             </div>
 
             <button type="submit" class="govuk-button">

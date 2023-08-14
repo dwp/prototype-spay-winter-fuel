@@ -1,9 +1,6 @@
 /* global $ */
 
-//
-// For guidance on how to add JavaScript see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-//
+
 
 // Warn about official sensitive nature of this prototype
 if (window.console && window.console.info) {
@@ -46,18 +43,19 @@ console.log("hello")
 
 }
 
-// $(document).ready(function () {
+$(document).ready(function () {
+
+  window.GOVUKFrontend.initAll()
+
+  try { 
+    $('input[type=radio]:checked').each(function() {
+      nextPageBasedOnSelection($(this))
+    })
+    enableInternalBranding()
+  } catch (e) {}
 
 
-//   try { 
-//     $('input[type=radio]:checked').each(function() {
-//       nextPageBasedOnSelection($(this))
-//     })
-//     enableInternalBranding()
-//   } catch (e) {}
-
-
-// })
+})
 
 /* Change where journey goes once a radio option is selected, to define use the following element in your page:
 
@@ -78,6 +76,5 @@ $('input[type=radio]').on('change', function() {
     })
   } catch (e) {}
 })  
-
 
 

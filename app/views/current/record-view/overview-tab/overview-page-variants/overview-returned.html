@@ -8,7 +8,6 @@
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
-
 {% block content %}
 
 <div class="govuk-width-container">
@@ -16,216 +15,93 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      {% include 'current/includes/_bar.html' %}
+      <form method="post">
 
-        <form method="post">
+{% include 'current/includes/_bar.html' %}
 
-       <!-- {% if data['details-updated']=='yes' and data ['movemonth'] == '07' or data['movemonth'] == '7' or data['living-with-month'] == '07' or data['living-with-month'] == '7'%}
-         <div class="moj-banner moj-banner--success">
-            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-
-            <div class="moj-banner__message">
-              <span class="moj-banner__assistive">Success</span>Details updated - overpayment recorded
-            </div>
-          </div>
-
-        {% elif data['details-updated']=='yes' and data ['movemonth'] == '08' or data['movemonth'] == '8' or data['living-with-month'] == '08' or data['living-with-month'] == '8'%}
-         <div class="moj-banner moj-banner--success">
-            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-
-            <div class="moj-banner__message">
-              <span class="moj-banner__assistive">Success</span>Details updated - top up payment made
-            </div>
-          </div>
-
-        {% elif data['details-updated']=='yes' and data ['movemonth'] == '12' or data['living-with-month'] == '12' %}
-         <div class="moj-banner moj-banner--success">
-            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-
-            <div class="moj-banner__message">
-              <span class="moj-banner__assistive">Success</span>Details updated - payment recalculated
-            </div>
-          </div>
-
-
-        {% elif data['details-updated']=='yes'%}
-         <div class="moj-banner moj-banner--success">
-            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
-
-            <div class="moj-banner__message">
-              <span class="moj-banner__assistive">Success</span>Details updated
-            </div>
-          </div>
-       {% endif %}-->
-
-            {% include 'current/includes/_tab-overview-returned-2.html' %}
-
+            {% include 'current/includes/_tab-overview.html' %}
 
             <br>
             <br>
 
-            
-            
             <table class="govuk-table">
-            <h2 class="govuk-heading-m">2024 Payment</h2>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header"></th>
-                <th scope="col" class="govuk-table__header"></th>
-              </tr>
-            </thead>
+            <h2 class="govuk-heading-m">Payment for winter 2020 to 2021</h2>
+
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Current entitlement</th>
-                  <td class="govuk-table__cell">£200</td>
+                  <th scope="row" class="govuk-table__header">Payment date</th>
+                  <td class="govuk-table__cell">Wednesday 6 November 2020</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">£100</td>
                 </tr>
               </tbody>
+
+
             </table>
+
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
-               <span class="govuk-visually-hidden">Warning</span>
-               <span style="padding-bottom:10px; display:inline-block" style="padding-bottom:10px; display:inline-block">Bank has returned payment</span><br>
-                <a href="process-returned-payment" class="govuk-link" style="padding-bottom:10px; display:inline-block">Reissue payment</a><br>
-                <a href="payment-not-processed" class="govuk-link">BLS hand off to Winter Fuel</a>
-
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Bank has returned payment. <br><a href="reissue-account" class="govuk-link">Check account details and reissue payment</a>
               </strong>
             </div>
 
+
+
 <br>
 
-<table class="govuk-table">
-<h2 class="govuk-heading-m">Qualification details 
-  </h2>
+            <table class="govuk-table">
+                  <h2 class="govuk-heading-m">Qualification details</h2>
+              <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+              </a>
 
-  <a href="/current/record-view/overview-tab/update-details/update-details-options"><span class="govuk-link govuk-!-font-size-19 govuk-!-margin-left-2" style="float:right">Update details</span>
-  </a>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Age</th>
+                  <td class="govuk-table__cell">70</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell">2 August 1950</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">
+                    101  Caxton Place<br>
+                    BURWEN<br>
+                  LL68 3GJ
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">
+                    6 March 2016
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">
+                    {% if data['living-with'] %}
+                    {{data['living-with']}}
+                      {% else %}
+                      Lives with someone else who gets Winter Fuel Payment
+                    {% endif %}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-<dl class="govuk-summary-list">
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Age
-  </dt>
-  <dd class="govuk-summary-list__value">
-    66
-  </dd>
-  <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+      </div>
 
+      <div class="govuk-grid-column-one-third">
+          {% include 'current/includes/_history.html' %}
+      </div>
 
-    
-  </dd>
-</div>
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Date of birth
-  </dt>
-  <dd class="govuk-summary-list__value">
-1 April 1956
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    
-  </dd>
-</div>
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Address
-  </dt>
-  <dd class="govuk-summary-list__value">
-  1 Victoria Road<br>
-  FALKIRK<br>
-  FK55 8XN
-  </dd>
-  <dd class="govuk-summary-list__actions">
-   
-  </dd>
-</div>
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Occupancy
-  </dt>
-  <dd class="govuk-summary-list__value">
-    <p>Other eligible people they live with:</p>
-    
-     <p>Under 80: 0
-       <br>80 and over: 0</p>
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    
-  </dd>
-</div>
-
- 
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Date they moved in
-  </dt>
-  <dd class="govuk-summary-list__value">
-    {% if data['move-date-changed'] == 'true' %}
-    {{data['moveday']}}
-    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January
-    {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February
-    {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March
-    {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April
-    {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May
-    {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June
-    {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July
-    {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August
-    {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September
-    {% elif data['movemonth'] == '10' %} October
-    {% elif data['movemonth'] == '11' %} November
-    {% elif data['movemonth'] == '12' %} December
-    {% endif %}
-    {{data['moveyear']}}
-          {% else %}
-          10 March 2016
-        {% endif %}
-  </dd>
- 
-  <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-
-  </dd>
-  
-</div>
-
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Benefit type
-  </dt>
-    <dd class="govuk-summary-list__value">
-    Pension Credit
-  </dd>
-  <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-    <ul class="govuk-summary-list__actions-list">
-      <li class="govuk-summary-list__actions-list-item">
-        <a class="govuk-link" href="/current/record-view/overview-tab/update-details/choose-benefit-flag-pc">Change<span class="govuk-visually-hidden"> change benefit flag</span></a>
-      </li>
-      <li class="govuk-summary-list__actions-list-item">
-        <a class="govuk-link" href="/current/record-view/overview-tab/remove-benefit-flag">Remove<span class="govuk-visually-hidden"> remove benefit flag</span></a>
-      </li>
-    </ul>
-  </dd>
-  
-</div>
-
-</dl>
-
-<!--</div>
-<div class="govuk-grid-column-one-third">
-{% include 'current/includes/_history.html' %}
-</div>
-</div>-->
-
-</div>
-</tbody>
-</table>
+    </div>
 
   </div>
 

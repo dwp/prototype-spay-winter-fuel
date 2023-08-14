@@ -64,7 +64,10 @@ Winter Fuel Payments
               
                 </fieldset><br>
 
-              
+                {% if data['preferred-first-name'] %}
+                <a href="confirm-remove-preferred-name"><span class="govuk-link govuk-!-font-size-19">Citizen no longer uses a requested name</span>
+                </a>
+                {% endif %}
 
               </div>
 

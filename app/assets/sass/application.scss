@@ -1,10 +1,54 @@
-//
-// For guidance on how to add CSS and SCSS see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
 
-// Add extra styles here
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
 
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/task-list";
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+
+
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+@import 'most-recent';
+@import 'index-top';
+@import 'key-details-bar';
+@import 'key-details-bar-black';
+@import 'key-details-bar-pink';
+@import 'key-details-bar-purple';
+@import 'key-details-bar-light-purple';
+@import 'key-details-bar-red';
+@import 'key-details-bar-orange';
+@import 'key-details-bar-turquoise';
+@import 'key-details-bar-grey';
+@import 'key-details-bar-dark-blue';
+@import 'key-details-bar-light-blue';
+@import 'navigation-global';
+@import 'timeline';
+@import 'app-c-tag';
+@import 'navigation-secondary';
+@import '_verified-badge';
+@import '_govuk-panel--agent';
+@import 'not-verified-badge';
+
+
+
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 @import 'custom-styles';
 @import 'duet-date-picker-custom';
@@ -22,45 +66,6 @@
   }
 }
 
-// Verified & non-verified badges in admin screens
-
-.verified-badge {
-  color: #6f777b;
-  float: left;
-  font-size: .8em;
-  margin: .4em 0 0;
-  position: relative;
-}
-
-.verified::before {
-  background-image: url("/public/images/icon-verified.svg");
-  background-repeat: no-repeat;
-  content: '';
-  height: 1.1em;
-  left: -1.3em;
-  position: absolute;
-  top: 0;
-  width: 1em;
-}
-
-.not-verified-badge {
-  color: #6f777b;
-  float: left;
-  font-size: .8em;
-  margin: .4em 0 0;
-  position: relative;
-}
-
-.not-verified::before {
-  background-image: url("/public/images/icon-not-verified.png");
-  background-repeat: no-repeat;
-  content: '';
-  height: 1.1em;
-  left: -1.3em;
-  position: absolute;
-  top: 0;
-  width: 1em;
-}
 
 .govuk-header__content {
   padding-left: 0;
@@ -71,15 +76,6 @@
   padding-left:30px;
 }
 
-.moj-primary-navigation {
-
-}
-
-// Styling to ensure status tags don't overflow over two lines
-
-.govuk-tag {
-  max-width: none;
-}
 
 .steps {
   @include govuk-typography-common; 
@@ -988,14 +984,3 @@ clear: both;
 margin-top: 5px;
 }
 }
-
-// Custom H3 styling - tiles
-.tile-h3-medium-styling {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-
-
-

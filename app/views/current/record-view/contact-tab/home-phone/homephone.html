@@ -30,6 +30,9 @@ Winter Fuel Payments
 
             
 
+            <br>
+            <br>
+
             <h1 class="govuk-heading-l">What is your home phone number?</h1>
 
             <form method="post">
@@ -41,6 +44,13 @@ Winter Fuel Payments
               <input class="govuk-input govuk-input--width-20" id="homephone" name="homephone" type="tel">
             </div>
 
+              {% if (data.homephone) and data ['homephone-remove'] != 'Yes' %}
+            <div>
+            <a href="homephone-remove" class="govuk-link govuk-!-font-size-19">Remove home phone as a contact option</a><br><br>
+            </div>
+              {% endif %}
+
+             
 
             <button type="submit" class="govuk-button">
               Continue
