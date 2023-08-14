@@ -1,0 +1,543 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      {% include 'current/includes/_bar.html' %}
+
+        <form method="post">
+
+      
+
+            {% include 'current/includes/_tab-history.html' %}
+
+<br>
+<br>
+            <h2 class="govuk-heading-m" id="0">
+              Current exercise 
+            </h2>
+
+              <table class="govuk-table">
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="width:25%">Date</th>
+                    <th scope="col" class="govuk-table__header" style="width:60%">Action</th>
+                    <th scope="col" class="govuk-table__header" >By</th>
+                    <th scope="col" class="govuk-table__header" ></th>
+                  </tr>
+
+
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >3 Jan 2023 15:00 </td>
+                    <td class="govuk-table__cell" >Non-recoverable overpayment - letter sent</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >3 Jan 2023 12:33 </td>
+                    <td class="govuk-table__cell" >Non-recoverable overpayment - letter scheduled</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >3 Jan 2023 12:33 </td>
+                    <td class="govuk-table__cell" >Review overpayment task completed - not recoverable</td>
+                    <td class="govuk-table__cell" >Staff: 15865477</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >1 Jan 2023 09:22 </td>
+                    <td class="govuk-table__cell" >Task created to review overpayment</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >1 Jan 2023 09:22 </td>
+                    <td class="govuk-table__cell" >Overpayment calculated as £250</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >1 Jan 2023 09:20 </td>
+                    <td class="govuk-table__cell" >Shared entitlement / under 80 - lives with someone who is also eligible and is over state pension age</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >1 Jan 2023 09:20 </td>
+                    <td class="govuk-table__cell" >Eligible  </td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >1 Jan 2023 09:00</td>
+                    <td class="govuk-table__cell" >Data load: change of occupancy  </td>
+                    <td class="govuk-table__cell" >D&A</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >28 Nov 2022 08:00 </td>
+                    <td class="govuk-table__cell" >Payment of £500 sent on Thurday, 1 December 2022</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >25 Oct 2022 09:00 </td>
+                    <td class="govuk-table__cell" >Annual payment - letter sent</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >12 Oct 2022 11:01 </td>
+                    <td class="govuk-table__cell" >Annual payment - letter scheduled</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >12 Oct 2022 11:01 </td>
+                    <td class="govuk-table__cell" >Payment of £500 scheduled for 28 November 2022</td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >12 Oct 2022 11:00 </td>
+                    <td class="govuk-table__cell" >Eligible  </td>
+                    <td class="govuk-table__cell" >WFS</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >11 Oct 2022 08:20</td>
+                    <td class="govuk-table__cell" >Data load: no changes to citizen data  </td>
+                    <td class="govuk-table__cell" >War Pension</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >11 Oct 2022 03:00 </td>
+                    <td class="govuk-table__cell" >Data load: bank account changed   </td>
+                    <td class="govuk-table__cell" >GySP</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >10 Oct 2022 15:00 </td>
+                    <td class="govuk-table__cell" >Data load: change of address  </td>
+                    <td class="govuk-table__cell" >D&A</td>
+                  </tr>
+
+
+
+                </tbody>
+              </table>
+             <!-- <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                   <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+                     <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"> &nbsp;</path>
+                   </svg>Back to top
+                 </a>-->
+           
+
+             <!-- <h2 class="govuk-heading-m" id="1">
+                Exercise 2020/2021
+              </h2>
+
+
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header" style="width:25%">Date</th>
+                      <th scope="col" class="govuk-table__header" style="width:50%">Action</th>
+                      <th scope="col" class="govuk-table__header">By</th>
+                      <th scope="col" class="govuk-table__header"></th>
+                    </tr>
+
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">18 Dec 2020</td>
+                      <td class="govuk-table__cell">Occupancy changed</td>
+                      <td class="govuk-table__cell">SPS
+                    </td>
+
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">11 Dec 2020</td>
+                      <td class="govuk-table__cell">  Change to payment £150 paid </td>
+                      <td class="govuk-table__cell">SPS
+                    </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">2 Sep 2020 14:30</td>
+                    <td class="govuk-table__cell">
+                    <p class="govuk-body govuk-!-margin-bottom-3">Mobile phone changed</p>
+                    <p class="govuk-body govuk-!-margin-bottom-3">Home phone changed</p>
+                      Address changed</td>
+                    <td class="govuk-table__cell">Staff 73229975</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >17 Aug 2020 10:53</td>
+                    <td class="govuk-table__cell" >Bank account changed</td>
+                    <td class="govuk-table__cell" >Staff 17635285</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">2 Aug 2020 14:31</td>
+                    <td class="govuk-table__cell">
+                    <p class="govuk-body govuk-!-margin-bottom-3">Mobile phone changed</p>
+                    <p class="govuk-body govuk-!-margin-bottom-3">Home phone changed</p>
+                      Address changed</td>
+                    <td class="govuk-table__cell">Staff 73229975</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >2 Aug 2020 14:30</td>
+                    <td class="govuk-table__cell" >Bank account changed</td>
+                    <td class="govuk-table__cell" >Staff 17635285</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">29 July 2020</td>
+                      <td class="govuk-table__cell">Occupancy changed </td>
+                      <td class="govuk-table__cell">SPS
+                    </td>
+
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">20 July 2020 14:30</td>
+                      <td class="govuk-table__cell">Bank details changed</td>
+                      <td class="govuk-table__cell">Staff 73229975
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">19 July 2020</td>
+                      <td class="govuk-table__cell">Occupancy changed </td>
+                      <td class="govuk-table__cell">SPS
+                    </td>
+
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">15 July 2020 14:30</td>
+                      <td class="govuk-table__cell">Bank details changed</td>
+                      <td class="govuk-table__cell">Staff 73229975
+                    </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">14 July 2020 14:30</td>
+                    <td class="govuk-table__cell">
+                      <p class="govuk-body govuk-!-margin-bottom-3">
+                        Change of address / move date (14 July 2020)</p>
+                        <p class="govuk-body govuk-!-margin-bottom-3">Ineligible status removed (ineligible EEA)</p>
+
+                      Annual payment recalculated to £100
+
+                    <td class="govuk-table__cell">Staff 54329975</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >10 Mar 2020 14:30</td>
+                    <td class="govuk-table__cell" >Bank account changed</td>
+                    <td class="govuk-table__cell" >Staff 17635285</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">4 Feb 2020 10:53</td>
+                    <td class="govuk-table__cell">
+                      <p class="govuk-body govuk-!-margin-bottom-3">Mobile phone changed</p>
+                      <p class="govuk-body govuk-!-margin-bottom-3">
+                      Home phone changed</p>
+                      Address changed</td>
+                    <td class="govuk-table__cell">Staff 73229975</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >28 Jan 2020 14:30</td>
+                    <td class="govuk-table__cell" >Bank account changed</td>
+                    <td class="govuk-table__cell" >Staff 17635285</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">27 Jan Dec 2020</td>
+                      <td class="govuk-table__cell">Occupancy changed </td>
+                      <td class="govuk-table__cell">SPS
+                    </td>
+
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">11 Jan 2020 14:30</td>
+                      <td class="govuk-table__cell">Bank details changed</td>
+                      <td class="govuk-table__cell">Staff 73229975
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+               
+
+                 <h2 class="govuk-heading-m" id="2">
+                  Exercise 2019/2020
+              </h2>
+
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header" style="width:25%">Date</th>
+                      <th scope="col" class="govuk-table__header" style="width:50%">Action</th>
+                      <th scope="col" class="govuk-table__header">By</th>
+                      <th scope="col" class="govuk-table__header"></th>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">18 Dec 2019</td>
+                        <td class="govuk-table__cell">Occupancy changed</td>
+                        <td class="govuk-table__cell">SPS
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">11 Dec 2019</td>
+                        <td class="govuk-table__cell">  Change to payment £150 paid </td>
+                        <td class="govuk-table__cell">SPS
+                      </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">2 Sep 2019 14:30</td>
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body govuk-!-margin-bottom-3">Ineligible EEA status applied</p>
+
+                        Annual payment recalculated to £0
+
+                      <td class="govuk-table__cell">Staff 73229975</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" >17 Aug 2019 10:53</td>
+                      <td class="govuk-table__cell" >Bank account changed</td>
+                      <td class="govuk-table__cell" >Staff 17635285</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">2 Aug 2019 14:31</td>
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body govuk-!-margin-bottom-3">Mobile phone changed</p>
+                        <p class="govuk-body govuk-!-margin-bottom-3">
+                        Home phone changed</p>
+                        Address changed</td>
+                      <td class="govuk-table__cell">Staff 73229975</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" >2 Aug 2019 14:30</td>
+                      <td class="govuk-table__cell" >Bank account changed</td>
+                      <td class="govuk-table__cell" >Staff 17635285</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">29 July 2019</td>
+                        <td class="govuk-table__cell">   Occupancy changed </td>
+                        <td class="govuk-table__cell">SPS
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">20 July 2019 14:30</td>
+                        <td class="govuk-table__cell">Bank details changed</td>
+                        <td class="govuk-table__cell">Staff 73229975
+                      </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">19 July 2019</td>
+                        <td class="govuk-table__cell">   Occupancy changed </td>
+                        <td class="govuk-table__cell">SPS
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">15 July 2019 14:30</td>
+                        <td class="govuk-table__cell">Bank details changed</td>
+                        <td class="govuk-table__cell">Staff 73229975
+                      </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" >10 Mar 2019 14:30</td>
+                      <td class="govuk-table__cell" >Bank account changed</td>
+                      <td class="govuk-table__cell" >Staff 17635285</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">4 Feb 2019 10:53</td>
+                      <td class="govuk-table__cell">
+                        <p class="govuk-body govuk-!-margin-bottom-3">Mobile phone changed</p>
+                        <p class="govuk-body govuk-!-margin-bottom-3">Home phone changed</p>
+                        Address changed</td>
+                      <td class="govuk-table__cell">Staff 73229975</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell" >28 Jan 2019 14:30</td>
+                      <td class="govuk-table__cell" >Bank account changed</td>
+                      <td class="govuk-table__cell" >Staff 17635285</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">27 Jan 2019</td>
+                        <td class="govuk-table__cell">Occupancy changed </td>
+                        <td class="govuk-table__cell">SPS
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">11 Jan 2019 14:30</td>
+                        <td class="govuk-table__cell">Bank details changed</td>
+                        <td class="govuk-table__cell">Staff 73229975
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>          
+
+                <h2 class="govuk-heading-m" id="3">
+                  Exercise 2018/2019
+           </h2>
+
+           <table class="govuk-table">
+             <tbody class="govuk-table__body">
+               <tr class="govuk-table__row">
+                 <th scope="col" class="govuk-table__header" style="width:25%">Date</th>
+                 <th scope="col" class="govuk-table__header" style="width:50%">Action</th>
+                 <th scope="col" class="govuk-table__header">By</th>
+                 <th scope="col" class="govuk-table__header"></th>
+               </tr>
+
+               <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">18 Dec 2018</td>
+                   <td class="govuk-table__cell">Occupancy changed</td>
+                   <td class="govuk-table__cell">SPS
+                 </td>
+
+                 </tr>
+                 <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">11 Dec 2018 </td>
+                   <td class="govuk-table__cell">  Change to payment £150 paid </td>
+                   <td class="govuk-table__cell">SPS
+                 </td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">2 Sep 2018 14:30</td>
+                 <td class="govuk-table__cell">
+                   <p class="govuk-body govuk-!-margin-bottom-3">Mobile phone changed</p>
+                     <p class="govuk-body govuk-!-margin-bottom-3">Home phone changed</p>
+                  Address changed</td>
+                 <td class="govuk-table__cell">Staff 73229975</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell" >17 Aug 2018 10:53</td>
+                 <td class="govuk-table__cell" >Bank account changed</td>
+                 <td class="govuk-table__cell" >Staff 17635285</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">2 Aug 2018 14:31</td>
+                 <td class="govuk-table__cell">
+                   <p class="govuk-body govuk-!-margin-bottom-3">Mobile phone changed<p>
+                   <p class="govuk-body govuk-!-margin-bottom-3">Home phone changed</p>
+                   Address changed</td>
+                 <td class="govuk-table__cell">Staff 73229975</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell" >2 Aug 2018 14:30</td>
+                 <td class="govuk-table__cell" >Bank account changed</td>
+                 <td class="govuk-table__cell" >Staff 17635285</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">29 July 2018 </td>
+                   <td class="govuk-table__cell">   Occupancy changed </td>
+                   <td class="govuk-table__cell">SPS
+                 </td>
+
+                 </tr>
+                 <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">20 July 2018 14:30</td>
+                   <td class="govuk-table__cell">Bank details changed</td>
+                   <td class="govuk-table__cell">Staff 73229975
+                 </td>
+               </tr>
+               <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">19 July 2018 </td>
+                   <td class="govuk-table__cell">   Occupancy changed </td>
+                   <td class="govuk-table__cell">SPS
+                 </td>
+
+                 </tr>
+                 <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">15 July 2018 14:30</td>
+                   <td class="govuk-table__cell">Bank details changed</td>
+                   <td class="govuk-table__cell">Staff 73229975
+                 </td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell" >10 Mar 2018 14:30</td>
+                 <td class="govuk-table__cell" >Bank account changed</td>
+                 <td class="govuk-table__cell" >Staff 17635285</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell">14 Feb 2018 10:53</td>
+                 <td class="govuk-table__cell">Eligible EU status applied<br>
+                     <p class="govuk-body govuk-!-margin-bottom-3">
+                 <td class="govuk-table__cell">Staff 73229975</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                 <td class="govuk-table__cell" >28 Jan 2018 14:30</td>
+                 <td class="govuk-table__cell" >Bank account changed</td>
+                 <td class="govuk-table__cell" >Staff 17635285</td>
+               </tr>
+
+               <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">27 Jan 2018 </td>
+                   <td class="govuk-table__cell">   Occupancy changed </td>
+                   <td class="govuk-table__cell">SPS
+                 </td>
+
+                 </tr>
+                 <tr class="govuk-table__row">
+                   <td class="govuk-table__cell">11 Jan 2018 14:30</td>
+                   <td class="govuk-table__cell">Bank details changed</td>
+                   <td class="govuk-table__cell">Staff 73229975
+                 </td>
+               </tr>
+               </tbody>
+             </table>-->
+
+
+      <!--</div>
+      <div class="govuk-grid-column-one-third">
+        {% include 'current/includes/_history.html' %}
+      </div>
+    </div>-->
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}
