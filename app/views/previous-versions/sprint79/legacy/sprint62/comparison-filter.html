@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Check results</h1>
+
+    <form method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Filter by
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="file-1" name="filter-by" type="radio" value="eligibility">
+              <label class="govuk-label govuk-radios__label" for="eligibility">
+                Eligibility and reason
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="file-2" name="filter-by" type="radio" value="file-type">
+              <label class="govuk-label govuk-radios__label" for="file">
+                Get your State
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <div>
+            <h1 class="govuk-heading-xl">
+              Joyce Burris<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56
+                {% endif %}
+
+
+              </span>
+            </h1>
+          </div>
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <form method="post">
+
+            <h2 class="govuk-heading-l">Details</h2>
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Start date</th>
+                  <td class="govuk-table__cell">What is this day? the payment date?</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">End date</th>
+                  <td class="govuk-table__cell">When does it endddd?</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">£100</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date confirmed</th>
+                  <td class="govuk-table__cell">Is this the date the agent marked as recoverable?</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date citizen notified</th>
+                  <td class="govuk-table__cell">Date notification sent? Or citizen told on phone?</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="task-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Have you done what you need to do with this case?
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="task" name="task" type="radio" value="complete">
+        <label class="govuk-label govuk-radios__label" for="task">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="task-2" name="task" type="radio" value="incomplete">
+        <label class="govuk-label govuk-radios__label" for="task-2">
+          No
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+            <button class="govuk-button" data-module="govuk-button">
+              Get next case
+            </button>
+
+<p>
+<a href="debt-management-task" class="govuk-link">Don't get next case - go back to landing screen</a>
+</p>
+
+            <p><b> Info required</b>
+              <br>Details of citizen's who have a debt<br>
+              Start and End date of the debt<br>
+              Amount of debt<br>
+              Date debt was confirmed<br>
+              Date citizen was notified of debt<br>
+    </p>
+
+
+          </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

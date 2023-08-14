@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-international.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+        <h1 class="govuk-heading-xl">Visits to the UK in the past 3 years</h1>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="more-detail">
+            Provide dates of any visits to the UK in the past 3 years and reasons for the visits
+          </label>
+          <span id="more-detail-hint" class="govuk-hint">
+            For example, now this is a challenge for you isn't it?
+          </span>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="20" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+</div>
+</div>
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

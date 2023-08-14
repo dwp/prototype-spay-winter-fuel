@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-international.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-heading-l">What are your bank details?</h1>
+    </legend>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="name-on-account">
+        Name on the account
+      </label>
+      <input class="govuk-input" id="name-on-account" name="name-on-account" type="text" spellcheck="false" aria-describedby="name-on-account-hint">
+    </div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="bic-code">
+    BIC or SWIFT code
+  </label>
+  <div id="bic-code-hint" class="govuk-hint">
+    Must be between 8 and 11 characters long. You can ask your bank or check your bank statement
+  </div>
+  <input class="govuk-input govuk-input--width-10" id="bic-code" name="bic-code" type="text" spellcheck="false" aria-describedby="bic-code-hint">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="iban">
+    IBAN
+  </label>
+  <div id="iban-hint" class="govuk-hint">
+    You can ask your bank or check your bank statement
+  </div>
+  <input class="govuk-input" id="iban" name="iban" type="text" spellcheck="false" aria-describedby="iban-hint">
+</div>
+
+  </fieldset>
+</div>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm
+          </button>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header-find.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Find a case</h1>
+
+    <form method="post" action="/current/record-view/overview-tab/overview">
+
+      <div class="moj-search">
+
+    
+
+      <div class="govuk-form-group">
+
+        <span id="search-hint" class="govuk-hint moj-search__hint ">
+          Search by National Insurance number or case ID
+        </span>
+
+        <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+      </div>
+
+      <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+        Find
+      </button>
+
+      </form>
+      </div>
+
+      <br>
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

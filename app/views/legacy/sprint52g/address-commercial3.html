@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {% include './_bar.html' %}
+
+           
+
+          
+
+            <form method="post">
+
+              <h2 class="govuk-heading-l">Can you confirm your full address?</h2>
+
+
+                            <div class="govuk-inset-text">
+                              If the citizen lives at a commercial address, or uses it for correspondence, choose the commercial address below. You can mark it as their residential or correspondence address on the next page.
+                            </div>
+
+<p><b>6</b> addresses found for <b>"{% if data['house-number'] %}
+                    {{data['house-number']}}
+                  {% else %}
+                 G05
+                  {% endif %}"
+                </b> and <b>"{% if data['postcode'] %}
+                                    {{data['postcode']}}
+                                  {% else %}
+                                  M1 5BY
+                                  {% endif %}"</b></p>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G01 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <label class="govuk-label govuk-radios__label" for="address">G01 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G02 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <label class="govuk-label govuk-radios__label" for="address">G02 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G03 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <label class="govuk-label govuk-radios__label" for="address">G03 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-1" name="address-change" type="radio" value="G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <label class="govuk-label govuk-radios__label" for="address">G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-2" name="address-change" type="radio" value="G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <label class="govuk-label govuk-radios__label" for="address-2">G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
+                        <strong class="govuk-tag govuk-tag--red">
+                          COMMERCIAL
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-2" name="address-change" type="radio" value="G06 Chorlton Mill, Cambridge Street, Manchester M1 5BY">
+                      <label class="govuk-label govuk-radios__label" for="address-2">G06 Chorlton Mill, Cambridge Street, Manchester M1 5BY<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-change-3" name="address-change" type="radio" value="address not found">
+                      <label class="govuk-label govuk-radios__label" for="address-3">
+                        The address has not been found
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+  <script>
+      nextPageRoutes = {
+          'G01 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G02 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G03 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G04 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G05 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'G06 Chorlton Mill, Cambridge Street, Manchester M1 5BY': 'not-commercial.html',
+          'address not found': '/legacy/sprint49/address.html',
+       }
+    </script>
+  {% endblock %}

@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Check cases</h1>
+
+    <form method="post">
+
+    <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Ineligibility reason
+        </h1>
+      </legend>
+
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Unverified date of birth
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Under State Pension age
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Dead
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Unknown residency
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            In hospital
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            In prison
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            In a care home receiving benefits
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            No correspondence address
+          </label>
+        </div>
+
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Immigration control
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          PO box not approved
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Commercial address not approved
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Ineligible EEA country
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Invalid residence address
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Resident outside EEA
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          No genuine sufficient link
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

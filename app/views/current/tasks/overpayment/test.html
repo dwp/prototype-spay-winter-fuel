@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-tasks.html' %}
+
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class=“govuk-grid-row”>
+        <div class=“govuk-grid-column-two-thirds”>
+            <form method=“post”>
+                {{ govukRadios({
+                    classes: ‘govuk-radios’,
+                    idPrefix: ‘ecl’,
+                    name: ‘ecl’,
+                    fieldset: {
+                        legend: {
+                            text: ‘’,
+                            isPageHeading: true,
+                            classes: ‘govuk-fieldset__legend--xl’
+                        }
+                    },
+                    items: [
+                        {
+                            text: ‘Yes’,
+                            value: ‘Yes’
+                        },
+                        {
+                            text: ‘No’,
+                            value: ‘No’
+                        }
+                    ]
+                }) }}
+                {{ govukButton({
+                    html: ‘Continue’
+                }) }}
+            </form>
+            <a href=“hub” class=“govuk-link govuk-!-font-size-19">Next</a>
+        </div>
+</div>
+<script>
+    nextPageRoutes = {
+        ‘Yes’: ‘yes-page.html’,
+        ‘No’: ‘no-page.html’,
+    }
+</script>
+{% endblock %}

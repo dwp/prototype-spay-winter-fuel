@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include './_start_again.html' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <form method="post">
+
+            <h1 class="govuk-heading-xl">Citizen cannot be found</h1>
+
+            <p>No citizen was found using National Insurance number
+              {% if data['nino'] %}
+                  {{data['nino']}}
+                  {% else %}
+                  <span class="govuk-!-font-weight-bold">AB123456C</span>.
+                  {% endif %}
+            </p>
+            <button type="submit" class="govuk-button">
+              Enter National Insurance number again
+            </button>
+
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

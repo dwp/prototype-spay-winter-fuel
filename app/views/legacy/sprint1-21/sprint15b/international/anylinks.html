@@ -1,0 +1,52 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <<dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a href="/legacy/sprint15b/international/familyuk" class="govuk-back-link">Back</a>
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl govuk-!-font-size-36">UK details</span>
+                    <h1 class="govuk-heading-xl">Do you have any other links to the UK?</h1>
+                    
+                    <div class="govuk-form-group">
+                        <textarea class="govuk-textarea" id="anylinks" name="anylinks" rows="5" autocomplete="street-address"></textarea>
+                        </div>
+                    
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button"> Save and continue </button>
+
+
+    </main>
+
+</form>
+</div>
+  {% endblock %}
+
+  

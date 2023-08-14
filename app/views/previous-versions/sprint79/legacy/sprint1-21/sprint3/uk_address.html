@@ -1,0 +1,87 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Find UK address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Find UK address</h1>
+       
+           <form action="date" method="post" class="form"> 
+
+                
+                   
+
+                     <div id="swapper-first" style="display:block;">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-postcode">Postcode</label>
+                          <input autofocus class="govuk-input govuk-input--width-10" for="width-10" id="contact-postcode" type="text" name="contact-postcode" value="{{ data['contact-postcode'] }}" autocomplete="off">
+                        </div>
+                        <div class="govuk-form-group">
+                          <a class="govuk-button" href="javascript:SwapDivsWithClick('swapper-first','swapper-other')">Find address</a>
+                        </div>
+                    </div>    
+                
+                  
+                    <div id="swapper-other" style="display:none;">
+                        <div class="govuk-form-group">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="change-postcode">Postcode</label>
+                           <p> <span class="govuk-!-font-weight-bold">CV22 5QQ </span><a style="padding-left:10px" href="javascript:SwapDivsWithClick('swapper-first','swapper-other')"> Change</a></p>
+                          </div>
+                          <label class="govuk-label" for="contact-address">Select an address</label>
+                          <select class="govuk-select" id="contact-address" name="contact-address">
+                            <option>5 addresses found</option>
+                            <option>162 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                            <option>162B Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                            <option>163 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                            <option>164 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                            <option>165 Hilmorton Grounds, Ashlawn Rd, Rugby CV22 5QQ</option>
+                          </select>
+                        </div>
+
+                        <p><a href="#">Add address manually</a></p>
+
+
+                         <input class="govuk-input" type="hidden" name="address1" value="162 Hilmorton Grounds" type="text">
+                         <input class="govuk-input" type="hidden" name="address2" value="Ashlawn Rd" type="text">
+                         <input class="govuk-input" type="hidden" name="address3" value="Rugby" type="text">
+                         <input class="govuk-input" type="hidden" name="address4" value="CV22 5QQ" type="text">
+                         <input class="govuk-input" type="hidden" name="country" value="United Kingdom" type="text">
+                         <input class="govuk-input" type="hidden" name="addresstype" value="UK" type="text">
+
+                        <input type="submit" method="post" value="Continue" class="govuk-button">
+
+                    </div>    
+
+            
+
+          </form>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

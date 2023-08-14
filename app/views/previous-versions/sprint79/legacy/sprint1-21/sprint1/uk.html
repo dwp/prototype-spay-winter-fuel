@@ -1,0 +1,61 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+  Add UK bank details
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Add UK bank details</h1>
+       
+           <form action="checkanswers_bank" method="post" class="form"> 
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="name">Account holder's full name</label>
+              <input class="govuk-input" id="name" autocomplete="off" name="name" type="text" autofocus>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">Sort code</label>
+              <input class="govuk-input form-control-small" maxlength="2" id="sort1" autocomplete="off" name="sort1" type="text">
+              <input class="govuk-input form-control-small" maxlength="2" id="sort2" autocomplete="off" name="sort2" type="text">
+              <input class="govuk-input form-control-small" maxlength="2" id="sort3" autocomplete="off" name="sort3" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="account">Account number</label>
+              <input class="govuk-input" id="account" autocomplete="off" name="account"  type="text">
+            </div>
+
+             <input class="govuk-input" type="hidden" name="type" value="Sort code" type="text">
+            <input class="govuk-input" type="hidden" name="type2" value="Account number" type="text">
+            <input class="govuk-input" type="hidden" name="banktype" value="UK" type="text">
+
+            <input type="submit" method="post" value="Continue" class="govuk-button">
+
+          </form>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

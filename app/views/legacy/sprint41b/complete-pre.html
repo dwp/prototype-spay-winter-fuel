@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="moj-identity-bar">
+  <div class="moj-identity-bar__container">
+    <div class="moj-identity-bar__details">
+      <span class="moj-identity-bar__title"><b>
+        {% if data['phone-post'] === 'phone' %}
+        Theodora Best
+        {% else %}
+        Samira Mcgill
+        {% endif %}</b></span>
+    </div>
+    <div class="moj-identity-bar__details">
+      <span class="moj-identity-bar__title">
+        <a href="type-of-application" class="govuk-link">Start again</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+
+            <form method="post">
+
+              <h1 class="govuk-heading-xl">
+                You qualify for a Winter Fuel Payment of £100,
+                  as long as your circumstances do not change
+              </h1>
+
+                <h2 class="govuk-heading-m">What happens next</h2>
+
+                <p>Your payment will be made in November or December.</p>
+
+                <p>Once you have received a Winter Fuel Payment you'll continue to get
+                  a payment every year without having to make another claim.</p>
+
+                <h3 class="govuk-heading-m">Changes of circumstance</h3>
+                <p>Your future payments may be affected if your circumstances change. You need to tell us as soon as possible if you:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>move house or there is a change to who you live with</li>
+                  <li>are in hospital for more than 52 weeks</li>
+                  <li>move into a care home</li>
+                </ul>
+                <br>
+                <button class="govuk-button" data-module="govuk-button">
+                  Start a claim for someone else
+                </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

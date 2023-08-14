@@ -1,0 +1,130 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  When was the claimant in hospital?
+{% endblock %}
+ 
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">When was the claimant in hospital?</h1>
+
+       
+                <form class="form" action="confirmation_negative" method="post"> 
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h2 class="govuk-label">
+                              Date of entry
+                            </h2>
+                          </legend>
+                          <div class="govuk-date-input" id="dob">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+
+                   
+                    <div class="govuk-form-group">
+                     <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h2 class="govuk-label">
+                              Date of exit (if relevant)
+                            </h2>
+                          </legend>
+                          <div class="govuk-date-input" id="dob">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+
+
+                    
+
+             
+
+    
+
+        <div>
+          <a href = '#'><input type='submit' value='Continue' class='govuk-button'></a>
+        </div>
+
+
+</form>
+
+ 
+    
+    </div>
+  </div>
+
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

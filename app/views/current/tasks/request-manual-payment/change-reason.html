@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar.html' %}
+
+            <form method="post" action="review-changes">
+              <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+               <div class="govuk-form-group">
+                 <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+                     Why have you changed the details of this request?
+                   </label>
+                 </h1>
+                 <div id="more-detail-hint" class="govuk-hint">
+                   Provide a brief reason for the change.
+                 </div>
+                 <div>
+                  <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+                </div>
+                <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                  You can enter up to 200 characters.
+                </div>
+                </div>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Submit request
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  How long does the claimant want to stop their Winter Fuel Payment for?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+       
+                <form action="confirmation_stop" method="post" class="form"> 
+
+                      <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    How long does the claimant want to stop their Winter Fuel Payment for?
+                                </h1>
+                              </legend>
+                              <span id="changed-name-hint" class="govuk-hint">
+                              
+                              </span>
+                              <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="uk" name="changed-name" type="radio" value="uk">
+                                  <label class="govuk-label govuk-radios__label" for="UK">
+                                  One year
+                                </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="international" name="changed-name" type="radio" value="international">
+                                  <label class="govuk-label govuk-radios__label" for="international">
+                                  Until further notice
+                                </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                           
+
+                          </fieldset>
+                      </div>
+
+            
+    
+
+        <div>
+          <a href = '#'><input type='submit' value='Continue' class='govuk-button'></a>
+        </div>
+
+          </form>
+
+
+
+
+ 
+    
+    </div>
+  </div>
+
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

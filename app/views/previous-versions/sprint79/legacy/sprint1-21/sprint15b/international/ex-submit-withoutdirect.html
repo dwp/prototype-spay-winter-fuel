@@ -1,0 +1,50 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">Title</h1>
+                    
+                    body here
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button"> Continue </button>
+
+
+    </main>
+
+</form>
+
+  {% endblock %}
+
+
+
+  in routes : 
+  
+  router.post('/legacy/sprint15/international/european-national', function(req, res) {
+  res.redirect('/legacy/sprint15/international/check-answers1')
+})

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <br>
+          <br>
+
+<h1 class="govuk-heading-xl">You do not qualify for a Winter Fuel Payment</h1>
+
+      <p>To qualify for a Winter Fuel Payment you must have been born before 6 October 1954.</p>
+
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Start again
+                </button>
+<!--
+<h3 class="govuk-heading-m">If you’re on a low income</h3>
+
+<p class="govuk-body">  You may be able to apply directly to your electricity supplier for help if you
+  do not get the Guarantee Credit element of Pension Credit but:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>your energy supplier is part of the scheme</li>
+  <li>you’re on a low income</li>
+  <li>you get certain means-tested benefits</li>
+</ul>
+
+<br>
+<p>
+  To get the discount you’ll need to stay with your supplier until it’s paid.
+</p>
+
+<p>For more information and how to apply<br>
+<b>www.gov.uk/the-warm-home-discount-scheme/low-income</b>
+</p>
+-->
+</div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

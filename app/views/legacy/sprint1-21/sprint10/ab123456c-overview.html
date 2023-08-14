@@ -1,0 +1,299 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+
+      <dd class="key-details-bar__name">Alex Smith</dd>
+
+      <dd class="key-details-bar__nino">AB 12 34 56 C</dd>
+
+      <dd class="key-details-bar__status">receiving winter fuel payment</dd>
+    </div>
+
+    <div class="key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>19 January 1953</dd>
+
+      <!--<dt>Address:</dt>
+      <dd>1 East Allerdean, Little Hayfield, High Peak, TD15 2TB</dd>-->
+
+    </div>
+
+  </dl>
+</section>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <nav class="navigation-global">
+      <ul>
+
+        <li>
+          <a href="ab123456c-overview" class="active" aria-current="page">Overview</a>
+        </li>
+
+        <li>
+          <a href="ab123456c-payment" class="" aria-current="page">Payment</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div>
+          <h2 class="govuk-heading-l">£100 Winter Fuel Payment</h2>
+<p>Paid on 24 November 2018</p>
+<div class="govuk-inset-text">
+    We have based this amount of the fact that our data shows 2 people living at the same residential address.
+  </div>
+          </div>
+
+
+          <div style="margin-top:30px">
+            <h2 class="govuk-heading-l">Qualifying details</h2>
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+
+                </dt>
+                <dd class="app-check-your-answers__answer">
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__answer">
+                  Age
+                </dt>
+                <dd class="app-check-your-answers__answer">
+
+                    66
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+
+                </dd>
+              </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__answer">
+                  Residential address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+
+                    70 Elmgrove Terrace<br />
+                    Newcastle-Upon-Tyne<br />
+                    Tyne & Wear<br />
+                    NE1 6XP
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="address">
+                    Change<span class="govuk-visually-hidden">Change residential address</span>
+                  </a>
+                </dd>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Occupants
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                Alex Smith<br />
+                Francis Smith<br />
+
+              </dd>
+
+              <dd class="app-check-your-answers__change">
+                <a href="homephone">
+                  Change<span class="govuk-visually-hidden">Change occupants</span>
+                </a>
+              </dd>
+            </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+
+          <h2 class="govuk-heading-m">
+            Case history
+          </h2>
+          <ol class="app-timeline">
+            <li class="app-timeline__entry">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                Address changed
+              </h3>
+
+              <p class="app-timeline__info govuk-!-margin-bottom-0">
+                <span class="govuk-visually-hidden">Marriage verified</span>
+                <span class="app-timeline__date">
+                  14 September 2018
+                </span>
+              </p>
+            </li>
+
+            <li class="app-timeline__entry">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                Bank account changed
+              </h3>
+
+              <p class="app-timeline__info govuk-!-margin-bottom-0">
+                <span class="govuk-visually-hidden">Marriage verified</span>
+                <span class="app-timeline__date">
+                  5 July 2018
+                </span>
+              </p>
+            </li>
+
+            <li class="app-timeline__entry">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                Bank account changed
+              </h3>
+
+              <p class="app-timeline__info govuk-!-margin-bottom-0">
+                <span class="govuk-visually-hidden">Marriage verified</span>
+                <span class="app-timeline__date">
+                  5 January 2018
+                </span>
+              </p>
+            </li>
+
+            <li class="app-timeline__entry">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                Bank account changed
+              </h3>
+
+              <p class="app-timeline__info govuk-!-margin-bottom-0">
+                <span class="govuk-visually-hidden">Marriage verified</span>
+                <span class="app-timeline__date">
+                  17 November 2017
+                </span>
+              </p>
+            </li>
+
+          </ol>
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+
+        <div style="margin-top:30px">
+          <h2 class="govuk-heading-l">Contact details</h2>
+          <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+
+              </dt>
+              <dd class="app-check-your-answers__answer">
+
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="#">
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Contact address
+              </dt>
+              <dd class="app-check-your-answers__answer">
+
+                70 Elmgrove Terrace<br />
+                Newcastle-Upon-Tyne<br />
+                Tyne & Wear<br />
+                NE1 6XP
+
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="address">
+                  Change<span class="govuk-visually-hidden">Change landline telephone number</span>
+                </a>
+              </dd>
+            </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Landline telephone
+              </dt>
+              <dd class="app-check-your-answers__answer">
+
+                  01234 567890
+
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="address">
+                  Change<span class="govuk-visually-hidden">Change landline telephone number</span>
+                </a>
+              </dd>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              Email
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              alexsmith@gmail.com
+
+            </dd>
+
+            <dd class="app-check-your-answers__change">
+              <a href="homephone">
+                Change<span class="govuk-visually-hidden">Change email address</span>
+              </a>
+            </dd>
+          </div>
+</div>
+
+          </div>
+
+
+      </div>
+
+    </main>        </div>
+  <!-- </div> -->
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    </div>
+  </div>
+
+  {% endblock %}

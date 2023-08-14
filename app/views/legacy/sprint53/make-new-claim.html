@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-l">You need to make a new claim</h1>
+
+             
+                <p>If you want to claim Winter Fuel Payments while you are living outside of the UK, you need to make a new claim.</p>
+
+                <p>You can call 0800 731 0160 to make an overseas claim, or send in a new claim by post.</p>
+
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-warning-text__assistive">Warning</span>
+                  No future payments will be sent to you until you make a new claim.
+                </strong>
+              </div>
+              
+
+              
+
+              <br>
+              <br>
+
+            </fieldset>
+
+            <button type="submit" class="govuk-button">
+              <input type="hidden" name="prev-page" value="make-new-claim">
+              Continue
+            </button>
+
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

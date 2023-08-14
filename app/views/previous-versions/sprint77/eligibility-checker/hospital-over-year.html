@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="//legacy/sprint21/benefits" method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+            <br>
+            <br>
+
+          <h1 class="govuk-heading-xl">You do not qualify for a Winter Fuel Payment</h1>
+
+          <p>For winter 2020, we worked out payments during the week
+             of 21 to 27 September 2020. This is called the 'qualifying week'.</p>
+
+          <p>You do not qualify because you were in hospital for over a year,
+            including the qualifying week.</p>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

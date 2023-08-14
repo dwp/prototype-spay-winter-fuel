@@ -1,0 +1,60 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a href="/legacy/sprint15b/international/familyuk" class="govuk-back-link">Back</a>
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl govuk-!-font-size-36">UK details</span>
+                    <h1 class="govuk-heading-xl">Give details about your family in the UK</h1>
+                    
+                    <label class="govuk-label govuk-!-margin-top-5" for="sp-ni-number">
+                        <strong>What is your relationship to them?</strong>
+                    </label>
+                    <input class="govuk-input" id="familyrelationship" name="familyrelationship" type="text" autocomplete="name" spellcheck="false">
+
+                    <label class="govuk-label govuk-!-margin-top-5" for="sp-ni-number">
+                        <strong>How many times have you visited them in the last 3 years?</strong>
+                    </label>
+                    <input class="govuk-input govuk-input--width-3" id="familyvisited" name="familyvisited" type="text" autocomplete="name" spellcheck="false">
+
+                    
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue </button>
+
+
+    </main>
+
+</form>
+</div>
+
+  {% endblock %}
+
+

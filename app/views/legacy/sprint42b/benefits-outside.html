@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">What benefits or pensions from a country outside of the UK do ye get?</h1>
+
+
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="benefits-pensions-yes">
+              Name of benefit or pension
+            </label>
+            <input class="govuk-input govuk-!-width-full" id="contact-by-yes" name="contact-by-yes" type="yes" spellcheck="false">
+
+          <br>
+          <br>
+
+            <label class="govuk-label" for="benefits-pensions-yes">
+              Date benefit or pension started
+            </label>
+            <div class="govuk-date-input" id="passport-issued">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+
+          <br>
+
+            <label class="govuk-label" for="benefits-pensions-yes">
+            Country paying the benefit or pension
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" spellcheck="false">
+            <br>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="benefits-outside-add-about-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                Any more?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefits-outside-add-about-conditional" name="benefits-outside-add" type="radio" value="yes" data-aria-controls="conditional-benefits-outside-add-about-conditional">
+                  <label class="govuk-label govuk-radios__label" for="benefits-outside-add-about-conditional">
+                  Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefits-outside-add-about-conditional-2" name="benefits-outside-add" type="radio" value="no" data-aria-controls="conditional-benefits-outside-add-about-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="benefits-outside-add-about-conditional-2">
+                  No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

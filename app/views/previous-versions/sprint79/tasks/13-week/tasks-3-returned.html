@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form method="post">
+
+
+          <h1 class="govuk-heading-xl">Tasks</h1>
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+            <li class="moj-sub-navigation__item">
+              <a class="moj-sub-navigation__link" href="tasks">Verify addresses</a>
+            </li>
+
+            <li class="moj-sub-navigation__item">
+              <a class="moj-sub-navigation__link" href="tasks-2">Contact citizens</a>
+            </li>
+
+            <li class="moj-sub-navigation__item">
+              <a class="moj-sub-navigation__link" aria-current="page" href="tasks-3">Review GSLs</a>
+            </li>
+
+            <li class="moj-sub-navigation__item">
+              <a class="moj-sub-navigation__link" href="tasks-4">Review overpayments</a>
+            </li>
+            </ul>
+
+                      </nav>
+
+                      <div class="moj-banner">
+                      <div class="moj-banner__message">
+                      <span class="moj-banner__assistive">information</span>GSL not reviewed - case returned to queue</div>
+                      </div>
+
+                                <h1 class="govuk-heading-l">Review GSLs</h1>
+
+                                <h3 class="govuk-heading-l"> 49
+                                  <p class="govuk-body govuk-!-font-size-24">cases</p>
+                                </h3>
+
+                                <button class="govuk-button" data-module="govuk-button">
+                                  Get next GSL case
+                                </button>
+
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15/international/" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">What type of new claim do you want to make?</h1>
+       
+       <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="Newclaim-UK" name="Newclaim" type="radio" value="UK">
+        <label class="govuk-label govuk-radios__label" for="Newclaim-UK">
+          UK
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="Newclaim-international" name="Newclaim" type="radio" value="international">
+        <label class="govuk-label govuk-radios__label" for="Newclaim-international">
+          International
+        </label>
+      </div>
+    </div>
+
+<br>
+
+           <a href="/legacy/sprint15/international/homepage.html" class="govuk-button govuk-!-margin-top-3"> Continue </a>
+
+           
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

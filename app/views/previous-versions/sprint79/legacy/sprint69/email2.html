@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          
+                {% if data['email'] or data['email3'] %}
+
+          <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-heading-l">Is {{data['email'] or data['email3']}} the correct email address?</h1>
+              </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="email2" name="email2" type="radio" value="yes" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="email2" name="email2" type="radio" value="no" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No - use a different email address
+        </label>
+      </div>
+      
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+                Email address
+          </label>
+          <input class="govuk-input" id="email" name="email" type="email" value="" aria-describedby="email-hint">
+      </div>
+      
+    </div>
+
+              </fieldset>
+            </div>
+
+
+
+
+            {% else %}
+
+            <h1 class="govuk-heading-l">Add email address</h1>
+          
+              <div class="govuk-form-group">
+               <label class="govuk-label" for="email3">
+                Email address
+               </label>
+                <input class="govuk-input" id="email3" name="email3" type="email3" value="" aria-describedby="email-hint">
+              </div>
+              
+            {% endif %}
+
+            <br>
+            
+            <button type="submit" class="govuk-button">
+              Save
+            </button>
+          </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+
+{% endblock %}

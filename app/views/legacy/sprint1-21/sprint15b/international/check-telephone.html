@@ -1,0 +1,55 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15b/international/telephone" class="govuk-back-link">Back</a>
+
+
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+                    <form method="post"> 
+                    <span class="govuk-caption-xl govuk-!-font-size-36">Contact information</span>
+                    <h1 class="govuk-heading-xl">Check telephone number</h1>
+                    
+                    <p>{{data.telephonenumber}}</p>
+                    <button type="submit" class="govuk-button"> Save and continue </a>
+
+                    </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}
+
+
+

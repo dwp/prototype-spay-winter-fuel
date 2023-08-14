@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar_3.html' %}
+
+            <form method="post" action="review-decline-and-update">
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-heading-l" style="margin-bottom:0px;">Select the reason to decline and update this manual payment request</h1>
+
+<br>
+                 
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    </legend>
+    <div id="waste-hint" class="govuk-hint">
+      Select all that apply.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="decline-reason-1" name="decline-reason-1" type="checkbox" value="Incorrect exercise">
+        <label class="govuk-label govuk-checkboxes__label" for="living-with-q-week-2">
+          Incorrect exercise 
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="decline-reason-2" name="decline-reason-2" type="checkbox" value="Incorrect amount">
+        <label class="govuk-label govuk-checkboxes__label" for="living-with-q-week-1">
+          Incorrect amount
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="decline-reason-3" name="decline-reason-3" type="checkbox" value="Incorrect bank details">
+        <label class="govuk-label govuk-checkboxes__label" for="living-with-q-week-1">
+          Incorrect bank details
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+</div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+              <p><a href="/current/tasks/request-manual-payment/send-case-back-to-task-list" class="govuk-link">Return this case to the queue</a></p>
+
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

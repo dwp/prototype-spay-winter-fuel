@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-xl">Review exceptions</h2>
+
+    <nav class="moj-pagination" id="pagination-label">
+
+    <a href="/legacy/sprint22/exceptions" class="govuk-back-link">Back</a>
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label"></p>
+
+  <ul class="moj-pagination__list">
+  </ul>
+  <p class="moj-pagination__results"><b>Number of cases:</b> 28</p>
+  </nav>
+
+  <br>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+
+  <div class="moj-search">
+
+  <form action="#" method="post">
+
+  <div class="govuk-form-group">
+    <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+      Find a case
+    </label>
+
+    <span id="search-hint" class="govuk-hint moj-search__hint ">
+      Search by National Insurance number
+    </span>
+
+    <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+  </div>
+
+  <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+    Search
+  </button>
+
+
+  </form>
+  </div>
+
+</div>
+</div>
+
+<br>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

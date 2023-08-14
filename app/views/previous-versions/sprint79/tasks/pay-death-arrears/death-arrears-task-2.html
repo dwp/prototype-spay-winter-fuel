@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  XX 62 31 26 C<br>
+                  <span class="govuk-body-l">
+                    Camilla Ward
+                  </span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <form method="post">
+
+            <h1 class="govuk-heading-m">Details</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-third">Date of birth</th>
+                    <td class="govuk-table__cell govuk-!-width-one-half">9 August 1950</td>
+                  </tr>
+                </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of death</th>
+                  <td class="govuk-table__cell">1 October 2020</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">91  South Crescent<br>
+                    LYTHMORE<br>
+                    KW14 0PN</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">10 June 2005</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">Does not live with someone else who gets Winter Fuel Payment</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Payment amount</th>
+                  <td class="govuk-table__cell">£200</td>
+                </tr>
+                </thead>
+            </table>
+
+            <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    WFPF001 and WFPL004 have been sent to D. Ward
+  </strong>
+</div>
+
+            <br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="dap-2-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Do you have payment details for a death arrears payee?
+                  </h1>
+                </legend>
+                <div id="dap-2-hint" class="govuk-hint">
+
+                </div>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dap-2-1" name="dap-2" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="dap-2-1">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dap-2-2" name="dap-2" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="dap-2-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/current/tasks/pay-death-arrears/death-arrears-task-2-dap-name.html',
+        'no': '/current/tasks/pay-death-arrears/tasks-5-3.html',
+    }
+  </script>
+
+{% endblock %}

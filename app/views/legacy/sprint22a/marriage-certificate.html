@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <main id="content" role="main">
+          <div class="grid-row">
+            <div class="column-full">
+
+{% include './_bar.html' %}
+
+{% include './_tab-overview.html' %}
+</br>
+        <div>
+          <a href="marital-status" class="govuk-back-link">Back</a>
+        </div>
+
+      </br>
+
+      <h1 class="govuk-heading-l">Marriage certificate</h1>
+    <form action="overview" method="post">
+
+        <p>This change of marital details has been made, but we need to see the marriage
+          certificate before we can verify the marriage in our records.  </br>
+        </br>
+
+
+        Send the marriage certificate with National Insurance number to:  </br>
+      </br>
+        The Pension Service 4</br>
+        Mail Handling Site A</br>
+        Wolverhampton</br>
+        WV98 1AG
+
+      </p>
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+    </form>
+
+
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>        </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

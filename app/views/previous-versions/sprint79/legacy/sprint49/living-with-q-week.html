@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {% include './_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-heading-l">Were you living with anyone during the week of 21 to 27 September 2020?</h1>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with-q-week-no" name="living-with-q-week" type="radio" value="Does not live with anyone else of State Pension age">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

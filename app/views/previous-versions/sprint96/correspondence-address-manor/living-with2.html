@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {% include './_bar.html' %}
+
+
+
+
+            <form method="post">
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-heading-l">Do you live with anyone?</h1>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Lives with someone else who gets Winter Fuel Payment">
+                      <label class="govuk-label govuk-radios__label" for="living-with-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Does not live with someone else who gets Winter Fuel Payment">
+                      <label class="govuk-label govuk-radios__label" for="living-with-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+  <script>
+      nextPageRoutes = {
+          'Lives with someone else who gets Winter Fuel Payment': 'living-with-age2.html',
+          'Does not live with someone else who gets Winter Fuel Payment': 'living-with-date2.html',
+        }
+  </script>
+  {% endblock %}

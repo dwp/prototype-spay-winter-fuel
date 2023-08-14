@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+
+                    <table class="govuk-table">
+                      <h2 class="govuk-heading-l">Payment details</h2>
+                      <thead class="govuk-table__head">
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Date</th>
+                          <td class="govuk-table__cell">Monday 4 November 2020</td>
+                          <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Amount</th>
+                          <td class="govuk-table__cell">£200</td>
+                          <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Status</th>
+                          <td class="govuk-table__cell">Returned</td>
+                          <td class="govuk-table__cell"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div class="govuk-warning-text">
+                      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                      <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        This payment has been returned by the bank. <br>
+                        <a href="reissue-bank-type" class="govuk-link">Reissue this payment</a>
+                      </strong>
+                    </div>
+
+
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Qualification details</h2>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">69</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  Via Albarelle 6<br>
+                  St-Pierre-de-Clages<br>
+                  1955<br>
+                  Switzerland
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">
+                  Does not live with someone else who gets Winter Fuel Payment
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <br>
+
+          <h3 class="govuk-heading-m">Bank account details</h3>
+
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">
+                  {% if data['accountholder'] %}
+                    {{data['accountholder']}}
+                  {% else %}
+                  R Aldred
+                  {% endif %}
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                <td class="govuk-table__cell">
+                  CTBAAU2S
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">IBAN</th>
+                <td class="govuk-table__cell">
+                  CH93 0076 2011 6238 5295 7
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

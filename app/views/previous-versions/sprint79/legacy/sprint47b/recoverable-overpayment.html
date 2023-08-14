@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          <form method="post">
+
+            <h2 class="govuk-heading-l">Download PDF and upload to CAM</h2>
+
+            <p>Maybe something to tell the agent what they are expected to do? this is the record of decision?</p>
+
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Download PDF
+            </button>
+
+            <br>
+
+            <button type="submit" class="govuk-button">
+            PDF downloaded - continue?
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

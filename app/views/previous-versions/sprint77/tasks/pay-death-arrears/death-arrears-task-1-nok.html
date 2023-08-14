@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar-dead.html' %}
+
+
+          <form method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nok-details-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Do you have next of kin details?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="nok-details" name="nok-details" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="nok-details">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="nok-details-2" name="nok-details" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="nok-details-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+            <br><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a>
+            <br><br><br>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/current/tasks/pay-death-arrears/send-wfpf100.html',
+        'no': '/current/tasks/pay-death-arrears/tasks-5-2.html',
+      }
+  </script>
+
+{% endblock %}

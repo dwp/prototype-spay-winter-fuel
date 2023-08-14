@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  Theodora Best<br>
+                  <span class="govuk-body-l">
+                    XX 12 34 56
+                  </span>
+              </div>
+
+            </div>
+          </div>
+
+          {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+          <form method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nok-details-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    What type of address is this?
+                  </h1>
+                </legend>
+
+                  <p>
+                    G05 Chorlton Mill <br>
+                    Cambridge Street <br>
+                    Manchester <br>
+                    M1 5BY<br>
+                  </p>
+
+
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                          <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                            Residential
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                            Correspondence
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+                          <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                            Commercial
+                          </label>
+                        </div>
+                      </div>
+
+                    </fieldset>
+                  </div>
+
+<br>
+<br>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-xl">Cases</h2>
+
+    <a href="#" class="govuk-back-link">Back</a>
+
+    <br>
+    <br>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            To do
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            .
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-month">
+            Tab
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-year">
+            Tab
+          </a>
+        </li>
+      </ul>
+      <section class="govuk-tabs__panel" id="past-day">
+        <h2 class="govuk-heading-l">To do</h2>
+
+
+        <table class="govuk-table">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+
+              <th scope="col" class="govuk-table__header">Person</th>
+
+              <th scope="col" class="govuk-table__header">Status</th>
+
+              <th scope="col" class="govuk-table__header">Stage</th>
+
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+
+              <th scope="row" class="govuk-table__header">
+
+                <a href="#"> John Smith <br>
+                  QQ 12 34 56 X</a></th>
+
+              <td class="govuk-table__cell">In progress</td>
+
+              <td class="govuk-table__cell">Verify address</td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <th scope="row" class="govuk-table__header">
+                <a href="#">Harold Sutton <br> QQ 12 34 56 X</a></th>
+
+              <td class="govuk-table__cell">Suspended</td>
+
+              <td class="govuk-table__cell">Update case</td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <th scope="row" class="govuk-table__header">
+                <a href="#"> Jennifer Langley<br>
+                  1QQ 12 34 56 X</a></th>
+
+              <td class="govuk-table__cell">Suspended</td>
+
+              <td class="govuk-table__cell">Calculate eligibility</td>
+
+            </tr>
+
+
+
+
+            <tr class="govuk-table__row">
+
+              <th scope="row" class="govuk-table__header">
+                <a href="#">Alan Jones<br>QQ 12 34 56 X</a></th>
+
+              <td class="govuk-table__cell">Decision needed</td>
+
+              <td class="govuk-table__cell">Update case</td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+
+              <th scope="row" class="govuk-table__header">
+                <a href="#">John Smith<br>QQ 12 34 56 X</a></th>
+
+              <td class="govuk-table__cell">Decision needed</td>
+
+              <td class="govuk-table__cell">Calculate entitlement</td>
+
+            </tr>
+
+          </tbody>
+        </table>
+
+      </section>
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+        <h2 class="govuk-heading-l">Past week</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Case manager</th>
+              <th scope="col" class="govuk-table__header">Cases opened</th>
+              <th scope="col" class="govuk-table__header">Cases closed</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">David Francis</td>
+              <td class="govuk-table__cell">24</td>
+              <td class="govuk-table__cell">18</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Paul Farmer</td>
+              <td class="govuk-table__cell">16</td>
+              <td class="govuk-table__cell">20</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Rita Patel</td>
+              <td class="govuk-table__cell">24</td>
+              <td class="govuk-table__cell">27</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+        <h2 class="govuk-heading-l">Past month</h2>
+
+
+
+      </section>
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+        <h2 class="govuk-heading-l">Past year</h2>
+
+
+      </section>
+    </div>
+
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar">
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

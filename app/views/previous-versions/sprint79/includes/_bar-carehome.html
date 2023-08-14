@@ -1,0 +1,25 @@
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+          Bertie Brewis<br>
+
+                            <span class="govuk-body-l">
+                              {% if data['nino'] %}
+                                {{data['nino']}}
+                              {% else %}
+                                XX 44 34 56 E
+                              {% endif %}
+                            </span><br>
+
+                            
+                            <strong class="govuk-tag govuk-tag--orange">
+                              IN CARE HOME
+                            </strong>       
+        </div>
+
+  </div>
+</div>

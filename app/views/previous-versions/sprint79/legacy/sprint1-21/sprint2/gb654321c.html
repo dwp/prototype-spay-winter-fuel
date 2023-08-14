@@ -1,0 +1,171 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Sam Bulmer
+{% endblock %}
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %}
+{  {# Set serviceName in config.js. #}
+  {% include "includes/headsearch.html" %}
+
+      <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-bar__name">Sam Bulmer</dd>
+
+          <dt class="govuk-visually-hidden">National Insurance number:</dt>
+          <dd class="key-details-bar__nino">GB 65 43 21 C</dd>
+
+         
+
+          <dt class="visually-hidden">Claim status:</dt>
+          <dd class="key-details-bar__status">Dead letter office (DLO)</dd> 
+
+          
+        </div>
+
+        <div class="key-details-bar__bottom-block">
+          <dt>Date of birth:</dt>
+          <dd>12 July 1950</dd>
+
+          <dt>Address:</dt>
+          <dd>Not known</dd>
+
+        </div>
+      </dl>
+    </section>
+
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="">
+
+    <div class="govuk-grid-row">
+
+     
+      <div class="govuk-grid-column-two-thirds">
+
+         <h1 class="govuk-visually-hidden">Winter Fuel details: Sam Bulmer</h1>
+
+
+        <div class="tabs">
+            <div class="tabs-nav">
+              <ul class="tabs-list">
+                <li>
+                  <a href="#tab-1">
+                    Payment details
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+        <div class="tabs-content">
+          <div class="tabs-panel" id="tab-1">
+            <div class="tabs-panel-inner">
+
+                   <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment amount
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                (awaiting calculation)
+                              </dd>
+                            </div>
+                           
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment status
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                               Not paid
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment date
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                (awaiting payment)
+                              </dd>
+                            </div>
+                             <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Matches at same address
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Not known
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Relevant benefits
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                None
+                              </dd>
+                            </div>
+
+                          
+                        </dl>
+
+              
+            </div>
+          </div>  
+        </div>
+
+
+      </div>
+
+       <input class="govuk-input" type="hidden" name="person" value="Sam Bulmer" type="text">
+
+   </div>
+
+      <div class="govuk-grid-column-one-third">
+          <div class="invoicesummary">
+
+            <p>
+                <strong class="app-c-tag app-c-tag--danger">not paid</strong>
+              </p>
+
+              <ul class="govuk-list">
+                <li>
+                  <a style="font-weight: 700;" class="govuk-link" href="address_prison">Add new address</a> 
+                </li>
+              
+              
+              <li>
+                <a style="font-weight:700;" class="govuk-link" href="stop_payment">Stop payments</a>
+              </li>
+
+              </ul>
+
+
+            <!--
+
+              <h3 class="govuk-heading-s">Actions</h3>
+
+              <form action="address_prison" method="post" class="form"> 
+                <input class="govuk-input" type="hidden" name="person" value="Sam Bulmer" type="text">
+                <input type="submit" method="post" value="Add address" class="govuk-button">
+              </form> -->
+
+             
+         </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+</div>
+
+
+{% endblock %}
+

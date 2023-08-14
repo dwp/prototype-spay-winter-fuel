@@ -1,0 +1,121 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a href="/legacy/sprint15/international/nationalities-start" class="govuk-back-link">Back</a>
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">Other nationalities</h1>
+                    
+<p> <strong>Nationality 1</strong>
+<br> Ireland
+<br> Since birth
+</p>
+
+
+                    <h2 class="govuk-heading-m govuk-!-margin-top-5" for="sp-ni-number">
+                        In which country?
+                        </h2>
+                        <input class="govuk-input" id="whichcountry" name="whichcountry" type="text" autocomplete="name" spellcheck="false">
+
+
+                    <h3 class="govuk-heading-m govuk-!-margin-top-8" for="sp-ni-number">
+                        When did it start?
+                        </h3>
+
+                    
+
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="startbirth" name="startbirth" type="radio" value="sincebirth">
+                                    <label class="govuk-label govuk-radios__label" for="anyone-else-sp-yes">
+                                    Since birth
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="startother" name="startother" type="radio" value="anotherdate">
+                                    <label class="govuk-label govuk-radios__label" for="anyone-else-sp">
+                                    Another date
+                                    </label>
+                                </div>
+                                </div>
+
+
+
+                                    <span id="dob-hint" class="govuk-hint govuk-!-margin-top-5">
+                                        For example, 12 11 1960
+                                    </span>
+
+
+                                    <div class="govuk-date-input" id="natstart" name="natstartinput">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="natstart-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="natstartday" name="natstartday" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="natstart-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="natstartmonth" name="natstartmonth" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="natstart-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="natstartyear" name="natstartyear" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                    </div>
+
+            
+                <div class="govuk-!-margin-top-5">
+                <a href="#" class="govuk-link govuk-!-font-size-19"  >Add another</a>
+                </div>
+
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue </button>
+
+
+    </main>
+
+</form>
+</div>
+  {% endblock %}

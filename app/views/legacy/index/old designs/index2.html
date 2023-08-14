@@ -1,0 +1,405 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl" style="margin-bottom: 3%;">Winter Fuel Payments prototype</h1>
+<br>
+
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link" aria-current="page" href="index" style="color: black">Agent</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link"href="index-admin" style="color: #1D70B8; text-decoration: underline;" >Admin</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-govuk" style="color: #1D70B8; text-decoration: underline;" >GOV.UK</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-ur" style="color: #1D70B8; text-decoration: underline;" >User research</a>
+    </li>
+  </ul>
+
+</nav>
+
+
+
+
+
+<h2 class="govuk-heading-l">New Claims</h2>
+
+
+
+
+
+  <h3 class="govuk-heading-m">
+    <a href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type">International new claims</a>
+</h3>
+
+{% set detailsContentHTML1 %}
+    
+    
+    <p>
+       
+        <h3 class="govuk-heading-l">Current version</h3>
+        
+            <a href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+            <a href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367455929908&cot=14"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Start journey map
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1112<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to add alternative format
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1111<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to update address
+             
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+    
+    
+    <p>
+        
+        <h3 class="govuk-heading-l">Previous version - V2</h3>
+        
+            <a href="#"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1110<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to change language to Welsh
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1109<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to tag someone as dead
+         
+        
+    </p>
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+    
+    <p>
+        
+        <h3 class="govuk-heading-l">Previous version - V1</h3>
+        
+            <a href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1110<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to change language to Welsh
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1109<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to tag someone as dead
+         
+        
+    </p>
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+{% endset %}
+                
+{{ govukDetails({
+    summaryText: 'International new claims details',
+    html: detailsContentHTML1
+}) }}
+                
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+
+
+
+<h3 class="govuk-heading-m">
+    <a href="https://winterfuel.herokuapp.com/current/new-claims/uk/type-of-application">UK new claims</a>
+</h3>
+
+{% set detailsContentHTML2 %}
+    
+    
+    <p>
+       
+        <h3 class="govuk-heading-l">Current version</h3>
+        
+            <a href="https://winterfuel.herokuapp.com/current/new-claims/uk/type-of-application"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+            <a href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367453165485&cot=14"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Start journey map
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1112<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to add alternative format
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1111<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to update address
+             
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+    
+    
+    
+    <p>
+        
+        <h3 class="govuk-heading-l">Previous version - V1</h3>
+        
+            <a href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1110<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to change language to Welsh
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1109<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to tag someone as dead
+         
+        
+    </p>
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+{% endset %}
+                
+{{ govukDetails({
+    summaryText: 'UK new claims details',
+    html: detailsContentHTML2
+}) }}
+                
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+
+<br><h2 class="govuk-heading-l">Tasks</h2>
+
+
+
+
+
+  <h3 class="govuk-heading-m">
+    <a href="#">Contact citizens</a>
+</h3>
+
+{% set detailsContentHTML1 %}
+    
+    
+    <p>
+       
+        <h3 class="govuk-heading-l">Current version</h3>
+        
+            <a href="#"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+            <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Start journey map
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1112<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to add alternative format
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1111<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to update address
+             
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+    
+    
+    
+    <p>
+        
+        <h3 class="govuk-heading-l">Previous version - V1</h3>
+        
+            <a href="#"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1110<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to change language to Welsh
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1109<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to tag someone as dead
+         
+        
+    </p>
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+{% endset %}
+                
+{{ govukDetails({
+    summaryText: 'Contact citizens',
+    html: detailsContentHTML1
+}) }}
+                
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+
+
+
+<h3 class="govuk-heading-m">
+    <a href="#">Fix account details</a>
+</h3>
+
+{% set detailsContentHTML2 %}
+    
+    
+    <p>
+       
+        <h3 class="govuk-heading-l">Current version</h3>
+        
+            <a href="#"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+            <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Start journey map
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1112<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to add alternative format
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1111<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to update address
+             
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+    
+    
+    
+
+    
+    <p>
+        
+        <h3 class="govuk-heading-l">Previous version - V1</h3>
+        
+            <a href="#"><button class="govuk-button" data-module="govuk-button">
+              Start prototype
+            </button></a>
+
+                <h3 class="govuk-heading-s">Tickets worked on in this version</h3>
+
+                    <a class="govuk-link" href="#">
+                      SPAY-1110<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to change language to Welsh
+             
+
+                <br><a class="govuk-link" href="#">
+                      SPAY-1109<span class="govuk-visually-hidden">ticket worked on</span>
+                    </a>
+                    - enable agents to tag someone as dead
+         
+        
+    </p>
+    
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+{% endset %}
+                
+{{ govukDetails({
+    summaryText: 'Fix account details',
+    html: detailsContentHTML2
+}) }}
+                
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+
+
+
+<!--   -->
+
+      {% endblock %}
+
+

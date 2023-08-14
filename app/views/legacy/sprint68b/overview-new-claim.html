@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-international.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <div>
+            <h1 class="govuk-heading-xl">
+              Chris Wear<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56 D
+                {% endif %}<br>
+              <strong class="govuk-tag govuk-tag--orange">
+                  Need to make new UK claim
+                </strong>
+              </span>
+            </h1>
+          </div>
+
+          <div class="moj-banner moj-banner--success">
+
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+          </svg>
+
+          <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Details updated
+          </div>
+
+          </div>
+
+          {% include './_tab-overview.html' %}
+
+          <br>
+          <br>
+
+         
+          <h2 class="govuk-heading-m">Payment for winter 2020 to 2021</h2>
+          
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              This person needs to make a new UK claim.
+            </strong>
+          </div>
+
+
+<br>
+
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Qualification details</h2>
+            <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+            </a>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">69</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">5 March 1951</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  12 Hampstead High Street<br>
+                    London<br>
+                    NW3 1PY
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date moved in</th>
+                <td class="govuk-table__cell">
+                  20 June 2020
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">
+                  Does not live with someone else who gets Winter Fuel Payment
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        {% include './_history-ineligible-eea.html' %}
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        <h2 class="govuk-heading-xl">Alex Smith<br>
+          <span class="govuk-caption-xl"> {{data.nino}} </span>
+          <span class="app-c-tag">Receiving Winter Fuel Payment</span>
+        </h2>
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <h1 class="govuk-heading-l">Change work telephone</h1>
+
+
+            <form method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="telephone-number">
+                  Work telephone number
+
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="worknumber" name="worknumber" type="tel">
+              </div>
+
+
+              <div>
+              <a href="workphone-remove" class="govuk-link govuk-!-font-size-19">Remove work telephone number</a>
+            </div>
+        
+              <br>
+
+              <button type="submit" class="govuk-button">
+                Save
+              </button>
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}

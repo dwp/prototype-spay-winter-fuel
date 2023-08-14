@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+      <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" aria-current="page" href="/current/manage-things/manage-things">Manage things...</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="payments">Payments</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="letters">Letters</a>
+        </li>
+
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link" href="jobs">Jobs run in the last 7 days</a>
+        </li>
+
+    </nav>
+
+    <form method="post">
+
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">
+                Load files
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="da-file" aria-describedby="eligibility-completed">
+                      Data and analytics file
+                    </a>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    <strong class="govuk-tag govuk-tag--green">
+                      completed
+                    </strong>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    1 April 2021
+                  </span>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="gysp" aria-describedby="read-declaration-completed">
+                      Get your State Pension file
+                    </a>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    <strong class="govuk-tag govuk-tag--green">
+                      completed
+                    </strong>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    1 April 2021
+                  </span>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="war-pensions" aria-describedby="read-declaration-completed">
+                      War pension file
+                    </a>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    <strong class="govuk-tag govuk-tag--blue">
+                      In progress
+                    </strong>
+                  </span>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="" aria-describedby="read-declaration-completed">
+                      Winter Fuel Payment System file
+                    </a>
+                  </span>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="" aria-describedby="read-declaration-completed">
+                      Legacy file
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </li>
+
+
+            <li>
+              <h2 class="app-task-list__section">
+                Calculate entitlement
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="calculate-entitlement" aria-describedby="company-information-completed">
+                      Calculate entitlement
+                    </a>
+                  </span>
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="sweep" aria-describedby="company-information-completed">
+                      Clean up
+                    </a>
+                  </span>
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                Manage letters and payments
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="schedule-letters-payments" aria-describedby="company-information-completed">
+                      Schedule letters and payments
+                    </a>
+                  </span>
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                Secure data
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="calculate-entitlement" aria-describedby="company-information-completed">
+                      Encrypt data
+                    </a>
+                  </span>
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="sweep" aria-describedby="company-information-completed">
+                      Decrypt data
+                    </a>
+                  </span>
+              </ul>
+            </li>
+
+          </ol>
+
+        </div>
+      </div>
+
+
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+<script>
+  $(document).on('click', 'a', function(e) {
+    if ( /(remove-link-)([0-9])/.test($(this).attr('id')) ) {
+      e.preventDefault();
+      $(this).parent().parent().parent().remove();
+      remove_links();
+      $(this).blur();
+    }
+  });
+
+  $('#add-another-name').on('click', function(e) {
+    e.preventDefault();
+    var last_input = $('#other-name-container input').last().attr('id'),
+        num = last_input.substr(last_input.length - 1);
+        num = parseInt(num) + 1;
+
+    $('#other-name-container').append('<div class="form-group">' +
+                      '<label class="form-label-bold" for="other-name-' + num + '">Other name <span></span></label>' +
+                      '<input class="form-control" id="other-name-' + num + '" name="other-name-' + num + '"type="text" autocomplete="off">' +
+                    '</div>');
+
+    remove_links();
+
+    $(this).blur();
+  })
+
+  function remove_links() {
+    var last_input = $('#other-name-container input').last().attr('id'),
+        num = last_input.substr(last_input.length - 1);
+        num = parseInt(num) + 1;
+
+    $('.form-label-bold').each(function() {
+      if ( num > 2 ) {
+        $(this).find('span').html('<a id="remove-link-' + num + '" href="' + Math.random() + '" style="font-weight: normal;">Remove</a>');
+      } else {
+        $(this).find('span').html('');
+      }
+    });
+  }
+</script>

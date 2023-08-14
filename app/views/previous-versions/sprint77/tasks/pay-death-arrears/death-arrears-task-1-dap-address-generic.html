@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  XX 62 31 26 C<br>
+                  <span class="govuk-body-l">
+                    Meera Rudd
+                  </span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <form method="post">
+
+                              <h2 class="govuk-heading-l">
+Address of the death arrears payee</h2>
+
+  <fieldset class="govuk-fieldset">
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        Address line 1 <span class="govuk-visually-hidden">line 1 of 2</span>
+      </label>
+      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-2">
+        Address line 2<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+      </label>
+      <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2"></div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-3">
+        Address line 3<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+      </label>
+      <input class="govuk-input" id="address-line-3" name="address-line-3" type="text" autocomplete="address-line3"></div>
+      
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-4">
+        Address line 4<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+      </label>
+      <input class="govuk-input" id="address-line-4" name="address-line-4" type="text" autocomplete="address-line4"></div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-5">
+        Address line 5<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+      </label>
+      <input class="govuk-input" id="address-line-5" name="address-line-5" type="text" autocomplete="address-line5"></div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-6">
+        Address line 6<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+      </label>
+      <input class="govuk-input" id="address-line-6" name="address-line-6" type="text" autocomplete="address-line6"></div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-7">
+        Address line 7<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+      </label>
+      <input class="govuk-input" id="address-line-7" name="address-line-7" type="text" autocomplete="address-line7"></div>
+
+  </fieldset>
+
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

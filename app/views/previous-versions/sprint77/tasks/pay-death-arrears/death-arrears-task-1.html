@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+         {% include 'current/includes/_bar-dead.html' %}
+
+
+          <form method="post">
+
+            <h1 class="govuk-heading-m">Details</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Date of birth</th>
+                    <td class="govuk-table__cell">29 August 1920</td>
+                  </tr>
+                </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of death</th>
+                  <td class="govuk-table__cell">30 September 2020</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">
+                    {% if data['address-change'] %}
+                    27 KENT STREET<br>
+                    AMBLE<br>
+                    NE65 0LZ
+                  {% else %}
+
+
+                    87 OAKWELL AVE<br>
+                    ALNWICK<br>
+                    NE65 9TT
+                    {% endif %}
+
+                  </td>
+
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">{% if data['moveday'] %}
+                    {{data['moveday']}}
+                    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January
+                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February
+                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March
+                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April
+                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May
+                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June
+                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July
+                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August
+                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September
+                {% elif data['movemonth'] == '10' %} October
+                {% elif data['movemonth'] == '11' %} November
+                {% elif data['movemonth'] == '12' %} December
+                {% endif %}
+                    {{data['moveyear']}}
+                    {% else %}
+                    19 July 2019
+                    {% endif %}</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">{% if data['living-with'] %}
+                    {{data['living-with']}}
+                    {% else %}
+                    Lives with someone else of State Pension age
+                    {% endif %}</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Payment amount</th>
+                  <td class="govuk-table__cell">£150</td>
+                </tr>
+                </thead>
+            </table>
+            <a href="address" <span class="govuk-link govuk-!-font-size-19" >Update details</span></a>
+            <br><br><br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="dap-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                Do you have payment details for a death arrears payee?
+                  </h1>
+                </legend>
+                <div id="dap-hint" class="govuk-hint">
+
+                </div>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dap" name="dap" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="dap">
+                    Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dap-2" name="dap" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="dap-2">
+                    No
+                    </label>
+                  </div>
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="dap-3" name="dap" type="radio" value="cancel">
+                    <label class="govuk-label govuk-radios__label" for="dap-2">
+                    Cancel this payment
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <br><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a>
+            <br><br><br>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/current/tasks/pay-death-arrears/death-arrears-task-1-dap-name.html',
+        'no': '/current/tasks/pay-death-arrears/death-arrears-task-1-nok.html',
+        'cancel': '/current/tasks/pay-death-arrears/death-arrears-task-1-cancel-check.html',
+    }
+  </script>
+
+{% endblock %}

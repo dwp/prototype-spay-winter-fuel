@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        <br>
+        <br>
+
+      <div>
+        <h1 class="govuk-heading-xl">
+          AA 12 34 56 X<br>
+          <span class="app-c-tag">Eligible</span>
+      </div>
+
+        <br>
+
+              <h2 class="govuk-heading-m">Entitlement</h2>
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Payment amount
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    £100
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      <span class="govuk-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h2 class="govuk-heading-m">Contact details</h2>
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    78 Graham Road<br>
+                    Chelsham<br>
+                    CR6 9ND
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      <span class="govuk-visually-hidden"></span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Home phone number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    01665 000000
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> licence type</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Mobile phone number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    00777777778
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> home address</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h2 class="govuk-heading-m">Payment details</h2>
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Account holder
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    A Smith
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"></span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Account number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  12345678
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"></span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Sort code
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  12 34 56
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                    <span class="govuk-visually-hidden"> home address</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <form action="/form-handler" method="post" novalidate>
+
+                <input type="hidden" name="answers-checked" value="true">
+              </form>
+
+            </div>
+          </div>
+        </main>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post" action="death-arrears-task-1-dap-make-payment">
+
+          {% include 'current/includes/_bar-dead.html' %}
+
+
+                        <h1 class="govuk-heading-l">Account details for the death arrears payee</h1>
+
+                      
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="width-20">
+                              Name on the account
+                            </label>
+                            <input class="govuk-input govuk-input--width-20" id="accountholder" name="accountholder" type="text">
+                          </div>
+
+
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="sortcode">
+                              Sort code
+                            </label>
+                            <input class="govuk-input govuk-input--width-10" id="sortcode" name="sortcode" type="text">
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="width-20">
+                              Account number
+                            </label>
+                            <input class="govuk-input govuk-input--width-20" id="accountnumber" name="accountnumber" type="text">
+                          </div>
+
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="rollnumber">
+                              Building society roll number (if there is one)
+                            </label>
+                            <input class="govuk-input govuk-input--width-10" id="rollnumber" name="rollnumber" type="text">
+                          </div>
+                          <br><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a>
+                          <br><br><br>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

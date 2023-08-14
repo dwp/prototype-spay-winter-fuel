@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <table class="govuk-table">
+            <h1 class="govuk-heading-l">Reissue the payment</h1>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount</th>
+                <td class="govuk-table__cell">£200</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Payment date</th>
+                <td class="govuk-table__cell">Monday, 11 November 2019</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Bank account details</h2>
+            <tbody class="govuk-table__body">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Name on the account</th>
+                  <td class="govuk-table__cell">
+                    {% if data.nameonaccount %}
+                    {{data.nameonaccount}}
+                    {% else %}
+                  	T Best
+                    {% endif %}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                  <td class="govuk-table__cell">
+                    {% if data.bic %}
+                    {{data.bic}}
+                    {% else %}
+                    00 11 22
+                    {% endif %}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">IBAN</th>
+                  <td class="govuk-table__cell">
+                    {% if data.iban %}
+                    {{data.iban}}
+                    {% else %}
+                    ****5678
+                    {% endif %}</td>
+                </tr>
+              </tbody>
+            </tbody>
+          </table>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Reissue the payment
+          </button>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

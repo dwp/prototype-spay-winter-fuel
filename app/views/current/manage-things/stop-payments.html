@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="/current/manage-things/manage-things">Manage things...</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="payments">Payments</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="letters">Letters</a>
+              </li>
+
+          </nav>
+
+<br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+              Are you sure you want to stop sending payments?
+                </h1>
+              </legend>
+              <br>
+              <br>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+      Confirm
+      </button>
+
+
+
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}

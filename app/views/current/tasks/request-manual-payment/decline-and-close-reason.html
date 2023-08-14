@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar_4.html' %}
+
+            <form method="post" action="review-decline-and-update">
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-heading-l" style="margin-bottom:0px;">Select the reason to decline and close this manual payment request</h1>
+
+<br>
+                 
+
+
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios">
+                    
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="decline-reason" name="decline-reason" type="radio" value=" Citizen not entitled">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-2">
+                        Citizen not entitled
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="decline-reason" name="decline-reason" type="radio" value="Duplicate payments ">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
+                        Duplicate payment
+                      </label>
+                    </div>
+                    <div class="govuk-radios__divider">or</div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="decline-reason" name="decline-reason" type="radio" value="Manual payment not needed ">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
+                        Manual payment not needed 
+                      </label>
+                    </div>
+                   
+
+ 
+                   
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+              <p><a href="/current/tasks/request-manual-payment/send-case-back-to-task-list" class="govuk-link">Return this case to the queue</a></p>
+
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include '../includes/_header-manage-admin.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+
+
+        <form method="post" action="run-sql-query">
+          <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Run SQL query
+                  </h1>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="query" name="query" type="radio" value="eligibility">
+                    <label class="govuk-label govuk-radios__label" for="query">
+                      Eligibility query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="query-2" name="query" type="radio" value="payments">
+                    <label class="govuk-label govuk-radios__label" for="query-2">
+                      Payments query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="query-3" name="query" type="radio" value="notifications">
+                    <label class="govuk-label govuk-radios__label" for="query-3">
+                      Notifications query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="query-4" name="query" type="radio" value="task">
+                    <label class="govuk-label govuk-radios__label" for="query-4">
+                      Task history query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="query-4" name="query" type="radio" value="action">
+                    <label class="govuk-label govuk-radios__label" for="query-4">
+                      Action history query
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+          <button type="submit" class="govuk-button">
+            Run query
+          </button>
+
+        </form>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+    </main>
+    </div>
+
+    {% endblock %}

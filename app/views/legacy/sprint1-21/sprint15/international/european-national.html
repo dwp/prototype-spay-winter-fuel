@@ -1,0 +1,63 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<form method=post>
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15/international/relationship-status" class="govuk-back-link">Back</a>
+
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Are you a partner of a European national?</h1>
+       
+        <div class="govuk-radios ">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="europeannational-yes" name="europeannational" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="europeannational-yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="europeannational-no" name="europeannational" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="europeannational-no">
+          No
+        </label>
+      </div>
+    </div>
+
+           <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue </button>
+
+
+
+           
+    </div>
+
+  </main>
+</div>
+</form>
+{% endblock %}

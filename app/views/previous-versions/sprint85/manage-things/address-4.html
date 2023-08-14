@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include 'current/includes/_bar_4.html' %}
+
+          {{ govukBackLink({
+                            text: "Back",
+                            href: "javascript:history.go(-1)"
+                          }) }}
+
+          <br>
+          <br>
+
+          <form method="post">
+
+            <h2 class="govuk-heading-l">Verify an address</h2>
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Unverified address</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">
+                    Sandhills<br>
+                    Lower Road<br>
+                    Stallbridge<br>
+                    Dorset<br>
+                    DT10 2NY</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Mobile number</th>
+                  <td class="govuk-table__cell">07771 900 900</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="govuk-heading-m">Select a verified address</h2>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-4-1" name="address-fix-4" type="radio" value="1 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY">
+                    <label class="govuk-label govuk-radios__label" for="address-1">
+                      1 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-4-2" name="address-fix-4" type="radio" value="2 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY">
+                    <label class="govuk-label govuk-radios__label" for="address-1">
+                      2 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-4-3" name="address-fix-4" type="radio" value="3 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY">
+                    <label class="govuk-label govuk-radios__label" for="address-1">
+                      3 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-4-4" name="address-fix-4" type="radio" value="4 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY">
+                    <label class="govuk-label govuk-radios__label" for="address-1">
+                      4 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-4-5" name="address-fix-4" type="radio" value="Address not found">
+                    <label class="govuk-label govuk-radios__label" for="address-1">
+                      The address cannot be verified
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+          </form>
+
+
+
+
+
+          <br>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

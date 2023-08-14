@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <h2 class="govuk-heading-l">Are you sure you want to mark this payment as returned?</h2>
+
+
+          <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="returned" name="returned" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="returned">
+            Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="returned-2" name="returned" type="radio" value="dead">
+        <label class="govuk-label govuk-radios__label" for="returned-2">
+          No
+        </label>
+      </div>
+    </div>
+
+              <br>
+              <Br>
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </div>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

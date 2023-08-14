@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+            <br>
+            <br>
+
+            <h2 class="govuk-heading-m">
+              Contact history
+            </h2>
+
+            <ol class="app-timeline">
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                    <a href="history-details" class="govuk-link">  Phone call received</a>
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">New address given</span>
+                  <span class="app-timeline__date">
+                    5 January 2018
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  <a href="history-details" class="govuk-link">Email received</a>
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Marriage verified</span>
+                  <span class="app-timeline__date">
+                    8 March 2016
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  <a href="history-details" class="govuk-link">Letter sent</a>
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Marriage verified</span>
+                  <span class="app-timeline__date">
+                    8 March 2016
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Text message sent
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Marriage verified</span>
+                  <span class="app-timeline__date">
+                    5 July 2013
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Fax received
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Marriage verified</span>
+                  <span class="app-timeline__date">
+                    19 January 2009
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  <a href="history-details" class="govuk-link">Phone call made</a>
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Marriage verified</span>
+                  <span class="app-timeline__date">
+                    18 January 2009
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Email sent
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Marriage verified</span>
+                  <span class="app-timeline__date">
+                    30 June 2006
+                  </span>
+                </p>
+              </li>
+
+
+            </ol>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_start_again.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <h1 class="govuk-heading-xl">
+        Why do you think you should get Winter Fuel?</h1>
+        <form method="post">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+              Tell us everything
+            </label>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="15" aria-describedby="more-detail-hint"></textarea>
+          </div>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Submit and hope for the best
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

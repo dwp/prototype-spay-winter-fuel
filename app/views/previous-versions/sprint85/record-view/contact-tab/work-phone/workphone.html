@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% if data['update-details']=='yes'%}
+          <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
+        {% else %}
+          <form method="post" action="/current/record-view/contact-tab/contact-details">
+        {% endif %}
+
+            {% include 'current/includes/_bar.html' %}
+
+            <br>
+            <br>
+
+            {% if not data.worknumber %}
+            <h1 class="govuk-heading-l">What is your work phone number?</h1>
+            {% else %}
+            <h1 class="govuk-heading-l">What is your work phone number?</h1>
+            {% endif %}
+
+            <form method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="telephone-number">
+                  Phone number
+
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="worknumber" name="worknumber" type="tel">
+              </div>
+
+              {% if (data.worknumber) and data ['workphone-remove'] != 'yes' %}
+            <div>
+            <a href="workphone-remove" class="govuk-link govuk-!-font-size-19">Remove work phone as a contact option</a><br><br>
+            </div>
+              {% endif %}
+
+             
+
+              {% if data['update-details']=='yes'%}
+             <button type="submit" class="govuk-button">
+              Continue
+            </button>
+          {% else %}
+             <button type="submit" class="govuk-button">
+              Save
+            </button>
+          {% endif %}
+           
+            <input type="hidden" name="workphone-changed" value="true">
+            <input type="hidden" name="workphone-remove" value="no">
+            <input type="hidden" name="contact-details-changed" value="true">
+            <input type="hidden" name="from-contact-tab" value="true">
+          </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}
+
+ 

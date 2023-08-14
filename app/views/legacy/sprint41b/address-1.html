@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% if data['phone-post'] === 'phone' %}
+{% include './_blue_bar.html' %}
+{% else %}
+{% include './_blue_bar-2.html' %}
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <h2 class="govuk-heading-xl">Can you confirm your full address?</h2>
+
+              <p><b>1</b> address found for <b>"{% if data['house-number'] %}
+                                  {{data['house-number']}}
+                                {% else %}
+                                27
+                                {% endif %}"
+                              </b> and <b>"{% if data['postcode'] %}
+                                                  {{data['postcode']}}
+                                                {% else %}
+                                                NE65 0LZ
+                                                {% endif %}"</b></p>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="27 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        {% if data['phone-post'] === 'phone' %}
+                        27 Kent Street, Amble, NE65 0LZ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                        {% else %}
+                        50 Kings Road, Walsall, WS21 3OE<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                        {% endif %}
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-2" name="address-change" type="radio" value="2 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-2">
+                        Address not found
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+            {% if data['prototype-mode'] === 'dev' %}
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  DEV info
+                </span>
+              </summary>
+
+              <div class="govuk-details__text">
+                <p><b>Error message</b><br>
+                ...</p>
+            </details>
+            {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

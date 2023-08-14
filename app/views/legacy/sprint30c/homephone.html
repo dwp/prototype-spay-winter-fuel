@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+            {% include './_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <h1 class="govuk-heading-l">Change home telephone</h1>
+
+            <form method="post">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="telephone-number">
+                New home telephone
+
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="homephone" name="homephone" type="tel">
+            </div>
+
+            <div>
+              <p>0191 000 000</p>
+            <a href="homephone-remove" class="govuk-link govuk-!-font-size-19">Remove old home telephone</a>
+            </div>
+            <br>
+
+            <button type="submit" class="govuk-button">
+              Save
+            </button>
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}

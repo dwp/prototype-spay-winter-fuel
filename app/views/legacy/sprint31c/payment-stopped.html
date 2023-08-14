@@ -1,0 +1,297 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="moj-banner moj-banner--success">
+
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+          <div class="moj-banner__message">
+            <span class="moj-banner__assistive">Success</span>Payments stopped</div>
+
+        </div>
+
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {% include './_tab-payment.html' %}
+
+          <br>
+          <br>
+          <h2 class="govuk-heading-m">Bank or building society account details</h2>
+
+          <table class="govuk-table">
+            <a href="bankdetails" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 90%">Change</span>
+            </a>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Bank or building society</th>
+                <td class="govuk-table__cell">HSBC</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">
+                  Mrs M H Morrison
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">****5678</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">00 11 22</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+
+          <h3 class="govuk-heading-m">Next payment</h3>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Payments have been stopped</td>
+                <td class="govuk-table__cell"> <a href="start-payments" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 35%">Restart payments</span>
+                  </a></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">
+          Action history
+        </h2>
+        <ol class="app-timeline">
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Stopped payments
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                11 November 2019
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Changed bank account
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                5 July 2018
+              </span>
+            </p>
+          </li>
+
+
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Changed bank account
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                5 January 2018
+              </span>
+            </p>
+          </li>
+
+        </ol>
+
+      </div>
+
+
+
+      <div class="govuk-grid-column-full">
+        <br>
+        <h2 class="govuk-heading-m">Previous payments</h2>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Date paid</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Monday, 29 October 2018</td>
+              <td class="govuk-table__cell">£100</td>
+              <td class="govuk-table__cell">Paid</td>
+              <td class="govuk-table__cell"><a href="previous-payment" class="govuk-link">Details</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Monday, 30 October 2017</td>
+              <td class="govuk-table__cell">£100</td>
+              <td class="govuk-table__cell">Paid</td>
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Monday, 31 October 2016</td>
+              <td class="govuk-table__cell">£00</td>
+              <td class="govuk-table__cell">Paid</td>
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Monday, 2 November 2015</td>
+              <td class="govuk-table__cell">£200</td>
+              <td class="govuk-table__cell">Paid</td>
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Monday, 27 October 2014</td>
+              <td class="govuk-table__cell">£200</td>
+              <td class="govuk-table__cell">Paid</td>
+              <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              See more payments
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date paid</th>
+                  <th scope="col" class="govuk-table__header">Amount</th>
+                  <th scope="col" class="govuk-table__header">Status</th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 29 October 2013</td>
+                  <td class="govuk-table__cell">£200</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="previous-payment" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 30 October 2012</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 31 October 2011</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 2 November 2010</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 27 October 2009</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 2 November 2008</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 27 October 2007</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 27 October 2006</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 2 November 2005</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 27 October 2004</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 27 October 2003</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 27 October 2002</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 2 November 2001</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Monday, 27 October 2000</td>
+                  <td class="govuk-table__cell">£100</td>
+                  <td class="govuk-table__cell">Paid</td>
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link">Details</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

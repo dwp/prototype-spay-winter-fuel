@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-new-claims.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Type of application</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="phone-post" name="phone-post" type="radio" value="phone">
+                  <label class="govuk-label govuk-radios__label" for="phone-post">
+                    Phone
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="phone-post-2" name="phone-post" type="radio" value="post">
+                  <label class="govuk-label govuk-radios__label" for="phone-post-2">
+                    Post
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

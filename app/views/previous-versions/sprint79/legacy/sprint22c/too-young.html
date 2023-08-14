@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+<h1 class="govuk-heading-l">You are too young to get a Winter Fuel Payment</h1>
+
+    <p>  You qualify for a Winter Fuel Payment if you were born before 6 October 1954.</p>
+
+<h3 class="govuk-heading-m">If you’re on a low income</h3>
+
+<p class="govuk-body">  You may be able to apply directly to your electricity supplier for help with your heating bills through the Warm Home Discount Scheme if:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>your energy supplier is part of the scheme</li>
+  <li>you’re on a low income</li>
+  <li>you get certain means-tested benefits</li>
+</ul>
+
+<p>For more information and how to apply<br>
+<b>www.gov.uk/the-warm-home-discount-scheme/low-income</b>
+</p>
+
+</div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

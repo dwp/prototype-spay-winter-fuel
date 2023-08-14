@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% if data['mark-as-dlo']=='yes'%}
+          {% include 'current/includes/_bar-dlo.html' %}
+        {% else %}
+          {% include 'current/includes/_bar-telephone.html' %}
+        {% endif %}
+
+          <br>
+          <br>
+
+
+
+
+            <form method="post">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="nok-details-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Confirm this address
+                    </h1>
+                  </legend>
+
+
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="care-home-yes" name="care-home" type="radio" value="found" >
+                      <label class="govuk-label govuk-radios__label" for="nok-details">
+                        24 Sycamore Avenue, Newcastle, Tyne and Wear, NE1 4AT
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="care-home-no" name="care-home" type="radio" value="notfound" data-aria-controls="conditional-contact">
+                          <label class="govuk-label govuk-radios__label" for="contact">
+                            The address does not exist or you suspect fraud
+                          </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                          <div class="govuk-warning-text">
+                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                            <strong class="govuk-warning-text__text">
+                              <span class="govuk-warning-text__assistive">Warning</span>
+                              This citizen cannot get a payment.
+                              <a href="//legacy/sprint49/address" class="govuk-link"><br>Change address if possible</a>
+                            </strong>
+                          </div>
+                      </div>
+                    </div>
+
+                </fieldset>
+              </div>
+
+
+
+
+            <div class="govuk-button-group">
+              <button class="govuk-button" button type="submit" data-module="govuk-button">
+                Continue
+              </button>
+
+            </div>
+
+
+
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+<script>
+    nextPageRoutes = {
+        'found': 'overview.html',
+        'notfound': 'overview2.html',
+    }
+</script>
+
+
+{% endblock %}

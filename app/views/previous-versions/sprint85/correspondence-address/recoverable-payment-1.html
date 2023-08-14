@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-l">Recoverable overpayment</h1>
+
+
+              <h1 class="govuk-heading-m">2019 payment qualifying details</h1>
+              <table class="govuk-table">
+                <caption class="govuk-table__caption"></caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Address</th>
+                    <td class="govuk-table__cell"> 1 Victoria Road
+                      <br>FALKIRK
+                      <br>FK55 8XN</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Occupancy</th>
+                    <td class="govuk-table__cell">Does not live with anyone else of State Pension age</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Move date</th>
+                    <td class="govuk-table__cell">6 March 2016</td>
+                  </tr>
+                </thead>
+              </table>
+
+
+              <h1 class="govuk-heading-m">Updated details</h1>
+              <table class="govuk-table">
+                <caption class="govuk-table__caption"></caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Address</th>
+                    <td class="govuk-table__cell">27 Kent Street<br>
+                     AMBLE<br>
+                     NE65 0LZ</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Occupancy</th>
+                    <td class="govuk-table__cell">Lives with someone else of State Pension age</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Move date</th>
+                    <td class="govuk-table__cell">12 July 2019</td>
+                  </tr>
+                </thead>
+              </table>
+
+              <br>
+
+              <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Why is this overpayment recoverable?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="recoverable" name="recoverable" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="recoverable">
+                      Late notification of change of address
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="recoverable-2">
+                      Failure to notify change in residency status
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+
+            <br>
+            <br>
+
+            <button type="submit" class="govuk-button">
+              Download overpayment PDF
+            </button>
+
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

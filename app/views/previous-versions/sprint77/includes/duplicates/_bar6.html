@@ -1,0 +1,37 @@
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            Theodora Best<br>
+
+          <span class="govuk-body-l">
+            {% if data['nino'] %}
+              {{data['nino']}}
+            {% else %}
+              XX 12 34 56
+            {% endif %}
+            <br>
+
+            {% if data['marked-as-dead']=='true' %}
+              <strong class="govuk-tag govuk-tag--grey">
+                Dead
+              </strong>
+            {% elif data['stop-payments']=='dead'%}
+              <strong class="govuk-tag govuk-tag--grey">
+                Dead
+              </strong>
+            {% elif data['stop-payments']=='opted-out'%}
+              <strong class="govuk-tag govuk-tag--yellow">
+                Opted out
+              </strong>
+            {% endif %}
+          </span>
+                          
+
+        </div>
+
+  </div>
+</div>

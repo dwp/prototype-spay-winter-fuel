@@ -1,0 +1,132 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+ 
+ <div class="govuk-width-container">
+
+  <a href="/legacy/sprint15/international/hospital" class="govuk-back-link">Back</a>
+
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">Give hospital details</h1>
+                    <span id="hospdate-hint" class="govuk-hint">
+                      These dates do not have to be exact, but to the best of your knowledge
+                         </span>
+                    
+                    <p class="govuk-heading-m govuk-!-margin-top-6">
+                        Date of admission
+                    </p>
+                  
+                             <span id="date-hint" class="govuk-hint">
+                      For example, 12 11 1960
+                         </span>
+
+
+                    <div class="govuk-date-input" id="hosp-input" name="hosp-input">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hospad-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospadday" name="hospadday" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hospad-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospadmonth" name="hospadmonth" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hospad-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hospadyear" name="hospadyear" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+
+
+                                     <p class="govuk-heading-m">
+                        Date of discharge
+                    </p>
+                    
+                             <span id="date-hint" class="govuk-hint">
+                      For example, 12 11 1960
+                         </span>
+
+
+                    <div class="govuk-date-input" id="hosp-input" name="hosp-input">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hospdis-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospdisday" name="hospdisday" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hospdis-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospdismonth" name="hospdismonth" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="hospdis-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hospdisyear" name="hospdisyear" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="govuk-button"> Save and continue </button>
+        </div>
+            
+            
+
+
+    </main>
+
+</form>
+</div>
+
+  {% endblock %}
+
+
+  
+  

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+<br>
+<br>
+
+    <h1 class="govuk-heading-xl">Clean up</h1>
+
+    <p>
+      <strong class="govuk-tag govuk-tag--grey">
+      Not started
+      </strong>
+    </p>
+
+    <br>
+    <br>
+
+    <form method="post">
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Job Status</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Stage</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Write count</th>
+            <th scope="col" class="govuk-table__header">Start time</th>
+            <th scope="col" class="govuk-table__header">End time</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Verify Address</td>
+            <td class="govuk-table__cell">Not started</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Calculate eligibility</td>
+            <td class="govuk-table__cell">Not started</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">New thing</td>
+            <td class="govuk-table__cell">Not started</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Evaluate related cases</td>
+            <td class="govuk-table__cell">Not started</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Calculate entitlement</td>
+            <td class="govuk-table__cell">Not started</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        {% include 'current/includes/_bar.html' %}
+
+
+            <form method="post">
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-heading-l">Are you power of attorney for anyone?</h1>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="poa-yes" name="poa" type="radio" value="Yes">
+                      <label class="govuk-label govuk-radios__label" for="poa-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="poa-no" name="poa" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="poa-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+   <script>
+    nextPageRoutes = {
+        'Yes': 'poa-people',
+        'No': 'declaration',
+        }
+</script>
+
+  {% endblock %}

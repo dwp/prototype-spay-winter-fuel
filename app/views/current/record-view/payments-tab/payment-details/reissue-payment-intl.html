@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="../payments-reissued-intl?payment-reissued=yes">
+
+          {% include 'current/includes/_bar.html' %}
+
+        
+
+          <br>
+          <br>
+
+          <table class="govuk-table">
+            <h1 class="govuk-heading-l">Reissue the payment</h1>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Amount</th>
+                <td class="govuk-table__cell">£200</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Period</th>
+                <td class="govuk-table__cell">Winter 2021 to 2022</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Payment date</th>
+                <td class="govuk-table__cell">Monday, 11 November 2021</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Bank account details</h2>
+            <tbody class="govuk-table__body">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Name on the account</th>
+                  <td class="govuk-table__cell">
+                    {% if data.accountholder %}
+                    {{data.accountholder}}
+                    {% else %}
+                    Mrs T D Best
+                    {% endif %}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                  <td class="govuk-table__cell">
+                    {% if data.rollnumber %}
+                    {{data.rollnumber}}
+                    {% else %}
+                    SBININBB425
+                    {% endif %}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">IBAN</th>
+                  <td class="govuk-table__cell">
+                    {% if data.accountnumber %}
+                    {{data.accountnumber}}
+                    {% else %}
+                    AT483200000012345864
+                    {% endif %}</td>
+                </tr>
+              </tbody>
+            </tbody>
+          </table>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Reissue the payment
+          </button>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

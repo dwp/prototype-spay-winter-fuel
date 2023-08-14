@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+            <form method="post" onsubmit="return handleAction(this)">
+
+
+
+
+
+          <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+              There is a problem
+            </h2>
+
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#nationality">Select the case types you want to fix</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h1 class="govuk-heading-xl">Fix account details</h1>
+
+          <div class="govuk-form-group govuk-form-group--error">
+            <fieldset class="govuk-fieldset" aria-describedby="nationality-hint nationality-error">
+
+
+              <p id="nationality-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select the case types you want to fix
+              </p>
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="fix-account-details" name="fix-account-details" type="checkbox" value="international">
+                  <label class="govuk-label govuk-checkboxes__label" for="fix-account-details">
+                    UK address with international bank account details - 400 cases
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="fix-account-details-2" name="fix-account-details" type="checkbox" value="other">
+                  <label class="govuk-label govuk-checkboxes__label" for="fix-account-details-2">
+                    Other bank account problems - 492 cases
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+
+
+      <button class="govuk-button" data-module="govuk-button" button type=“submit”>
+        Continue
+      </button>
+      </form>
+    </div>
+
+</div>
+
+</main>
+</div>
+<script type="text/javascript">
+
+      function handleAction(form) {
+        const cbInternational = document.querySelector('#fix-account-details');
+        const cbOther = document.querySelector('#fix-account-details-2');
+        if (cbInternational.checked || cbOther.checked) {
+          form.action =  "/current/tasks/fix-account-details/bank-task";
+        } else {
+          form.action = "/current/tasks/fix-account-details/tasks-fix-account-details-error";
+        }
+      }
+
+</script>
+{% endblock %}

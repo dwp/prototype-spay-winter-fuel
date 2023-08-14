@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Tasks</h1>
+
+
+          <form method=“post” action="tasks-review-overpayments">
+
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="tasks-radio-hint">
+                <div id="tasks-radio-hint" class="govuk-hint">
+                  Select a task to continue
+                </div>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio" name="tasks-radio" type="radio" value="verify-addresses" aria-describedby="tasks-radio-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio">
+                      Verify addresses
+                    </label>
+                    <div id="tasks-radio-item-hint" class="govuk-hint govuk-radios__hint">
+                      2,841 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-2" name="tasks-radio" type="radio" value="fix-account-details" aria-describedby="tasks-radio-2-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-2">
+                      Fix account details
+                    </label>
+                    <div id="tasks-radio-2-item-hint" class="govuk-hint govuk-radios__hint">
+                      892 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-3" name="tasks-radio" type="radio" value="review-gsls" aria-describedby="tasks-radio-3-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-3">
+                      Review GSLs
+                    </label>
+                    <div id="tasks-radio-3-item-hint" class="govuk-hint govuk-radios__hint">
+                     39 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-4" name="tasks-radio" type="radio" value="review-overpayments" aria-describedby="tasks-radio-4-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-4">
+                      Review overpayments
+                    </label>
+                    <div id="tasks-radio-4-item-hint" class="govuk-hint govuk-radios__hint">
+                     8,398 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-5" name="tasks-radio" type="radio" value="pay-death-arrears" aria-describedby="tasks-radio-5-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-5">
+                      Pay death arrears
+                    </label>
+                    <div id="tasks-radio-5-item-hint" class="govuk-hint govuk-radios__hint">
+                     3,927 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-5" name="tasks-radio" type="radio" value="pay-death-arrears" aria-describedby="tasks-radio-5-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-5">
+                      Commercial addresses
+                    </label>
+                    <div id="tasks-radio-5-item-hint" class="govuk-hint govuk-radios__hint">
+                     124 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-5" name="tasks-radio" type="radio" value="pay-death-arrears" aria-describedby="tasks-radio-5-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-5">
+                      Care home 13 weeks
+                    </label>
+                    <div id="tasks-radio-5-item-hint" class="govuk-hint govuk-radios__hint">
+                     1,429 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-5" name="tasks-radio" type="radio" value="pay-death-arrears" aria-describedby="tasks-radio-5-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-5">
+                      Alternative formats
+                    </label>
+                    <div id="tasks-radio-5-item-hint" class="govuk-hint govuk-radios__hint">
+                     281 cases
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-5" name="tasks-radio" type="radio" value="pay-death-arrears" aria-describedby="tasks-radio-5-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-5">
+                      Contact citizens (not prototyped)
+                    </label>
+                    <div id="tasks-radio-5-item-hint" class="govuk-hint govuk-radios__hint">
+                     32 cases
+                    </div>
+                  </div>
+
+                </div>
+
+              </fieldset>
+            </div>
+
+
+
+                     <a button class="govuk-button" href="tasks-review-overpayments" >
+                       Continue
+                     </a>
+
+
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

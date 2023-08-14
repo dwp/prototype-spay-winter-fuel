@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {% include 'current/includes/_bar.html' %}
+
+
+            <br>
+            <br>
+
+              <h2 class="govuk-heading-l">Are you sure you want to remove this correspondence address?</h2>
+<p>
+  315 Concell De Cent<br>
+  Eixample<br>
+  Barcelona<br>
+  190008<br>
+  SPAIN<br>
+
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="remove-address" name="remove-address" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="remove-address">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="remove-address-2" name="remove-address" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="remove-address">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+<script>
+    nextPageRoutes = {
+        'yes': 'contact-details-add.html',
+        'no': '/current/record-view/contact-tab/correspondence-address/contact-details-international.html',
+    }
+</script>
+
+
+  </main>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <div class="govuk-panel govuk-panel--confirmation">
+                <div class="govuk-panel__body">
+                  <strong>The new information you've given will be checked and saved
+                  </strong>
+                </div>
+              </div>
+          </div>
+
+          <h2 class="govuk-heading-m">What happens next</h2>
+          <p>You'll get a confirmation letter from DWP within 4 weeks.</p>
+
+
+        </form>
+      </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

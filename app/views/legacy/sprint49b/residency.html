@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+<br>
+<br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-xl">Were you living in the UK during the week of 21 to 27 September 2020?</h1>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="united-kingdom" name="living" type="radio" value="united-kingdom">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                    Yes
+                  </label> </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="overseas" name="living" type="radio" value="overseas">
+                  <label class="govuk-label govuk-radios__label" for="living-overseas">
+                    No
+                  </label> </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

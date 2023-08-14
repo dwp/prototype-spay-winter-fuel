@@ -1,0 +1,250 @@
+{% extends "layoutsearchgsl.html" %}
+
+{% block pageTitle %}
+ Ian Robertson
+{% endblock %}
+
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %}
+{  {# Set serviceName in config.js. #}
+  {% include "includes/headsearchgsl.html" %}
+
+      <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-bar__name">Ian Robertson</dd>
+
+          <dt class="govuk-visually-hidden">National Insurance number:</dt>
+          <dd class="key-details-bar__nino">AB 12 34 56 C</dd>
+
+         
+<!--
+          <dt class="visually-hidden">Claim status:</dt>
+          <dd class="key-details-bar__status">Paid</dd> -->
+
+          
+        </div>
+
+        <div class="key-details-bar__bottom-block">
+          <dt>Date of birth:</dt>
+          <dd>15 July 1952</dd>
+
+          <dt>Address:</dt>
+          <dd>AbteilungTM-K, 80788 Munich, Bavaria, Germany</dd>
+
+        </div>
+      </dl>
+    </section>
+
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="">
+
+    <div class="govuk-grid-row">
+
+
+
+     
+      <div class="govuk-grid-column-two-thirds">
+
+         <h1 class="govuk-visually-hidden">Winter Fuel details: Ian Robertson</h1>
+
+         <a class="govuk-back-link" href='#'onclick="goBack()">Back to all GSL cases</a>
+
+
+        <div class="tabs">
+            <div class="tabs-nav">
+              <ul class="tabs-list">
+                <li>
+                  <a href="#tab-1">
+                    Payment details
+                  </a>
+                </li>
+                <li>
+                  <a href="#tab-2">
+                    Bank account details
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+        <div class="tabs-content">
+          <div class="tabs-panel" id="tab-1">
+            <div class="tabs-panel-inner">
+
+                       <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment amount
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                £100
+                              </dd>
+                            </div>
+                            
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment status
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Needs GSL decision
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment date
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                               
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Matches at same address
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                <a href="#">Claire Robertson</a>
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Benefits
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                State Pension 
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Age
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                59
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Years living in the UK
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                27 years 
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Years National Insurance contributions
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                11 years 
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                % of life resident in the UK
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                45%
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                % of life paying National Insurance contributions
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                45%
+                              </dd>
+                            </div>
+
+                           
+                        </dl>
+
+              
+            </div>
+          </div>  
+
+
+            <div class="tabs-panel" id="tab-2">
+            <div class="tabs-panel-inner">
+             
+
+                        <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Account holder
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Ian Robertson
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                SWIFT code
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                1432 5465 8873
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                IBAN Number
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                1234 6543 9876 5678
+                              </dd>
+                            </div>
+                        </dl>
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+   </div>
+
+      <div class="govuk-grid-column-one-third">
+          <div class="invoicesummary">
+
+            <p>
+            <strong class="app-c-tag app-c-tag--danger">Needs GSL decision</strong>
+          </p>
+
+            <ul class="govuk-list">
+                <li>
+                  <a style="font-weight: 700;" class="govuk-link" href="#">Add decision</a> 
+                </li>
+              </ul>
+
+            <!--
+
+           <h3 class="govuk-heading-s">Actions</h3>
+
+              <form action="#" method="post" class="form"> 
+                <input type="submit" method="post" value="Add decision" class="govuk-button">
+              </form> -->
+             
+
+             
+         
+         </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+</div>
+
+
+{% endblock %}
+

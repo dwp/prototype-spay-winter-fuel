@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+{% include './_bar.html' %}
+
+            {% include './_tab-overview.html' %}
+
+            <br>
+            <br>
+
+            <table class="govuk-table">
+            <h2 class="govuk-heading-m">Last payment</h2>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">2019 payment</th>
+                  <td class="govuk-table__cell">Monday, 4 November 2019</td>
+                  <td class="govuk-table__cell">£100</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+              <table class="govuk-table">
+              <h2 class="govuk-heading-m">Qualification details</h2>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Age</th>
+                    <td class="govuk-table__cell">67</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date of birth</th>
+                    <td class="govuk-table__cell">16 July 1952</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Occupancy details</th>
+                    <td class="govuk-table__cell">Lives with someone of State Pension age</td>
+                  </tr>
+                </tbody>
+              </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

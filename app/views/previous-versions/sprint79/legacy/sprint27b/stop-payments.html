@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+          {% include './_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+                  <h2 class="govuk-heading-l">Are you sure you want to stop payments?</h2>
+
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="stop-payments" name="stop-payments" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="stop-payments">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="stop-payments-2" name="stop-payments" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="stop-payments-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <br>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

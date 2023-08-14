@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include 'current/includes/_bar.html' %}
+
+
+          <br>
+          <br>
+         
+
+<br>
+
+
+
+            
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="reissue-account-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Check account details
+                  </h1>
+                </legend><br>
+                <div id="sign-in-hint" class="govuk-hint">
+                  <table class="govuk-table">
+      
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Bank or building society</th>
+                        <td class="govuk-table__cell">Halifax</td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Name on the account</th>
+                        <td class="govuk-table__cell">
+                          A Noakes
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sort code</th>
+                        <td class="govuk-table__cell">
+                          00 11 22
+                        </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Account number</th>
+                        <td class="govuk-table__cell">
+                          12345678
+                        </td>
+                      </tr>
+                      {% if data['rollnumber'] %}
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Building society roll number (if there is one)</th>
+                        <td class="govuk-table__cell">
+                          {{data['rollnumber']}}
+                        </td>
+                      </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+                  </div><br>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reissue-account" name="reissue-account" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="reissue-account">
+                      Reissue to this account
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reissue-account-2" name="reissue-account" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="reissue-account-2">
+                      Enter new account details
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+  nextPageRoutes = {
+      'yes': 'reissue-payment.html',
+      'no': 'reissue-bank-details',
+  }
+</script>
+
+{% endblock %}

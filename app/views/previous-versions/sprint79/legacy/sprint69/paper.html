@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which paper colour do you need?
+      </h1>
+    </legend><br>
+    <div class="govuk-radios">
+     <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="colour" type="radio" value="Bright white">
+        <label class="govuk-label govuk-radios__label" for="colour-9">
+          Bright white
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="colour" type="radio" value="Light green">
+        <label class="govuk-label govuk-radios__label" for="colour-9">
+          Light green
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="colour" type="radio" value="Pale blue">
+        <label class="govuk-label govuk-radios__label" for="colour-9">
+          Pale blue
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="braille" name="colour" type="radio" value="Peach">
+        <label class="govuk-label govuk-radios__label" for="colour-10">
+          Peach
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bsl" name="colour" type="radio" value="Red">
+        <label class="govuk-label govuk-radios__label" for="colour-11">
+          Red
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="large" name="colour" type="radio" value="Yellow">
+        <label class="govuk-label govuk-radios__label" for="colour-12">
+          Yellow
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+<input type="hidden" name="alt-format-changed" value="true">
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

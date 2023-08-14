@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Emergency ‘Top up’ Payments (COVID19)
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Job Seekers Allowance file<br>
+      <strong class="govuk-tag govuk-tag--green">
+        Finished
+      </strong></h1>
+
+    <form method="post">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Start
+      </button>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Job Status</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Stage</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Write count</th>
+            <th scope="col" class="govuk-table__header">Start time</th>
+            <th scope="col" class="govuk-table__header">End time</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Validate file</td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green">
+                Finished
+              </strong>
+            </td>
+            <td class="govuk-table__cell">18,000,000</td>
+            <td class="govuk-table__cell">09:13</td>
+            <td class="govuk-table__cell">11:10</td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Update case</td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green">
+                Finished
+              </strong>
+            </td>
+            <td class="govuk-table__cell">18,000,000</td>
+            <td class="govuk-table__cell">14:03</td>
+            <td class="govuk-table__cell">16:54</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

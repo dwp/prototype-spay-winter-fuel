@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <div class="govuk-form-group">
+
+            <h1 class="govuk-heading-xl">What benefits or pensions from a country outside of the UK do you get?</h1>
+
+            <label class="govuk-label" for="more-detail">
+              Provide the name of the benefit or pension, the date it started and the country that pays it
+            </label>
+            <span id="more-detail-hint" class="govuk-hint">
+              For example, ZzzzZzzz
+            </span>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="15" aria-describedby="more-detail-hint"></textarea>
+          </div>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

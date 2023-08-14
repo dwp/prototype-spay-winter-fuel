@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cancel my Winter Fuel payment
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Cancel your Winter Fuel payment</h1>
+
+    <h2 class="govuk-heading-m">Use this service to cancel your Winter Fuel payments if you think you do not need them.</h2>
+
+    <p class="govuk-body-m">This should take around <strong>3 minutes</strong>. You can ask us to start your payments again at any time.</p>
+
+
+
+<h3 class="govuk-heading-m">Personal information</h3>
+      <p class="govuk-body">We will treat your information carefully and only use it as allowed by data protection laws.</p>
+
+      <p class="govuk-body">To find out more about how we use information and your information rights, read our Personal Information Charter. You can get a copy of this at a jobcentre.</p>
+
+
+
+    {{ govukButton({
+      text: "Start now",
+      href: "method",
+      classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+    }) }}
+
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+
+
+</div>
+{% endblock %}

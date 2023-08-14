@@ -1,0 +1,52 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Payment complete
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h2 class="govuk-panel__title">Top-up payment complete</h2>
+            <div class="govuk-panel__body">
+              A payment of <strong>£100</strong> has been made to Ermintrude Thelma Louise Brown
+            </div>
+          </div>
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p>The payment will appear in their bank account in the next few days.</p>
+            <p>Ermintrude should try and contact Fred to get them to change their address.</p>
+           <p>They do not need to do anything next year, they will get the payment automatically using the new address.</p>
+
+
+             <form action="search" method="post" class="form"> 
+                <input type="submit" method="post" value="Search for a person" class="govuk-button">
+              </form>
+            
+              <p><a  href="#">View record</a></p>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

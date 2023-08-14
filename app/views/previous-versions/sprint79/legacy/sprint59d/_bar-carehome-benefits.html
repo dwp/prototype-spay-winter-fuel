@@ -1,0 +1,25 @@
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+          Albert Anderson<br>
+
+                            <span class="govuk-body-l">
+                              {% if data['nino'] %}
+                                {{data['nino']}}
+                              {% else %}
+                                XX 12 34 33 D
+                              {% endif %}
+                            </span><br>
+
+                            
+                            <strong class="govuk-tag govuk-tag--orange">
+                              IN CARE HOME RECEIVING BENEFITS
+                            </strong>       
+        </div>
+
+  </div>
+</div>

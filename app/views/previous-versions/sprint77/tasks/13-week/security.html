@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel security
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <br>
+
+
+      <form method="post">
+
+                <h1 class="govuk-heading-xl">Security questions</h1>
+
+                <div class="govuk-inset-text"><span style="font-weight: bold">If you need to ask security questions to verify the caller's identity, do it now before continuing.</span></div>
+
+
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+
+<br>
+                      <p>  <a href="..//legacy/sprint41b/type-of-application" class="govuk-link">Start again</a></p>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

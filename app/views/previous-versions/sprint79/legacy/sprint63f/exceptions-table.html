@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-xl">Fix exceptions</h2>
+
+    <a href="#" class="govuk-back-link">Back</a>
+
+    <br>
+    <br>
+
+
+
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar">
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+            <table class="govuk-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <th scope="col" class="govuk-table__header">Person</th>
+
+                  <th scope="col" class="govuk-table__header">Status</th>
+
+                  <th scope="col" class="govuk-table__header">Stage</th>
+
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+
+                    <a>John Smith <br>
+                      QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">In progress</td>
+
+                  <td class="govuk-table__cell">Verify address</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a >Harold Sutton <br> QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Suspended</td>
+
+                  <td class="govuk-table__cell">Update case</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a>Jennifer Langley<br>
+                      1QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Suspended</td>
+
+                  <td class="govuk-table__cell">Calculate eligibility</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a">Susan Francis<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Decision needed</td>
+
+                  <td class="govuk-table__cell">Calculate eligibility</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+
+                  <th scope="row" class="govuk-table__header">
+                    <a>John Smith<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Error</td>
+
+                  <td class="govuk-table__cell">Send letter</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header"><a>
+                    Warren Sutton<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Decision needed</td>
+
+                  <td class="govuk-table__cell">Verify address</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a>Alan Jones<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Decision needed</td>
+
+                  <td class="govuk-table__cell">Update case</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a>Jennifer Langley<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Suspended</td>
+
+                  <td class="govuk-table__cell">Evaluate related cases</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a>Susan Francis<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Completed</td>
+
+                  <td class="govuk-table__cell">Send letter</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a>John Smith<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Decision needed</td>
+
+                  <td class="govuk-table__cell">Calculate entitlement</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+            <nav class="moj-pagination" id="pagination-label">
+
+<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+<ul class="moj-pagination__list">
+
+<li class="moj-pagination__item moj-pagination__item--active">1</li>
+
+<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=2">2</a></li>
+
+<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+
+<li class="moj-pagination__item  moj-pagination__item--next">
+  <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+</li>
+</ul>
+<p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>24</b> results</p>
+</nav>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

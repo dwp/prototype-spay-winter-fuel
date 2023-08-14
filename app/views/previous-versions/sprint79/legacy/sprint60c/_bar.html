@@ -1,0 +1,28 @@
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+
+            {% if data['nino'] === 'XX987654X' %}
+              Alfie Noakes
+            {% elif data['nino'] === 'xx987654x'%}
+              Alfie Noakes
+            {% else %}
+              Theodora Best
+            {% endif %}
+           <br>
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+                {{data['nino']}}
+              {% else %}
+                XX 12 34 56
+              {% endif %}
+           </span>
+          </h1>
+        </div>
+
+  </div>
+</div>

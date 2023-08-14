@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <div class="govuk-form-group">
+
+            <p><strong>Scenario:</strong> If the citizen is not receiving benefits and needs to make a claim, add the following:</p>
+            <p><a href="full-payment-no-benefits" class="govuk-link">Example (under 80, full claim)</a></p>
+            <p>----------------------------------</p>
+           <h3 class="govuk-heading-m">You need to make a claim</h3>
+           <p>You should call back using the same number and when prompted choose the option to make a new claim.</p>
+            
+
+           <h3 class="govuk-heading-s">Winter Fuel Claim and Helpline</h3>
+           <p><b>Telephone: </b>0800 731 0160<br>
+              <b>Textphone:</b> 0800 731 0464<br>
+              Monday to Friday, 8am to 6pm</p>
+
+
+           </form>
+          </div>
+      </div>
+    </div>
+
+</main>
+</div>
+
+{% endblock %}

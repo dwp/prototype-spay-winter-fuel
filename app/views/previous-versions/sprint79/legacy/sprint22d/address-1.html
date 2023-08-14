@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <main id="content" role="main">
+          <div class="grid-row">
+            <div class="column-full">
+
+{% include './_bar.html' %}
+
+{% include './_tab-contact.html' %}
+
+            </div>
+          </div>
+        </main>
+
+        </br>
+
+        <div>
+          <a href="address" class="govuk-back-link">Back</a>
+        </div>
+
+        <h1 class="govuk-heading-l">Change address</h1>
+
+<h2 class="govuk-heading-s">Postcode <br>
+{{data.postcode}} <a href="address" class="govuk-link"> Change</a></h2>
+
+
+            <form method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label class" for="sort">
+                  Select new address
+                </label>
+
+                {% set addresses = [
+                  '5 addresses found',
+                  '2 Windsor Street, South Gosforth, Newcastle Upon Tyne, NE3 1YL',
+                  '3a Windsor Street, South Gosforth, Newcastle Upon Tyne, NE3 1YL',
+                  '3b Windsor Street, South Gosforth, Newcastle Upon Tyne, NE3 1YL',
+                  '4 Windsor Street, South Gosforth, Newcastle Upon Tyne, NE3 1YL',
+                  '5 Windsor Street, South Gosforth, Newcastle Upon Tyne, NE3 1YL'
+                ] %}
+
+                <select class="govuk-select" id="address" name="address">
+                  <option value="{{addresses[0]}}"selected>{{addresses[0]}}</option>
+                  <option value="{{addresses[1]}}">{{addresses[1]}}</option>
+                  <option value="{{addresses[2]}}">{{addresses[2]}}</option>
+                  <option value="{{addresses[3]}}">{{addresses[3]}}</option>
+                  <option value="{{addresses[4]}}">{{addresses[4]}}</option>
+                  <option value="{{addresses[5]}}">{{addresses[5]}}</option>
+                </select>
+              </div>
+
+<div>
+  <p>
+  <a href="address-postcode-manual" class="govuk-link">I can't find my address in the list</a>
+</p>
+</div>
+
+              <button type="submit" class="govuk-button">
+                Save
+              </button>
+            </form>
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>        </div>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    </div>
+  </div>
+
+  {% endblock %}

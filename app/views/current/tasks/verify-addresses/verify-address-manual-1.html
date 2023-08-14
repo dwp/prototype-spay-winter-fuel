@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+        <div>
+          <h1 class="govuk-heading-xl">
+            Theodora Best<br>
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+              {{data['nino']}}
+              {% else %}
+              XX 12 34 56
+              {% endif %}<br>
+              <strong class="govuk-tag govuk-tag--red">
+                unverified address
+              </strong>
+            </span>
+          </h1>
+        </div>
+
+                      <h2 class="govuk-heading-l">Search for a different address</h2>
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post" action="address-1b">
+
+
+
+
+
+
+            <h2 class="govuk-heading-m">Unverified address</h2>
+            <p>Flat D<br>
+            104 Boundary Lane<br>
+            Hulme<br>
+            Manchester<br>
+            M15 6FD</p>
+
+            <h2 class="govuk-heading-m">Contact numbers</h2>
+            <p><strong>Home phone:</strong> 01324 800 900<br>
+            <strong>Mobile phone:</strong> 07771 900 900<br>
+            <strong>Work phone:</strong> 01324 400 500</p>
+
+
+    <!--        <h2 class="govuk-heading-m">Contact numbers</h2>
+            <p>Home telephone: 01324 800 900<br>
+               Mobile: 07771 900 900</p>   -->
+
+<br>
+
+<fieldset class="govuk-fieldset">
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+<h1 class="govuk-fieldset__heading">
+Enter address search details
+</h1>
+</legend>
+
+<div class="govuk-inset-text">
+<p>You can add, remove or change any details shown below.</p>
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-line-1">
+Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+</label>
+<input class="govuk-input" id="address-search-line-1" name="address-search-line-1" type="text" value="Flat D">
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-line-2">
+<span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+</label>
+<input class="govuk-input" id="address-search-line-2" name="address-search-line-2" type="text" value="104 Boundary Lane">
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-town">
+Town or city
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="address-search-town" name="address-search-town" type="text" value="Hulme">
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-county">
+County
+</label>
+<input class="govuk-input govuk-!-width-two-thirds" id="address-search-county" name="address-search-county" type="text" value="Manchester, Lancs">
+</div>
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-search-postcode">
+Postcode
+</label>
+<input class="govuk-input govuk-input--width-10" id="address-search-postcode" name="address-search-postcode" type="text" value="M15 6FD">
+</div>
+
+<p><a href="verify-address-not-fixed-returned" class="govuk-link">Return this case to the queue</a></p>
+<br>
+
+
+<div class="govuk-button-group">
+<button class="govuk-button" button type="submit" data-module="govuk-button">
+Search
+</button>
+
+<a class="govuk-link" href="address-cleared">Clear form</a>
+</div>
+
+
+</fieldset>
+
+          </form>
+          <br>
+      </div>
+
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'current/includes/remove-blue-bar.html' %}
+{% endblock %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">...</h1>
+
+          <ul class="govuk-list">
+            <li>
+              <a class="govuk-link govuk-!-font-size-24" href="/legacy/sprint22/exceptions">Review exceptions</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-!-font-size-24" href="comparison-filter">Check results for comparison</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-!-font-size-24" href="/legacy/sprint22/work-queue">Work queue</a>
+            </li>
+            <li>
+              <a class="govuk-link govuk-!-font-size-24" href="/legacy/sprint22/manage-jobs2">Manage jobs</a>
+            </li>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

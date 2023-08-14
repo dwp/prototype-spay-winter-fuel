@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include './_secondary_nav_manage.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage things...</h1>
+
+
+    <form method="post">
+
+
+
+      <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            Load files
+          </h2>
+          <ul class="app-task-list__items govuk-!-padding-left-0">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="da-file" aria-describedby="eligibility-completed">
+                  Data and analytics file
+                </a>
+              </span>
+              <span class="app-task-list__task-time">
+                  <strong class="app-c-tag app-c-tag--success app-task-list__task-completed" id="eligibility-completed">Complete</strong>
+              </span>
+              <span class="app-task-list__task-time">
+                19th October 2019
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="gysp" aria-describedby="read-declaration-completed">
+                Get your State Pension file
+                </a>
+              </span>
+              <span class="app-task-list__task-time">
+                  <strong class="app-c-tag app-c-tag--success app-task-list__task-completed" id="eligibility-completed">Complete</strong>
+              </span>
+              <span class="app-task-list__task-time">
+                19th October 2019
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="war-pensions" aria-describedby="read-declaration-completed">
+                  War pension file
+                </a>
+              </span>
+  <strong class="app-c-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="" aria-describedby="read-declaration-completed">
+                  Winter Fuel Payment System file
+                </a>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="war-pensions" aria-describedby="read-declaration-completed">
+                  Legacy file
+                </a>
+              </span>
+            </li>
+          </ul>
+        </li>
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            Calculate entitlement
+          </h2>
+          <ul class="app-task-list__items govuk-!-padding-left-0">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="calculate-entitlement" aria-describedby="company-information-completed">
+                  Calculate entitlement
+                </a>
+              </span>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="sweep" aria-describedby="company-information-completed">
+                  Clean up
+                </a>
+              </span>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+          Send letters
+          </h2>
+          <ul class="app-task-list__items govuk-!-padding-left-0">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="letters" aria-describedby="company-information-completed">
+                  Send letters
+                </a>
+              </span>
+          </ul>
+        </li>
+
+      </ol>
+
+    </div>
+  </div>
+
+
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

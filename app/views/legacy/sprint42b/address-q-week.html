@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <h1 class="govuk-heading-xl">What was your Q week address? 👷</h1>
+        <form method="post">
+
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-1">
+                Address <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-2">
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-3">
+                <span class="govuk-visually-hidden">Building and street line 3 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-3" name="address-line-3" type="text" autocomplete="address-line3">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-4">
+                <span class="govuk-visually-hidden">Building and street line 4 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-4" name="address-line-4" type="text" autocomplete="address-line4">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-5">
+                <span class="govuk-visually-hidden">Building and street line 5 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-5" name="address-line-5" type="text" autocomplete="address-line5">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                Country
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+            </div>
+
+          </fieldset>
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Did you live with anyone born before 6 October 1954?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

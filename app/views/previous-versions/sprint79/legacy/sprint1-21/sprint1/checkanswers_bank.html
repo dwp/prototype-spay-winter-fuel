@@ -1,0 +1,118 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Check bank details before you make the payment
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Check these details before you make the payment</h1>
+
+            <dl class="app-check-your-answers app-check-your-answers--long">
+              
+               <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  UK or international bank
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['banktype'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="payment_type">
+                    Change<span class="govuk-visually-hidden">UK or international bank</span>
+                  </a>
+                </dd>
+              </div>
+
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Account holder
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['name'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">Full name of the account holder</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  {{ data['type'] }}
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['sort1'] }}{{ data['sort2'] }}{{ data['sort3'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">{{ data['type'] }}</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  {{ data['type2'] }}
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['account'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">{{ data['type2'] }}</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+            <br>
+            
+             <h2 class="govuk-heading-m">Caller declaration</h2>
+
+             <p class="govuk-body">
+                By accepting these details you confirm that:
+              </p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>the information is correct and complete as far as you know</li>
+                <li>you will pay the money back if you are overpaid</li>
+              </ul>
+
+              <p class="govuk-body">
+                You could be prosecuted or have to pay a financial penalty if you
+                  deliberately give the wrong or incomplete information or do not
+                  report changes.
+              </p>
+
+          <form action="confirmation" method="post" class="form"> 
+            <input type="submit" method="post" value="Accept and make the payment" class="govuk-button">
+          </form>
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+<div class="moj-banner moj-banner--success">
+
+<svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+<path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+<div class="moj-banner__message">
+<span class="moj-banner__assistive">Success</span>Submitted address verified and added to SPS - task removed from queue</div>
+
+</div>
+
+
+<form method="post" action="verify-address-manual-1">
+
+
+        <h1 class="govuk-heading-xl">Check submitted addresses</h1>
+
+        <h3 class="govuk-heading-l"> 153,652
+        <p class="govuk-body govuk-!-font-size-24">cases</p></h3>
+
+        <button href="verify-address-manual-1" class="govuk-button" data-module="govuk-button">
+          Check next submitted address case
+        </button>
+
+</div>
+</div>
+
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  XX 62 31 26 C<br>
+                  <span class="govuk-body-l">
+                    Meera Rudd
+                  </span><br>
+                  <strong class="govuk-tag govuk-tag--grey">
+                    Dead
+                  </strong>
+              </div>
+
+            </div>
+          </div>
+
+
+          <form method="post">
+
+            <h2 class="govuk-heading-l">Type of death arrears payee</h2>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="type-1" name="type" type="radio" value="person">
+                    <label class="govuk-label govuk-radios__label" for="type">
+                      An individual
+                    </label>
+                    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                      For example, a spouse or family member.
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="type-2" name="type" type="radio" value="company">
+                    <label class="govuk-label govuk-radios__label" for="type2">
+                      An organisation
+                    </label>
+                    <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                      For example, a law firm or legal department.
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+      
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+<br><a href="/legacy/sprint43b/tasks-5" class="govuk-link">Return this case to the queue</a>
+
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

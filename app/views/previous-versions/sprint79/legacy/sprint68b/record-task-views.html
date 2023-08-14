@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+<h2 class="govuk-heading-xl">Task record views</h2>
+
+<h3 class="govuk-heading-m">Prototype links</h3>
+
+<p>
+
+<p class="govuk-body-l"><a href="/legacy/sprint33c/overview-verify-address" class="govuk-link"><b>Unverified address</b></a></p>
+<p class="govuk-body-l"><a href="overview-awaiting-gsl" class="govuk-link"><b>GSL awaiting approval</b></a></p>
+<p class="govuk-body-l"><a href="/legacy/sprint66b/overview" class="govuk-link"><b>Withdrawal Agreement awaiting approval</b></a></p>
+<p class="govuk-body-l"><a href="/legacy/sprint40b/overview-po-box" class="govuk-link"><b>PO box not approved</b></a></p>
+<p class="govuk-body-l"><a href="/legacy/sprint50/overview-dead" class="govuk-link"><b>Pay death arrears</b></a></p>
+
+      </div>
+
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

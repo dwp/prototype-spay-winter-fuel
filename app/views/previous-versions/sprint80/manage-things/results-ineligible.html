@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-xl">Check cases</h2>
+
+    <nav class="moj-pagination" id="pagination-label">
+
+    <a href="/legacy/sprint22/exceptions" class="govuk-back-link">Back</a>
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label"></p>
+
+  <ul class="moj-pagination__list">
+  </ul>
+  <p class="moj-pagination__results"><b>Number of cases: </b>728</p>
+  </nav>
+
+  <br>
+
+<p class="govuk-body govuk-!-font-size-24"><b>Filtered by</b> </p>
+<p class="govuk-body govuk-!-font-size-19">   <b>Eligibility:</b> Ineligible <a href="#" class="govuk-link">Change</a><br>
+<b>Reason ineligible:</b> Unverified date of birth, No correspondence address, PO box not approved, Resident outside EEA, Dead <a href="#" class="govuk-link">Change</a></p>
+
+
+    <div class="moj-filter-layout">
+
+
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar">
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+            <table class="govuk-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <th scope="col" class="govuk-table__header">Case</th>
+
+                  <th scope="col" class="govuk-table__header">Reason ineligible</th>
+
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+
+                    <a href="/legacy/sprint22/aa123456x">
+                      AA 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">No correspondence address</td>
+
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="/legacy/sprint22/bb123456x">BB 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Unverified date of birth</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">
+                      CC 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Resident outside EEA</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">DD 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Unverified date of birth</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">EE 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Unverified date of birth</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">
+                      FF 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">No correspondence address</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">GG 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">PO box not approved</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">HH 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Dead</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">II 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Unverified date of birth</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">JJ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Resident outside EEA</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+            <nav class="moj-pagination" id="pagination-label">
+
+              <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+              <ul class="moj-pagination__list">
+
+                <li class="moj-pagination__item moj-pagination__item--active">1</li>
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=2">2</a></li>
+
+                <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">4</a></li>
+
+                    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">5</a></li>
+
+                <li class="moj-pagination__item  moj-pagination__item--next">
+                  <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+              </ul>
+              <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>728</b> results</p>
+            </nav>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

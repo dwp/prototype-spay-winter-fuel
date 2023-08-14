@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds" >
+
+
+
+        <form method="post">
+
+          <div class="govuk-panel govuk-panel--confirmation" style="background: #005ea5; text-align: left;">
+            <div class="govuk-panel__body">
+
+          <h1 class="govuk-heading-l" style="color:white;">Your result is not a guarantee</h1>
+
+          
+            
+             
+
+                <div class="govuk-warning-text" style=" margin-bottom:0px">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text" style="color:white;font-weight:normal; font-size:22px">
+                    <span class="govuk-warning-text__assistive" >Warning</span>
+                   If anything you've told us changes before the end of the third week in September (when we work out your actual payment):
+                  
+                    <ul>
+                      <li>you might get a different amount for your Winter Fuel Payment, or</li>
+                      <li>you might not qualify for a payment at all</li>
+                   
+                    </ul>
+                
+                  </strong><br>
+                  <p class="govuk-warning-text__text" style="color:white; font-weight:normal;font-size:22px">
+                   We'll tell you how to report any changes to us on the next page.
+                  </p>
+                </div>
+
+           
+
+         
+
+      
+
+    </div></div></div>
+
+</div><br>
+<button type="submit" class="govuk-button">
+  Accept and continue
+</button>
+</main>
+</div>
+
+
+
+{% endblock %}

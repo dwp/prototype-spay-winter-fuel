@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            XX 12 34 56<br>
+            <span class="govuk-caption-xl govuk-!-font-size-24">Alex Smith</span>
+          </h1>
+        </div>
+
+        <h2 class="govuk-heading-l">£100 underpayment</h2>
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Amount already paid</th>
+              <td class="govuk-table__cell">£100</td>
+            </tr>
+          </thead>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Amount to top up</th>
+              <td class="govuk-table__cell">£100</td>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date of birth</th>
+              <td class="govuk-table__cell">12 January 1951</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Age during qualifying week</th>
+              <td class="govuk-table__cell">65</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Address</th>
+              <td class="govuk-table__cell">10 Park Lane<br>
+                Motherwell<br>
+                ML35 9RJ
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Occupancy details</th>
+              <td class="govuk-table__cell">Was not living with anyone over State Pension age</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+  <form method="post">
+        <div class="govuk-form-group">
+          <h3 class="govuk-heading-s">Do you want to make this £100 top-up payment?</h3>
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="topup-payment" name="topup-payment" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="topup-payment">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="topup-payment-2" name="topup-payment" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="topup-payment-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

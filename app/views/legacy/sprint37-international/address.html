@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <h1 class="govuk-heading-xl">Address</h1>
+        <form method="post">
+
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-1">
+                Address <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-2">
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-3">
+                <span class="govuk-visually-hidden">Building and street line 3 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-3" name="address-line-3" type="text" autocomplete="address-line3">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-4">
+                <span class="govuk-visually-hidden">Building and street line 4 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-4" name="address-line-4" type="text" autocomplete="address-line4">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-5">
+                <span class="govuk-visually-hidden">Building and street line 5 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-5" name="address-line-5" type="text" autocomplete="address-line5">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                Country
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+            </div>
+
+          </fieldset>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  When did you move to this address?
+                </h1>
+              </legend>
+              <span id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </span>
+              <div class="govuk-date-input" id="move-day">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="move-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-day" name="move-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="move-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="move-month" name="move-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="move-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="move-year" name="move-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="living-with-anyone-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you live with anyone at this address?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="living-with-anyone" name="living-with-anyone" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="living-with-anyone">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="living-with-anyone-2" name="living-with-anyone" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="living-with-anyone-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

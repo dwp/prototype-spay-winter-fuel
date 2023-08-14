@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">Eligible record views</h1>
+
+<h2 class="govuk-heading-m">Links to prototype</h2>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <p class="govuk-body-l"><strong><a href="/legacy/sprint49/find" class="govuk-link">UK record view</a></strong><br>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Use <strong>NE2 1YL</strong> as postcode for <strong>address not found</strong></li>
+          <li>Use <strong>08</strong> as move month for <strong>Q week questions</strong> and
+          <strong>underpayment</strong></li>
+          <li>Use <strong>07</strong> as move month for <strong>Q week questions</strong>and
+              <strong>overpayment</strong></li>
+          <li>Use <strong>NE65 0AP</strong> as postcode for <strong>care home</strong></li>
+<li> Use <b>DH3 3HD</b> for <b>care home detagging</b> </li>
+<li> Use <b>M1 5BY</b> for <b>confirming a commercially tagged address as residential</b> (use capitals for postcodes)</li>
+        </ul>
+
+        <a href="/legacy/sprint55b/overview">Benefit flag for secure customer records</a><br><br>
+        <a href="/legacy/sprint57c/find">Move from UK to overseas address</a><br><br>
+
+      </p>
+
+  </div>
+
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body-l"><strong><a href="/legacy/sprint45b/overview" class="govuk-link">International record view</a></strong></p>
+  </div>
+</div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

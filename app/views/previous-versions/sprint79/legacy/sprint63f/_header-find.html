@@ -1,0 +1,22 @@
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "index",
+  serviceName: serviceName,
+  serviceUrl: "/index.html",
+  navigation: [
+    {
+      href: "manage-jobs3",
+      text: "Manage things"
+    },
+    {
+      href: "check-cases",
+      text: "Caseload statuses"
+    },
+    {
+      href: "find-case",
+      text: "Find a case",
+      active: true
+    }
+  ]
+}) }}

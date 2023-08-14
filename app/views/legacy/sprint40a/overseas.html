@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/legacy/sprint21/benefits" method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+
+            <p><strong>Scenario:</strong> If the citizen is not living in the UK, calculate eligibility as usual and make the following changes to the final page:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>add the word "may" to the green panel</li>
+              <li>add the word "may" to the first paragraph</li>
+              <li>add "live outside the uk" to the list of eligibility reasons</li>
+              <li>replace all content following the list of eligibility reasons</li>
+            </ul>
+            <p>See below as an example of an overseas 'under 80, full payment' page.
+            <p>----------------------------------</p>
+
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body">
+                <strong>You may qualify for a Winter Fuel Payment of £200</strong>
+              </div>
+            </div>
+
+            <br>
+
+          <p>You may qualify for £200 because you:</p>
+
+             <ul class="govuk-list govuk-list--bullet">
+               <li>were born before 6 October 1954</li>
+               <li>do not live with anyone who qualifies</li>
+               <li>live outside of the UK</li>
+             </ul>
+
+          <h2 class="govuk-heading-m">Because you live outside the UK</h2>
+
+          <p class="govuk-body">Not everyone who lives outside the UK can get a Winter Fuel Payment.</p>
+          <p class="govuk-body">You might still get the payment if you live in the EU, Switzerland, Norway, Iceland or Liechtenstein.</p>
+          <p class="govuk-body">You need to have a genuine and sufficient link to the UK - this can include having lived or worked in the UK, and having family in the UK.</p>
+
+          <p class="govuk-body">
+            You cannot get the payment if you live in Cyprus, France, Gibraltar, Greece, Malta,
+            Portugal or Spain because the average winter temperature there is higher than the warmest
+            region of the UK.
+          </p>
+
+          <h3 class="govuk-heading-m">Make a claim</h3>
+          <p>Make a claim by calling the Winter Fuel Payment Centre.</p>
+           <div class="govuk-warning-text">
+           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+             <strong class="govuk-warning-text__text">
+               <span class="govuk-warning-text__assistive">Warning</span>
+               You cannot make a claim until 1 August 2020.
+             </strong>
+           </div>
+
+          <h3 class="govuk-heading-s">Winter Fuel Payment Centre</h3>
+          <p><b>Telephone: </b>0800 731 0160<br>
+             <b>Textphone:</b> 0800 731 0464<br>
+             Monday to Friday, 8am to 6pm</p>
+
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

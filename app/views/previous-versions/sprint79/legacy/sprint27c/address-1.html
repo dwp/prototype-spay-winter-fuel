@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        <h2 class="govuk-heading-xl">Alex Smith<br>
+          <span class="govuk-caption-xl"> {{data.nino}} </span>
+          <span class="app-c-tag">Receiving Winter Fuel Payment</span>
+        </h2>
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <h2 class="govuk-heading-l">What is the first line of your address?</h2>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="27kentstreet">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        27 Kent Street
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-2" name="address-change" type="radio" value="2kentstreet">
+                      <label class="govuk-label govuk-radios__label" for="address-2">
+                        2 Kent Street
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-3" name="address-change" type="radio" value="7kentstreet">
+                      <label class="govuk-label govuk-radios__label" for="address-3">
+                       7 Kent Street
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <p>
+                <a href="manual-address" class="govuk-link">I can't find the address in the list</a>
+              </p>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

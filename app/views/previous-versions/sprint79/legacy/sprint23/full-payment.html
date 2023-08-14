@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <div class="govuk-form-group">
+
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body">
+                <strong>You are entitled to a Winter Fuel Payment of £200</strong>
+              </div>
+            </div>
+
+            <br>
+
+            <p>This is a full payment because you do not live with someone else over
+              State Pension age.</p>
+
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+              Find caller's record
+            </button>
+
+          </div>
+
+
+
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

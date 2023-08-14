@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'current/includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <a href="exceptions-result" class="govuk-back-link">Back</a>
+
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-full">
+
+            {% include 'current/includes/_bar.html' %}
+
+            <table class="govuk-table">
+  <thead class="govuk-table__head">
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Stage</th>
+      <td class="govuk-table__cell">Verify address</td>
+    </tr>
+  </tbody>
+</table>
+
+            <div class="govuk-form-group">
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="16" aria-describedby="more-detail-hint">
+                {
+                   "nino":"QQ000121",
+                   "ninoSuffix":"D",
+                   "dateOfBirth":"1920-01-01",
+                   "dateOfDeath":null,
+                   "bankAccount":null,
+                   "name":{
+                      "title":"MR",
+                      "forename1":"BOB",
+                      "forename2":"KELP MUER",
+                      "surname":null
+                   },
+                   "alias":{
+                      "title":"REV",
+                      "forename1":"ZELLER",
+                      "forename2":"CULTON",
+                      "surname":null
+                   },
+                   "residenceAddress":{
+                      "line1":"13 LANCEFIELD AVENUE",
+                      "line2":"WALKER",
+                      "line3":"NEWCASTLE UPON TYNE",
+                      "line4":"",
+                      "line5":"",
+                      "postCode":"NE6 2NP",
+                      "countryCode":"GBR",
+                      "startDate":"2018-05-01",
+                      "uprn":"4510084477",
+                      "empty":false
+                   },
+                   "contactDetails":{
+                      "homePhone1":"01111111111",
+                      "homePhone2":"02222222222",
+                      "workPhone":"04444444444",
+                      "mobile":"03333333333"
+                   },
+                   "correspondenceAddress":{
+                      "line1":"30 THE VALE",
+                      "line2":"BRENTWOOD",
+                      "line3":"",
+                      "line4":"",
+                      "line5":"",
+                      "postCode":"CM14 4UP",
+                      "countryCode":null,
+                      "startDate":"2018-03-01",
+                      "uprn":"100090347263",
+                      "empty":false
+                   }
+                }
+              </textarea>
+            </div>
+
+            <button type="submit" class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+              Save
+            </button>
+
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Return this case to the queue
+            </button>
+
+
+          </div>
+        </div>
+      </main>
+
+
+    </div>
+
+  </main>
+</div>
+<!-- </div> -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

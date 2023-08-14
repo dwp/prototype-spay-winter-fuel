@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-xl">Review exceptions</h2>
+
+    <nav class="moj-pagination" id="pagination-label">
+
+    <a href="/legacy/sprint22/exceptions" class="govuk-back-link">Back</a>
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label"></p>
+
+  <ul class="moj-pagination__list">
+  </ul>
+  <p class="moj-pagination__results"><b>Number of cases:</b> 5</p>
+  </nav>
+
+  <br>
+
+
+
+  <br>
+
+<p class="govuk-body govuk-!-font-size-24"><b>Filtered by</b> </p>
+<p class="govuk-body govuk-!-font-size-19"> Get your State Pension cases <a href="#" class="govuk-link">Change</a><br>
+</p>
+
+
+
+    <div class="moj-filter-layout">
+
+
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar">
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+            <table class="govuk-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <th scope="col" class="govuk-table__header">Case</th>
+
+                  <th scope="col" class="govuk-table__header">Date</th>
+
+                  <th scope="col" class="govuk-table__header">Status</th>
+
+                  <th scope="col" class="govuk-table__header">Stage</th>
+
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+
+                    <a href="/legacy/sprint22/aa123456x">
+                      AA 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">19 August 2019</td>
+
+                  <td class="govuk-table__cell">Decision needed</td>
+
+                  <td class="govuk-table__cell">Verify address</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="/legacy/sprint22/bb123456x">BB 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">19 August 2019</td>
+
+                  <td class="govuk-table__cell">Decision needed</td>
+
+                  <td class="govuk-table__cell">Verify address</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">
+                      CC 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">19 August 2019</td>
+
+                  <td class="govuk-table__cell">Suspended</td>
+
+                  <td class="govuk-table__cell">Calculate eligibility</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">DD 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">20 August 2019</td>
+
+                  <td class="govuk-table__cell">Decision needed</td>
+
+                  <td class="govuk-table__cell">Calculate eligibility</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">EE 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">20 August 2019</td>
+
+                  <td class="govuk-table__cell">Error</td>
+
+                  <td class="govuk-table__cell">Send letter</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+            <nav class="moj-pagination" id="pagination-label">
+
+              <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+              <ul class="moj-pagination__list">
+
+              </ul>
+              <p class="moj-pagination__results">Showing <b>1</b> to <b>5</b> of <b>5</b> results</p>
+            </nav>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

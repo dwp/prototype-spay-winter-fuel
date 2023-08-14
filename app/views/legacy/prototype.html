@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-prototypes.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-xl">
+    Prototyping
+  </h1>
+
+  <!--<h2 class=" govuk-heading-l">Sprint 49</h2>-->
+
+
+  <main class="govuk-main-wrapper">
+    <div class="prototype-write-up">
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-half">
+
+          <h5 class=" govuk-heading-m">Record view and tasks</h5>
+          <div class="app-most-recent">
+            {% include 'notes/wf-sprint50.html' %}
+          </div>
+
+          <br>
+
+          <h5 class=" govuk-heading-m">Task list</h5>
+          <div class="app-most-recent">
+            {% include 'notes/wf-sprint50c.html' %}
+          </div>
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-half"">
+
+          <h5 class=" govuk-heading-m">Record view</h5>
+          <div class="app-most-recent">
+            {% include 'notes/wf-sprint49.html' %}
+          </div>
+
+          <br>
+
+          <h5 class=" govuk-heading-m">Record view</h5>
+          <div class="app-most-recent">
+            {% include 'notes/wf-sprint51.html' %}
+          </div>
+
+        </div>
+
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+  </main>
+</div>
+
+{% endblock %}

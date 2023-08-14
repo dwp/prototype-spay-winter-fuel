@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Tasks</h1>
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+          <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="tasks">Verify addresses</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="tasks-2">Fix account details</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="tasks-3">Review GSLs</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="tasks-4">Review overpayments</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="tasks-5">Pay death arrears</a>
+          </li>
+          </ul>
+
+          </nav>
+
+
+                    <h1 class="govuk-heading-l">Pay death arrears</h1>
+
+                    <h3 class="govuk-heading-l"> 142
+                      <p class="govuk-body govuk-!-font-size-24">total cases</p>
+                    </h3>
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                              <strong>89</strong> cases needing first action
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                              <strong>12</strong> cases waiting for WFPF001 to be returned
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                              <strong>34</strong> cases blah blah
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                              <strong>7</strong> cases needing blah blah blah
+                            </label>
+                          </div>
+                        </div>
+                    
+                      </fieldset>
+                    </div>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                      Get next death arrears case
+                    </button>
+
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

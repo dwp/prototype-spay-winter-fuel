@@ -1,0 +1,244 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Work</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="uk-work-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Have you worked in the UK?
+                </h2>
+              </legend>
+              <br>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-work-conditional" name="uk-work" type="radio" value="yes" data-aria-controls="conditional-uk-work-conditional">
+                  <label class="govuk-label govuk-radios__label" for="uk-work-conditional">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-uk-work-conditional">
+
+                  <span id="conditional-uk-work-conditional-hint" class="govuk-hint">
+                    Give dates of all periods worked
+                  </span>
+
+                  <div class="govuk-date-input" id="uk-work-periods">
+                    <label class="govuk-label" for="width-20">
+                      <b>From</b>
+                    </label>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="uk-work-periods-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="uk-work-periods-day" name="uk-work-periods-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="uk-work-periods-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="uk-work-periods-month" name="uk-work-periods-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="uk-work-periods-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="uk-work-periods-year" name="uk-work-periods-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <div class="govuk-date-input" id="uk-work-periods">
+                    <label class="govuk-label" for="width-20">
+                      <b>To</b>
+                    </label>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="uk-work-periods-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="uk-work-periods-day" name="uk-work-periods-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="uk-work-periods-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="uk-work-periods-month" name="uk-work-periods-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="uk-work-periods-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="uk-work-periods-year" name="uk-work-periods-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+                  <p><a href="#" class="govuk-link">Add another time period</a></p>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-work-conditional-2" name="uk-work" type="radio" value="no" data-aria-controls="conditional-uk-work-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="uk-work-conditional-2">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="international-work-conditional-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h2 class="govuk-fieldset__heading">
+                            Have you worked outside the UK?
+                          </h2>
+                        </legend>
+                        <br>
+                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="international-work-conditional" name="international-work" type="radio" value="yes" data-aria-controls="conditional-international-work-conditional">
+                            <label class="govuk-label govuk-radios__label" for="international-work-conditional">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-international-work-conditional">
+
+                            <span id="conditional-international-work-conditional-hint" class="govuk-hint">
+                              Give dates of the longest period
+                            </span>
+
+                            <div class="govuk-date-input" id="international-work-periods">
+                              <label class="govuk-label" for="width-20">
+                                <b>From</b>
+                              </label>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="international-work-periods-day">
+                                    Day
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="international-work-periods-day" name="international-work-periods-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="international-work-periods-month">
+                                    Month
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="international-work-periods-month" name="international-work-periods-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="international-work-periods-year">
+                                    Year
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="international-work-periods-year" name="international-work-periods-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                              </div>
+                            </div>
+
+                            <br>
+
+                            <div class="govuk-date-input" id="international-work-periods">
+                              <label class="govuk-label" for="width-20">
+                                <b>To</b>
+                              </label>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="international-work-periods-day">
+                                    Day
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="international-work-periods-day" name="international-work-periods-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="international-work-periods-month">
+                                    Month
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="international-work-periods-month" name="international-work-periods-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="international-work-periods-year">
+                                    Year
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="international-work-periods-year" name="international-work-periods-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="international-work-conditional-2" name="international-work" type="radio" value="no" data-aria-controls="conditional-international-work-conditional-2">
+                            <label class="govuk-label govuk-radios__label" for="international-work-conditional-2">
+                              No
+                            </label>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                    </div>
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+          {% include 'current/includes/_bar.html' %}
+
+                      <h2 class="govuk-heading-l">Search for a different address</h2>
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post" action="address-1b">
+
+
+
+       
+
+
+            <h2 class="govuk-heading-m">Unverified address</h2>
+            <p>Flat D<br>
+            104 Boundary Lane<br>
+            Hulme<br>
+            Manchester<br>
+            M15 6FD</p>
+
+
+    <!--        <h2 class="govuk-heading-m">Contact numbers</h2>
+            <p>Home telephone: 01324 800 900<br>
+               Mobile: 07771 900 900</p>   -->
+
+<br>
+
+            <fieldset class="govuk-fieldset">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <h1 class="govuk-fieldset__heading">
+      Enter address search details
+    </h1>
+  </legend>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-1">
+      Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+    </label>
+    <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-2">
+      <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+    </label>
+    <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-town">
+      Town or city
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-county">
+      County
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-postcode">
+      Postcode
+    </label>
+    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+  </div>
+
+</fieldset>
+
+            <button type="submit" class="govuk-button">
+              Search
+            </button>
+
+          </form>
+          <br>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Contact numbers</h2>
+        <p><strong>Home phone:</strong> 01324 800 900<br>
+        <strong>Mobile phone:</strong> 07771 900 900<br>
+        <strong>Work phone:</strong> 01324 400 500</p>
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

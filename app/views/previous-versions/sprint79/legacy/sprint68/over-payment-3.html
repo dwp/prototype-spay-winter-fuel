@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-l">You do not qualify for a Winter Fuel Payment</h1>
+
+              <p>You do not qualify because you live in an ineligible country.</p><br>
+            <h3 class="govuk-heading-m">Changes of circumstance</h3>
+            <p>You might be entitled to a Winter Fuel Payment in the future if you move to an eligible country.</p>
+
+            </fieldset><br>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

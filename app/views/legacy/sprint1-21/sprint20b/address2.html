@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <a href="/legacy/sprint20b/residency" class="govuk-back-link">Back</a>
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  ?
+                </h1>
+              </legend>
+
+              <br>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                        Normal?
+                      </label> </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                        Care or nursing home
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                        NHS hospital
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                        Prison
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+                        No fixed abode
+                      </label>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

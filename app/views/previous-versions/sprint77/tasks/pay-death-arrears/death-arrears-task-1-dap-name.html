@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post" action="death-arrears-task-1-dap-address">
+
+          {% include 'current/includes/_bar-dead.html' %}  
+
+            <h2 class="govuk-heading-l">Name of the death arrears payee</h2>
+
+            <div class="govuk-form-group">
+      <label class="govuk-label" for="payeename">
+        First name
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="payeename" name="payeename" type="text" spellcheck="false" autocomplete="name"><br><br>
+      <label class="govuk-label" for="payeelastname">
+        Last name
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="payeelastname" name="payeelastname" type="text" spellcheck="false" autocomplete="name"></div>
+      <br><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a>
+      <br><br><br>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

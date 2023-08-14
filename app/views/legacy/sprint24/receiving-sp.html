@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+              <h1 class="govuk-heading-l">Are you getting your State Pension or Pension
+                Credit?</h1>
+
+<br>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="benefit" name="benefit" type="radio" value="sp">
+            <label class="govuk-label govuk-radios__label" for="benefit-1">
+              State Pension only
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="benefit-2" name="benefit" type="radio" value="pc">
+            <label class="govuk-label govuk-radios__label" for="benefit-2">
+              Pension Credit only
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="benefit-3" name="benefit" type="radio" value="both">
+            <label class="govuk-label govuk-radios__label" for="benefit-3">
+              Both State Pension and Pension Credit
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="benefit-4" name="benefit" type="radio" value="none">
+            <label class="govuk-label govuk-radios__label" for="benefit-4">
+              Neither of them
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+  </fieldset>
+</div>
+
+<button type="submit" class="govuk-button">
+  Continue
+</button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

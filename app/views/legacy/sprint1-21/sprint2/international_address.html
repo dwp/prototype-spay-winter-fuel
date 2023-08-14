@@ -1,0 +1,157 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Add overseas address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Add overseas address</h1>
+       
+           <form action="date" method="post" class="form"> 
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address1">
+                    Address
+                    <span class="govuk-visually-hidden">Address line 1 of 4</span>
+                  </label>
+                  <input autofocus autocomplete="off" class="govuk-input" id="address1" name="address1" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address2">
+                    <span class="govuk-visually-hidden">Address line 2 of 4</span>
+                  </label>
+                  <input class="govuk-input" autocomplete="off" id="address2" name="address2" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address3">
+                    <span class="govuk-visually-hidden">Address line 3 of 4</span>
+                  </label>
+                  <input class="govuk-input" autocomplete="off" id="address3" name="address3" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address4">
+                    <span class="govuk-visually-hidden">Address line 3 of 4</span>
+                  </label>
+                  <input class="govuk-input" autocomplete="off" id="address4" name="address4" type="text">
+                </div>
+      </div>
+    </div>
+
+          <div class="govuk-grid-row">
+             <div class="govuk-grid-column-one-third">
+
+
+                <div style="font-family: Arial,sans-serif" class="govuk-form-group">
+                  <label class="govuk-label" for="select-box">Country</label>
+                  <input class="govuk-input govuk-!-width-one-half" id="country-moving" name="countryint" type="text" autocomplete="off">
+                </div>
+  
+
+                <input class="govuk-input" type="hidden" name="addresstype" value="International" type="text">
+                <input class="govuk-input" type="hidden" name="country" value="Germany" type="text">
+
+
+         <input type="submit" method="post" value="Continue" class="govuk-button">
+
+                   
+
+            
+
+          </form>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+<!-- Javascript -->
+<script src="/public/javascripts/details.polyfill.js"></script>
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/public/javascripts/govuk/selection-buttons.js"></script>
+<script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
+<script src="/public/javascripts/govuk/show-hide-content.js"></script>
+<script src="/public/javascripts/application.js"></script>
+<!-- GOV.UK Prototype kit {{releaseVersion}} -->
+
+<script src="https://unpkg.com/ua-parser-js@0.7.12"></script>
+<script src="/public/javascripts/bloodhound.js"></script>
+<script src="https://unpkg.com/accessible-typeahead@0.3.1"></script>
+<link rel="stylesheet" href="https://unpkg.com/accessible-typeahead@0.3.1/examples/styled.css">
+<style>
+    .typeahead__menu--inline {
+        max-height: none;
+        overflow-x: visible;
+    }
+</style>
+<script src="https://unpkg.com/lodash@4.17.4" type="text/javascript"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="/public/javascripts/autocomplete.js"></script>
+
+<script type="text/babel">
+    var preferredLocale = 'en-GB'
+    var minTypeAHeadLength = 2;
+    var showPaths = true
+
+    $(document).ready(function () {
+        //get country data then populates fields
+        $.getJSON( "/public/data/picker-data-4.json")
+            .done(function(json) {
+                var graph = json;
+                var locationReverseMap = (preferredLocale) => Object.keys(graph)
+                    .reduce((revMap, curie) => {
+                        var node = graph[curie]
+                        Object.keys(node.names).forEach(locale => {
+                            var name = node.names[locale]
+                            var isntDefinedAndLocaleIsEnGb = !revMap[name] && locale === preferredLocale
+                            if (isntDefinedAndLocaleIsEnGb) {
+                                revMap[name] = { node, locale }
+                            }
+                        })
+                        return revMap
+                    }, {})
+                var reverseMap = locationReverseMap(preferredLocale)
+                setupAutoCompleteFields(graph, reverseMap)
+            })
+            .fail(function( jqxhr, textStatus, error ) {
+                var err = textStatus + ", " + error;
+                console.log( "Request Failed: " + err );
+            });
+
+        function setupAutoCompleteFields(graph, reverseMap) {
+            createData("country-moving", "-move", graph, minTypeAHeadLength, reverseMap, preferredLocale, showPaths)
+        }
+    })
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

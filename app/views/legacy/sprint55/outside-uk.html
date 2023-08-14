@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+<br>
+<br>
+
+          <h1 class="govuk-heading-xl">You might get a Winter Fuel Payment if you live in Europe</h1>
+
+          <p class="govuk-body">You might still get the Winter Fuel Payment if you used to live or work in the UK, or have family in the UK.</p>
+          <p class="govuk-body">You must live in Switzerland or a <a href="https://www.gov.uk/eu-eea">European Economic Area (EEA) country</a>. But you cannot get the payment if you live in Cyprus, France, Gibraltar, Greece, Malta, Portugal or Spain because the average winter temperature there is higher than the warmest region of the UK.
+          </p>
+
+          <h3 class="govuk-heading-m">Make a claim</h3>
+          <p>Make a claim by calling the Winter Fuel Payment Centre.</p>
+           <div class="govuk-warning-text">
+           
+
+          <h3 class="govuk-heading-s">Winter Fuel Payment Centre</h3>
+          <p><b>Telephone: </b>0800 731 0160<br>
+             <b>Textphone:</b> 0800 731 0464<br>
+             Monday to Friday, 8am to 6pm</p>
+
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

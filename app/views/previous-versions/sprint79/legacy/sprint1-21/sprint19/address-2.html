@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <main id="content" role="main">
+          <div class="grid-row">
+            <div class="column-full">
+
+{% include './_bar.html' %}
+
+            </div>
+          </div>
+        </main>
+
+        </br>
+
+        <div>
+          <a href="address" class="govuk-back-link">Back</a>
+        </div>
+
+        {% include './_green-bar.html' %}
+
+
+        <div class="govuk-inset-text">
+        2 Windsor Street <br>
+        South Gosfroth <br>
+        Newcastle <br>
+        NE3 1YL
+        </div>
+
+            <a href="/legacy/sprint19/correct-address" class="govuk-button">Save</a>  
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>        </div>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    </div>
+  </div>
+
+  {% endblock %}

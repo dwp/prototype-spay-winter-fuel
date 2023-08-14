@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include 'current/includes/_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-l">Payment details</h2>
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount</th>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date paid</th>
+                <td class="govuk-table__cell">Monday, 29 October 2018</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Qualification details</h2>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">79</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  {% if data['address-change'] %}
+                  {{data['address-change'].split(', ').join('<br />') | safe }}
+                  {% elif data.address %}
+                  {{data.address.split(', ').join('<br />') | safe}}
+                  {% else %}
+                  78 Graham Road<br>
+                  Chelsham<br>
+                  CR6 9ND
+                  {% endif %}
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy details</th>
+                <td class="govuk-table__cell"> {% if data['living-with'] %}
+                  {{data['living-with']}}
+                  {% else %}
+                  Lives with someone else of State Pension age
+                  {% endif %}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="govuk-heading-m">Account details</h3>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Bank or building society</th>
+                <td class="govuk-table__cell">HSBC</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">Mrs M H Morrison</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">00 11 22</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">****5678</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="width-20" style="font-size:24px">
+              <b>What type of family do you have in the UK?</b>
+            </label>
+            <span id="more-detail-hint" class="govuk-hint">
+              For example "brother" or "cousin".
+            </span>
+            <textarea class="govuk-textarea" id="family" name="family" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20" style="font-size:24px">
+            <b>How many times have you been to the UK to visit family in the last 3 years?</b>
+          </label>
+
+          <input class="govuk-input govuk-input--width-20" id="famiyvisit" name="family visit" type="text">
+        </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

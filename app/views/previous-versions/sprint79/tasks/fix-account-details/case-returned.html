@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form method="post" action="bank-task">
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+
+    <p class="govuk-body">Case returned to queue</p>
+  </div>
+</div>
+
+
+                    <h1 class="govuk-heading-l">Get next account details case</h1>
+
+                    <div id="govuk-checkboxes govuk-checkboxes--small">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+
+                          <p><strong>Select the case types you want to fix</strong></p>
+
+                          <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fix-account-details" name="fix-account-details" type="checkbox" value="international" checked="true">
+                              <label class="govuk-label govuk-checkboxes__label" for="fix-account-details">
+                                UK address with international bank account details - 399 cases
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="fix-account-details-2" name="fix-account-details" type="checkbox" value="other">
+                              <label class="govuk-label govuk-checkboxes__label" for="fix-account-details-2">
+                                Other bank account problems - 492 cases
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                    <div class="govuk-button-group">
+                      <button class="govuk-button" data-module="govuk-button" button type=“submit”>
+                        Get next case
+                      </button>
+
+                      <a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="/current/tasks/tasks.html">
+                        Return to all tasks list
+                      </a>
+                    </div>
+
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

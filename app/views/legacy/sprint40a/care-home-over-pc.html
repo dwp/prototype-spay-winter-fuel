@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/legacy/sprint21/benefits" method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <h1 class="govuk-heading-l">You do not qualify for a Winter Fuel Payment</h1>
+
+
+          <p>You do not qualify because of the date you moved into the care home, and because you get one of these benefits:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Pension Credit</li>
+            <li>income-based Jobseeker’s Allowance (JSA)</li>
+            <li>income-related Employment and Support Allowance (ESA)</li>
+            <li>Income Support</li>
+          </ul>
+          <h3 class="govuk-heading-m">Changes of circumstance</h3>
+          <p>Your future entitlement may be affected if your circumstances change, such as if you leave the care home.</p>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

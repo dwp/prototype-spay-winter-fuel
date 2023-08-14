@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+      
+          <form method="post">
+            <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          How do you want to be paid?
+        </h1>
+      </legend>
+
+  <br>
+
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="bank-account-type" name="bank-account-type" type="radio" value="uk">
+          <label class="govuk-label govuk-radios__label" for="bank-account-type">
+              UK bank or building society account
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="bank-account-type-2" name="bank-account-type" type="radio" value="international">
+          <label class="govuk-label govuk-radios__label" for="bank-account-type-2">
+            Bank account outside the UK
+          </label>
+        </div>
+    </fieldset>
+  </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

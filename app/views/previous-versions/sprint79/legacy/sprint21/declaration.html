@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_blue_bar.html' %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <a href="/legacy/sprint21/residency" class="govuk-back-link">Back</a>
+          <br>
+          <br>
+
+          <h1 class="govuk-heading-l">Declaration</h1>
+
+          <p>By submitting this change, you agree that:<br>
+                        <ul class="govuk-list govuk-list--bullet">
+                        <li>the information you've given is complete and correct</li>
+                        <li>to tell Department for Work and Pensions (DWP) straight away if your circumstances change </li>
+                        <li>DWP can ask you to pay back any recoverable overpayment</li>
+                        </ul>
+                        </p>
+
+                        <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                        <span class="govuk-warning-text__assistive">Warning</span>
+                        You could be prosecuted or have to pay a penalty if you give wrong or incomplete
+                        information, or if you don't report changes.
+                        </strong>
+                        </div>
+
+            <button type="submit" class="govuk-button">
+              Caller agrees
+            </button>
+
+          </div>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

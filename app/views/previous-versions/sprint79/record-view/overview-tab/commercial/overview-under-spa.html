@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <div>
+            <h1 class="govuk-heading-xl">
+              Rayhaan Mullen<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56
+                {% endif %}<br>
+                <strong class="govuk-tag govuk-tag--orange">
+                  Too young
+                </strong>
+              </span>
+            </h1>
+          </div>
+
+          <br>
+          <br>
+
+            <h2 class="govuk-heading-m">2019 payment</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                This person does not qualify because they were born after 5 October 1954.
+              </strong>
+            </div>
+
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Current details</h2>
+            <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%"></span>
+            </a>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">66</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">9 August 1953</td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="other-nationalities-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Do you hold any other Nationalities?
+                </h1>
+              </legend>
+              <br>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other-nationalities-conditional" name="other-nationalities" type="radio" value="yes" data-aria-controls="conditional-other-nationalities-conditional">
+                  <label class="govuk-label govuk-radios__label" for="other-nationalities-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other-nationalities-conditional-2" name="other-nationalities" type="radio" value="no" data-aria-controls="conditional-other-nationalities-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="other-nationalities-conditional-2">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-nationalities-conditional-2">
+
+                  {% if data['uk-national'] === 'no' %}
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="no-nationality-conditional-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                          Are you a...
+                        </h1>
+                      </legend>
+                      <span id="no-nationality-conditional-hint" class="govuk-hint">
+                        Select all that apply.
+                      </span>
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional" name="no-nationality" type="checkbox" value="stateless" data-aria-controls="conditional-no-nationality-conditional">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional">
+                            A stateless person
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional-2" name="no-nationality" type="checkbox" value="refugee" data-aria-controls="conditional-no-nationality-conditional-2">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional-2">
+                            A refugee
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional-3" name="no-nationality" type="checkbox" value="parter-eea" data-aria-controls="conditional-no-nationality-conditional-3">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional-3">
+                            A partner of a EEA national
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

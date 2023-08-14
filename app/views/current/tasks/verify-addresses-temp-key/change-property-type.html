@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+     
+
+
+      <div class="govuk-grid-column-two-thirds">
+                      <form method="post">
+                        
+                        {% include 'current/includes/_bar.html' %}
+                        
+                        <h2 class="govuk-heading-s">Address submitted</h2>
+                        <p class="govuk-body">
+                          Flat D<br>
+                          104 Boundary Lane<br>
+                          Hulme<br>
+                          Manchester<br>
+                          M15 6FD</p>
+
+<br>
+<h2 class="govuk-heading-s">Contact numbers</h2>
+<p><strong>Home phone:</strong> 01324 800 900<br>
+  <strong>Mobile phone:</strong> 07771 900 900<br>
+<br><br>
+<h2 class="govuk-heading-m">Choose a property type</h2>
+
+                                <div class="govuk-form-group">
+                                  <fieldset class="govuk-fieldset">
+                                    <div class="govuk-radios" data-module="govuk-radios">
+                                     
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="care">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                          
+                                          <strong class="govuk-tag govuk-tag--pink">
+                                            Care home
+                                          </strong>
+                                        </label>
+                                      </div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="hospital">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                          
+                                          <strong class="govuk-tag govuk-tag--orange">
+                                            Hospital
+                                          </strong>
+                                        </label>
+                                      </div>
+                                      <div class="govuk-checkboxes__divider">or</div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="residential">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                         keep as 
+                                          <strong class="govuk-tag govuk-tag--blue">
+                                            Residential
+                                          </strong>
+                                        </label>
+                                      </div>
+
+                                    </div>
+
+
+                                  </fieldset>
+                                </div>
+
+
+                               
+                                <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
+                                <br>
+
+                          <button type="submit" class="govuk-button">
+                            Continue
+                          </button>
+
+                        </form>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  <script>
+    nextPageRoutes = {
+        'care': 'verify-address-fixed.html',
+        'hospital': 'verify-address-fixed.html',
+        'residential': 'verify-address-fixed.html',
+
+     }
+  </script>
+
+  {% endblock %}

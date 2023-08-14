@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-l">Payment recalculated</h1>
+
+              <div class="govuk-inset-text">
+                Based on the updated information you have given us, this year your payment should be £XXX.
+              </div>
+
+              <br>
+
+            </fieldset>
+
+            <button type="submit" class="govuk-button">
+              Confirm
+            </button>
+
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

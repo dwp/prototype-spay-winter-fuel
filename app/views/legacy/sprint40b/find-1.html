@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+    <!--    {% include './_bar.html' %}  -->
+
+    <h1 class="govuk-heading-xl">
+      Can you confirm your full name?<br>
+    </h1>
+
+    <p class="govuk-body-l">Name: Izabela Regan</p>
+
+
+        <button type="submit" class="govuk-button">
+          Confirm name
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

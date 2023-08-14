@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include './_bar_2.html' %}
+          
+
+          <form method="post">
+
+
+
+            
+
+            <h1 class="govuk-heading-m">Details</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell">6 March 1935</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell"> 1 Victoria Road
+                    <br>FALKIRK
+                    <br>FK55 8XN</td>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Home phone</th>
+                  <td class="govuk-table__cell">01298336876</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Mobile phone</th>
+                  <td class="govuk-table__cell">07890123652</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Letter type</th>
+                  <td class="govuk-table__cell">Overpayment</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" style="padding-top:20px;margin-bottom:0px; padding-bottom:0px">Alternative format</th>
+                 
+                  <td class="govuk-table__cell">Audio - CD</td>
+                </tr>
+              </thead>
+
+            </table>
+
+
+
+            <br>
+
+            
+<a href="next-task" class="govuk-link">Return this case to the queue</a>
+        <br><br><br>
+          
+
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Create alternative format request
+              </button>
+              <input type="hidden" name="alt-request" value="yes">
+
+             
+            </div>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

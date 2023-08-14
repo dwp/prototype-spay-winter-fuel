@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="moj-banner moj-banner--success">
+
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+        <div class="moj-banner__message">
+        <span class="moj-banner__assistive">Success</span>Security passed</div>
+
+        </div>
+
+      <form method="post">
+
+        <h2 class="govuk-heading-xl">Alex Smith<br>
+          <span class="govuk-caption-xl"> {{data.nino}} </span>
+          <span class="app-c-tag app-c-tag--orange">Payment returned</span>
+        </h2>
+
+            {% include './_tab-overview.html' %}
+
+            <br>
+
+        <div>
+          <dl class="app-check-your-answers app-check-your-answers--short">
+
+            <div class="app-check-your-answers__contents">
+              <dd class="app-check-your-answers__answer">
+                <h2 class="govuk-heading-m">2018 payment</h2>
+              </dd>
+              <dd class="app-check-your-answers__answer">
+                <strong></strong>
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="#"></a>
+              </dd>
+            </div>
+
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Wednesday 30 October 2018
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                £100
+              </dd>
+              <dd class="app-check-your-answers__change">
+              </dd>
+            </div>
+        </div>
+
+        <div class="govuk-inset-text">
+          X
+        </div>
+
+        <div>
+          <dl class="app-check-your-answers app-check-your-answers--short">
+
+            <div class="app-check-your-answers__contents">
+              <dd class="app-check-your-answers__answer">
+                <h2 class="govuk-heading-m">2019 payment</h2>
+              </dd>
+              <dd class="app-check-your-answers__answer">
+                <strong></strong>
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="#"></a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Wednesday 30 October 2019
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                £100
+              </dd>
+              <dd class="app-check-your-answers__change">
+              </dd>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+      <br>
+      <br>
+      <br>
+
+        <h2 class="govuk-heading-m">
+          Contact history
+        </h2>
+        <ol class="app-timeline">
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+          <a href="top-up-request" class="govuk-link">Top up payment request <br>sent to DWP</a>
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="app-timeline__date">
+              8 November 2018
+              </span>
+            </p>
+          </li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

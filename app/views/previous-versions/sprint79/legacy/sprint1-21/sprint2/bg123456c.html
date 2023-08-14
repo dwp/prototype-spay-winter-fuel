@@ -1,0 +1,217 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Bob Smith
+{% endblock %}
+
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %} {# Set serviceName in config.js. #}
+  {% include "includes/headsearch.html" %}
+
+      <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-bar__name">Bob Smith</dd>
+
+          <dt class="govuk-visually-hidden">National Insurance number:</dt>
+          <dd class="key-details-bar__nino">BG 12 34 56 C</dd>
+
+         <!--
+
+          <dt class="visually-hidden">Claim status:</dt>
+          <dd class="key-details-bar__status">Dead letter office (DLO)</dd> -->
+
+          
+        </div>
+
+        <div class="key-details-bar__bottom-block">
+          <dt>Date of birth:</dt>
+          <dd>19 January 1953</dd>
+
+          <dt>Address:</dt>
+          <dd>1 East Allerdean, Little Hayfield, High Peak, TD15 2TB</dd>
+
+        </div>
+      </dl>
+    </section>
+
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="">
+
+    <div class="govuk-grid-row">
+
+     
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-visually-hidden">Winter Fuel details: Bob Smith</h1>
+
+
+        <div class="tabs">
+            <div class="tabs-nav">
+              <ul class="tabs-list">
+                <li>
+                  <a href="#tab-1">
+                    Payment details
+                  </a>
+                </li>
+                <li>
+                  <a href="#tab-2">
+                    Bank account details
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+        <div class="tabs-content">
+          <div class="tabs-panel" id="tab-1">
+            <div class="tabs-panel-inner">
+
+                       <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment amount
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                £200
+                              </dd>
+                            </div>
+                            
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment status
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Paid
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment date
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                10 August 2018
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Matches at same address
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                None
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Relevant benefits
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                None
+                              </dd>
+                            </div>
+                            
+                        </dl>
+
+              
+            </div>
+          </div>  
+
+
+            <div class="tabs-panel" id="tab-2">
+            <div class="tabs-panel-inner">
+             
+
+                        <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Account holder
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Bob Smith
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Sort code
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                20 20 20 
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Account number
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                **** **78
+                              </dd>
+                            </div>
+                        </dl>
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+   </div>
+
+      <div class="govuk-grid-column-one-third">
+          <div class="invoicesummary">
+
+              <p>
+             <strong class="app-c-tag app-c-tag--success">Paid</strong>
+           </p>
+             
+
+              <ul class="govuk-list">
+                <li>
+                  <a style="font-weight: 700;" class="govuk-link" href="topup3">Review matches</a>
+                </li>
+                <li>
+                  <a style="font-weight:700;" class="govuk-link" href="#">Change address</a>
+                </li>
+                <li>
+                  <a style="font-weight:700;" class="govuk-link" href="#">Change bank account</a>
+                </li>
+                <li>
+                  <a style="font-weight: 700;" class="govuk-link" href="#">Enter date of death</a>
+                </li>
+                <li>
+                  <a style="font-weight:700;" class="govuk-link" href="#">Stop payments</a>
+                </li>
+              </ul>
+
+            <!--
+
+           <h3 class="govuk-heading-s">Actions</h3>
+
+              <form action="#" method="post" class="form"> 
+                <input type="submit" method="post" value="Change payment amount" class="govuk-button">
+              </form>-->
+             
+
+             
+         
+         </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+</div>
+
+
+{% endblock %}
+

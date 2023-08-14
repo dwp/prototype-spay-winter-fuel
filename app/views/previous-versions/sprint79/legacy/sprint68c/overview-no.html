@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-international.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+
+        <form method="post">
+
+          <div>
+            <h1 class="govuk-heading-xl">
+              Yu Martin<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56 Q
+                {% endif %}<br>
+
+                <strong class="govuk-tag govuk-tag--orange">
+                              IN CARE HOME / receiving benefits?
+                            </strong>
+
+              </span>
+            </h1>
+
+          
+
+          </div>
+
+
+          <div class="moj-banner moj-banner--success">
+
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+        <div class="moj-banner__message">
+          {% if data['recoverable'] === 'yes' %}
+          <span class="moj-banner__assistive">Success</span>Record of decision downloaded - you should now upload this to CAM<br><a href="">Download record of decision again</a></div>
+        {% else %}
+          <span class="moj-banner__assistive">Success</span>Details updated and task removed from queue</div>
+        {% endif %}
+        
+
+        </div>
+
+          {% include './_tab-overview.html' %}
+
+          <br>
+          <br>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              This person moved into a carehome less than 13 weeks from Q week so their payment was calculated on their previous residential address.
+            </strong>
+          </div>
+
+
+
+          <table class="govuk-table">
+          <h2 class="govuk-heading-m">Payment for winter 2020 to 2021</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header"></th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Payment date</th>
+                <td class="govuk-table__cell">Monday, 4 November 2020</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount</th>
+                <td class="govuk-table__cell">£100 (Should this table be here?)</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+<br>
+
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Qualification details</h2>
+            <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+            </a>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">87</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">11 November 1933</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  35 St Albans Close<br>
+                    ASHINGTON<br>
+                    NE63 9RU
+                    </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date moved in</th>
+                <td class="govuk-table__cell">
+                  7 January 1992
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">
+                  Lives with someone else who gets Winter Fuel Payment
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        {% include './_history-13-weeks.html' %}
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

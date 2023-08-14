@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  XX 62 31 26 C<br>
+                  <span class="govuk-body-l">
+                  Roland Wiley
+                  </span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <form method="post">
+
+            <h2 class="govuk-heading-l">Name of the death arrears payee</h2>
+
+            <div class="govuk-form-group">
+      <label class="govuk-label" for="payeename">
+        Full name
+      </label>
+      <input class="govuk-input" id="payeename" name="payeename" type="text" spellcheck="false" autocomplete="name"></div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

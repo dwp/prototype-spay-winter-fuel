@@ -1,0 +1,74 @@
+#global-header-bar {
+  display: none;
+}
+
+.navigation-global ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.navigation-global {
+  background: govuk-colour("light-grey");
+}
+
+.navigation-global ul {
+  margin: 0 auto;
+  max-width: 960px;
+  padding-left: 0;
+}
+
+.navigation-global li {
+  float: left;
+  list-style-type: none;
+}
+
+@media (max-width: 640px) {
+  .navigation-global li {
+    width: 100%;
+  }
+}
+
+.navigation-global a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.navigation-global a:link,
+.navigation-global a:visited {
+  color: #0b0c0c;
+}
+
+.navigation-global a:active,
+.navigation-global a:focus {
+  background: govuk-colour("yellow");
+  color: #0b0c0c;
+}
+
+.navigation-global a:hover {
+  background: govuk-colour("light-grey");
+  text-decoration: underline;
+}
+
+.navigation-global .active {
+  background: govuk-colour("blue");
+  border-bottom: 0;
+  font-weight: 700;
+}
+
+.navigation-global .active:link,
+.navigation-global .active:visited,
+.navigation-global .active:active {
+  color: #fff;
+}
+
+.navigation-global .active:focus {
+  color: #0b0c0c;
+}
+
+.navigation-global .active:hover {
+  background: govuk-colour("blue");
+  color: #fff;
+  text-decoration: underline;
+}

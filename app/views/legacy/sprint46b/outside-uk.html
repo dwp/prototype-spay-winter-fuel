@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+<br>
+<br>
+
+          <h1 class="govuk-heading-xl">Because you live outside the UK</h1>
+
+          <p class="govuk-body">Not everyone who lives outside the UK can get a Winter Fuel Payment.</p>
+          <p class="govuk-body">You might still get the payment if you live in the EU, Switzerland, Norway, Iceland or Liechtenstein.</p>
+          <p class="govuk-body">You need to have a genuine and sufficient link to the UK - this can include having lived or worked in the UK, and having family in the UK.</p>
+
+          <p class="govuk-body">
+            You cannot get the payment if you live in Cyprus, France, Gibraltar, Greece, Malta,
+            Portugal or Spain because the average winter temperature there is higher than the warmest
+            region of the UK.
+          </p>
+
+          <h3 class="govuk-heading-m">Make a claim</h3>
+          <p>Make a claim by calling the Winter Fuel Payment Centre.</p>
+           <div class="govuk-warning-text">
+           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+             <strong class="govuk-warning-text__text">
+               <span class="govuk-warning-text__assistive">Warning</span>
+               You cannot make a claim until 1 August 2020.
+             </strong>
+           </div>
+
+          <h3 class="govuk-heading-s">Winter Fuel Payment Centre</h3>
+          <p><b>Telephone: </b>0800 731 0160<br>
+             <b>Textphone:</b> 0800 731 0464<br>
+             Monday to Friday, 8am to 6pm</p>
+
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

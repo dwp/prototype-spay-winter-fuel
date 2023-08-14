@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <main id="content" role="main">
+          <div class="grid-row">
+            <div class="column-full">
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                      <div>
+                        <h1 class="govuk-heading-xl">
+                          Alex Smith<br>
+                                          <span class="govuk-caption-xl">{{data.nino}}</span>
+                          <span class="app-c-tag">Receiving Winter Fuel Payment</span>
+                      </div>
+
+                </div>
+              </div>
+
+
+{% include './_tab-contact.html' %}
+
+            </div>
+          </div>
+        </main>
+
+        <br>
+        <br>
+
+          <div>
+            <h2 class="govuk-heading-m">Contact details</h2>
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+
+                </dt>
+                <dd class="app-check-your-answers__answer">
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__answer">
+                  Address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  
+                  {% if data.address %}
+                    {{data.address.split(', ').join('<br />') | safe}}
+                  {% else %}
+                  78 Graham Road<br>
+                  Chelsham<br>
+                  CR6 9ND
+                  {% endif %}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="address">
+                    <span class="govuk-visually-hidden">Change address</span>
+                  </a>
+                </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Home phone number
+              </dt>
+              <dd class="app-check-your-answers__answer">
+
+                {% if data['homephone-remove'] === 'Yes' %}
+                {% elseif data.homephone %}
+                  {{data.homephone}}
+                {% else %}
+                01665 720871
+                {% endif %}
+              </dd>
+
+              <dd class="app-check-your-answers__change">
+                <a href="homephone">
+                <span class="govuk-visually-hidden">Change home phone number</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Work phone number
+              </dt>
+              <dd class="app-check-your-answers__answer">
+
+                {% if data['workphone-remove'] === 'Yes' %}
+                {% elseif data.worknumber %}
+                  {{data.worknumber}}
+                {% else %}
+                  0191 2798475
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="workphone">
+                </a>
+              </dd>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+
+    </main>        </div>
+  <!-- </div> -->
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    </div>
+  </div>
+
+  {% endblock %}

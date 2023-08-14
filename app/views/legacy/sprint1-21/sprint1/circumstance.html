@@ -1,0 +1,90 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Do any of the following apply to Sam?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+       
+           <form action="checkanswers_address" method="post" class="form"> 
+
+            <!--  <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Show full address
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p>123 Glossop Road,<br>
+                      Little Hayfield,<br>
+                      High Peak,<br>
+                      TD15 2TB<p>
+                </div>
+              </details> -->
+            
+
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Qualifying week details
+                </h1>
+              </legend>
+              <span id="waste-hint" class="govuk-hint">
+                Select all that apply
+              </span>
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="prison" name="prison" type="checkbox" value="Yes">
+                  <label class="govuk-label govuk-checkboxes__label" for="prison">
+                   Sam was in prison 6 to 13 September 2018
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="hospital" name="hospital" type="checkbox" value="Yes">
+                  <label class="govuk-label govuk-checkboxes__label" for="hospital">
+                    Sam was in hospital for 52 weeks before 6 September 2018
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        
+
+           
+
+          <div>
+            <a href = '#'><input type='submit' value='Continue' class='govuk-button'></a>
+          </div>
+
+      </form>  
+
+                   
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+<script>
+
+
+
+</script>  
+
+{% endblock %}
+
+

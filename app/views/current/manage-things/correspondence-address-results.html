@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/current/caseload-statuses/check-cases">Check and update cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="ineligible">Ineligible cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">No correspondence address</li>
+  </ol>
+</div>
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+
+  <br>
+  <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">No correspondence address</h1>
+
+
+<table class="govuk-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header">Case</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+
+        <a href="/legacy/sprint35d/overview-nfa">
+          AA 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="/legacy/sprint35d/overview-nfa">BB 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="/legacy/sprint35d/overview-nfa">
+          CC 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a href="/legacy/sprint35d/overview-nfa">DD 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="/legacy/sprint35d/overview-nfa">EE 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">
+          FF 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">GG 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">HH 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">II 12 34 56 X</a></th>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">JJ 12 34 56 X</a></th>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

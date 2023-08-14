@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+        <form method="post">
+
+         
+
+          <h1 class="govuk-heading-xl">Check your Winter Fuel Payment</h1>
+
+          
+          <p class="govuk-body">Use this service to find out:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>if you qualify for Winter Fuel Payments</li>
+            <li>how much you'll get</li>
+            <li>if you need to make a claim to get it</li>
+           
+          </ul>
+
+        
+         
+          <div class="govuk-inset-text">
+            It usually takes less than a minute to answer the questions and get your result.
+          </div>
+          
+
+          <button type="submit" class="govuk-button" style="font-weight:bold;">
+            Start now
+            <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+            </svg>
+          </button>
+
+          <input type="hidden" name="deferred-sp" value="nil">
+          <input type="hidden" name="had-winter-fuel-before" value="nil">
+          <input type="hidden" name="claimed-since-deferred" value="nil">
+
+          {% if data['notes'] == 'yes' %}  
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                (Prototype notes)
+              </span>
+            </summary>
+            <div class="govuk-details__text" style="padding:0px">
+              <ul>
+                <li>use 1940 for date of birth year to trigger 80 or over pages</li>
+                <li>use 1955 for date of birth year to trigger too young page</li>
+                <li>any other date triggers under 80 pages</li>
+              </ul>
+            </div>
+          </details>
+          {% endif %}
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

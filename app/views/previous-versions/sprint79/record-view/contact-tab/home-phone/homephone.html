@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      {% if data['update-details']=='yes'%}
+        <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
+      {% else %}
+        <form method="post" action="/current/record-view/contact-tab/contact-details">
+      {% endif %}
+
+            {% include 'current/includes/_bar.html' %}
+
+            
+
+            <br>
+            <br>
+
+            <h1 class="govuk-heading-l">What is your home phone number?</h1>
+
+            <form method="post">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="telephone-number">
+                Phone number
+
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="homephone" name="homephone" type="tel">
+            </div>
+
+              {% if (data.homephone) and data ['homephone-remove'] != 'Yes' %}
+            <div>
+            <a href="homephone-remove" class="govuk-link govuk-!-font-size-19">Remove home phone as a contact option</a><br><br>
+            </div>
+              {% endif %}
+
+             
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+            <input type="hidden" name="homephone-changed" value="true">
+            <input type="hidden" name="homephone-remove" value="no">
+            <input type="hidden" name="contact-details-changed" value="true">
+            <input type="hidden" name="from-contact-tab" value="true">
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}

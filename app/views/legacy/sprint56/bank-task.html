@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  Mabel Mora<br>
+                  <span class="govuk-body-l">
+                    XX 62 31 26 C
+                  </span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <form method="post">
+
+            <h1 class="govuk-heading-m">Details</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Date of birth</th>
+                    <td class="govuk-table__cell">29 August 1927</td>
+                  </tr>
+                </thead>
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">27 Kent Street<br>
+                    AMBLE<br>
+                    NE65 0LZ</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">12 July 2019</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Home phone</th>
+                  <td class="govuk-table__cell">01916352781</td>
+                </tr>
+                </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Mobile phone</th>
+                  <td class="govuk-table__cell">07965123654</td>
+                </tr>
+                </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Work phone</th>
+                  <td class="govuk-table__cell"> </td>
+                </tr>
+                </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Benefit type</th>
+                  <td class="govuk-table__cell">Pension Credit</td>
+                </tr>
+                </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">Lives with someone else who gets Winter Fuel Payment</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Payment amount</th>
+                  <td class="govuk-table__cell">£150</td>
+                </tr>
+                </thead>
+
+            </table>
+
+            <br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="bank-details-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                Case options
+                  </h1>
+                </legend>
+                <div id="bank-details-hint" class="govuk-hint">
+
+                </div>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="bank-details" name="bank-details" type="radio" value="add">
+                    <label class="govuk-label govuk-radios__label" for="bank-details">
+                      Add new account details
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="bank-details" name="bank-details" type="radio" value="return">
+                    <label class="govuk-label govuk-radios__label" for="bank-details-2">
+                      No new account details to add - return case to queue
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="bank-details" name="bank-details" type="radio" value="remove">
+                    <label class="govuk-label govuk-radios__label" for="bank-details-3">
+                      International payment approved
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="bank-details" name="bank-details" type="radio" value="ineligible">
+                    <label class="govuk-label govuk-radios__label" for="bank-details-4">
+                      Citizen is ineligible for payment - remove from queue
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+<a href="">Return this case to the queue</a>
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

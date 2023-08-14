@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <a href="/legacy/sprint20b/residency-type" class="govuk-back-link">Back</a>
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Did they move into the care or nursing home after 24 June 2018?
+                </h1>
+              </legend>
+
+<br>
+
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="live-yes" name="carehome-13weeks" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="live-yes">
+                    Yes
+                  </label> </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="live-no" name="carehome-13weeks" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="live-no">
+                    No
+                  </label> </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

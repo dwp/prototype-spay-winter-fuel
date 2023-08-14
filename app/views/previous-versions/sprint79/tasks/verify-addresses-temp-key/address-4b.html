@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% include 'current/includes/_bar-telephone.html' %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+          {% include 'current/includes/_bar_4.html' %}
+          <h1 class="govuk-heading-l">Verify an address</h1>
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+          <form method="post">
+
+            <h2 class="govuk-heading-m">Unverified address</h2>
+            <p>Sandhills<br>
+            Lower Road<br>
+            Stallbridge<br>
+            Dorset<br>
+            DT10 2NY</p>
+
+            <h2 class="govuk-heading-m">Select a verified address</h2>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-4-1" name="address-fix-4" type="radio" value="1 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY">
+                    <label class="govuk-label govuk-radios__label" for="address-1">
+                      Sandhills<br>
+                      Lower Road<br>
+                      Stalbridge<br>
+                      Sturminister Newton<br>
+                      DT10 2NJ<br>
+                      <strong class="govuk-tag govuk-tag--blue">
+                      Residential
+                    </strong>
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-4-2" name="address-fix-4" type="radio" value="Address not found">
+                    <label class="govuk-label govuk-radios__label" for="address-2">
+                      Search for a different address
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <p>  <a href="cannot-verify-4" class="govuk-link">This address cannot be verified</a> </p>
+            <br>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+          </form>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Contact number</h2>
+        <p><strong>Mobile phone:</strong> 07771 900 900</p>
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        '1 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY': 'verify-address-fixed-4.html',
+        '2 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY': 'verify-address-fixed-3.html',
+        '3 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY': 'verify-address-fixed-3.html',
+        '4 Raleigh Road, Stalbridge, Sturminister Newton, DT10 2NY': 'verify-address-fixed-3.html',
+        'Address not found': 'verify-address-manual-4.html',
+      }
+  </script>
+
+{% endblock %}

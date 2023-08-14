@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+          
+
+            <form method="post" action="test-file">
+                <h1>This is a standard page</h1>
+
+                 <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="width-10">
+                      Some data
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="some-data" name="some-data" type="text">
+                  </div>
+
+                 
+
+                </fieldset>
+              </div>
+
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+            </form>
+
+           
+            
+
+        </div>
+
+</div>
+
+
+{% endblock %}

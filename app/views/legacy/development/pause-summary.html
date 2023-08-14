@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers - Pension Credit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Confirm your details
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Your details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-summary-list--short">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Alex Smith
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="who-is-caller">
+            Change
+          </a>
+        </dd>
+      </div>
+
+      <dt class="govuk-summary-list__key">
+        Reference number
+      </dt>
+      <dd class="govuk-summary-list__value">
+        WF-2019 000 0001
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="name-and-nino">
+          Change
+        </a>
+      </dd>
+    </dl
+
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-m">What happens next</h1>
+        <p class="govuk-body">By submitting this you agree that you want us to cancel your Winter Fuel payments. </p>
+
+
+
+
+
+    <form action="done" method="post">
+      <p>
+        {{ govukButton({
+          text: "Agree and submit"
+        }) }}
+      </p>
+    </form>
+
+  </div>
+</div>
+{% endblock %}

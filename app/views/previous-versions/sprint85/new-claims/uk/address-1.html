@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+              {% if data['mark-as-dlo']=='yes'%}
+               {% include 'current/includes/_bar-dlo.html' %}
+             {% else %}
+               {% include 'current/includes/_bar.html' %}
+             {% endif %}
+
+            <form method="post">
+
+              <h2 class="govuk-heading-xl">Can you confirm your full address?</h2>
+
+              <p><b>{% if data['postcode'] === 'NE65 0AB' %}20
+                  {% else %}1  {% endif %}
+                </b> address found for <b>{% if data['house-number'] %}
+                                  "{{data['house-number']}}"</b> and
+                                {% else %}
+                                {% endif %}
+                               <b>"{% if data['postcode'] %}
+                                                  {{data['postcode']}}
+                                                {% else %}
+                                                NE65 0LZ
+                                                {% endif %}"</b></p>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address" name="address-change" type="radio" value="27 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        27 Kent Street, Amble, {% if data['postcode'] %}
+                                            {{data['postcode']}}
+                                          {% else %}
+                                          NE65 0LZ
+                                          {% endif %}<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+
+                  {% if data['postcode'] === 'NE65 0AB' %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-2" name="address-change" type="radio" value="29 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-2">
+                        29 Kent Street, Amble, NE65 0AB<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-3" name="address-change" type="radio" value="25 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-3">
+                        25 Kent Street, Amble, NE65 0AB<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-4" name="address-change" type="radio" value="31 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-4">
+                        31 Kent Street, Amble, NE65 0AB<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-5" name="address-change" type="radio" value="3 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-5">
+                        3 Kent Street, Amble, NE65 0AB<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-6" name="address-change" type="radio" value="17 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-6">
+                        17 Kent Street, Amble, NE65 0AB<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-7" name="address-change" type="radio" value="21 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-7">
+                        21 Kent Street, Amble, NE65 0AB<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-8" name="address-change" type="radio" value="33-35 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-8">
+                      Boots the Chemists Ltd, 33-35 Kent Street, Amble, NE65 0AB<br>
+                      <strong class="govuk-tag govuk-tag--turquoise">
+                      Commercial
+                      </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-9" name="address-change" type="radio" value="1 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address-9">
+                        1 Kent Street, Amble, NE65 0AB<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                        Residential
+                        </strong>
+                      </label>
+                    </div>
+                    {% endif %}
+
+                    {% if data['postcode'] === 'NE65 0AB' %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="address-10" name="address-change" type="radio" value="see all">
+                      <label class="govuk-label govuk-radios__label" for="address-10">
+                        See all results
+                      </label>
+                    </div>
+                                      {% else %}
+
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-11" name="address-change" type="radio" value="address not found">
+                                        <label class="govuk-label govuk-radios__label" for="address-11">
+                                          Address not found
+                                        </label>
+                                      </div>
+
+                                      {% endif %}
+
+
+
+
+
+
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  <script>
+    nextPageRoutes = {
+        '27 Kent Street, Amble, NE65 0LZ': 'immigration-control.html',
+        '29 Kent Street, Amble, NE65 0LZ': '.html',
+        '25 Kent Street, Amble, NE65 0LZ': '.html',
+        '31 Kent Street, Amble, NE65 0LZ': '.html',
+        '3 Kent Street, Amble, NE65 0LZ': '.html',
+        '17 Kent Street, Amble, NE65 0LZ': '.html',
+        '21 Kent Street, Amble, NE65 0LZ': '.html',
+        '33-35 Kent Street, Amble, NE65 0LZ': '.html',
+        '1 Kent Street, Amble, NE65 0LZ': '.html',
+        'see all, NE65 0LZ': '.html',
+        'address not found': 'address.html',
+    }
+</script>
+
+  {% endblock %}

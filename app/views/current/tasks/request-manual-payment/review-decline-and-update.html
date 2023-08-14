@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  {% if data['update-details'] == 'yes'%}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+{% endif %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="get-next-task-manual-payment">
+    
+          {% include 'current/includes/_bar_3.html' %}
+
+          {% if data['approve']=='decline-and-update'%}
+          <h1 class="govuk-heading-l">
+            Check decline and update 
+          </h1>
+          
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Action</th>
+                  <td class="govuk-table__cell">Decline and update</td>
+                  <td class="govuk-table__cell"><a href="request-manual-payment-v2" class="govuk-link">Change</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Decline and update reason</th>
+                  <td class="govuk-table__cell">{{ data['decline-reason-1']}}<br>{{ data['decline-reason-2']}}<br>{{ data['decline-reason-3']}}</td>
+                  <td class="govuk-table__cell"><a href="decline-and-update-reason" class="govuk-link">Change</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <button type="submit" class="govuk-button">
+              Send for update
+              <input type="hidden" name="details-updated" value="yes">
+            </button>
+          
+
+
+          <!--  <br>
+            <h2 class="govuk-heading-m">Caller declaration</h2>-->
+
+           <!-- <p> Decline and update will allow the manual payment request to be amended and sent back for approval.</p>-->
+           
+            {% else %}
+
+           <h1 class="govuk-heading-l">
+            Check decline and close 
+          </h1>
+          
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Action</th>
+                  <td class="govuk-table__cell">Decline and close</td>
+                  <td class="govuk-table__cell"><a href="request-manual-payment-v2" class="govuk-link">Change</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Decline and close reason</th>
+                  <td class="govuk-table__cell">{{ data['decline-reason']}}</td>
+                  <td class="govuk-table__cell"><a href="decline-and-update-reason" class="govuk-link">Change</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <button type="submit" class="govuk-button">
+              Close request
+              <input type="hidden" name="details-updated" value="yes">
+            </button>
+
+
+
+          <!--  <br>
+            <h2 class="govuk-heading-m">Caller declaration</h2>-->
+
+          <!--  <p> Decline and close will close the manual payment request and the citizen will not be paid.</p>-->
+            
+            
+            {% endif %}
+<br>
+  
+             
+              <p><a href="/current/tasks/request-manual-payment/send-case-back-to-task-list" class="govuk-link">Return this case to the queue</a></p>
+
+
+
+          </form>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+{% if data['update-details'] == 'yes'%}
+   {% set nextReviewPage = '/current/record-view/overview-tab/update-details/overview-manual-payment-processed' %} 
+{% else %}
+  {% set nextReviewPage = 'get-next-task-manual-payment' %}
+{% endif %}
+
+    <script>
+        nextPageRoutes = {
+            'yes': '{{nextReviewPage}}',
+            'change': 'request-manual-payment-this-year',
+            'return': '',
+            'no': 'cancel-reason',
+        }
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+        <h1 class="govuk-heading-xl">Check cases</h1>
+
+    <form method="post">
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Filter by
+      </h1>
+    </legend>
+    <div class="govuk-checkboxes govuk-checkboxes--small">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="eligibility-1" name="eligibility" type="checkbox" value="eligible">
+        <label class="govuk-label govuk-checkboxes__label" for="eligibility-1">
+          Eligible
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="eligibility-2" name="eligibility" type="checkbox" value="ineligible">
+        <label class="govuk-label govuk-checkboxes__label" for="eligibility-2">
+          Ineligible
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

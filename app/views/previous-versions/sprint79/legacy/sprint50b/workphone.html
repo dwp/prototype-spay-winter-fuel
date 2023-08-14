@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+            {% include './_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            {% if not data.worknumber %}
+            <h1 class="govuk-heading-l">What is your work phone number?</h1>
+            {% else %}
+            <h1 class="govuk-heading-l">What is your work phone number?</h1>
+            {% endif %}
+
+            <form method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="telephone-number">
+                  Phone number
+
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="worknumber" name="worknumber" type="tel">
+              </div>
+
+              <p><a href="workphone-remove" class="govuk-link">Delete number</a></p>
+
+              <button type="submit" class="govuk-button">
+                Save
+              </button>
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}

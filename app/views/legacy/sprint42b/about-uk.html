@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Info about UK</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="uk-residence-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have a residence in the UK?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-residence" name="uk-residence" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="uk-residence">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-residence-2" name="uk-residence" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="uk-residence-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          {% if data['bank-account-type'] === 'international-bank' %}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="uk-bank-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have a UK bank account?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-bank" name="uk-bank" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="uk-bank">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-bank-2" name="uk-bank" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="uk-bank-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+            {% endif %}
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="wf-payment-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Have you ever had a Winter Fuel Payment?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="wf-payment" name="wf-payment" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="wf-payment">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="wf-payment-2" name="wf-payment" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="wf-payment-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="uk-residence-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Are you still a UK National?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-national" name="uk-national" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="uk-residence">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-national-2" name="uk-national" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="uk-national-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

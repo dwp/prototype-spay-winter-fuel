@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-international.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+<h1 class="govuk-heading-xl">Which other countries are you a national of?</h1>
+
+<p>We need the <b>nationality</b> and the <b>date the nationality started</b>.</p>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="width-20">
+    Details
+  </label>
+  <textarea class="govuk-textarea" id="nationality" name="nationality" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <nav class="navigation-global">
+      <ul>
+
+        <li>
+          <a href="find" class="" aria-current="page">Find someone</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+{% if data['imprisoned-day'] or data['dead-day'] %}
+  {% set status = data['stopped-reason'] %}
+{% else %}
+  {% set status = 'Payment returned'%}
+{% endif %}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+
+      <dd class="key-details-bar__name">Roberto Hugh Smith</dd>
+
+      <dd class="key-details-bar__nino">QQ 12 34 56 X</dd>
+
+      <dd class="key-details-bar__status">{{status}}</dd>
+    </div>
+  </dl>
+</section>

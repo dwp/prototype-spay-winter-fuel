@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            Joyce Burris<br>
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+              {{data['nino']}}
+              {% else %}
+              XX 12 34 56
+              {% endif %}
+<br>
+              <strong class="govuk-tag govuk-tag--grey">
+                Dead
+              </strong>
+
+            </span>
+          </h1>
+        </div>
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+
+                                  <h1 class="govuk-heading-l">Request payment to overseas account</h1>
+
+                                  <form method="post">
+                                    <div class="govuk-inset-text">
+                                      <p>You need to complete form SOP5 if the death arrears payee account is not:</p>
+                                      <ul>
+                                        <li>in the UK</li>
+                                        <li>in the EEA or Switzerland</li>
+                                      </ul>
+                                  </div>
+                                    
+
+
+
+
+            <button type="submit" class="govuk-button">
+              Confirm payment has been requested
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

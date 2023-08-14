@@ -1,0 +1,75 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Enter the National Insurance number of the person you want to add
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+       
+
+       
+                <form class="form" action="topup4" method="post"> 
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                              Enter the National Insurance number of the person you want to add
+                            </h1>
+                          </legend>
+
+                          <div class="govuk-form-group">
+                            <label class="govuk-label" for="fullname">
+                              National Insurance number
+                            </label>
+                            <input class="govuk-input" id="fullname" name="fullname" type="text">
+                          </div>
+                          
+
+                        </fieldset>
+                      </div>
+
+                   
+                   
+
+             
+
+    
+
+        <div>
+          <a href = '#'><input type='submit' value='Add this person' class='govuk-button'></a>
+        </div>
+
+
+</form>
+
+ 
+    
+    </div>
+  </div>
+
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

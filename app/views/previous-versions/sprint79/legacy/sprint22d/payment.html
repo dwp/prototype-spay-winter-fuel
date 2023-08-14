@@ -1,0 +1,245 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-full">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+
+                {% if data['imprisoned-day'] or data['dead-day'] %}
+                {% set status = data['stopped-reason'] %}
+                {% else %}
+                {% set status = 'Payment returned'%}
+                {% endif %}
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+
+                        <div>
+                          <h1 class="govuk-heading-xl">
+                            Alex Smith<br>
+                                            <span class="govuk-caption-xl">{{data.nino}}</span>
+                            <span class="app-c-tag">Receiving Winter Fuel Payment</span>
+                        </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {% include './_tab-payment.html' %}
+
+          </div>
+        </div>
+      </main>
+
+      <br>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <h2 class="govuk-heading-m">Bank or building society account details</h2>
+        <div class="app-check-your-answers__contents">
+          <dd class="app-check-your-answers__answer">
+
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="bankdetails">
+              <span class="govuk-visually-hidden">Change address</span>
+              <span class="govuk-visually-hidden">Change payment details</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__answer">
+            Bank or building society
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            HSBC
+          </dd>
+          <dd class="app-check-your-answers__change">
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__answer">
+            Account holder
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% if data.accountholder %}
+            {{data.accountholder}}
+            {% else %}
+            Mr A Smith
+            {% endif %}
+          </dd>
+          <dd class="app-check-your-answers__change">
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__answer">
+            Account number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% if data.accountnumber %}
+            {{data.accountnumber}}
+            {% else %}
+            ****5678
+            {% endif %}
+          </dd>
+          <dd class="app-check-your-answers__change">
+          </dd>
+        </div>
+
+    </div>
+
+
+    <div class="govuk-grid-column-one-third">
+
+      <h2 class="govuk-heading-m">
+        Payment history
+      </h2>
+      <ol class="app-timeline">
+
+        <li class="app-timeline__entry">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+            Bank account changed
+          </h3>
+
+          <p class="app-timeline__info govuk-!-margin-bottom-0">
+            <span class="govuk-visually-hidden">Marriage verified</span>
+            <span class="app-timeline__date">
+              5 July 2018
+            </span>
+          </p>
+        </li>
+
+
+
+        <li class="app-timeline__entry">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+            Bank account changed
+          </h3>
+
+          <p class="app-timeline__info govuk-!-margin-bottom-0">
+            <span class="govuk-visually-hidden">Marriage verified</span>
+            <span class="app-timeline__date">
+              5 January 2018
+            </span>
+          </p>
+        </li>
+
+      </ol>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <dl class="app-check-your-answers app-check-your-answers--short">
+
+    </div>
+
+
+
+    <div class="govuk-grid-column-full">
+              <h2 class="govuk-heading-m">Previous payments</h2>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Wednesday 30 October 2018</td>
+          <td class="govuk-table__cell">HSBC ****5678</td>
+          <td class="govuk-table__cell">£100</td>
+          <td class="govuk-table__cell">
+            <span class="verified-badge verified">
+            <b>Paid</b>
+          </span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Wednesday 30 October 2017</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">£100</td>
+          <td class="govuk-table__cell">
+            <span class="verified-badge verified">
+            <b>Paid</b>
+          </span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Wednesday 30 October 2016</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">£100</td>
+          <td class="govuk-table__cell">
+            <span class="verified-badge verified">
+            <b>Paid</b>
+          </span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Wednesday 30 October 2015</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">£100</td>
+          <td class="govuk-table__cell">
+            <span class="verified-badge verified">
+            <b>Paid</b>
+          </span></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Wednesday 30 October 2014</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">£100</td>
+          <td class="govuk-table__cell">
+            <span class="verified-badge verified">
+            <b>Paid</b>
+          </span></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+</div>
+
+
+</div>
+
+</main>
+</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

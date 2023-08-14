@@ -1,0 +1,247 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+
+              <div>
+                <h1 class="govuk-heading-xl">
+                  Mica Bennett
+                  <br>
+                  <span class="govuk-body-l">
+                    {% if data['nino'] %}
+                    {{data['nino']}}
+                    {% else %}
+                    XX 12 34 56
+                    {% endif %}
+                  </span>
+                </h1>
+              </div>
+
+            </div>
+          </div>
+
+          {% include './_tab-payment-2.html' %}
+
+          <br>
+          <br>
+          <h2 class="govuk-heading-m">Bank or building society account details </h2>
+
+          <table class="govuk-table">
+            <a href="bankdetails" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 90%">Change</span>
+            </a>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Bank or building society</th>
+                <td class="govuk-table__cell">TSB</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">
+                  {% if data['accountholder'] %}
+                  {{data['accountholder']}}
+                  {% else %}
+                M Bennett
+                  {% endif %}
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">
+                  {% if data['sortcode'] %}
+                  {{data['sortcode']}}
+                  {% else %}
+                  00 11 22
+                  {% endif %}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">
+                  {% if data['accountnumber'] %}
+                  {{data['accountnumber']}}
+                  {% else %}
+                  ****5678
+                  {% endif %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+
+          <h2 class="govuk-heading-m">Payments</h2>
+
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment date</th>
+                <th scope="col" class="govuk-table__header">Amount</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Friday, 13 November 2019</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">Paid</td>
+                <td class="govuk-table__cell"><a href="previous-payment" class="govuk-link">Details</a></td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Monday, 4 November 2020</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">
+                  {% if data.reissued %}
+                  Reissued
+                  {% elseif data.returnedreason %}
+                  Returned
+                  {% else %}
+                  Paid
+                  {% endif %}</td>
+
+
+                <td class="govuk-table__cell"><a href="previous-payment-pending" class="govuk-link">
+                    Details</a></td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Wednesday, 20 November 2019</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">Paid</td>
+                <td class="govuk-table__cell"><a href="previous-payment" class="govuk-link">Details</a></td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Monday, 12 December 2018</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">Paid</td>
+                <td class="govuk-table__cell"><a href="previous-payment" class="govuk-link">Details</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">
+          Action history
+        </h2>
+        <ol class="app-timeline">
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Top up payment paid
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Top up payment paid</span>
+              <span class="app-timeline__date">
+                13 November 2020
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Move date changed
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Move date changed</span>
+              <span class="app-timeline__date">
+                10 November 2020
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Occupancy changed
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Occupancy changed</span>
+              <span class="app-timeline__date">
+                10 November 2020
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Bank account details changed
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Mobile phone changed</span>
+              <span class="app-timeline__date">
+                9 June 2018
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Opted in
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Bank account changed</span>
+              <span class="app-timeline__date">
+                20 March 2018
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Opted out
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Opted out</span>
+              <span class="app-timeline__date">
+                5 January 2016
+              </span>
+            </p>
+          </li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

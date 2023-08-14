@@ -1,0 +1,61 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint17/NIresults" class="govuk-back-link">Back</a>
+
+
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+                    <form method="post"> 
+                    <span class="govuk-caption-xl govuk-!-font-size-36">Contact information</span>
+                    <h1 class="govuk-heading-xl">What telephone number should we use to contact you?</h1>
+                    <span id="passport-issued-hint" class="govuk-hint">
+                        For international numbers include country code
+                        </span>
+                    <div class="govuk-form-group">
+                    
+                    
+                    <input class="govuk-input govuk-input--width-10" id="telephonenumberbox2" name="telephonenumberbox2" type="tel" aria-describedby="telephone-number-hint" autocomplete="tel">
+                    </div>
+                    <a href="/legacy/sprint17/NIresults" class="govuk-button govuk-!-margin-top-3"> Save and continue </a>
+
+                    </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}
+
+
+

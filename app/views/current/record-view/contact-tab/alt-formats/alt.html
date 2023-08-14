@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      {% include 'current/includes/_bar.html' %}
+
+      <form method="post">
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which alternative format do you need?
+      </h1>
+    </legend><br>
+    <div class="govuk-radios govuk-radios--small">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="tape" name="alternative-format" type="radio" value="Audio - cassette tape">
+        <label class="govuk-label govuk-radios__label" for="alternative-format">
+          Audio - cassette tape
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="alternative-format" type="radio" value="Audio - CD">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-2">
+          Audio - CD
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="alternative-format" type="radio" value="Audio - DVD">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-8">
+          Audio - DVD
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="alternative-format" type="radio" value="Audio - MP3">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-9">
+          Audio - MP3
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="braille" name="alternative-format" type="radio" value="Braille Type 1">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-3">
+          Braille Type 1
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="braille" name="alternative-format" type="radio" value="Braille Type 2">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-10">
+          Braille Type 2
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="BSL (British Sign Language) - DVD">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-4">
+          BSL (British Sign Language) - DVD
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="BSL (British Sign Language) - MPEG">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-11">
+          BSL (British Sign Language) - MPEG
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="Coloured paper">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-12">
+          Coloured paper
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bsl" name="alternative-format" type="radio" value="Easy Read">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-12">
+          Easy Read
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="large" name="alternative-format" type="radio" value="Large print (default - size 16)">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-13">
+          Large print (default - size 16)
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="large" name="alternative-format" type="radio" value="Large print (custom size)">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-5">
+          Large print (custom size)
+        </label>
+      </div>
+     <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="large" name="alternative-format" type="radio" value="Web accessible PDF">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-14">
+          Web accessible PDF
+        </label>
+      </div>
+      
+
+{% if data['alt-format-changed'] == 'true' %}
+
+          <div class="govuk-radios__divider">or</div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="none" name="next-page" type="radio" value="../contact-details">
+        <label class="govuk-label govuk-radios__label" for="alternative-format-7">
+          Remove all alternative formats from citizen record
+        </label>
+      </div>
+
+        {% endif %}
+      
+    </div>
+
+  </fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Save
+</button>
+<input type="hidden" name="alt-format-changed" value="true">
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% if data ['newclaim']=='yes'%}
+    {% set nextPage = '/current/new-claims/uk/bank-details' %}
+  {% else %}
+    {% set nextPage = '/current/record-view/contact-tab/contact-details' %}
+  {% endif %}
+
+<script>
+    nextPageRoutes = {
+        'Audio - cassette tape': '{{nextPage}}',
+        'Audio - CD': '{{nextPage}}',
+        'Audio - DVD': '{{nextPage}}',
+        'Audio - MP3': '{{nextPage}}',
+        'Braille Type 1': '{{nextPage}}',
+        'Braille Type 2': '{{nextPage}}',
+        'BSL (British Sign Language) - DVD': '{{nextPage}}',
+        'BSL (British Sign Language) - MPEG': '{{nextPage}}',
+        'Coloured paper': 'paper',
+        'Easy Read': '{{nextPage}}',
+        'Large print (default - size 16)': 'bold',
+        'Large print (custom size)': 'large-print',
+        'Web accessible PDF': 'email2',
+    }
+  </script>
+
+{% endblock %}

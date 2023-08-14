@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/legacy/sprint21/benefits" method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <h1 class="govuk-heading-l">You do not qualify for a Winter Fuel Payment</h1>
+
+
+          <p>For winter 2019, we worked out payments during the week
+             of 16 to 22 September 2020. This is called the 'qualifying week'.</p>
+
+          <p>You do not qualify because you were getting Pension Credit and
+            living in a care or nursing home for 13 weeks or more, including qualifying week.</p>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

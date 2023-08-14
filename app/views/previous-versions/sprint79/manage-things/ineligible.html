@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/current/caseload-statuses/check-cases">Caseload statuses</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Ineligible cases</li>
+  </ol>
+</div>
+
+<br>
+<br>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Ineligible cases</h1>
+       
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="sp-panel-deck">
+
+          <p class="sp-panel-deck__panel sp-panel-deck__panel--black-bg govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text">
+          165,245
+          <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">Ineligible cases</span>
+          <span class="govuk-visually-hidden">for this year</span>
+          </p>
+
+          
+          <a href="carehome-benefit-results" class="sp-panel-deck__panel sp-panel-deck__link-panel sp-panel-deck__last-panel govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text"
+          style="color: #ffffff">
+            38,448
+            <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">Care home and benefits</span><br>
+            <span class="govuk-visually-hidden">for this year</span>
+          </a>
+
+          <a href="invalid-address-results" class="sp-panel-deck__panel sp-panel-deck__link-panel sp-panel-deck__last-panel govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text"
+          style="color: #ffffff">
+            37,283
+            <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">Invalid addresses</span>
+            <span class="govuk-visually-hidden">for this year</span>
+          </a>
+
+          <a href="hospital-results" class="sp-panel-deck__panel sp-panel-deck__link-panel sp-panel-deck__last-panel govuk-heading-l sp-panel-deck__panel_content sp-panel--white-text"
+          style="color: #ffffff">
+            30,680
+            <span class="govuk-caption-l sp-panel--white-text" aria-hidden="true">In hospital</span>
+            <span class="govuk-visually-hidden">for this year</span>
+          </a>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+
+</div>
+
+<br>
+<br>
+
+<hr class="govuk-section-break govuk-section-break--visible">
+
+<br>
+<br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <h6 class="govuk-heading-l govuk-!-margin-bottom-0">9,922</h6>
+    <span class="govuk-caption-l"><a href="correspondence-address-results"><strong>no correspondence address</strong></a></span>
+
+    <br>
+
+    <h7 class="govuk-heading-l govuk-!-margin-bottom-0">789</h7>
+    <span class="govuk-caption-l"><a href=""><strong>partner claimant</strong></a></span>
+
+    <br>
+
+    <h8 class="govuk-heading-l govuk-!-margin-bottom-0">310</h8>
+    <span class="govuk-caption-l"><a href=""><strong>in prison</strong></a></span>
+
+    <br>
+
+    <h14 class="govuk-heading-l govuk-!-margin-bottom-0">186</h14>
+    <span class="govuk-caption-l"><a href=""><strong>opted out</strong></a></span>
+
+    <br>
+
+    <h4 class="govuk-heading-l govuk-!-margin-bottom-0">68</h4>
+    <span class="govuk-caption-l"><a href=""><strong>ineligible EEA</strong></a></span>
+
+    <br>
+
+    <h11 class="govuk-heading-l govuk-!-margin-bottom-0">56</h11>
+    <span class="govuk-caption-l"><a href=""><strong>PO box not approved</strong></a></span>
+
+
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+
+    <h12 class="govuk-heading-l govuk-!-margin-bottom-0">1897</h12>
+    <span class="govuk-caption-l"><a href=""><strong>outside of EEA</strong></a></span>
+
+    <br>
+
+    <h3 class="govuk-heading-l govuk-!-margin-bottom-0">669</h3>
+    <span class="govuk-caption-l"><a href=""><strong>under State Pension age</strong></a></span>
+
+    <br>
+
+    <h10 class="govuk-heading-l govuk-!-margin-bottom-0">198</h10>
+    <span class="govuk-caption-l"><a href=""><strong>GSL disallowed</strong></a></span>
+
+    <br>
+
+    <h13 class="govuk-heading-l govuk-!-margin-bottom-0">167</h13>
+    <span class="govuk-caption-l"><a href=""><strong>paused</strong></a></span>
+
+    <br>
+
+    <h5 class="govuk-heading-l govuk-!-margin-bottom-0">59</h5>
+    <span class="govuk-caption-l"><a href=""><strong>commercial address</strong></a></span>
+
+    <br>
+
+    <h9 class="govuk-heading-l govuk-!-margin-bottom-0">6</h9>
+    <span class="govuk-caption-l"><a href=""><strong>unknown residency</strong></a></span>
+
+  </div>
+
+
+  {% endblock %}

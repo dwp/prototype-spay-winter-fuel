@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="manage">Manage things...</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="letters">Letters</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="payments">Payments</a>
+              </li>
+
+          </nav>
+
+        
+
+        </div>
+      </div>
+
+
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

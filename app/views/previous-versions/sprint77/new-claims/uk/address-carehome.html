@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_blue_bar.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <form method="post">
+
+            <h2 class="govuk-heading-xl">Can you confirm your full address?</h2>
+
+            <p><b>2</b> address found for <b>"{% if data['house-number'] %}
+                {{data['house-number']}}
+                {% else %}
+                Dolphin View
+                {% endif %}"
+              </b> and <b>"{% if data['postcode'] %}
+                {{data['postcode']}}
+                {% else %}
+                NE65 OAP
+                {% endif %}"</b></p>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="Dolphin View, Harbour Road, Amble, NE65 0AP">
+                    <label class="govuk-label govuk-radios__label" for="address">
+                      Dolphin View, Harbour Road, Amble, NE65 0AP<br>
+                      <strong class="govuk-tag govuk-tag--pink">
+                        Care home
+                      </strong>
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="Harbour Office, Harbour Road, Amble, NE65 0AP">
+                    <label class="govuk-label govuk-radios__label" for="address">
+                      Harbour Office, Harbour Road, Amble, NE65 0AP<br>
+                      <strong class="govuk-tag govuk-tag--turquoise">
+                      Commercial
+                      </strong>
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-2" name="address-change" type="radio" value="2 Kent Street, Amble, NE65 0LZ">
+                    <label class="govuk-label govuk-radios__label" for="address-2">
+                      Address not found
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

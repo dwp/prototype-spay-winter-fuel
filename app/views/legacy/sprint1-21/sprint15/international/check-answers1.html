@@ -1,0 +1,285 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Winter fuel international claim",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+    </section>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15/international/relationship-status" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-xl">Check your answers to part 1</h1>
+
+        
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Country
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>{{data.country}} </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p> {{data.dobday}} {{data.dobmonth}} {{data.dobyear}}</p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data.fullname}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact information</span>
+              </a>
+            </dd>
+          </div>
+
+        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"> {{data.address1line1}}
+                                      <br> {{data.address1line2}}
+                                      <br> {{data.address1line3}}
+                                      <br> {{data.address1line4}}
+                                      <br>{{data.address1line8}}
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+ <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Start date at home address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"> {{data.datelivingday}} {{data.datelivingmonth}} {{data.datelivingyear}}
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address during qualifying week
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"> Ballough House 
+                                  <br>Lusk 
+                                  <br>County Dublin
+                                  <br>Ireland
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+ <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Contact address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"> {{data.address3line1}}
+                                      <br> {{data.address3line2}}
+                                      <br> {{data.address3line3}}
+                                      <br> {{data.address3line4}}
+                                      <br> {{data.address3line8}}
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Lived in any other countries?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">Spain
+                                    <br> Germany
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Telephone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"> {{data.telephonenumberbox1}} {{data.telephonenumberbox2}}
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+
+        
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Email address
+            
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{data.email}}m
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+<div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Contact preference
+            
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{data.contact}}
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Relationship status
+            
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body"> Married or civil partner
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Is partner a European national?
+            
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">{{data.europeannational}}
+                                    </p>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change
+                <span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+
+
+
+        
+        </dl>
+
+<a href="/legacy/sprint15/international/anyone-else-sp.html" class="govuk-button"> Continue </a>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

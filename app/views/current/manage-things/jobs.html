@@ -1,0 +1,292 @@
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+    }) }}
+
+    <h1 class="govuk-heading-xl">Jobs run</h1>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-one-third">
+        <label class="govuk-label--m" for="wfstart">
+          <!-- just an example, we should have proper content below to read correctly -->
+          <span class="govuk-visually-hidden"> Jobs </span> From <span class="govuk-visually-hidden"> date</span>
+          <div class="govuk-hint"> For example, 12-06-2007</div>
+          <duet-date-picker
+              name="start"
+              class="wfstart"
+              id="wfstart"
+              label="From">
+          </duet-date-picker>
+        </label>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-one-third">
+        <label class="govuk-label--m" for="wfend">
+          <!-- just an example, we should have proper content below to read correctly -->
+          <span class="govuk-visually-hidden"> Jobs </span> To <span class="govuk-visually-hidden"> date</span>
+          <div class="govuk-hint"> For example, 12-06-2007</div>
+        </label>
+        <duet-date-picker
+            name="start"
+            class="wfend"
+            id="wfend"
+            label="To">
+        </duet-date-picker>
+      </div>
+    </div>
+
+    <style>
+
+.duet-date__input {
+  border: 2px solid #0b0c0c;
+}
+
+    .duet-date__toggle {
+      display: none;
+    }
+    </style>
+
+    <script>
+      window.onload = function() {
+              setTimeout(function() {
+                      var pad0IfNeeded = function(datePart) {
+                              const d = (datePart && datePart.toString()) || "";
+                              if (datePart.toString().length === 1) {
+                                      return "0" + datePart;
+                                    }
+                              return datePart;
+                            };
+                      var dateAdapter = {
+                              parse: function(value) {
+                                      return new Date();
+                                    },
+                              format: function(date) {
+                                      return [
+                                              pad0IfNeeded(date.getDate()),
+                                              pad0IfNeeded(date.getMonth() + 1),
+                                              date.getFullYear()
+                                            ].join("-");
+                                    }
+                            };
+                      // Select the above date picker components
+                      console.log('loaded');
+                      var startDate, endDate;
+                      var startPicker = document.querySelector(".wfstart");
+                      var endPicker = document.querySelector(".wfend");
+                      var localization = {
+                              buttonLabel: "",
+                              selectedDateMessage: "Selected date is",
+                              prevMonthLabel: "Previous month",
+                              nextMonthLabel: "Next month",
+                              monthSelectLabel: "Month",
+                              yearSelectLabel: "Year",
+                              closeLabel: "Close window",
+                              keyboardInstruction: "You can use arrow keys to navigate dates",
+                              calendarHeading: "Choose a date",
+                              dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                              monthNames: [
+                                      "January",
+                                      "February",
+                                      "March",
+                                      "April",
+                                      "May",
+                                      "June",
+                                      "July",
+                                      "August",
+                                      "September",
+                                      "October",
+                                      "November",
+                                      "December",
+                                    ],
+                              monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                              locale: "en-GB",
+                            };
+                      startPicker.localization = localization ;
+                      startPicker.dateAdapter = dateAdapter;
+
+                      endPicker.localization = localization ;
+                      endPicker.dateAdapter = dateAdapter;
+
+                      startDate = startPicker.querySelector('.duet-date__input');
+                      startDate.classList.add('govuk-input');
+                      startDate.addEventListener('click', function(ev) {
+                              console.log(ev);
+                              startPicker.show();
+                            });
+
+                      endDate = endPicker.querySelector('.duet-date__input');
+                      endDate.classList.add('govuk-input');
+                      endDate.addEventListener('click', function(ev) {
+                              console.log(ev);
+                              endPicker.show();
+                            });
+
+                    }, 200);
+            };
+    </script>
+
+    <div id="date-picker" class="datepicker"></div>
+    <dl id="dates-cant-attend-list" class="add-another-list">
+
+
+                        <h2 class="app-task-list__section">
+                        Job type
+                        <br>
+                        <div id="event-name-hint" class="govuk-hint">
+                        Select the jobs you want to see
+                        </div>
+                        
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-3" name="jobs-3" type="checkbox" value="jobs-3" data-aria-controls="jobs-3">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-3">
+                            All
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs" name="jobs" type="checkbox" value="jobs" data-aria-controls="jobs">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs">
+                            Data and analytics weekly refresh file
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-4" name="jobs-4" type="checkbox" value="jobs-4" data-aria-controls="jobs-4">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-4">
+                            Winter fuel payment system file
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-2" name="jobs-2" type="checkbox" value="jobs-2" data-aria-controls="jobs-2">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-2">
+                            War pension file
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-5" name="jobs-5" type="checkbox" value="jobs-5" data-aria-controls="jobs-5">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-5">
+                            Get your state pension file
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-6" name="jobs-6" type="checkbox" value="jobs-6" data-aria-controls="jobs-6">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-6">
+                            Data and analytics file
+                          </label>
+                        </div>
+                  
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-7" name="jobs-7" type="checkbox" value="jobs-7" data-aria-controls="jobs-7">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-7">
+                            Calculate entitlement
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-8" name="jobs-8" type="checkbox" value="jobs-8" data-aria-controls="jobs-8">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-8">
+                            Clean up
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-9" name="jobs-9" type="checkbox" value="jobs-9" data-aria-controls="jobs-9">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-9">
+                            Clean up with revert status
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-10" name="jobs-10" type="checkbox" value="jobs-10" data-aria-controls="jobs-10">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-10">
+                            Schedule letters and payments
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-10" name="jobs-11" type="checkbox" value="jobs-11" data-aria-controls="jobs-11">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-11">
+                            sendNotifyLetterJob
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-13" name="jobs-13" type="checkbox" value="jobs-13" data-aria-controls="jobs-13">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-13">
+                            sendLetterJob
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="jobs-10" name="jobs-12" type="checkbox" value="jobs-12" data-aria-controls="jobs-12">
+                          <label class="govuk-label govuk-checkboxes__label" for="jobs-12">
+                            paymentJob
+                          </label>
+                        </div>
+
+                        <br>
+                        <br>
+
+      <button class="govuk-button" data-module="govuk-button">
+      Continue
+      </button>
+      <input type="hidden" name="jobs-run" value="true">
+     
+
+      <form method="post">
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Job</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Start</th>
+              <th scope="col" class="govuk-table__header">End</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="war-pensions" class="govuk-link">War pension file</td></a>
+                <td class="govuk-table__cell">In progress</td>
+                <td class="govuk-table__cell">1 April 2021 6:07pm</td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="da-file" class="govuk-link">Data and analytics file</td></a>
+                <td class="govuk-table__cell">Completed</td>
+                <td class="govuk-table__cell">1 April 2021 5:21pm</td>
+                <td class="govuk-table__cell">1 April 2021 6:06pm</td>
+                <td class="govuk-table__cell"><span class="verified-badge verified">
+                  </span></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}

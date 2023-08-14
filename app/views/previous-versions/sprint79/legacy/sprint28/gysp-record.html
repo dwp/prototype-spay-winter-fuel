@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        <br>
+        <br>
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            AA 12 34 56 X<br>
+            <span class="app-c-tag">Eligible</span>
+        </div>
+
+        <br>
+
+        <h2 class="govuk-heading-m">Payment details</h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Amount</th>
+              <td class="govuk-table__cell">£100</td>
+              <td class="govuk-table__cell"><span class="verified-badge verified">
+                  <b>Paid</b>
+                </span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Reference</th>
+              <td class="govuk-table__cell">13245768</td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date</th>
+              <td class="govuk-table__cell">12 November 2019</td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+
+        <h2 class="govuk-heading-m">Contact details</h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Address</th>
+              <td class="govuk-table__cell"> 78 Graham Road<br>
+                Chelsham<br>
+                CR6 9ND</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Home phone number</th>
+              <td class="govuk-table__cell"> 01665 000000D</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Mobile phone number</th>
+              <td class="govuk-table__cell">00777777778</td>
+            </tr>
+          </tbody>
+        </table>
+
+<br>
+
+        <h2 class="govuk-heading-m">Bank details</h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Account holder</th>
+              <td class="govuk-table__cell"> George Grange</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Account number</th>
+              <td class="govuk-table__cell">12345678</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Sort code</th>
+              <td class="govuk-table__cell">12 34 56</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form action="/form-handler" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

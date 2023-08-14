@@ -1,0 +1,147 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Check these details before you continue
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Check these details before you continue</h1>
+
+
+            <dl class="app-check-your-answers app-check-your-answers--long">
+              
+              
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  1 East Allerdean<br>
+                  Little Hayfield<br>
+                  Glossop<br>
+                  TD15 2TB<br>
+                  
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href='#'onclick="goBack()">
+                    Change<span class="govuk-visually-hidden">address</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Matches at same address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                 
+                  Sam Jones
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href='#'onclick="goBack()">
+                    Change<span class="govuk-visually-hidden">matches at same address</span>
+                  </a>
+                </dd>
+              </div>
+
+               <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Date match moved to address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href='#'>
+                    Change<span class="govuk-visually-hidden">date match moved to address</span>
+                  </a>
+                </dd>
+              </div>
+
+               <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Government departments already know another person has moved in
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                No
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href='#'>
+                    Change<span class="govuk-visually-hidden">government departments already know another person has moved in</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Why the claimant didn't say another person had moved in
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                {{ data['reason'] }}
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href='#'>
+                    Change<span class="govuk-visually-hidden">why the claimant didn't say another person had moved in</span>
+                  </a>
+                </dd>
+              </div>
+
+
+            </dl>
+            
+            </dl>
+            <br>
+
+
+             <h2 class="govuk-heading-m">Claimant declaration</h2>
+
+               <p class="govuk-body">
+                By submitting this claim you agree that the information you've given is complete and correct. While you're receiving the Winter Fuel Payment, you'll report changes to your circumstances straight away by calling 0345 000 000.  If you give wrong or incomplete information, or you don’t report changes, you may:
+              </p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>be prosecuted</li>
+                <li>need to pay a financial penalty</li>
+                <li>have your Winter Fuel Payment reduced or stopped</li>
+                <li>be paid too much Winter Fuel Payment and have to pay the money back</li>
+              </ul>
+
+          <form action="confirmation_overpayment2" method="post" class="form"> 
+
+            <input class="govuk-input" type="hidden" name="overpayment" value="The claimant left it too late to tell us their circumstances had changed. We may want them to pay the money back." type="text">
+            
+            <input type="submit" method="post" value="Accept and continue" class="govuk-button">
+          </form>
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+        {{ govukRadios({
+          idPrefix: "settings",
+          name: "scenario",
+          fieldset: {
+            legend: {
+              text: "Settings",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "1",
+              text: "Under State Pension age"
+            },
+            {
+              value: "2",
+              text: "Over State Pension age and under 80"
+            },
+            {
+              value: "3",
+              text: "Over State Pension age and over 80"
+            }
+
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15/international/letteroremail-decision" class="govuk-back-link">Back</a>
+ 
+ <div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Application complete
+          </h1>
+          <div class="govuk-panel__body">
+           your reference number is your National Insurance number <br>
+          </div>
+        </div>
+
+<h2 class="govuk-heading-m">What happens next</h2>
+
+        <p class="govuk-body">
+          A decision maker will now review your case. If you are successful you will receive a phone call, if you are unsuccessful you will receive a letter.
+        </p>
+        
+          <a href="/legacy/sprint15/international/index" class="govuk-button">Back to new claim homescreen</a> 
+        
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+  {% endblock %}

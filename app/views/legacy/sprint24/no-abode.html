@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-panel govuk-panel--confirmation">
+                    <div class="govuk-panel__body">
+                    <strong>You qualify for a Winter Fuel Payment of £200</strong>
+                    </div>
+                  </div>
+
+<br>
+        <p>For winter 2019, we worked out your payment during the week of
+    16 to 22 September 2020. This is called the 'qualifying week'.</p>
+
+        <p>You qualify for £200 because you were under 80 years old and of no fixed
+           abode during the qualifying week.</p>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Payment complete
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h2 class="govuk-panel__title">Sam Bulmer is due a payment of £200</h2>
+            <div class="govuk-panel__body">
+              <strong></strong>
+            </div>
+          </div>
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p>You need to add their bank account details so that the payment can be made.</p>
+       
+
+
+             <form action="payment_type" method="post" class="form"> 
+                <input type="submit" method="post" value="Add bank account details" class="govuk-button">
+              </form>
+            
+              <p><a  href="#">View record</a></p>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

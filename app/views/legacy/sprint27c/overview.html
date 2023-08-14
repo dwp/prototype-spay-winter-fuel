@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+{% include './_bar.html' %}
+
+            {% include './_tab-overview.html' %}
+
+            <br>
+            <br>
+
+            <table class="govuk-table">
+            <h2 class="govuk-heading-m">2019 payment</h2>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Monday 4 November 2019</th>
+                  <td class="govuk-table__cell">£100</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+              <table class="govuk-table">
+              <h2 class="govuk-heading-m">Qualifying details</h2>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Age</th>
+                    <td class="govuk-table__cell">70</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date of birth</th>
+                    <td class="govuk-table__cell">29 June 1949</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Occupancy details</th>
+                    <td class="govuk-table__cell">Living with someone born before 6 November 1953</td>
+                  </tr>
+                </tbody>
+              </table>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <h2 class="govuk-heading-m">
+          Contact history
+        </h2>
+        <ol class="app-timeline">
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+          <a href="top-up-request" class="govuk-link">Top up payment request <br>sent to DWP</a>
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="app-timeline__date">
+              8 November 2018
+              </span>
+            </p>
+          </li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

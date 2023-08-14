@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          <form method="post">
+
+
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Amount already paid</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">
+                    £800</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Reason for possible overpayment</th>
+                  <td class="govuk-table__cell">Lives with someone else who gets Winter Fuel Payment</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">More details</th>
+                  <td class="govuk-table__cell">{{data['more-detail']}}</td>
+                </tr>
+              </tbody>
+            </table><br><br>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Are any of these overpayments?
+                  </h1>
+                </legend>
+                <div id="waste-hint" class="govuk-hint">
+                  Select all that apply.
+                </div>
+                <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-1" name="recoverable-year-2018" type="checkbox" value="2018">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      £200 for winter 2019 to 2020
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-2" name="recoverable-year-2019" type="checkbox" value="2019">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                      £200 for winter 2020 to 2021
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="recoverable-year-2020" type="checkbox" value="2020">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      £200 for winter 2021 to 2022
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="recoverable-year-2021" type="checkbox" value="2020">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      £200 for winter 2022 to 2023
+                    </label>
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+        
+               
+            
+            
+           
+
+            <br>
+
+           
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

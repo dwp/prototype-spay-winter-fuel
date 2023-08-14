@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+         
+
+          <br>
+          <br>
+
+          <div class="govuk-panel govuk-panel--confirmation">
+                    <div class="govuk-panel__body">
+                    <strong>You qualify for a Winter Fuel Payment of £200</strong>
+                    </div>
+                  </div>
+                  <p class="govuk-body">For winter 2021, we worked out your payment during the week of 20 to 26 September 2021. This is called the 'qualifying week'.</p>
+
+                  <p class="govuk-body">You qualify for £200 because before you moved into the home you lived alone.</p>
+             
+        
+           
+        
+             
+
+      
+      <br><br>
+      <button class="govuk-button" data-module="govuk-button">
+        Start again
+      </button>
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}

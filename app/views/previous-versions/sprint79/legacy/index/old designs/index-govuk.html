@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl" style="margin-bottom: 3%;">Winter Fuel Payments prototype</h1>
+<br>
+
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link"href="index" style="color: #1D70B8; text-decoration: underline;" >Agent</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-admin" style="color: #1D70B8; text-decoration: underline;" >Admin</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link" aria-current="index-govuk" href="index" style="color: black">GOV.UK</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-previous-versions" style="color: #1D70B8; text-decoration: underline;" >Previous versions</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="https://dwpdigital.atlassian.net/wiki/spaces/SPAY/pages/116438451121/User+Research" style="color: #1D70B8; text-decoration: underline;" >User research</a>
+    </li>
+  </ul>
+
+</nav>
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" href="https://winterfuel.herokuapp.com/current/eligibility-checker/check-eligibility">
+                Caseload statuses<span class="govuk-visually-hidden">Caseload statuses</span>
+            </a>
+
+        <br><br>
+
+            <a href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367836702734&cot=14"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Start journey map
+            </button></a>
+  
+        </div>
+
+               
+      </div>
+
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+ 
+  
+  
+
+<!--   -->
+
+      {% endblock %}
+
+

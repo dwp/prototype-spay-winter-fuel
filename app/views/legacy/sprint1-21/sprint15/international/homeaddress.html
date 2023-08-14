@@ -1,0 +1,66 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+PAB details 
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15/international/fullname" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            <form method="post"> 
+                <h1 class="govuk-heading-xl">What is your home address?</h1>
+
+                
+                
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line1" name="address1line1" type="text" autocomplete="name" spellcheck="false">
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line2" name="address1line2" type="text" autocomplete="name" spellcheck="false">
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line3" name="address1line3" type="text" autocomplete="name" spellcheck="false">
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line4" name="address1line4" type="text" autocomplete="name" spellcheck="false">
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line5" name="address1line5" type="text" autocomplete="name" spellcheck="false">
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line6" name="address1line6" type="text" autocomplete="name" spellcheck="false">
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line7" name="address1line7" type="text" autocomplete="name" spellcheck="false">
+                
+                <label class="govuk-label" for="full-name">
+                    Country
+                </label>
+                <input class="govuk-input govuk-!-margin-bottom-2 govuk-input--width-30" id="address1line8" name="address1line8" type="text" autocomplete="name" spellcheck="false">
+                
+
+            
+            <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue  </button>
+
+            </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

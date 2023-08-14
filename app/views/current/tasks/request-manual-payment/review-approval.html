@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+ 
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="">
+    
+          {% include 'current/includes/_bar_2.html' %}
+
+         
+          <h1 class="govuk-heading-l">
+            Are you sure you want to approve  this request?
+          </h1>
+          
+            
+         
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              Once this request is approved you cannot change it. 
+            </strong>
+          </div>
+
+          
+
+           
+<br>
+  
+             
+
+              <div class="govuk-button-group">
+                <a class="govuk-button govuk-!-margin-right-2" value="yes" data-module="govuk-button" href="get-next-task-manual-payment" >
+                  Approve request</a>
+               <button class="govuk-button govuk-button--secondary" value="no" data-module="govuk-button" href="request-manual-payment-v2">
+                No, go back
+               </button>
+              </div>
+
+
+           <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
+              <br>
+
+
+          </form>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+
+
+    <script>
+        nextPageRoutes = {
+            'yes': 'get-next-task-manual-payment',
+            'no': 'request-manual-payment-v2',
+           
+        }
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Check bank details before you make the payment
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Check these details before you make the payment</h1>
+
+            <dl class="app-check-your-answers app-check-your-answers--long">
+              
+               <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  UK or international account
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['banktype'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="payment_type">
+                    Change<span class="govuk-visually-hidden">UK or international account</span>
+                  </a>
+                </dd>
+              </div>
+
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Account holder
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['name'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">account holder's name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  {{ data['type'] }}
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['sort1'] }} {{ data['sort2'] }} {{ data['sort3'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">{{ data['type'] }}</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  {{ data['type2'] }}
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['account'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">{{ data['type2'] }}</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+            <br>
+
+            
+            
+             <h2 class="govuk-heading-m">Claimant declaration</h2>
+
+           
+
+             <p class="govuk-body">
+                By submitting this claim you agree that the information you've given is complete and correct. While you're receiving the Winter Fuel Payment, you'll report changes to your circumstances straight away by calling 0345 000 000.  If you give wrong or incomplete information, or you don’t report changes, you may:
+              </p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>be prosecuted</li>
+                <li>need to pay a financial penalty</li>
+                <li>have your Winter Fuel Payment reduced or stopped</li>
+                <li>be paid too much Winter Fuel Payment and have to pay the money back</li>
+              </ul>
+
+
+          <form action="confirmation" method="post" class="form"> 
+            <input type="submit" method="post" value="Make the payment" class="govuk-button">
+          </form>
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar-normal.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <h2 class="govuk-heading-l">Payment details</h2>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Payment amount</th>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Payment reference</th>
+                <td class="govuk-table__cell">13243546</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Payment date</th>
+                <td class="govuk-table__cell">Monday 11 November 2019</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="govuk-heading-m">Bank account details</h3>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account holder</th>
+                <td class="govuk-table__cell">
+                  {% if data.accountholder %}
+                  {{data.accountholder}}
+                  {% else %}
+                  Mrs H Morrison
+                  {% endif %}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">
+                  {% if data.accountnumber %}
+                  {{data.accountnumber}}
+                  {% else %}
+                  12345678
+                  {% endif %}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">
+                  {% if data.rollnumber %}
+                  {{data.rollnumber}}
+                  {% else %}
+                  00 11 22
+                  {% endif %}</td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+      <br>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">
+          Payment history
+        </h2>
+        <ol class="app-timeline">
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+          <a>Payment reissued</a>
+            </h3>
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="app-timeline__date">
+              7 November 2019
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Payment returned
+            </h3>
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="app-timeline__date">
+                 4 November 2019
+              </span>
+            </p>
+          </li>
+
+        </ol>
+
+        </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

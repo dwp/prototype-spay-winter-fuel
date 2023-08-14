@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds" >
+
+
+
+        <form method="post">
+
+         
+
+         
+              <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="background:#3f4041; border:5px solid #3f4041">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+                  <p class="govuk-notification-banner__heading" style="font-size:18px; font-weight: bold">
+                    We work out your Winter Fuel Payment based on your circumstances during the week of 19 to 25 September 2022.<br><br>
+                   Some of the following questions will ask you what you think your circumstances will be during that week. For example, where you think you'll be living and who you think you'll be living with.
+                   
+                    
+                  </p>
+                </div>
+             
+          
+            
+             
+
+
+           
+
+         
+
+      
+
+    </div></div>
+
+</div><br>
+<button type="submit" class="govuk-button">
+  Accept and continue
+</button>
+</main>
+</div>
+
+
+
+{% endblock %}

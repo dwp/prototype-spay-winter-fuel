@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include './_bar.html' %}
+
+        {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+        <br>
+        <br>
+
+        <h1 class="govuk-heading-l">Send £100 overpayment to Debt Management</h1>
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption"></caption>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Age during qualifying week</th>
+              <td class="govuk-table__cell">79</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Address</th>
+              <td class="govuk-table__cell">
+                78 Graham Road<br>
+                Chelsham<br>
+                CR6 9ND</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date they moved in</th>
+              <td class="govuk-table__cell">1 March 2002</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <div class="govuk-inset-text">
+          <h3 class="govuk-heading-m">New information</h3>
+          <table class="govuk-table">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Occupancy during qualifying week</th>
+              <td class="govuk-table__cell">Was living with someone of State Pension age</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date occupancy changed</th>
+              <td class="govuk-table__cell">17 July 2019</td>
+            </tr>
+          </table>
+        </div>
+
+
+      <form method="post">
+
+        <button class="govuk-button" data-module="govuk-button">
+          Send to Debt Management
+        </button>
+
+      </form>
+
+        <p><a href="#" class="govuk-link">Don't send to Debt Management, send somewhere else...</a></p>
+
+      </div>
+    </div>
+  </main>
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

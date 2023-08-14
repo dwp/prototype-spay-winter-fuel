@@ -1,0 +1,41 @@
+.app-c-tag {
+  background-color: govuk-colour("blue");
+  color: #fff;
+  display: inline-block;
+  font-family: 'nta', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.25;
+  padding: 5px 8px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.app-c-tag--warning {
+  background-color: govuk-colour("black");
+}
+
+.app-c-tag--danger {
+  background-color: govuk-colour("red");
+}
+
+.app-c-tag--dead {
+  background-color: govuk-colour("black");
+}
+
+.app-c-tag--orange {
+  background-color: govuk-colour("orange");
+}
+
+.app-c-tag--green {
+  background-color: govuk-colour("green");
+}
+
+.app-c-tag--purple {
+  background-color: govuk-colour("light-purple");
+}
+
+.app-c-tag--otherpurple {
+  background-color: govuk-colour("purple");
+}

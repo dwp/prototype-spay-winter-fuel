@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+
+
+          {% include 'current/includes/_bar.html' %}
+
+
+
+          <form method="post">
+
+
+            <h2 class="govuk-heading-l">Verify an address using the full OS database</h2>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+
+                <h2 class="govuk-heading-m">Unverified address</h2>
+                <p class="govuk-body govuk-!-font-size-24">
+                  Flat D<br>
+                  104 Boundary Lane<br>
+                  Hulme<br>
+                  Manchester<br>
+                  M15 6FD</p>
+
+                  <h2 class="govuk-heading-m">Contact numbers</h2>
+                  <p><strong>Home phone:</strong> 01324 800 900<br>
+                    <strong>Mobile phone:</strong> 07771 900 900<br>
+                    <strong>Work phone:</strong> 01324 400 500</p>
+
+
+              </div>
+
+
+
+
+
+
+                <div class="govuk-grid-column-two-thirds">
+
+                  <h2 class="govuk-heading-m">Select a verified address</h2>
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                          <label class="govuk-label govuk-radios__label" for="address">
+                            104D Boundary Lane<br>
+                            Manchester<br>
+                            M15 6FD<br>
+                            <strong class="govuk-tag govuk-tag--blue">
+                              Residential
+                            </strong>
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="104A Boundary Lane, Manchester, M15 6FD">
+                          <label class="govuk-label govuk-radios__label" for="address">
+                            104A Boundary Lane<br>
+                            Manchester<br>
+                            M15 6FD<br>
+                            <strong class="govuk-tag govuk-tag--blue">
+                              Residential
+                            </strong>
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-fix-3" name="address-fix-1" type="radio" value="104B Boundary Lane, Manchester, M15 6FD">
+                          <label class="govuk-label govuk-radios__label" for="address">
+                            104B Boundary Lane<br>
+                            Manchester<br>
+                            M15 6FD<br>
+                            <strong class="govuk-tag govuk-tag--blue">
+                              Residential
+                            </strong>
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-fix-4" name="address-fix-1" type="radio" value="104C Boundary Lane, Manchester, M15 6FD">
+                          <label class="govuk-label govuk-radios__label" for="address">
+                            104C Boundary Lane<br>
+                            Manchester<br>
+                            M15 6FD<br>
+                            <strong class="govuk-tag govuk-tag--blue">
+                              Residential
+                            </strong>
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="address-fix-5" name="address-fix-1" type="radio" value="Address not found">
+                          <label class="govuk-label govuk-radios__label" for="address">
+                            Search for a different address
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                  <p> <a href="cannot-verify-1" class="govuk-link">This address cannot be verified</a> </p>
+                  <br>
+
+                  <script>
+                      nextPageRoutes = {
+                          '104D Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          '104A Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          '104B Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          '104C Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+                          'Address not found': 'verify-address-manual-1.html',
+                       }
+                    </script>
+
+
+
+                  <div class="govuk-button-group">
+                    <button type="submit" button class="govuk-button" data-module="govuk-button">
+                      Continue
+                    </button>
+
+                  </div>
+
+                </div>
+
+            </div>
+
+
+
+      </div>
+
+
+
+
+
+
+      <br>
+
+
+    </div>
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        '104D Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        '104A Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        '104B Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        '104C Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        'Address not found': 'verify-address-manual-1.html',
+     }
+  </script>
+
+{% endblock %}

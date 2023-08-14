@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_bar-telephone.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+          {% include 'current/includes/_bar.html' %}
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="verify-address-fixed-2">
+
+              <h2 class="govuk-heading-l">Add a new address into the database</h2>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-search-line-1">
+                  Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-search-line-1" name="address-search-line-1" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-search-line-2">
+                  <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-search-line-2" name="address-search-line-2" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-search-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-search-town" name="address-search-town" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-search-county">
+                  County
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-search-county" name="address-search-county" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-search-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="address-search-postcode" name="address-search-postcode" type="text">
+              </div>
+
+
+              <div class="govuk-button-group">
+                <button class="govuk-button" button type="submit" data-module="govuk-button">
+                  Submit and continue
+                </button>
+
+
+              </div>
+
+
+
+            </form>
+
+
+          <br>
+      </div>
+
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block header %}
+{% include "includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-full">
+
+            {% include './_bar.html' %}
+
+            {% include './_tab-overview.html' %}
+
+
+          </div>
+        </div>
+      </main>
+
+      <br>
+      <br>
+
+
+      <form method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-heading-l">
+                Check your answers
+              </h1>
+            </legend>
+
+<p>Removing Geoff Smith and Harry Smith from 70 Elmgrove Terrace.</p>
+
+          <h2 class="govuk-heading-m">Geoff Smith</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Reason
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Moved out recently
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="reason-removed1">
+                        Change<span class="govuk-visually-hidden"> name</span>
+                      </a>
+                    </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Move date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      5 January 2019
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="move-date">
+                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+
+                <h3 class="govuk-heading-m">Harry Smith</h3>
+
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                            Reason
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                            Not known
+                          </dd>
+                          <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="reason-removed2">
+                              Change<span class="govuk-visually-hidden"> name</span>
+                            </a>
+                          </dd>
+                        </div>
+                      </dl>
+
+          </fieldset>
+          <button type="submit" class="govuk-button">
+            Confirm
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+
+  </main>
+</div>
+<!-- </div> -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

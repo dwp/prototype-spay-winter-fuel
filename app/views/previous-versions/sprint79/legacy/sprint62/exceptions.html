@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+        <h1 class="govuk-heading-xl">Review exceptions</h1>
+
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+          <dd class="key-details-bar__name govuk-!-font-size-48">208</dd>
+        </div>
+        <div class="key-details-bar__bottom-block">
+      <a href="#" class="govuk-link govuk-!-font-size-27">Error</a>
+        </div>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+          <dd class="key-details-bar__name govuk-!-font-size-48">98</dd>
+        </div>
+        <div class="key-details-bar__bottom-block">
+      <a href="#" class="govuk-link govuk-!-font-size-27">Decision needed</a>
+        </div>
+      </dl>
+    </section>
+  </div>
+</div>
+
+    <br>
+    <br>
+
+    <form method="post">
+
+    <h2 class="govuk-heading-l">Filter by</h2>
+
+    <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Stage
+        </h1>
+      </legend>
+
+
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            Update case
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+            Verify address
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+            Calculate eligibility
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+            Evaluate related cases
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+            Calculate entitlement
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+          <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+            Send letter
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Status
+      </h1>
+    </legend>
+    <div class="govuk-checkboxes govuk-checkboxes--small">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+         Error
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Decision needed
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <h1 class="govuk-fieldset__heading">
+      Source
+    </h1>
+  </legend>
+
+
+  <div class="govuk-checkboxes govuk-checkboxes--small">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+      <label class="govuk-label govuk-checkboxes__label" for="organisation">
+        Data and analytics cases
+      </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+      <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+        Get your State Pension cases
+      </label>
+    </div>
+
+
+  </div>
+</fieldset>
+</div>
+
+
+<a href="/legacy/sprint22/exceptions-result" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+</a>
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

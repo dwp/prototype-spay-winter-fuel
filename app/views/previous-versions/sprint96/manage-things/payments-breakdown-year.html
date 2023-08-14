@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+{{ govukBackLink({
+            text: "Back",
+            href: "payments"
+          }) }}
+
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="/current/manage-things/manage-things">Manage things...</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="payments">Payments</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="letters">Letters</a>
+              </li>
+
+
+          </nav>
+
+
+
+        </div>
+      </div>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          
+          <br>
+          <br>
+
+          <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-l">Payments sent</h2>
+          </div>
+
+          <div class="govuk-grid-column-full">
+
+          <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#past-day">
+                  <span class="govuk-caption-m">Winter</span>
+                  <h3 class="govuk-heading-m">2020 to 2021</h3>
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#past-week">
+                  <span class="govuk-caption-m">Winter</span>
+                  <h3 class="govuk-heading-m">2019 to 2020</h3>
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="past-day">
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Payments sent</th>
+                    <th scope="col" class="govuk-table__header">Payments returned</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">3</td>
+                    <td class="govuk-table__cell">0</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">0</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">0</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Payments sent</th>
+                    <th scope="col" class="govuk-table__header">Payments returned</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">24</td>
+                    <td class="govuk-table__cell">18</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">16</td>
+                    <td class="govuk-table__cell">20</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">24</td>
+                    <td class="govuk-table__cell">27</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+
+</div>
+        </div>
+
+
+
+
+
+      </div>
+  </div>
+
+
+  {% endblock %}

@@ -1,0 +1,224 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">UK information</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="business-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Do you have a business registered in the UK?
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="business-conditional" name="business" type="radio" value="yes" data-aria-controls="conditional-business-conditional">
+                  <label class="govuk-label govuk-radios__label" for="business-conditional">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-business-conditional">
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="business-details-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h3 class="govuk-fieldset__heading">
+                          When was the business set up?
+                        </h3>
+                      </legend>
+                      <span id="business-details-hint" class="govuk-hint">
+                        For example, 27 3 2007
+                      </span>
+                      <div class="govuk-date-input" id="business-details">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="business-details-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="business-details-day" name="business-details-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="business-details-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="business-details-month" name="business-details-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="business-details-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="business-details-year" name="business-details-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+
+                  <div class="govuk-form-group">
+
+                    <label class="govuk-label" for="more-detail">
+                      <h4 class="govuk-heading-m">Give a brief description of the business</h4>
+                    </label>
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                  </div>
+
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="business-conditional-2" name="business" type="radio" value="no" data-aria-controls="conditional-business-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="business-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="uk-healthcare-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you see a healthcare professional in the UK?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-healthcare-conditional" name="uk-healthcare" type="radio" value="yes" data-aria-controls="conditional-uk-healthcare-conditional">
+                  <label class="govuk-label govuk-radios__label" for="uk-healthcare-conditional">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-uk-healthcare-conditional">
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="healthcare-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                          What was the date of your last appointment?
+                        </h1>
+                      </legend>
+                      <span id="healthcare-hint" class="govuk-hint">
+                        For example, 3 2007
+                      </span>
+                      <div class="govuk-date-input" id="healthcare">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="healthcare-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="healthcare-month" name="healthcare-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="healthcare-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="healthcare-year" name="healthcare-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-healthcare-conditional-2" name="uk-healthcare" type="radio" value="no" data-aria-controls="conditional-uk-healthcare-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="uk-healthcare-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="property-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you own property in the UK?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-conditional" name="property" type="radio" value="yes" data-aria-controls="conditional-property-conditional">
+                  <label class="govuk-label govuk-radios__label" for="property-conditional">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-property-conditional">
+
+
+                  <fieldset class="govuk-fieldset">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="width-5">
+                        How many properties do you own? big spender?
+                      </label>
+                      <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+                    </div>
+                  </fieldset>
+
+
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="property-conditional-2" name="property" type="radio" value="no" data-aria-controls="conditional-property-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="property-conditional-2">
+                    No
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

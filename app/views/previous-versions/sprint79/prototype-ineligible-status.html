@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-index.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  {{ govukBackLink ({
+    text: 'Back',
+    href: 'javascript:history.back()'
+  }) }}
+
+  <br>
+  <br>
+
+  <h2 class="govuk-heading-l">Ineligible status</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-carehome-benefits">Carehome + benefits</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-commercial-address">Commercial address</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-dead">Dead</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-gsl-disallowed">GSL disallowed</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-gsl-not-reviewed">GSL not reviewed</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-ineligible-eea">Ineligible EEA</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-not-covered-withdrawal-agreement">Not covered by Withdrawal Agreement</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+          <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-no-international-claim">No international claim submitted</a>
+          <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+        </li>
+        <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-hospital">In hospital</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-prison">In prison</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-invalid-residence">Invalid residence</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-no-addresses">No permanent address</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/overview-page-variants/overview-opted-out">Opted out</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-partner-claimant">Partner claimant</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-paused">Paused</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-po-box">PO Box not approved</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-under-spa">Too young / under SPA</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-outside-eea">Outside EEA</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-immigration-control">Under immigration control</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+    </ul>
+    <br><br>
+    <h2 class="govuk-heading-s">Ineligible status - no longer used</h2>        
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/ineligible/overview-unknown-address">Address unknown</a>
+        <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514399952846&cot=14">Journey map</a><br>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+    
+
+
+
+<!--   -->
+
+      {% endblock %}
+
+

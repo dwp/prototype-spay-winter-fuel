@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          <form method="post">
+
+
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Amount already paid</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">
+                    £200</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Paid for</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">
+                    Winter 2020 to 2021</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount overpaid</th>
+                  <td class="govuk-table__cell">£100</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Reason for overpayment</th>
+                  <td class="govuk-table__cell">Lives with someone else who gets Winter Fuel Payment</td>
+                </tr>
+              </tbody>
+            </table><br><br>
+
+            
+
+            <br>
+
+            <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="recoverable-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Is this overpayment recoverable?
+      </h1>
+    </legend>
+    <div id="recoverable-hint" class="govuk-hint">
+
+    </div>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable" name="recoverable" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="recoverable">
+          Yes - download record of decision
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="recoverable-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

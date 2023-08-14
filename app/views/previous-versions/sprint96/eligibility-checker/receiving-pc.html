@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+ 
+
+            <h1 class="govuk-heading-xl">Do you get any of these?</h1>
+
+            
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Pension Credit</li>
+              <li>income-based Jobseeker’s Allowance (JSA)</li>
+              <li>income-related Employment and Support Allowance (ESA)</li>
+              <li>Income Support</li>
+            </ul>
+            <br>
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-credit" name="pension-credit" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="pension-credit-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-credit-2" name="pension-credit" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="pension-credit-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+  </fieldset>
+</div>
+
+<button type="submit" class="govuk-button">
+  Continue
+</button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

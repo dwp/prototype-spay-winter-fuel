@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+          {% include 'current/includes/_bar.html' %}
+
+          {% include 'current/includes/_tab-contact.html' %}
+
+          <br>
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Contact details</h2>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Home telephone</th>
+                <td class="govuk-table__cell">
+                  {% if data['homephone-remove'] === 'Yes' %}
+                  {% elseif data.homephone %}
+                  {{data.homephone}}
+                  {% else %}
+                  01665 720 871
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="homephone">
+                    Change<span class="govuk-visually-hidden"> home phone number</span>
+                  </a>
+                <!--    Change
+                    <span class="govuk-visually-hidden">Change home phone number</span> -->
+                <!--    {% if not data.homephone %}
+                    Add<span class="govuk-visually-hidden"> home phone number</span>
+                    {% else %}
+                    Change<span class="govuk-visually-hidden"> home phone number</span>
+                    {% endif %}
+                  </a>   -->
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Mobile</th>
+                <td class="govuk-table__cell">
+                  {% if data.mobilenumber %}
+                  {{data.mobilenumber}}
+                  {% endif %}
+                  {% if data['mobilephone-remove'] === 'Yes' %}
+                  {% elseif data.mobilephone %}
+                  {{data.mobilephone}}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="mobilephone">
+                    {% if not data.mobilenumber %}
+                    Add<span class="govuk-visually-hidden"> mobile number</span>
+                    {% else %}
+                    Change<span class="govuk-visually-hidden"> mobile number</span>
+                    {% endif %}
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Work telephone</th>
+                <td class="govuk-table__cell">
+                  {% if data.worknumber %}
+                  {{data.worknumber}}
+                  {% endif %}
+                  {% if data['workphone-remove'] === 'Yes' %}
+                  {% elseif data.workphone %}
+                  {{data.workphone}}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="workphone">
+                    {% if not data.worknumber %}
+                    Add<span class="govuk-visually-hidden"> work number</span>
+                    {% else %}
+                    Change<span class="govuk-visually-hidden"> work number</span>
+                    {% endif %}
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Email address</th>
+                <td class="govuk-table__cell">
+                  {% if data['email-remove'] === 'Yes' %}
+                  {% elseif data.email %}
+                  {{data.email}}
+                  {% else %}
+                dora-best@hotmail.com
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="email">
+                    Change<span class="govuk-visually-hidden">email</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Correspondence address</th>
+                <td class="govuk-table__cell">
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="address">
+                    Add
+                    <span class="govuk-visually-hidden">Change address</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Contact preferences</th>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">
+                  <a href="">
+                    {% if not data.contactpreferences %}
+                    Add <span class="govuk-visually-hidden">contact preferences</span>
+                    {% else %}
+                    Change <span class="govuk-visually-hidden">contact preferences</span>
+                    {% endif %}
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        {% include 'current/includes/_action-history.html' %}
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

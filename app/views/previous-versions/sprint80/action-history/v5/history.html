@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+{% include './_bar.html' %}
+
+            {% include './_tab-history.html' %}
+
+            <br>
+            <br>
+
+            <h2 class="govuk-heading-l">
+              Current
+            </h2>
+
+
+
+            <ol class="app-timeline">
+              <li class="app-timeline__entry">
+                <strong class="govuk-tag govuk-tag--red">
+                  payment returned
+                </strong>
+                &nbsp;<a href="//legacy/sprint52b/payment-details-2" class="govuk-link">View</a>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Address changed</span>
+                  <span class="govuk-content">System action</span>
+                  <span class="app-timeline__date">
+                    30 July 2021
+                  </span>
+                </p>
+                </li>
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Address changed
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Address changed</span>
+                  <span class="govuk-content">System action</span>
+                  <span class="app-timeline__date">
+                    5 July 2021
+                  </span>
+                </p>
+                </li>
+
+                <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Home phone changed
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Address changed</span>
+                  <span class="govuk-content">System action</span>
+                  <span class="app-timeline__date">
+                    5 July 2021
+                  </span>
+                </p>
+                </li>
+
+                <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Mobile phone changed
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Mobile phone changed</span>
+                  <span class="govuk-content">Staff 73229975</span>
+                  <span class="app-timeline__date">
+                    9 June 2021
+                  </span>
+                </p>
+                </li>
+
+                <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Bank account changed
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Bank account changed</span>
+                  <span class="govuk-content">Staff 72957362</span>
+                  <span class="app-timeline__date">
+                    5 April 2021
+                  </span>
+                </p>
+                </li>
+
+                <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Opted-in
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Opted-in</span>
+                  <span class="govuk-content">Staff 29573822</span>
+                  <span class="app-timeline__date">
+                    5 April 2021
+                  </span>
+                </p>
+                </li>
+            </ol>
+
+
+            <br>
+
+            <h2 class="govuk-heading-l">
+              2019 to 2020
+            </h2>
+            <ol class="app-timeline">
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Home phone changed<br>
+                  Address changed<br>
+                  email changed
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Address changed</span>
+                  <span class="govuk-content">System action</span>
+                  <span class="app-timeline__date">
+                    5 July 2020
+                  </span>
+                </p>
+                </li>
+
+
+
+                <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Mobile phone changed
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Mobile phone changed</span>
+                  <span class="govuk-content">Staff 28464729</span>
+                  <span class="app-timeline__date">
+                    9 June 2020
+                  </span>
+                </p>
+                </li>
+
+                <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Bank account changed<br>
+                  Opted-in
+                </h3>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="govuk-visually-hidden">Bank account changed</span>
+                  <span class="govuk-content">Staff 19376452</span>
+                  <span class="app-timeline__date">
+                    5 April 2020
+                  </span>
+                </p>
+                </li>
+                </ol>
+
+
+                <h2 class="govuk-heading-l">
+                  2018 to 2019
+                </h2>
+                <ol class="app-timeline">
+
+                  <li class="app-timeline__entry">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Home phone changed
+                    </h3>
+
+                    <p class="app-timeline__info govuk-!-margin-bottom-0">
+                      <span class="govuk-visually-hidden">Address changed</span>
+                      <span class="govuk-content">System action</span>
+                      <span class="app-timeline__date">
+                        16 August 2019
+                      </span>
+                    </p>
+                    </li>
+
+
+
+                    <li class="app-timeline__entry">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Mobile phone changed
+                    </h3>
+
+                    <p class="app-timeline__info govuk-!-margin-bottom-0">
+                      <span class="govuk-visually-hidden">Mobile phone changed</span>
+                      <span class="govuk-content">Staff 82165329</span>
+                      <span class="app-timeline__date">
+                        17 June 2019
+                      </span>
+                    </p>
+                    </li>
+
+                    <li class="app-timeline__entry">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                      Bank account changed<br>
+                      Opted-in
+                    </h3>
+
+                    <p class="app-timeline__info govuk-!-margin-bottom-0">
+                      <span class="govuk-visually-hidden">Bank account changed</span>
+                      <span class="govuk-content">Staff 92742853</span>
+                      <span class="app-timeline__date">
+                        8 April 2018
+                      </span>
+                    </p>
+                    </li>
+
+
+            </ol>
+
+            <br>
+            <h2 class="govuk-heading-l">
+              Start of history 14 January 2018
+            </h2>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

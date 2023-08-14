@@ -1,0 +1,235 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include '../includes/_header-manage-admin.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-width" style="margin-left:15px">
+        
+
+
+        <form method="post">
+          <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Run SQL query
+                  </h1>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                  {% if data['query']=='eligibility'%}
+                    <input class="govuk-radios__input" id="query" name="query" type="radio" value="eligibility" checked="true">
+                  {% else %}
+                    <input class="govuk-radios__input" id="query" name="query" type="radio" value="eligibility">
+                  {% endif%}
+                    <label class="govuk-label govuk-radios__label" for="query">
+                      Eligibility query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                   {% if data['query']=='payments'%}
+                    <input class="govuk-radios__input" id="query-2" name="query" type="radio" value="payments" checked="true">
+                  {% else %}
+                    <input class="govuk-radios__input" id="query-2" name="query" type="radio" value="payments">
+                  {% endif%}
+                    <label class="govuk-label govuk-radios__label" for="query-2">
+                      Payments query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                  {% if data['query']=='notifications'%}
+                    <input class="govuk-radios__input" id="query-3" name="query" type="radio" value="notifications" checked="true">
+                  {% else %}
+                    <input class="govuk-radios__input" id="query-3" name="query" type="radio" value="notifications">
+                  {% endif%}
+                    <label class="govuk-label govuk-radios__label" for="query-3">
+                      Notifications query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                  {% if data['query']=='task'%}
+                    <input class="govuk-radios__input" id="query-4" name="query" type="radio" value="task" checked="true">
+                  {% else %}
+                    <input class="govuk-radios__input" id="query-4" name="query" type="radio" value="task">
+                  {% endif %}
+                    <label class="govuk-label govuk-radios__label" for="query-4">
+                      Task history query
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                  {% if data['query']=='action'%}
+                    <input class="govuk-radios__input" id="query-4" name="query" type="radio" value="action" checked="true">
+                  {% else %}
+                    <input class="govuk-radios__input" id="query-4" name="query" type="radio" value="action">
+                  {% endif %}
+                    <label class="govuk-label govuk-radios__label" for="query-4">
+                      Action history query
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+          <button type="submit" class="govuk-button">
+            Run query
+          </button><br><br>
+
+        </form>
+
+<a href="">Download results</a><br><br><br>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Task history query - results</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" style="width:10%">payment_year</th>
+      <th scope="col" class="govuk-table__header" style="width:20%">activity_type</th>
+      <th scope="col" class="govuk-table__header">change_reason</th>
+      <th scope="col" class="govuk-table__header">count</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">ALTERNATIVE_FORMAT</td>
+      <td class="govuk-table__cell">CANCELLED_BY_SYSTEM</td>
+      <td class="govuk-table__cell">43</td>
+    </tr>
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">ALTERNATIVE_FORMAT</td>
+      <td class="govuk-table__cell">CREATED</td>
+      <td class="govuk-table__cell">86</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">CONTACT_CITIZEN</td>
+      <td class="govuk-table__cell">AGENT_ABANDONED_THE_CASE</td>
+      <td class="govuk-table__cell">411</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">CONTACT_CITIZEN</td>
+      <td class="govuk-table__cell">CANCELLED_BY_SYSTEM</td>
+      <td class="govuk-table__cell">4170</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">CONTACT_CITIZEN</td>
+      <td class="govuk-table__cell">CITIZEN_DID_NOT_ANSWER_THE_PHONE</td>
+      <td class="govuk-table__cell">4176</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">CONTACT_CITIZEN</td>
+      <td class="govuk-table__cell">COMPLETED</td>
+      <td class="govuk-table__cell">3485</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">CONTACT_CITIZEN</td>
+      <td class="govuk-table__cell">IN_PROGRESS_WITH_AGENT</td>
+      <td class="govuk-table__cell">16866</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">CONTACT_CITIZEN</td>
+      <td class="govuk-table__cell">RESET_TO_OPEN_BY_SCHEDULED_JOB</td>
+      <td class="govuk-table__cell">4767</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">CONTACT_CITIZEN</td>
+      <td class="govuk-table__cell">TASK_ACTIVITY_CHANGED</td>
+      <td class="govuk-table__cell">7688</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">AGENT_ABANDONED_THE_CASE</td>
+      <td class="govuk-table__cell">3331</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">CANCELLED_BY_SYSTEM</td>
+      <td class="govuk-table__cell">351</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">COMPLETED</td>
+      <td class="govuk-table__cell">10264</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">CREATED</td>
+      <td class="govuk-table__cell">50766</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">IN_PROGRESS_WITH_AGENT</td>
+      <td class="govuk-table__cell">66171</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">NEITHER_DAP_OR_NOK_IS_CURRENTLY_KNOWN</td>
+      <td class="govuk-table__cell">7973</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">RESET_TO_OPEN_BY_SCHEDULED_JOB</td>
+      <td class="govuk-table__cell">8620</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">DEATH_ARREARS</td>
+      <td class="govuk-table__cell">WFPF001_AND_WFPL004_ISSUED</td>
+      <td class="govuk-table__cell">35602</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">FAILED_PAYMENT</td>
+      <td class="govuk-table__cell">AGENT_ABANDONED_THE_CASE</td>
+      <td class="govuk-table__cell">75</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">FAILED_PAYMENT</td>
+      <td class="govuk-table__cell">BANK_DETAILS_NOT_KNOWN</td>
+      <td class="govuk-table__cell">837</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">2021</th>
+      <td class="govuk-table__cell">FAILED_PAYMENT</td>
+      <td class="govuk-table__cell">CANCELLED_BY_SYSTEM</td>
+      <td class="govuk-table__cell">1415</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+
+      </div>
+
+    </div>
+    </main>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header-check.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Check and update cases</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+        <dl class="key-details-bar__key-details">
+          <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name govuk-!-font-size-48">208 exceptions</dd>
+          </div>
+          <div class="key-details-bar__bottom-block">
+        <a href="exceptions" class="govuk-link govuk-!-font-size-27">Review exceptions</a>
+          </div>
+        </dl>
+      </section>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+        <dl class="key-details-bar__key-details">
+          <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name govuk-!-font-size-48">1,000,000 results</dd>
+          </div>
+          <div class="key-details-bar__bottom-block">
+        <a href="/current/caseload-statuses/check-cases" class="govuk-link govuk-!-font-size-27">Check results</a>
+          </div>
+        </dl>
+      </section>
+    </div>
+  </div>
+
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

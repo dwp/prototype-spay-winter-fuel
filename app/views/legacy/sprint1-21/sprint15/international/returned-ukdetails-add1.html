@@ -1,0 +1,139 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a href="/legacy/sprint15/international/returned-ukdetails" class="govuk-back-link">Back</a>
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">What are the dates you returned to the UK?</h1>
+                    
+                    <p><strong>Date 1</strong>
+                        <br>20 12 2018 - 02 01 2019
+                    </p>
+                      
+                            <span id="dob-hint" class="govuk-hint">
+                                        These dates do not have to be exact, but to the best of your knowledge
+                                    </span>
+                                    <label class="govuk-label govuk-!-margin-top-5" for="sp-ni-number">
+                                    From
+                                     </label>
+
+                                
+
+                                    <span id="dob-hint" class="govuk-hint">
+                                        For example, 12 11 1960
+                                    </span>
+
+
+                                    <div class="govuk-date-input" id="ukdates" name="ukdates">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="ukdatesfrom-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ukdatesfromday" name="ukdatesfromday" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="ukdatesfrom-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ukdatesfrommonth" name="ukdatesfrommonth" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="ukdatesfrom-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="ukdatesfromyear" name="ukdatesfromyear" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <label class="govuk-label govuk-!-margin-top-5" for="sp-ni-number">
+                                    To
+                                     </label>
+                                    <span id="dob-hint" class="govuk-hint">
+                                        For example, 12 11 1980
+                                    </span>
+
+
+                                    <div class="govuk-date-input" id="ukdatesto" name="ukdatestoinput">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="ukdatesto-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ukdatestoday" name="ukdatestoday" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="ukdatesto-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="ukdatestomonth" name="ukdatestomonth" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="ukdatesto-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="ukdatestoyear" name="ukdatestoyear" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                
+                    </div>
+                    <a href="/legacy/sprint15/international/returned-ukdetails-add2" class="govuk-link govuk-!-font-size-19"  >Add another time</a>                   
+                </div>
+        </div>
+            
+
+            
+            <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue </button>
+
+
+    </main>
+
+</form>
+</div>
+  {% endblock %}
+

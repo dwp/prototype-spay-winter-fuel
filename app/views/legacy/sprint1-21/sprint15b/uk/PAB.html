@@ -1,0 +1,68 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+  Add UK bank details
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group">
+        <form method=post>
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Are they applying on behalf of someone else?
+      </h1>
+    </legend>
+    <span id="changed-name-hint" class="govuk-hint">
+      What a Personal Acting Body is.
+    </span>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="PAB-yes" name="PAB" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="PAB-yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="PAB-no" name="PAB" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="PAB-no">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="govuk-button"> Continue 
+                </button>
+
+  </form>
+</div>
+       
+                 
+
+           
+           
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

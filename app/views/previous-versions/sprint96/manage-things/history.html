@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+{% include 'current/includes/_bar.html' %}
+
+            {% include 'current/includes/_tab-history.html' %}
+
+            <br>
+            <br>
+
+            <h2 class="govuk-heading-m">
+              Action history
+            </h2>
+
+            <ol class="app-timeline">
+
+              <li class="app-timeline__entry">
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                    <a href="history-details" class="govuk-link">  Changed bank account</a>
+                </h3>
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="dwp-timeline__date">
+                    Called on 5 January 2018
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h4 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Added home telephone
+                </h4>
+                <p class="dwp-timeline__info">
+                  <span class="dwp-visually__hidden">Added 	01665 720 871</span><br>
+                  <span class="dwp-timeline__date">Admin update 1 January 2018</span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h5 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  <a href="history-details" class="govuk-link">Changed address and occupancy</a>
+                </h5>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="dwp-timeline__date">
+                    Called on 8 March 2016
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h6 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  <a href="history-details" class="govuk-link">  Changed occupancy</a>
+                </h6>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="dwp-timeline__date">
+                    Admin update 5 July 2013
+                  </span>
+                </p>
+              </li>
+
+              <li class="app-timeline__entry">
+                <h7 class="govuk-heading-s govuk-!-margin-bottom-0">
+                  Removed mobile
+                </h7>
+
+                <p class="app-timeline__info govuk-!-margin-bottom-0">
+                  <span class="dwp-visually__hidden">Removed 07771 900 900</span><br>
+                  <span class="dwp-timeline__date">
+                    System update 19 January 2009
+                  </span>
+                </p>
+              </li>
+
+          </ol>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

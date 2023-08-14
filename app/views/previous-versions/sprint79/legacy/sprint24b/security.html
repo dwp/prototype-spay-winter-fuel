@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <br>
+
+
+            <form method="post">
+
+        <h1 class="govuk-heading-xl">Security questions</h1>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                What is your date of birth?
+              </h1>
+            </legend>
+            <span id="changed-name-hint" class="govuk-hint">
+              9 June 1940
+            </span>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="marital-1" name="marital" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="marital-1">
+                  Pass
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="marital-2" name="marital" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="marital-2">
+                  Fail
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Are you getting any other benefits?
+              </h1>
+            </legend>
+            <span id="changed-name-hint" class="govuk-hint">
+              State Pension
+            </span>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="benefits-1" name="benefits" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="benefits-1">
+                  Pass
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="benefits-2" name="benefits" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="benefits-2">
+                  Fail
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                How much was your Winter Fuel Payment in 2018?
+              </h1>
+            </legend>
+            <span id="changed-name-hint" class="govuk-hint">
+              £100
+            </span>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="payment-1" name="payment" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="payment-1">
+                  Pass
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="payment-2" name="payment" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="payment-2">
+                  Fail
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <br>
+
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

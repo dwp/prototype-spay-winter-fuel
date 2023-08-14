@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  {% if data['update-details'] == 'yes'%}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+{% endif %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+    
+          {% include 'current/includes/_bar_2.html' %}
+
+            <h1 class="govuk-heading-m">Manual payment request details</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="border-bottom:none;">Amount</th>
+                  <td class="govuk-table__cell"  style="border-bottom:none;"> 
+                  
+                    <div class="govuk-input__wrapper">
+                      <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                      
+                      <div class="govuk-form-group">
+                        
+                        <select class="govuk-select" id="sort" name="sort">
+                          <option value="500">500 - full entitlement</option>
+                          <option value="250">250 - shared entitlement</option>
+                          <option value="600">600 - full entitlement / full over 80 entitlement</option>
+                          <option value="350">350 - shared entitlement  / full over 80 entitlement</option> 
+                          <option value="300">300 - shared entitlement  / shared over 80 entitlement</option>
+                          <option value="100">100 - additional full entitlement over 80</option> 
+                          <option value="50">50 - additional shared entitlement over 80</option> 
+                        </select>
+                      </div>
+  
+  
+                    </div>
+                  </div></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"  style="border-bottom:none;">Reason</th>
+                  <td class="govuk-table__cell"  style="border-bottom:none;"> <div class="govuk-form-group">
+                        
+                    <select class="govuk-select" id="sort" name="sort">
+                      
+                      <option value="300">Payment sent to wrong account and not returned</option>
+                      <option value="350">Address classification incorrect and cannot be updated</option>
+                      <option value="600">International payment keeps failing but bank details are correct</option>
+                      <option value="600">Address not found during UK new claim</option>
+                      <option value="250">Technical problem with SPS</option>
+
+                    </select>
+                  </div></td>
+                </tr>
+              </thead>
+
+            </table>
+
+
+
+        
+
+            <div class="govuk-inset-text">
+              You should <a href="/current/record-view/overview-tab/overview-page-variants/overview-manual-payment-task" class="govuk-link">check this citizen's information</a> to confirm they need a manual payment before choosing an option below.
+              
+            
+            </div>
+            <br><br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Approve manual payment request?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="approve" type="radio" value="yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                  </div>
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="approve" type="radio" value="no" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      No - cancel the request
+                    </label>
+                  </div>
+                 
+                 
+                </div>
+
+              </fieldset>
+            </div>
+
+
+            {% if data['update-details'] != 'yes'%}
+            <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
+<br>
+{% endif %}
+
+
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+   
+
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+{% if data['update-details'] == 'yes'%}
+   {% set nextReviewPage = '/current/record-view/overview-tab/update-details/overview-manual-payment-processed' %} 
+{% else %}
+  {% set nextReviewPage = 'get-next-task-manual-payment' %}
+{% endif %}
+
+    <script>
+        nextPageRoutes = {
+            'yes': '{{nextReviewPage}}',
+            'no': 'cancel-reason',
+        }
+    </script>
+
+
+{% endblock %}

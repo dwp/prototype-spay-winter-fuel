@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Application complete - Pension Credit
+{% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "We have cancelled your Winter Fuel payments",
+        html: ""
+      }) }}
+
+      <h3 class="govuk-heading-m">What happens next</h3>
+
+      <p class="govuk-body">
+        We have cancelled your Winter Fuel payments. We will write to you
+        by <strong>DD / Month / Year (two weeks) </strong> to confirm this.
+      </p>
+
+      <p class="govuk-body">Call us on <strong>0800 200 200</strong> if you want us to start your payments again.</p>
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p>
+
+
+    </div>
+  </div>
+{% endblock %}

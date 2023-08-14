@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include 'current/includes/_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-l">Changed address and occupancy</h2>
+
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date the change was made</th>
+                <td class="govuk-table__cell">21 January 2020</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <div class="govuk-inset-text">
+            A confirmation letter was sent to their new address.<br>
+            <a href="send-letter" class="govuk-link">Send the letter again</a>
+          </div>
+
+          <h3 class="govuk-heading-m">New information</h3>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">78 Graham Road<br>
+                  Chelsham<br>
+                  CR6 9ND</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date they moved in</th>
+                <td class="govuk-table__cell">
+                  8 August 2019
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">Lives with someone of State Pension age</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="govuk-heading-m">Old information</h4>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">12 Old Street<br>
+                  Oldham<br>
+                  OD3 8TP</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date they moved in</th>
+                <td class="govuk-table__cell">
+                  15 May 2004
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">Does not live with anyone of State Pension age</td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+UK normally
+{% endblock %}
+
+{% block content %}
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you normally live in the UK?
+      </h1>
+    </legend>
+
+<div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="PAB-yes" name="PAB" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="PAB-yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="PAB-no" name="PAB" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="PAB-no">
+          No
+        </label>
+      </div>
+    </div>
+
+
+<a href="/legacy/sprint15/uk/immigration.html" class="govuk-button"> Continue </a>
+{% endblock %}

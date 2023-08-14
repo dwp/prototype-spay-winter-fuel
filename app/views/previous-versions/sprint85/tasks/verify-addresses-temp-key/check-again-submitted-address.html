@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.go(-1)"
+    }) }}
+
+{% include 'current/includes/_bar-name-nino.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+
+
+
+      <div class="govuk-grid-column-two-thirds">
+                      <form method="post">
+
+                        <h2 class="govuk-heading-s">Address originally submitted</h2>
+                        <p class="govuk-body">
+                          Flat D<br>
+                          104 Boundary Lane<br>
+                          Hulme<br>
+                          Manchester<br>
+                          M15 6FD</p>
+
+                          <br>
+                          <h2 class="govuk-heading-s">Contact numbers</h2>
+                          <p><strong>Home phone:</strong> 01324 800 900<br>
+                            <strong>Mobile phone:</strong> 07771 900 900<br>
+                          <br>
+<h2 class="govuk-heading-m">Choose an existing address</h2>
+
+                                <div class="govuk-form-group">
+                                  <fieldset class="govuk-fieldset">
+                                    <div class="govuk-radios">
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                          The West Penthouse D <br>
+                                          104 Boundary Lane<br>
+                                          Manchester<br>
+                                          M15 6FD<br>
+                                          <strong class="govuk-tag govuk-tag--blue">
+                                            Residential
+                                          </strong>
+                                        </label>
+                                      </div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                          The West Penthouse C <br>
+                                          104 Boundary Lane<br>
+                                          Manchester<br>
+                                          M15 6FD<br>
+                                          <strong class="govuk-tag govuk-tag--blue">
+                                            Residential
+                                          </strong>
+                                        </label>
+                                      </div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                          The West Penthouse B <br>
+                                          104 Boundary Lane<br>
+                                          Manchester<br>
+                                          M15 6FD<br>
+                                          <strong class="govuk-tag govuk-tag--blue">
+                                            Residential
+                                          </strong>
+                                        </label>
+                                      </div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                                        <label class="govuk-label govuk-radios__label" for="address">
+                                          The West Penthouse A <br>
+                                          104 Boundary Lane<br>
+                                          Manchester<br>
+                                          M15 6FD<br>
+                                          <strong class="govuk-tag govuk-tag--blue">
+                                            Residential
+                                          </strong>
+                                        </label>
+                                      </div><br>
+
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="Address not found">
+                                        <label class="govuk-label govuk-radios__label" for="address-1">
+                                          The address has not been found
+                                        </label>
+                                      </div>
+                                     <br>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="duplicate">
+                                        <label class="govuk-label govuk-radios__label" for="address-1">
+                                          Add submitted address to SPS
+                                        </label>
+                                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                          Select this option if you have verified that the submitted address is valid and can be used for payment calculation.
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+                                  </fieldset>
+                                </div>
+
+
+                                <br>
+
+                          <button type="submit" class="govuk-button">
+                            Continue
+                          </button>
+
+                        </form>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  <script>
+    nextPageRoutes = {
+        '104D Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        '104A Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        '104B Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        '104C Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+        'Address not found': 'search-again.html',
+        'duplicate': 'enter-address-pre-filled3.html',
+     }
+  </script>
+
+  {% endblock %}

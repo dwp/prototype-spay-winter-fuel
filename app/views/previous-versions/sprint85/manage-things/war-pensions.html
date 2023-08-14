@@ -1,0 +1,88 @@
+
+
+
+
+
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+<br>
+<br>
+
+    <h1 class="govuk-heading-xl">War Pension file</h1>
+
+    <p>
+      <strong class="govuk-tag govuk-tag--blue">
+        In progress
+      </strong>
+    </p>
+
+    <br><br>
+  
+    
+    {{ govukButton ({
+      text: 'Start',
+      href: '#',
+      classes: ' '
+    }) }}
+
+    {{ govukButton ({
+      text: 'Stop',
+      href: 'confirm-delete',
+      classes: 'govuk-button--warning'
+    }) }}
+
+</div>
+
+<br>
+    
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Job Status</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Stage</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Write count</th>
+            <th scope="col" class="govuk-table__header">Start time</th>
+            <th scope="col" class="govuk-table__header">End time</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Update case</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">1,403</td>
+            <td class="govuk-table__cell">1 April 2021 5:21pm</td>
+            <td class="govuk-table__cell">1 April 2021 6:06pm</td>
+            <td class="govuk-table__cell"><span class="verified-badge verified">
+          </span></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Verify address</td>
+            <td class="govuk-table__cell">In progress</td>
+            <td class="govuk-table__cell">1,291</td>
+            <td class="govuk-table__cell">1 April 2021 6:07pm</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>
+
+
+{% endblock %}

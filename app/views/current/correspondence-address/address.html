@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+        {% include './_bar.html' %}
+
+
+
+
+            <form method="post" action="address-commercial3">
+
+                  <h1 class="govuk-heading-l">What is the house number and postcode?</h1>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="width-10">
+                      Property number or name
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="house-number" name="house-number" type="text">
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="width-5">
+                      Postcode
+                    </label>
+                    <input class="govuk-input govuk-input--width-5" id="postcode" name="postcode" type="postcode">
+                  </div>
+
+                </fieldset>
+              </div>
+
+                
+
+              <button type="submit" class="govuk-button">
+                Find address
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

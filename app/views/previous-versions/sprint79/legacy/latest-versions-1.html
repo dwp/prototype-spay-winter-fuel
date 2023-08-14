@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header-latest.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-xl">
+Latest versions
+  </h1>
+
+  <main class="govuk-main-wrapper">
+    <div class="prototype-write-up">
+      <div class="govuk-grid-row">
+
+                <div class="govuk-grid-column-full"">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <section class="key-details-bar-red" role="contentinfo" aria-label="Key details">
+              <dl class="key-details-bar-red__key-details">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-margin-top-0">Tasks</h2>
+                <a href="/legacy/sprint43b/tasks" class="govuk-link govuk-!-font-size-19">Task list</a><br>
+                <a href="/legacy/sprint45b/record-task-views" class="govuk-link govuk-!-font-size-19">Record view tasks</a>
+              </dl>
+            </section>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <section class="key-details-bar-light-purple" role="contentinfo" aria-label="Key details">
+              <dl class="key-details-bar-light-purple__key-details">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-margin-top-">View a record</h2>
+                <a href="/legacy/sprint39c/user" class="govuk-link govuk-!-font-size-19">Eligible views</a><br>
+                <a href="/legacy/sprint35d/ineligible" class="govuk-link govuk-!-font-size-19">Ineligible views</a>
+              </dl>
+            </section>
+          </div>
+    </div>
+
+<br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <section class="key-details-bar-turquoise" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar-turquoise__key-details">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-4 govuk-!-margin-top-4"><a href="/legacy/sprint35e/end-pages-index">Eligibility and referral</a></h2>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <section class="key-details-bar-pink" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar-pink__key-details">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-4 govuk-!-margin-top-4"><a href="/legacy/sprint32c/manage-jobs3">Manage things</a></h2>
+      </dl>
+    </section>
+  </div>
+</div>
+
+<br>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <section class="key-details-bar-orange" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar-orange__key-details">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-4 govuk-!-margin-top-4"><a href="/legacy/sprint43/application-type">International new claims</a></h2>
+        <p>Use <strong>1960</strong> as date for <strong>too young postal journey</strong>
+        <br>Use <strong>1959</strong> as date for <strong>too young phone journey</strong><br>
+        Use <strong>AB 12 34 57</strong> for <strong>already getting WF</strong></p>
+      </dl>
+    </section>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <section class="key-details-bar-purple" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar-purple__key-details">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-4 govuk-!-margin-top-4"><a href="/legacy/sprint35b/type-of-application">UK new claims</a></h2>
+        <p>Use <strong>anything</strong> for <strong>phone/post happy paths</strong>
+        <br>Use <strong>PX 12 24 32 A</strong> and <strong>1959</strong> for <strong>postal too young</strong><br>
+        Use <strong>NE65 0AP</strong> for <strong>post code</strong> for <strong>phone care home</strong></p>
+      </dl>
+    </section>
+  </div>
+
+</div>
+
+
+
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a person
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Search for a person</h1>
+       
+            <p class="govuk-body">National Insurance number or reference number</p>
+
+            <input id="input" placeholder="" class="govuk-input search-awrs" type="text" autofocus autocomplete="on" maxchars="90" size="50" title="Search" value="" >
+
+            <a href = "" id="link" onclick="changeLink()" id="link" class="govuk-button search-button"></a>
+        <h1 class="govuk-heading-l">Results for BG123456C</h1>
+        <p class="govuk-heading-m"><a href="BG123456C_main">Bob Smith</a></p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+
+
+
+</script>  
+
+{% endblock %}
+

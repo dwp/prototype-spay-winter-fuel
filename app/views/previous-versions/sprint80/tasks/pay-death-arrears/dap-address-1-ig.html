@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            Joyce Burris<br>
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+              {{data['nino']}}
+              {% else %}
+              XX 12 34 56
+              {% endif %}
+<br>
+              <strong class="govuk-tag govuk-tag--grey">
+                Dead
+              </strong>
+
+            </span>
+          </h1>
+        </div>
+
+          
+
+            <form method="post">
+
+              <h2 class="govuk-heading-l">Confirm the full address</h2>
+
+    <p><b>1</b> addresses found for <b>"{% if data['house-number'] %}
+                    {{data['house-number']}}
+                  {% else %}
+                  10
+                  {% endif %}"
+                </b> and <b>"{% if data['postcode'] %}
+                                    {{data['postcode']}}
+                                  {% else %}
+                                  OX46 5EL
+                                  {% endif %}"</b></p>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="27 Kent Street, Amble, NE65 0LZ">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        10 Mill Road, OXFORD, OX46 5EL<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-2" name="address-change" type="radio" value="address not found">
+                      <label class="govuk-label govuk-radios__label" for="address-2">
+                        The address has not been found
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+                <button type="submit" class="govuk-button">
+                  Continue
+                </button>
+
+              </form>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

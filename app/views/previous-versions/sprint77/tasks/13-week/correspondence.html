@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {% include 'current/includes/_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <form method="post">
+
+                  <h2 class="govuk-heading-l">Choose correspondence address</h2>
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+        <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in" name="13-week2" type="radio" value="yes" aria-describedby="sign-in-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in">
+          Hallington Court, 130 Caradon Hill, UDNY GREEN, AB41 1JG
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          This is the current care home address.
+        </div>
+        
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-3" name="13-week2" type="radio" value="yes" aria-describedby="sign-in-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in">
+          118 Abbey Court, Clachnacuddin, Aberdeenshire, AB40 6GG
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          This is the current correspondence address.
+        </div>
+        
+      </div>
+      
+    <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="13-week2" type="radio" value="new" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="sign-in-2">
+          A different address
+        </label>
+        
+    </div>
+
+  </fieldset>
+</div>
+
+<div class="govuk-form-group">
+</div>
+
+<br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+<br><br><br>
+
+              
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

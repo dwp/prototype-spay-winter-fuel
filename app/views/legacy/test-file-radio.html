@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <form method="post">
+                
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Which alternative format do you need?
+                        </h1>
+                        </legend><br>
+                        <div class="govuk-radios govuk-radios--small">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt" name="tape" type="radio" value="audio-tape">
+                            <label class="govuk-label govuk-radios__label" for="alternative-format">
+                            Audio - cassette tape
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt" name="cd" type="radio" value="audio-cd">
+                            <label class="govuk-label govuk-radios__label" for="alternative-format-2">
+                            Audio - CD
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="alt" name="dvd" type="radio" value="audio-dvd">
+                            <label class="govuk-label govuk-radios__label" for="alternative-format-8">
+                            Audio - DVD
+                            </label>
+                        </div>
+                </div>
+            </div>
+
+                 <button class="govuk-button"  data-module=“govuk-button”>
+                    Continue
+                </button>
+
+            </form>
+            
+           
+        </div>
+
+</div>
+
+<script>
+    nextPageRoutes = {
+        'audio-tape': 'test-file.html',
+        'audio-cd': 'test-start.html',
+        'audio-dvd': 'dvd-page.html',
+
+    }
+    
+</script>
+
+{% endblock %}

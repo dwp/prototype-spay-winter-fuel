@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="moj-identity-bar">
+  <div class="moj-identity-bar__container">
+    <div class="moj-identity-bar__details">
+      <span class="moj-identity-bar__title"><b>
+          {% if data['phone-post'] === 'phone' %}
+          Theodora Best
+          {% else %}
+          Samira Mcgill
+          {% endif %}</b></span>
+    </div>
+    <div class="moj-identity-bar__details">
+      <span class="moj-identity-bar__title">
+        <a href="type-of-application" class="govuk-link">Start again</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+          <h1 class="govuk-heading-xl">Immigration control</h1>
+
+
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+        {% if data['prototype-mode'] === 'dev' %}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              DEV info
+            </span>
+          </summary>
+
+          <div class="govuk-details__text">
+            <p><b>Error message</b><br>
+              ...</p>
+        </details>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

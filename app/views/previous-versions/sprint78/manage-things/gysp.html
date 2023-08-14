@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+<br>
+<br>
+
+    <h1 class="govuk-heading-xl">Get your State Pension file</h1>
+
+    <p>
+      <strong class="govuk-tag govuk-tag--green">
+        Complete
+      </strong>
+    </p>
+
+    <br>
+    <br>
+
+    <form method="post">
+
+      <button class="govuk-button" data-module="govuk-button">
+        Start
+      </button>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Job Status</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Stage</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Write count</th>
+            <th scope="col" class="govuk-table__header">Start time</th>
+            <th scope="col" class="govuk-table__header">End time</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Validate file</td>
+            <td class="govuk-table__cell">Complete</td>
+            <td class="govuk-table__cell">108</td>
+            <td class="govuk-table__cell">17:21</td>
+            <td class="govuk-table__cell">18:06</td>
+            <td class="govuk-table__cell"><span class="verified-badge verified">
+          </span></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Update case</td>
+            <td class="govuk-table__cell">Complete</td>
+            <td class="govuk-table__cell">108</td>
+            <td class="govuk-table__cell">18:07</td>
+            <td class="govuk-table__cell">18:40</td>
+            <td class="govuk-table__cell"><span class="verified-badge verified">
+          </tr>
+        </tbody>
+      </table>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

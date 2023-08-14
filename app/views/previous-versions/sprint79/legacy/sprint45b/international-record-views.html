@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+<h2 class="govuk-heading-xl">International record views</h2>
+
+<h3 class="govuk-heading-m">Prototype links</h3>
+
+<p>
+
+<p class="govuk-body-l"><a href="overview-gsl-approved-pre" class="govuk-link"><b>GSL approved </b>(not yet had first payment)</a></p>
+<p class="govuk-body-l"><a href="overview-gsl-approved-post" class="govuk-link"><b>GSL approved </b>(had first payment)</a></p>
+<p class="govuk-body-l"><a href="overview-gsl-not-approved" class="govuk-link"><b>GSL disallowed</b></a></p>
+<p class="govuk-body-l"><a href="overview-awaiting-gsl" class="govuk-link"><b>Awaiting GSL decision</b></a></p>
+
+      </div>
+
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

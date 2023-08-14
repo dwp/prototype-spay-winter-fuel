@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% if data['phone-post'] === 'phone' %}
+{% include './_blue_bar.html' %}
+{% else %}
+{% include './_blue_bar-2.html' %}
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <form method="post">
+
+            <h1 class="govuk-heading-xl">Declaration</h1>
+
+            <p>By making this claim, you agree that:<br>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the information you've given is correct and complete as far as you know</li>
+              <li>you'll tell the Department for Work and Pensions straight away if your circumstances change</li>
+              <li>you'll pay back any money you're overpaid if you're asked to</li>
+            </ul>
+            </p>
+
+<br>
+
+            <button type="submit" class="govuk-button">
+              Agree and continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

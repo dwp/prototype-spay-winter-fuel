@@ -1,0 +1,20 @@
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            Yu Martin<br>
+
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+                {{data['nino']}}
+              {% else %}
+                XX 12 34 56 Q
+              {% endif %}
+            </span><br>
+
+                            <strong class="govuk-tag govuk-tag--red">
+                      Unverified address
+                    </strong>
+
+          </h1>
+
+        </div>

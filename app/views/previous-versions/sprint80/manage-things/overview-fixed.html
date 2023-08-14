@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        <div class="moj-banner moj-banner--success">
+
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+        <div class="moj-banner__message">
+        <span class="moj-banner__assistive">Success</span>The address has been fixed</div>
+
+        </div>
+
+            {% include 'current/includes/_bar.html' %}
+
+            {% include 'current/includes/_tab-overview.html' %}
+
+            <br>
+            <br>
+
+            <table class="govuk-table">
+            <h2 class="govuk-heading-m">2019 payment</h2>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Payment date</th>
+                  <td class="govuk-table__cell">Monday, 4 November 2019</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">£100</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+<br>
+
+            <table class="govuk-table">
+                  <h2 class="govuk-heading-m">Current details</h2>
+              <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+              </a>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Age</th>
+                  <td class="govuk-table__cell">79</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell">9 June 1940</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">
+                    {% if data['address-change'] %}
+                    {{data['address-change'].split(', ').join('<br />') | safe }}
+                    {% elif data.address %}
+                    {{data.address.split(', ').join('<br />') | safe}}
+                    {% else %}
+                    Victoria Road<br>
+                    FALKIRK<br>
+                    FK55
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">
+                    {% if data['living-with'] %}
+                    {{data['living-with']}}
+                      {% else %}
+                      Lives with someone else of State Pension age
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date they moved in</th>
+                  <td class="govuk-table__cell">
+                    6 March 2016
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            XX 12 34 56<br>
+            <span class="govuk-caption-xl govuk-!-font-size-24">Brooke Rodgers</span>
+          </h1>
+        </div>
+
+        <h2 class="govuk-heading-l">No payment received</h2>
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption"></caption>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Entered hospital</th>
+              <td class="govuk-table__cell">9 August 2018</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Left hospital</th>
+              <td class="govuk-table__cell">4 March 2019</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Time spent in hospital</th>
+              <td class="govuk-table__cell">29 weeks and 4 days</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Amount to pay</th>
+              <td class="govuk-table__cell">£200</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date of birth</th>
+              <td class="govuk-table__cell">7 March 1947</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Age during qualifying week</th>
+              <td class="govuk-table__cell">72</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Address</th>
+              <td class="govuk-table__cell">
+                85 The Avenue<br>
+                Plymouth<br>
+                PL68 8XI
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Occupancy details</th>
+              <td class="govuk-table__cell">Was not living with anyone over State Pension age</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form method="post">
+              <div class="govuk-form-group">
+                <h3 class="govuk-heading-s">Do you want to make this £200 payment?</h3>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="nopayment-payment" name="nopayment-payment" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="nopayment-payment">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="nopayment-payment-2" name="nopayment-payment" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="nopayment-payment-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+
+              </form>
+
+            </div>
+          </div>
+        </main>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <h1 class="govuk-heading-l">Agent options</h1>
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="hospital-conditional-hint">
+
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="update-details" name="update-details-options" type="radio" value="current-details" data-aria-controls="conditional-hospital-conditional">
+                  <label class="govuk-label govuk-radios__label" for="hospital-conditional">
+                    Update details
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    including current address, occupancy and contact details
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="govuk-radios govuk-radios" data-module="govuk-radios-">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dead" name="update-details-options" type="radio" value="dead" data-aria-controls="conditional-carehome-conditional">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional">
+                    {% if data['mark-as-dead']=='yes' %}
+                      Remove DEAD status
+                    {% else %}
+                      Mark citizen as DEAD
+                    {% endif %}
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="opt-out" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    {% if data ['opted-out']=='yes'%}
+                      Opt back in for future payments
+                    {% else %}
+                      Opt out of future payments
+                    {% endif %}
+
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="dlo" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                  {% if data['mark-as-dlo']=='yes'%}
+                    Remove DLO status
+                  {% else %}
+                    Mark residential address as DLO
+                  {% endif %}
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="gsl" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                  {% if data['gsl-disallowed']=='yes'%}
+                    Remove GSL DISALLOWED status
+                  {% else %}
+                    Disallow GSL
+                  {% endif %}
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="immig-control" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Remove IMMIGRATION CONTROL status
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dlo" name="update-details-options" type="radio" value="benefit-flag" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Add benefit flag
+                  </label>
+                </div>
+
+
+
+
+              </div>
+            </fieldset>
+          </div>
+
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            <input type="hidden" name="declared" value="no">
+            <input type="hidden" name="update-details" value="yes">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% if data ['mark-as-dead']=='yes'%}
+  {% set nextDeadPage = 'confirm-not-dead' %}
+{% else %}
+  {% set nextDeadPage = 'date-of-death' %}
+{% endif %}
+{% if data ['opted-out']=='yes'%}
+  {% set nextOptPage = 'confirm-opt-in' %}
+{% else %}
+  {% set nextOptPage = 'confirm-opt-out' %}
+{% endif %}
+{% if data ['mark-as-dlo']=='yes'%}
+  {% set nextDLOPage = 'address' %}
+{% else %}
+  {% set nextDLOPage = 'confirm-dlo' %}
+{% endif %}
+{% if data ['gsl-disallowed']=='yes'%}
+  {% set nextGSLPage = 'confirm-gsl-approved-again' %}
+{% else %}
+  {% set nextGSLPage = 'confirm-gsl-disallowed' %}
+{% endif %}
+    <script>
+        nextPageRoutes = {
+            'current-details': 'current-details.html',
+            'dead': '{{nextDeadPage}}',
+            'opt-out': '{{nextOptPage}}',
+            'dlo': '{{nextDLOPage}}',
+            'gsl': '{{nextGSLPage}}',
+            'immig-control': 'confirm-immigration-control',
+            'benefit-flag': 'choose-benefit-flag',
+        }
+    </script>
+
+
+{% endblock %}

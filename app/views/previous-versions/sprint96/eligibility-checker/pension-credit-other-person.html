@@ -1,0 +1,207 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% if data['dob-year'] == '1940' %}
+          <div class="govuk-panel govuk-panel--confirmation">
+            <div class="govuk-panel__body">
+              <strong>You qualify for a Winter Fuel Payment of £300</strong>
+            </div>
+          </div>
+
+        </div>
+      {% else %}
+        <div class="govuk-panel govuk-panel--confirmation">
+          <div class="govuk-panel__body">
+            <strong>You qualify for a Winter Fuel Payment of £200</strong>
+          </div>
+        </div>
+        <br>
+       
+      
+    {% endif %}
+
+    <p class="govuk-body">This is because you told us:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      {% if data['dob-year'] == '1940' %}  
+        <li>you are 80 or over</li>
+      {% else %}
+        <li>you are under 80</li>
+      {% endif %}
+      <li>you get Pension Credit and live with someone else who also gets Pension Credit</li>
+    </ul>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="background:#3f4041; border:5px solid #3f4041">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading" style="font-size:18px">
+                If anything you've told us changes before 26 September (when we work out your actual payment):
+            
+                <ul>
+                  <li>you might get a different amount for your Winter Fuel Payment, or</li>
+                  <li>you might not qualify for a payment at all</li>
+               
+                </ul>
+                
+              </p>
+            </div>
+          </div>
+          
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h2 class="govuk-heading-m">What happens next</h2>
+         
+          
+          <div class="steps">
+            {% if data['claimed-since-deferred'] == 'no' %}
+              <div class="step">
+                <div class="step-number">
+                    <div class="step-number-digit">
+                        <span>1</span>
+                    </div>
+                    <div class="step-number-track"></div>
+                </div>
+                <div class="step-detail">
+                    <h2 class="govuk-heading-s">YOU NEED TO MAKE A CLAIM</h2>
+                    <p class="govuk-body">If you have not had a Winter Fuel Payment since you deferred your State Pension, you need to <a href="/current/eligibility-checker/gov-uk-guidance/how-to-claim#claim-for-the-first-time-by-phone">make a claim</a> to get this payment.<br><br>You only need to do this once.</p>
+                </div>
+              </div>
+            {% elif data['had-winter-fuel-before'] == 'no' %}
+              <div class="step">
+                <div class="step-number">
+                    <div class="step-number-digit">
+                        <span>1</span>
+                    </div>
+                    <div class="step-number-track"></div>
+                </div>
+                <div class="step-detail">
+                    <h2 class="govuk-heading-s">YOU NEED TO MAKE A CLAIM</h2>
+                    <p class="govuk-body">You haven't had a Winter Fuel Payment before, so you need to <a href="/current/eligibility-checker/gov-uk-guidance/how-to-claim#claim-for-the-first-time-by-phone">make a claim</a> to get this payment.<br><br>You only need to do this once.</p>
+                </div>
+              </div>
+            {% else %}
+              <div class="step">
+                <div class="step-number">
+                    <div class="step-number-digit">
+                        <span>1</span>
+                    </div>
+                    <div class="step-number-track"></div>
+                </div>
+                <div class="step-detail">
+                    <h2 class="govuk-heading-s">YOU DO NOT NEED TO MAKE A CLAIM</h2>
+                    <p class="govuk-body">Your Winter Fuel Payment will be paid automatically.</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="step">
+              <div class="step-number">
+                  <div class="step-number-digit">
+                      <span>2</span>
+                  </div>
+                  <div class="step-number-track"></div>
+              </div>
+              <div class="step-detail">
+                  <h2 class="govuk-heading-s">Tell us if anything changes</h2>
+                  <p class="govuk-body">You need to tell us about any change of circumstances as soon as possible, as these can affect how much Winter Fuel Payment you get. For example, if you stop getting a benefit, move house or go into care.<br><br>
+                    You can call us for free on 0800 731 0160 (Monday to Friday, 8am to 6pm)<br><br>
+                        
+                    <a href="https://www.gov.uk/winter-fuel-payment/report-change-circumstances#guide-contents">Other ways to contact us</a></p>
+              </div>
+          </div>
+
+            <div class="step">
+              <div class="step-number">
+                  <div class="step-number-digit">
+                      <span>3</span>
+                  </div>
+                  <div class="step-number-track"></div>
+              </div>
+              <div class="step-detail">
+                  <h2 class="govuk-heading-s">We'll send you a letter next winter</h2>
+                  <p class="govuk-body">It will tell you how much you'll get paid.
+                  We normally send this to you in October or November.</p>
+              </div>
+          </div>
+
+                       
+
+                        <div class="step">
+                            <div class="step-number">
+                                <div class="step-number-digit">
+                                    <span>4</span>
+                                </div>
+                                <div class="step-number-track"></div>
+                            </div>
+                            <div class="step-detail" style="padding-bottom:0px">
+                                <h2 class="govuk-heading-s">We'll pay your Winter Fuel Payment</h2>
+                                <p class="govuk-body">
+                                  Most payments are made automatically in November or December.It's paid straight into your bank, building society or credit union account.</p>
+                                  
+                            </div>
+                        </div> <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> 
+
+                       
+                       
+                    </div>
+                    <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+                      <button class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link" style="background-image: url(https://finder-frontend.herokuapp.com/assets/finder-frontend/govuk_publishing_components/icon-print-b04bc2c6b31f73054f79768fd91f76df0b164b247c0905d8ca07b45cfb4f9a3b.png);background-position-x: 10px;
+                      background-position-y: 50%;
+                      background-size: 16px 18px;
+                      background-repeat-x: no-repeat;
+                      background-repeat-y: no-repeat;
+                      background-attachment: initial;
+                      background-origin: initial;
+                      background-clip: initial;
+                      background-color: initial;padding:5px 5px 5px 30px">Print this page</button>
+                  </div>
+         
+          <a href="/current/eligibility-checker/shared-with-under-80-2" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" style="font-weight:normal">
+            Start again
+          </a>
+
+
+        </form>
+
+      </div>
+
+
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}
+
+

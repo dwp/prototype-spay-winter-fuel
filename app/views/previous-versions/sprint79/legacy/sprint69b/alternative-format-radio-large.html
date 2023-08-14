@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include './_bar_2.html' %}
+          
+
+          <form method="post">
+
+
+
+            
+
+            <h1 class="govuk-heading-m">Details</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell">6 March 1935</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell"> 1 Victoria Road
+                    <br>FALKIRK
+                    <br>FK55 8XN</td>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Home phone</th>
+                  <td class="govuk-table__cell">01298336876</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Mobile phone</th>
+                  <td class="govuk-table__cell">07890123652</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Letter type</th>
+                  <td class="govuk-table__cell">Overpayment</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" style="padding-top:20px;margin-bottom:0px; padding-bottom:0px">Alternative format</th>
+                 
+                  <td class="govuk-table__cell"><div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                     
+                      <div class="govuk-radios govuk-radios--conditional govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                          <label class="govuk-label govuk-radios__label" for="contact">
+                            Large print (default - size 16)
+                          </label>
+                        </div>
+                       
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                          <label class="govuk-label govuk-radios__label" for="contact-2">
+                            Large print (custom size)
+                          </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                          <div class="govuk-form-group"><br>
+                            <h2 class="govuk-label-wrapper"><label class="govuk-label" style="font-weight: bold;" for="cost">
+                              Which large print size should be used?
+                            </label>
+                          </h2>
+                            <div id="account-number-hint" class="govuk-hint">
+                              Must be 16, 18, 20, 22, 24 or 26
+                            </div>
+                            <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel" autocomplete="tel"></div>
+                  
+                        </div>
+                     
+                      </div>
+                  
+                    </fieldset>
+                  </div>
+                  <div class="govuk-form-group" style="margin-bottom:0px">
+                    <fieldset class="govuk-fieldset">
+                    
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Bold
+                          </label>
+                        </div>
+                      
+                      </div>
+                  
+                    </fieldset>
+                  </div></td>
+                </tr>
+              </thead>
+
+            </table>
+
+
+
+            <br>
+
+            
+<a href="next-task" class="govuk-link">Return this case to the queue</a>
+        <br><br><br>
+            <button type="submit" class="govuk-button">
+              Create alternative format request
+            </button>
+            
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

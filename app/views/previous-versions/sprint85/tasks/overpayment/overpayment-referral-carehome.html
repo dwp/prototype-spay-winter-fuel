@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include 'current/includes/_bar-carehome.html' %}
+
+          
+
+          <form method="post">
+
+
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">
+                    Amount already paid</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">
+                    £200</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount overpaid</th>
+                  <td class="govuk-table__cell">£100</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Reason</th>
+                  <td class="govuk-table__cell">In a care home</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Updated details received</th>
+                  <td class="govuk-table__cell">6 December 2020</td>
+                </tr>
+              </tbody>
+            </table><br><br>
+
+            <h1 class="govuk-heading-m">Details used for winter 2020 to 2021 payment</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">Age</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">68
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell"> 	9 July 1951
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell"> 4  Falcon Terrace
+                    <br>GLASGOW
+                    <br>G13 6KD
+                  </td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">8 January 2013</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">Does not live with anyone else who gets Winter Fuel Payment</td>
+                </tr>
+              </thead>
+
+            </table>
+            
+<br><br>
+            <h1 class="govuk-heading-m">Current details</h1>
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">Age</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">68
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell"> 	9 July 1951
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">Sea View Care Home<br>
+                    30 Falcon Avenue<br>
+                    BINLEY<br>
+                    CV3 2ES</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">9 June 2019</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">Does not live with anyone else who gets Winter Fuel Payment</td>
+                </tr>
+              </thead>
+
+            </table>
+           
+           
+            <br>
+
+            <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="recoverable-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Is the overpayment for winter 2020 to 2021 recoverable?
+      </h1>
+    </legend>
+    <div id="recoverable-hint" class="govuk-hint">
+
+    </div>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable" name="recoverable" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="recoverable">
+          Yes - download overpayment decision document for winter 2020 to 2021
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="recoverable-2">
+          No
+        </label>
+        </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="recoverable-2">
+          Common Law - refer decision to Debt Management
+        </label>
+      </div>
+    
+    </div>
+  </fieldset>
+</div>
+
+
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+<br><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a>
+            
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

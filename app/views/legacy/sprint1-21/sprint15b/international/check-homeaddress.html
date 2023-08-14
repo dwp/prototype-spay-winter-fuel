@@ -1,0 +1,60 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+PAB details 
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15b/international/homeaddress" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            <form method="post"> 
+            <span class="govuk-caption-xl govuk-!-font-size-36">Household details</span>
+            <h1 class="govuk-heading-xl">Check home address</h1>
+
+                <p>{{data.address1line1}} </p>
+                <p>{{data.address1line2}} </p>
+                <p>{{data.address1line3}} </p>
+                <p>{{data.address1line4}} </p>
+                <p>{{data.address1line5}} </p>
+                <p>{{data.address1line6}} </p>
+                <p>{{data.address1line7}} </p>
+                <p>{{data.address1line8}} </p>
+                
+            <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue  </button>
+
+            </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

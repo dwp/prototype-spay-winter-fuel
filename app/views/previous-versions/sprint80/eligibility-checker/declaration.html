@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="confirmation">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <br>
+          <br>
+
+          <h1 class="govuk-heading-l">Declaration</h1>
+
+          <p>By making this change, you agree that:<br>
+                        <ul class="govuk-list govuk-list--bullet">
+                        <li>the information you've given is correct and complete</li>
+                        <li>you'll tell Department for Work and Pensions (DWP) straight
+                          away if your circumstances change </li>
+                        <li>you'll pay back any money you're overpaid if you're asked to</li>
+                        </ul>
+                        </p>
+
+                        <br>
+
+            <button type="submit" class="govuk-button">
+              Caller agrees, continue
+            </button>
+
+          </div>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

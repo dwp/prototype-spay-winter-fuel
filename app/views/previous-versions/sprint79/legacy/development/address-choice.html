@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your home address? - Pension Credit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      What is your address?
+    </h1>
+
+    <form action="name-and-nino" method="post" class="form">
+      {{ govukSelect({
+        id: "address",
+        name: "address",
+        label: {
+          text: "Select an address"
+        },
+        items: [
+          {
+            value: "address-count",
+            text: "3 addresses found",
+            selected: (data["address"] == "address-count")
+          },
+          {
+            value: "221a",
+            text: "221A Baker Street",
+            selected: (data["address"] == "221a")
+          },
+          {
+            value: "221b",
+            text: "221B Baker Street",
+            selected: (data["address"] == "221b")
+          },
+          {
+            value: "222",
+            text: "222 Baker Street",
+            selected: (data["address"] == "222")
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+<p><a class="govuk-link" href="address-missing">Enter address manually</a></p>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <p class="govuk-body">Can't complete this page? <a href="task-list">Save and return later. (Mark as in-progress)</a></p>
+
+  </div>
+</div>
+{% endblock %}

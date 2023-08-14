@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div>
+                <h1 class="govuk-heading-xl">
+                  Theodora Best<br>
+                  <span class="govuk-body-l">
+                    XX 12 34 56
+                  </span>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <form method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="nok-details-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Is this your residential or correspondence address?
+                  </h1>
+                </legend>
+
+                  <p>
+                    G05 Chorlton Mill <br>
+                    Cambridge Street <br>
+                    Manchester <br>
+                    M1 5BY<br>
+                  </p>
+
+
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="care-home-yes" name="care-home" type="radio" value="yes" >
+                    <label class="govuk-label govuk-radios__label" for="nok-details">
+                      Residential
+                    </label>
+                  </div>
+
+
+                  <div class="govuk-radios govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home-no" name="care-home" type="radio" value="correspondence" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                          Correspondence
+                        </label>
+                      </div>
+ 
+
+                  <div class="govuk-radios govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="care-home-no" name="care-home" type="radio" value="correspondence" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                          None of the above
+                        </label>
+                      </div>
+                  </div>
+
+              </fieldset>
+<br>
+<p><a href="/legacy/sprint49/address2" class="govuk-link">Start again</a></p>
+
+            </div>
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/legacy/sprint49/move-date2.html',
+        'no': '/legacy/sprint49/address2.html',
+        'correspondence': '/legacy/sprint49/address2.html',
+      }
+</script>
+
+{% endblock %}

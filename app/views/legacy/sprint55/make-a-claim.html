@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+            <br>
+            <br>
+
+          <div class="govuk-form-group">
+
+
+           <h1 class="govuk-heading-xl">Make a claim</h1>
+
+           <p>Make a claim by calling the Winter Fuel Payment Centre.</p>
+            
+
+           <h3 class="govuk-heading-s">Winter Fuel Payment Centre</h3>
+           <p><b>Telephone: </b>0800 731 0160<br>
+              <b>Textphone:</b> 0800 731 0464<br>
+              Monday to Friday, 8am to 6pm</p>
+
+
+
+
+           <h3 class="govuk-heading-m">What happens next</h3>
+           <p>Your payment will be made in November or December.</p>
+           <p>Once you have received a Winter Fuel Payment you'll continue to get a payment every year without having to make another claim.</p>
+
+
+           </form>
+          </div>
+      </div>
+    </div>
+
+</main>
+</div>
+
+{% endblock %}

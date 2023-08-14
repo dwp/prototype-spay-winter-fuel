@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+<br>
+<br>
+
+    <h1 class="govuk-heading-xl">Get your State Pension cases</h1>
+
+
+
+    <form method="post">
+
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Payment amount
+          </h1>
+        </legend>
+
+                  <p><a class="govuk-link" href="/legacy/sprint22/gysp-results">Select all</a></p>
+
+        <div class="govuk-checkboxes govuk-checkboxes--small">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              £100
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+              £150
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+              £200
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+              £300
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <button class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

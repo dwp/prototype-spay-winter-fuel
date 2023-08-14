@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+         
+          {% include 'current/includes/_bar.html' %}
+      
+
+
+          <form method="post">
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <h1 class="govuk-heading-l">
+                <span class="govuk-caption-l">Request manual payment</span>
+                Which exercise is this manual payment for?
+              </h1>
+                 
+                <div id="more-detail-hint" class="govuk-hint">
+                
+                </div>
+
+              <div class="govuk-radios govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="live-yes" name="last-year" type="radio" value="2021/2022">
+                  <label class="govuk-label govuk-radios__label" for="live-yes">
+                    2021/2022
+                  </label> </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="live-no" name="last-year" type="radio" value="2022/2023">
+                  <label class="govuk-label govuk-radios__label" for="live-no">
+                    2022/2023
+                  </label> </div>
+              </div>
+            </fieldset>
+          </div>
+
+         
+
+          <button type="submit" class="govuk-button">
+            Update request
+          </button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+  nextPageRoutes = {
+      '2021/2022': 'decline-and-update-review-updated',
+      '2022/2023': 'decline-and-update-review-updated',
+      
+  }   
+</script>
+
+{% endblock %}

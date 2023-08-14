@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include './_header-check.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+      <br>
+      <br>
+
+        <h1 class="govuk-heading-xl">Check and update cases</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <section class="key-details-bar-black" role="contentinfo" aria-label="Key details">
+          <dl class="key-details-bar-black__key-details">
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">11.67 million</h2>
+            <span class="govuk-caption-l">cases</span>
+          </dl>
+        </section>
+      </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0"><a href="eligible">11.34 million</a></h2>
+        <span class="govuk-caption-l"><a href="eligible">eligible</a></span>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-5"><a href="ineligible">133,004</a></h2>
+        <span class="govuk-caption-l"><a href="ineligible">ineligible</a></span>
+        <br>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-5"><a href="error">265,998</a></h2>
+          <span class="govuk-caption-l"><a href="error">in error</a></span>
+          <br>
+          </dl>
+    </section>
+    <br>
+    <section class="key-details-bar-grey" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar-grey__key-details">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0"><a href="recalculation">492</a></h2>
+          <span class="govuk-caption-l govuk-!-margin-bottom-2"><a href="recalculation">to be recalculated</a></span>
+          </dl>
+    </section>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+{% endblock %}

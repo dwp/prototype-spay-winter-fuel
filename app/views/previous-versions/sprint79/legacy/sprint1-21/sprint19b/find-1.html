@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form action="overview" method="post">
+
+        <h2 class="govuk-heading-xl">Alex Smith<br>
+          <span class="govuk-caption-xl"> {{data.nino}} </span>
+          <span class="app-c-tag">Receiving Winter Fuel</span>
+        </h2>
+
+
+      
+      <form method="post">
+        <section class="govuk-!-margin-bottom-9">
+        <h2 class="govuk-heading-l">About the caller</h2>
+          {{ govukInput({
+            label: {
+              text: "Full name"
+            },
+            id: "caller-name",
+            name: "caller[name]",
+            classes: "govuk-!-width-three-quarters"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Phone number"
+            },
+            id: "caller-phone",
+            name: "caller[phone]",
+            classes: "govuk-!-width-three-quarters"
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "Relationship to person who died"
+            },
+            id: "caller-relationship",
+            name: "caller[relationship]",
+            classes: "govuk-!-width-three-quarters"
+          }) }}
+        </section>
+        <section>
+          <h2 class="govuk-heading-l">Next security question to go here</h2>
+          <p class="govuk-body">
+            Use these details for the security check.
+          </p>
+          {{ govukInput({
+            label: {
+              text: "Full name"
+            },
+            id: "deceased-name",
+            name: "deceased[name]",
+            classes: "govuk-!-width-three-quarters"
+          }) }}
+          {{ govukDateInput({
+            id: "deceased-dob",
+            fieldset: {
+              legend: {
+                text: "Date of birth",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1980"
+            },
+            items: [
+              {
+                label: "Day",
+                name: "deceased[dob][day]",
+                classes: "govuk-input--width-2"
+              },
+              {
+                label: "Month",
+                name: "deceased[dob][month]",
+                classes: "govuk-input--width-2"
+              },
+              {
+                label: "year",
+                name: "deceased[dob][year]",
+                classes: "govuk-input--width-4"
+              }
+            ]
+          }) }}
+          {% set noHtml %}
+            {{ govukRadios({
+              idPrefix: "security-passed-secondary",
+              name: "security[passed2]",
+              fieldset: {
+                legend: {
+                  text: "Were they able to answer the additional security questions?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+          {% endset -%}
+          {{ govukInput({
+            label: {
+              text: "National Insurance number"
+            },
+            id: "deceased-nino",
+            name: "deceased[nino]",
+            classes: "govuk-!-width-three-quarters"
+          }) }}
+            
+          {{ govukRadios({
+            idPrefix: "security-passed",
+            name: "security[passed1]",
+            fieldset: {
+              legend: {
+                text: "Did the caller provide all of these details?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No",
+                conditional: {
+                  html: noHtml
+                }
+              }
+            ]
+          }) }}
+        </section>
+        <a href="/legacy/sprint19b/overview" class="govuk-button">Continue</a>
+      </form>
+    </div>
+</div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

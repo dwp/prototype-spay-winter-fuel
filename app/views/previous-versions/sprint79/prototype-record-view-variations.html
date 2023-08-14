@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-index.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+{{ govukBackLink ({
+  text: 'Back',
+  href: 'javascript:history.back()'
+}) }}
+            <br>
+            <br>
+
+<h2 class="govuk-heading-l">Record view variations</h2>
+
+
+                <ul class="govuk-list govuk-list--bullet">
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/overview-page-variants/overview-dap">Overview tab - death arrears payment due</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514370468729&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/overview-page-variants/overview-dap-form-sent">Overview tab - DAP form (WFPF004) sent</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764513835298424&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/overview-page-variants/overview-dap-cancelled">Overview tab - DAP opted out of payment</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764513835298281&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/overview-page-variants/overview-opted-out">Overview tab - opt back in</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764513835298260&cot=14">Journey map</a><br>
+                </li>
+                
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/commercial/overview-commercial">Overview tab - review commercial address</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456749769&cot=14">Journey map</a><br>
+                </li>
+            
+               
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/overview-page-variants/overview-withdrawal-agreement-not-reviewed">Overview tab - Withdrawal agreement not reviewed</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514370468792&cot=14">Journey map</a><br>
+                </li>
+
+                <br>
+                
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/payments-tab/payment-details/previous-payment-mark-as-returned">Payment tab - mark payment as FAILED</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367460669042&cot=14">Journey map</a><br>
+                </li>
+
+                <br>
+
+                <li>
+                <a target="_blank" class="govuk-body-m" style="font-weight:bold;padding-right:15px" href="/current/record-view/overview-tab/update-details/address-carehome">Update Details - carehome detagging</a>
+                <a target="_blank" class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764514467529493&cot=14">Journey map</a><br>
+                </li>
+
+               
+               
+                </ul>
+
+                
+    </div>
+  </div>
+
+                
+
+
+
+    
+
+
+
+<!--   -->
+
+      {% endblock %}
+
+

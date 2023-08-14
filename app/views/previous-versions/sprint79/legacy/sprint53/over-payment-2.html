@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-l">
+                {% if data['moveyear'] === '2020' %}
+                Possible overpayment
+              {% else %}
+                Possible overpayments
+              {% endif %}
+               </h1>
+
+
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                  {% if data['moveyear'] === '2020' %}
+                    This person may have been paid too much Winter Fuel Payment for winter 2020 to 2021.
+                  {% else %}
+                    This person may have been paid too much Winter Fuel Payment since {{ data['moveyear'] }}.
+                  {% endif %}
+                </strong>
+              </div>
+
+              <div class="govuk-inset-text">
+                  A case will be added to the 'Review overpayments' task.   
+              </div>
+
+              {% if data['moveyear'] === '2020' %}
+                <table class="govuk-table">
+                  <caption class="govuk-table__caption"></caption>
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Amount already paid</th>
+                      <td class="govuk-table__cell">£200</td>
+                    </tr>
+                  </thead>
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Possible overpayment</th>
+                      <td class="govuk-table__cell">£100</td>
+                    </tr>
+                  </thead>
+                </table>
+              {% endif %}
+             
+
+              <br>
+
+            
+
+              <br>
+              <br>
+
+            </fieldset>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,497 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-xl" style="margin-bottom: 3%;">Winter Fuel Payments prototype</h1>
+<br>
+
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link" aria-current="page" href="index" style="color: black">Agent</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 0%;">
+      <a class="moj-sub-navigation__link"href="index-admin" style="color: #1D70B8; text-decoration: underline;" >Admin</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-govuk" style="color: #1D70B8; text-decoration: underline;" >GOV.UK</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="index-previous-versions" style="color: #1D70B8; text-decoration: underline;" >Previous versions</a>
+    </li>
+    <li class="moj-sub-navigation__item" style="padding-left: 1%;">
+      <a class="moj-sub-navigation__link" href="https://dwpdigital.atlassian.net/wiki/spaces/SPAY/pages/116438451121/User+Research" style="color: #1D70B8; text-decoration: underline;" >User research</a>
+    </li>
+  </ul>
+
+</nav>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#new-claims">
+        New claims
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#tasks">
+        Tasks
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#record-view">
+        Record view
+      </a>
+    </li>
+   </ul>
+
+  <div class="govuk-tabs__panel" id="new-claims">
+    
+    <section class="key-details-bar-light-blue" role="contentinfo" aria-label="Key details">
+              <dl class="key-details-bar-light-blue__key-details">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag">
+                    New claims
+                  </strong>
+                  <br>
+                  <br>
+
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                  <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type">International new claims</a>
+                  <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367455929908&cot=14">Journey map</a><br>
+                  </li>
+                  <li>
+                  <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/new-claims/uk/type-of-application">UK new claims</a>
+                  <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367453165485&cot=14">Journey map</a><br>
+                  </li>
+              </dl>
+            </section>
+
+  </div>
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tasks">
+    <h2 class="govuk-heading-l">Tasks</h2>
+
+
+    <ul class="govuk-list govuk-list--bullet">
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/contact-citizens/address-1.html">Contact citizens</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367461045186&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/fix-account-details/bank-task">Fix account details</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456536173&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/pay-death-arrears/death-arrears-task-1.html">Pay death arrears</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367461045408&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/13-week/13-week">Review 13 week care home cases</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367458600816&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/send-alternative-format/alternative-format-choose-audio.html">Review alternative formats</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367458426179&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/commercial-address/commercial-address">Review commercial addresses</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367457834365&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/gsl/gsl-task">Review GSL / Withdrawal agreement</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367457668642&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/tasks/overpayment/overpayment-referral-shared">Review overpayments</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367453165485&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/verify-addresses/address-1.html">Verify addresses</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456313738&cot=14">Journey map</a><br>
+                </li>
+                </ul>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="record-view">
+    <h2 class="govuk-heading-l">Record view</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">98</td>
+          <td class="govuk-table__cell">95</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">122</td>
+          <td class="govuk-table__cell">131</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">126</td>
+          <td class="govuk-table__cell">142</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Past year</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+            <section class="key-details-bar-light-blue" role="contentinfo" aria-label="Key details">
+              <dl class="key-details-bar-light-blue__key-details">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag">
+                    New claims
+                  </strong>
+                  <br>
+                  <br>
+
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li>
+                  <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/new-claims/international/application-type">International new claims</a>
+                  <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367455929908&cot=14">Journey map</a><br>
+                  </li>
+                  <li>
+                  <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/new-claims/uk/type-of-application">UK new claims</a>
+                  <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367453165485&cot=14">Journey map</a><br>
+                  </li>
+              </dl>
+            </section>
+
+  
+<br>
+    
+            <section class="key-details-bar-dark-blue" role="contentinfo" aria-label="Key details">
+              <dl class="key-details-bar-dark-blue__key-details">
+                <strong class="govuk-tag app-c-tag--warning">
+                  Tasks
+                </strong>
+                <br>
+                <br>
+
+                <ul class="govuk-list govuk-list--bullet">
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/contact-citizens/address-1.html">Contact citizens</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367461045186&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/fix-account-details/bank-task">Fix account details</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456536173&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/pay-death-arrears/death-arrears-task-1.html">Pay death arrears</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367461045408&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/13-week/13-week">Review 13 week care home cases</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367458600816&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/send-alternative-format/alternative-format-choose-audio.html">Review alternative formats</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367458426179&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/commercial-address/commercial-address">Review commercial addresses</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367457834365&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/gsl/gsl-task">Review GSL / Withdrawal agreement</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367457668642&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/tasks/overpayment/overpayment-referral-shared">Review overpayments</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367453165485&cot=14">Journey map</a><br>
+                </li>
+                <li>
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/verify-addresses/address-1.html">Verify addresses</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456313738&cot=14">Journey map</a><br>
+                </li>
+                </ul>
+
+              </dl>
+            </section>
+
+            <br>
+
+            <section class="key-details-bar-dark-blue" role="contentinfo" aria-label="Key details">
+              <dl class="key-details-bar-dark-blue__key-details">
+                <strong class="govuk-tag app-c-tag--warning">
+                  Tasks
+                </strong>
+                <br>
+                <br>
+
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/contact-citizens/address-1.html">Contact citizens</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367461045186&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/fix-account-details/bank-task">Fix account details</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456536173&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/pay-death-arrears/death-arrears-task-1.html">Pay death arrears</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367461045408&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/13-week/13-week">Review 13 week care home cases</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367458600816&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/send-alternative-format/alternative-format-choose-audio.html">Review alternative formats</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367458426179&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/commercial-address/commercial-address">Review commercial addresses</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367457834365&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/gsl/gsl-task">Review GSL / Withdrawal agreement</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367457668642&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/tasks/overpayment/overpayment-referral-shared">Review overpayments</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367453165485&cot=14">Journey map</a><br>
+                
+                <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/tasks/verify-addresses/address-1.html">Verify addresses</a>
+                <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456313738&cot=14">Journey map</a><br>
+                
+              </dl>
+            </section>
+
+<br>
+
+        
+
+
+
+
+<section class="key-details-bar-purple" role="contentinfo" aria-label="Key details">
+              <dl class="key-details-bar-purple__key-details">
+                <strong class="govuk-tag app-c-tag--purple">
+                  Record View
+                </strong>
+                <br>
+                <br>
+                <a href="/legacy/sprint62/manage-jobs3" class="govuk-link govuk-!-font-size-19">Manage Winter Fuel Payments</a><br>
+              </dl>
+            </section>
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="#">
+                Action history<span class="govuk-visually-hidden">Action history</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="#">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/contact-tab/contact-details.html">
+                Contact tab<span class="govuk-visually-hidden">Contact tab</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367460668767&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+<br><br><br><br>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/overview-tab/overview-page-variants/overview-dap-form-sent">
+                DAP form (WFPF004) sent<span class="govuk-visually-hidden">DAP form (WFPF004) sent</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764513835298424&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/overview-tab/overview-page-variants/overview-dap-cancelled">
+                DAP opted out of payment<span class="govuk-visually-hidden">DAP opted out of payment</span>
+            </a>
+
+        <br>
+
+           <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764513835298281&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+<br><br><br><br>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/overview-tab/overview-page-variants/overview-opted-out">
+                Opt back in<span class="govuk-visually-hidden">Opt back in</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3458764513835298260&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/overview-tab/overview.html">
+                Overview<span class="govuk-visually-hidden">Overview</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367461431474&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+<br><br><br><br>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/payments-tab/payments.html">
+                Payment tab<span class="govuk-visually-hidden">Payment tab</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367460669042&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/overview-tab/commercial/overview-commercial">
+                Review commercial address<span class="govuk-visually-hidden">Review commercial address</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367456749769&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+<br><br><br><br><br><br>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/overview-tab/wa/overview">
+                Review withdrawal agreement<span class="govuk-visually-hidden">Review withdrawal agreement</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367457057812&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+    
+            <a class="govuk-body-l" style="font-weight:bold" href="https://winterfuel.herokuapp.com/current/record-view/overview-tab/overview">
+                Update details<span class="govuk-visually-hidden">Update details</span>
+            </a>
+
+        <br>
+
+            <a class="govuk-body-s" href="https://miro.com/app/board/o9J_lxzuego=/?moveToWidget=3074457367460669288&cot=14">
+                Journey map<span class="govuk-visually-hidden">Journey map</span>
+              </a>
+  
+        </div>
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+      </div>
+
+    
+
+
+
+<!--   -->
+
+      {% endblock %}
+
+

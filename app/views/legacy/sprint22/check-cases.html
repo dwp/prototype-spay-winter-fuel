@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-breadcrumbs">
+      <ol class="govuk-breadcrumbs__list">
+        <li class="govuk-breadcrumbs__list-item">
+          <a class="govuk-breadcrumbs__link" href="manage-jobs2">Check and update</a>
+        </li>
+        <li class="govuk-breadcrumbs__list-item" aria-current="page">Check cases</li>
+      </ol>
+    </div>
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+      <br>
+      <br>
+
+        <h1 class="govuk-heading-xl">Check cases</h1>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <section class="key-details-bar-black" role="contentinfo" aria-label="Key details">
+          <dl class="key-details-bar-black__key-details">
+            <span class="govuk-caption-l">Total cases</span>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">11.67 million</h2>
+          </dl>
+        </section>
+      </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <span class="govuk-caption-l"><a href="eligible">Eligible</a></span>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0"><a href="eligible">10.64 million</a></h2>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <span class="govuk-caption-l"><a href="ineligible">Ineligible</a></span>
+        <br>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-5"><a href="ineligible">133,004</a></h2>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <span class="govuk-caption-l"><a href="error">Error</a></span>
+        <br>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-5"><a href="error">0000
+        <br></a></h2>
+      </dl>
+    </section>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+{% endblock %}

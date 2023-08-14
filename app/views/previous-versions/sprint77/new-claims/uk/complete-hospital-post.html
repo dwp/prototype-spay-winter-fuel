@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% if data['phone-post'] === 'phone' %}
+{% include 'current/includes/_blue_bar.html' %}
+{% else %}
+{% include 'current/includes/_blue_bar-2.html' %}
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="//legacy/sprint21/benefits" method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+
+
+          <h1 class="govuk-heading-xl">You do not qualify for a Winter Fuel Payment</h1>
+
+          <p>You do not qualify because you were in hospital for over a year,
+            including the qualifying week.</p>
+
+            <h3 class="govuk-heading-m">Changes of circumstance</h3>
+            <p>Your future entitlement may be affected if your circumstances change.</p>
+            <p>You will not need to make a new application, but we need to know as soon as possible if you:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>leave hospital</li>
+              <li>move house or there is a change to who you live with</li>
+              <li>move into a care home</li>
+            </ul>
+
+            <p>
+              <strong>Telephone:</strong> 0800 731 0160<br>
+            </p>
+
+          </form>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <div class="govuk-form-group">
+
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body">
+                    <strong>You qualify for a Winter Fuel Payment of £300</strong>
+                    </div>
+                  </div>
+                
+                  <p>You qualify for £300 because you:</p>
+
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>were born on or before 20 September 1940</li>
+                    <li>have no fixed abode</li>
+                  </ul>
+                  </form>
+                  <button class="govuk-button" data-module="govuk-button">
+                    Start again
+                  </button>
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

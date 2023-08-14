@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="confirm-account">
+
+          {% include 'current/includes/_bar.html' %}
+
+            
+
+            <br>
+            <br>
+
+            <h1 class="govuk-heading-l">What are your bank or building society account details?</h1>
+            <p>This is the account we'll pay your Winter Fuel Payment into.</p>
+            <form method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                  Name on the account
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="accountholder" name="accountholder" type="text">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sortcode">
+                  Sort code
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="sortcode" name="sortcode" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                  Account number
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="accountnumber" name="accountnumber" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="rollnumber">
+                  Building society roll number (if there is one)
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="rollnumber" name="rollnumber" type="text">
+              </div>
+
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

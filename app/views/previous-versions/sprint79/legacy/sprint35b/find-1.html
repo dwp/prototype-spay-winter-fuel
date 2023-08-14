@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+<br>
+<br>
+
+      <form method="post">
+
+    <!--    {% include './_bar.html' %}  -->
+
+    <h1 class="govuk-heading-xl">
+      Can you confirm your name?
+    </h1>
+
+    <p class="govuk-body-m"><span style="font-weight: bold" class="govuk-body-l">
+      {% if data['phone-post'] === 'phone' %}
+      Theodora Best
+      {% else %}
+      Samira Mcgill
+      {% endif %}
+      </span></p>
+      <br>
+        <button type="submit" class="govuk-button">
+          Confirm name
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Name and Winter fuel statement reference number - Cancel my Winter Fuel Payment
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="pause-summary" method="post">
+        <h1 class="govuk-heading-xl">
+          Your details and reference number
+        </h1>
+
+        {{ govukInput({
+          label: {
+            text: "What is your full name?"
+          },
+          hint: {
+            text: "Include any middle names."
+          },
+          id: "full-name",
+          name: "full-name",
+          classes: "govuk-input--width-20",
+          value: data["full-name"]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Winter fuel letter reference number"
+          },
+          hint: {
+            text: "You can find this on your Winter Fuel letter."
+          },
+          id: "wfpn",
+          name: "wfpn",
+          classes: "govuk-input--width-10",
+          value: data["wfpn"]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

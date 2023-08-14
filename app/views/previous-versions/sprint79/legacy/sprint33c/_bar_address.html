@@ -1,0 +1,22 @@
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            Jay Adamson<br>
+
+                            <span class="govuk-body-l">
+                              {% if data['nino'] %}
+                                {{data['nino']}}
+                              {% else %}
+                                XX 12 34 56
+                              {% endif %}
+                            </span>
+
+                            <br>
+
+                            <strong class="govuk-tag govuk-tag--red">
+                      Unverified address
+                    </strong>
+
+          </h1>
+
+        </div>

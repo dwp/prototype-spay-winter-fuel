@@ -1,0 +1,244 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <main id="content" role="main">
+          <div class="grid-row">
+            <div class="column-full">
+
+{% include './_bar.html' %}
+
+{% include './_tab-contact.html' %}
+
+            </div>
+          </div>
+        </main>
+
+        <br>
+        <br>
+
+          <div>
+            <h2 class="govuk-heading-m">Contact details</h2>
+            <dl class="app-check-your-answers app-check-your-answers--short">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+
+                </dt>
+                <dd class="app-check-your-answers__answer">
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__answer">
+                  Address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {% if data.address %}
+                    {{data.address.split(', ').join('<br />') | safe}}
+                  {% else %}
+                    70 Elmgrove Terrace<br>
+                    Newcastle Upon Tyne<br>
+                    Tyne & Wear<br>
+                    NE1 6XP
+                  {% endif %}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="address">
+                    Change<span class="govuk-visually-hidden">Change address</span>
+                  </a>
+                </dd>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Home phone number
+              </dt>
+              <dd class="app-check-your-answers__answer">
+
+                {% if data['homephone-remove'] === 'Yes' %}
+                {% elseif data.homephone %}
+                  {{data.homephone}}
+                {% else %}
+                  0191 4461056
+                {% endif %}
+              </dd>
+
+              <dd class="app-check-your-answers__change">
+                <a href="homephone">
+                  Change<span class="govuk-visually-hidden">Change home phone number</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Work phone number
+              </dt>
+              <dd class="app-check-your-answers__answer">
+
+                {% if data['workphone-remove'] === 'Yes' %}
+                {% elseif data.worknumber %}
+                  {{data.worknumber}}
+                {% else %}
+                  0191 2798475
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="workphone">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Mobile phone number
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if data.mobilenumber %}
+                  {{data.mobilenumber}}
+                {% endif %}
+                {% if data['mobilephone-remove'] === 'Yes' %}
+                {% elseif data.mobilephone %}
+                  {{data.mobilephone}}
+                {% endif %}
+                </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="mobilephone">
+                  {% if not data.mobilenumber %}
+                    Add<span class="govuk-visually-hidden"> mobile number</span>
+                  {% else %}
+                    Change<span class="govuk-visually-hidden"> mobile number</span>
+                  {% endif %}
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Email address
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if data.email %}
+                  {{data.email}}
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="email">
+                  {% if not data.email %}
+                    Add<span class="govuk-visually-hidden"> mobile number</span>
+                  {% else %}
+                    Change<span class="govuk-visually-hidden"> mobile number</span>
+                  {% endif %}
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__answer">
+                Contact preferences
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if data.contactpreference %}
+                  {{data.contactpreference}}
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="contact-preferences">
+                  {% if not data.contactpreference %}
+                    Add<span class="govuk-visually-hidden"> contact preferences</span>
+                  {% else %}
+                    Change<span class="govuk-visually-hidden"> contact preferences</span>
+                  {% endif %}
+                </a>
+              </dd>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+
+          <h2 class="govuk-heading-m">
+            Contact changes
+          </h2>
+          <ol class="app-timeline">
+
+            <li class="app-timeline__entry">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                Address changed
+              </h3>
+
+              <p class="app-timeline__info govuk-!-margin-bottom-0">
+                <span class="govuk-visually-hidden">Bank account changed</span>
+                <span class="app-timeline__date">
+                  29 March 2019
+                </span>
+              </p>
+            </li>
+
+            <li class="app-timeline__entry">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+                Address changed
+              </h3>
+
+              <p class="app-timeline__info govuk-!-margin-bottom-0">
+                <span class="govuk-visually-hidden">No changes made</span>
+                <span class="app-timeline__date">
+8 January 2019
+                </span>
+              </p>
+            </li>
+
+
+          </ol>
+
+        </div>
+
+
+      </div>
+
+    </main>        </div>
+  <!-- </div> -->
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    </div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Payment due
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">The claimant is due a payment of £200</h1>
+        
+          </div>
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p>The claimant's new address will automatically update across all DWP systems.</p>
+            <p>You still need to add their bank account details so that the payment can be made.</p>
+       
+
+
+             <form action="payment_type" method="post" class="form"> 
+                <input type="submit" method="post" value="Add bank account details" class="govuk-button">
+              </form>
+            
+              <p><a  href="#">View record</a></p>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

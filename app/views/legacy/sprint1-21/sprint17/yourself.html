@@ -1,0 +1,42 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint17/whattype2" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+ <span class="govuk-caption-xl govuk-!-font-size-36">Pre-eligibility</span>
+              <h1 class="govuk-heading-xl">Are you applying for yourself?</h1>
+
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="someoneelse-yes" name="someoneelse" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="someoneelse-yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item govuk-!-margin-bottom-5">
+                      <input class="govuk-radios__input" id="someoneelse-no" name="someoneelse" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="someoneelse-no">
+                        No
+                      </label>
+                    </div>
+                </div>
+
+<a href="/legacy/sprint17/dateofbirth" class="govuk-button "> Continue </a>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,256 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-width-container">
+    <a href="#" class="govuk-back-link">Back</a>
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          {% include './_bar.html' %}
+
+          {% if (data['address-change'] === '27 Kent Street, Amble, NE65 0LZ') or (data['living-with-date-changed'] == 'true') or (data['living-with-date-changed'] == 'true') or (data['homephone-changed'] == 'true') or (data['poa-changed'] == 'true')%} 
+          <div class="moj-banner">
+
+            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+            <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+            C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" /></svg>
+            
+            <div class="moj-banner__message">
+            
+              <span class="moj-banner__information">Changes will not be submitted until you select 'Update details'</span>
+            </div>
+            
+            </div> 
+          {% endif %}
+  
+          <h2 class="govuk-heading-m">Current details</h2>
+  
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:60%">
+                Address{% if data['address-change'] === '27 Kent Street, Amble, NE65 0LZ' %}
+                <strong class="govuk-tag govuk-tag--blue"style="float:right">
+                  changed
+                </strong>
+                    {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p style="padding-bottom:10px">{% if data['address-change'] === '27 Kent Street, Amble, NE65 0LZ' %}
+                27 Kent Street<br>Amble<br>NE65 0LZ
+                      {% else %}
+                      72 Guild Street<br>London<br>SE23 6FH
+                    {% endif %}
+                <br><br>
+                since {% if data['move-date-changed'] == 'true' %}
+                {{data['moveday']}}
+                {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
+                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February 
+                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March 
+                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April 
+                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May 
+                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June 
+                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July 
+                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August 
+                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September 
+                {% elif data['movemonth'] == '10' %} October 
+                {% elif data['movemonth'] == '11' %} November 
+                {% elif data['movemonth'] == '12' %} December 
+                {% endif %}
+                {{data['moveyear']}}
+                      {% else %}
+                      10 March 2016
+                    {% endif %}</p>
+                
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Occupancy{% if data['living-with-date-changed'] == 'true' %}
+                <strong class="govuk-tag govuk-tag--blue"style="float:right">
+                  changed
+                </strong>
+                    {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body" style="padding-bottom:10px">{% if data['living-with'] %}
+                  {{data['living-with']}}
+                  {% else %}
+                  Lives with someone else who gets Winter Fuel Payment
+                    {% endif %}
+                <br><br>
+                since {% if data['living-with-date-changed'] == 'true' %}
+                {{data['living-with-day']}}
+                {% if (data['living-with-month'] == '1') or (data['living-with-month'] == '01') %} January 
+                {% elif (data['living-with-month'] == '2') or (data['living-with-month'] == '02') %} February 
+                {% elif (data['living-with-month'] == '3') or (data['living-with-month'] == '03') %} March 
+                {% elif (data['living-with-month'] == '4') or (data['living-with-month'] == '04') %} April 
+                {% elif (data['living-with-month'] == '5') or (data['living-with-month'] == '05') %} May 
+                {% elif (data['living-with-month'] == '6') or (data['living-with-month'] == '06') %} June 
+                {% elif (data['living-with-month'] == '7') or (data['living-with-month'] == '07') %} July 
+                {% elif (data['living-with-month'] == '8') or (data['living-with-month'] == '08') %} August 
+                {% elif (data['living-with-month'] == '9') or (data['living-with-month'] == '09') %} September 
+                {% elif data['living-with-month'] == '10' %} October 
+                {% elif data['living-with-month'] == '11' %} November 
+                {% elif data['living-with-month'] == '12' %} December 
+                {% endif %}
+                {{data['living-with-year']}}
+                      {% else %}
+                      10 March 2016
+                    {% endif %}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="living-with">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home phone{% if data['homephone-changed'] == 'true' %}
+                <strong class="govuk-tag govuk-tag--blue"style="float:right">
+                  changed
+                </strong>
+                    {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">{% if (data.homephone) and data ['homephone-remove'] != 'Yes' %}
+                  {{data['homephone']}}
+                  
+                  {% elif data ['homephone-remove'] === 'Yes' %}
+                  Not applicable
+                  {% else %}
+                      01207234567
+                    {% endif %}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="homephone">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Power of attorney{% if data['poa-changed'] == 'true' %}
+                <strong class="govuk-tag govuk-tag--blue"style="float:right">
+                  changed
+                </strong>
+                    {% endif %}
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">{% if data['poa'] === 'Yes'%}
+                  {{data['poa']}}
+                  <br><br>
+                  for {{data ['poa-person']}}
+                  {% else %}
+                      No
+                    {% endif %}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="poa">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+            </div>
+            
+          </dl><br><br>
+
+        
+  
+          
+         
+            
+            
+            
+  
+          <h2 class="govuk-heading-m">Previous address and occupancy</h2>
+  
+          
+
+          
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:60%">
+                30 April 2012 to 10 March 2016
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <a class="govuk-link" href="#">
+                  Delete address<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+               
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                4712 Rue Francais<br>Paris<br>12876
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Occupancy
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Did not live with someone else who got Winter Fuel Payment</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> contact details</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <a class="govuk-link" href="#" style="font-size:18px">
+            Add a previous address<span class="govuk-visually-hidden"> address</span>
+          </a><br><br><br><br><br>
+  
+          
+  
+          
+  
+        </div>
+      </div>
+      <form method="post">
+
+
+        {% if (data['address-change'] === '27 Kent Street, Amble, NE65 0LZ') or (data['living-with-date-changed'] == 'true') or (data['living-with-date-changed'] == 'true') or (data['homephone-changed'] == 'true') or (data['poa-changed'] == 'true')%} 
+        <button class="govuk-button" data-module="govuk-button">
+          Update details
+        </button>
+        {% endif %}
+                 
+        
+                </form>
+    </main>
+  </div>
+  </div>
+
+  {% endblock %}

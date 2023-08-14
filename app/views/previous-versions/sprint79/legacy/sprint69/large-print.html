@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+
+                
+
+                <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Which size large print do you need?
+      </h1>
+    </legend><br>
+    <div class="govuk-radios">
+     
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="large-print" type="radio" value="Size 18">
+        <label class="govuk-label govuk-radios__label" for="large-print-9">
+          Size 16
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="audio" name="large-print" type="radio" value="Size 18">
+        <label class="govuk-label govuk-radios__label" for="large-print-9">
+          Size 18
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="braille" name="large-print" type="radio" value="Size 20">
+        <label class="govuk-label govuk-radios__label" for="large-print-10">
+          Size 20
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bsl" name="large-print" type="radio" value="Size 22">
+        <label class="govuk-label govuk-radios__label" for="large-print-11">
+          Size 22
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="large" name="large-print" type="radio" value="Size 24">
+        <label class="govuk-label govuk-radios__label" for="large-print-12">
+          Size 24
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="welsh" name="large-print" type="radio" value="Size 26">
+        <label class="govuk-label govuk-radios__label" for="large-print-13">
+          Size 26
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+<input type="hidden" name="alt-format-changed" value="true">
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

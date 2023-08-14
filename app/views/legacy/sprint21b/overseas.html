@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_blue_bar.html' %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/legacy/sprint21/benefits" method="post">
+
+          <a href="/legacy/sprint21/residency" class="govuk-back-link">Back</a>
+          <br>
+          <br>
+
+          <h1 class="govuk-heading-l">You need to call the overseas team</h1>
+
+<p>You may be able to get Winter Fuel Payment depending on where you live.<br>
+<br>
+If you live in Switzerland or a European Economic Area (EEA) country and you have a genuine and sufficient link to the UK, you may get a payment.<br>
+
+<div class="govuk-inset-text">
+  You can not get a payment if you live in Cyprus, France, Gibraltar, Greece, Malta,
+  Portugal or Spain because the average winter temperature is higher than the warmest
+  region of the UK.
+</div>
+
+<p>Call 0800 731 0160 to make a overseas claim for Winter Fuel Payment.</p>
+
+
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

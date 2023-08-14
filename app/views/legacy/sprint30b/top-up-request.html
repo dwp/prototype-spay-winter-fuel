@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-full">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+
+
+                <div>
+                  <h1 class="govuk-heading-xl">
+                    Alex Smith<br>
+                    <span class="govuk-caption-xl">{{data.nino}}</span>
+                </div>
+
+              </div>
+            </div>
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <h2 class="govuk-heading-l">Top up payment request sent to DWP</h2>
+
+<p>
+    <span class="app-c-tag app-c-tag--orange">Receiving Winter Fuel Payment</span>
+</p>
+
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date</th>
+                  <td class="govuk-table__cell">8 November 2018</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">What is your date of birth?</th>
+                  <td class="govuk-table__cell">9 June 1940</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Were you living in the UK between 16 and 22 September 2020?</th>
+                  <td class="govuk-table__cell">Yes</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Are you receiving State Pension or Pension Credit?
+                  </th>
+                  <td class="govuk-table__cell">State Pension</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Do you live with anyone?
+                  </th>
+                  <td class="govuk-table__cell">No</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    What is your current address?
+                  </th>
+                  <td class="govuk-table__cell">27 Kent Street<br>
+                     Crossmoor<br>
+                     PR4 9FH
+
+              </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    Are you power of attorney for anyone?
+                  </th>
+                  <td class="govuk-table__cell">No</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+          </div>
+        </div>
+      </main>
+
+      <br>
+
+
+  </main>
+</div>
+
+
+<!-- </div> -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

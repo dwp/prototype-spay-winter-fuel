@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+              <h1 class="govuk-heading-xl">Were you admitted into hospital after 19 September 2021?</h1>
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="yes" name="hospital-admission" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="yes">
+                    Yes
+                  </label> </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="no" name="hospital-admission" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="no">
+                    No
+                  </label> </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+  
+  newDate = new Date();
+  var numberOfDaysToAdd = -366;
+  newDate.setDate(newDate.getDate() + numberOfDaysToAdd);
+  ny = newDate.getFullYear();
+  nm = newDate.getMonth();
+  nd = newDate.getDate();
+  
+  document.querySelector(".year-ago").innerHTML = nd + " " + monthNames[nm] + " " + ny;
+  </script>
+
+{% endblock %}

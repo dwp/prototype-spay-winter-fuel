@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-xl">Get your State Pension cases</h2>
+
+    <nav class="moj-pagination" id="pagination-label">
+
+      <p class="govuk-visually-hidden" aria-labelledby="pagination-label"></p>
+
+      <ul class="moj-pagination__list">
+      </ul>
+      <p class="moj-pagination__results"><b>Number of cases: </b>108</p>
+    </nav>
+
+    <br>
+
+    <div class="moj-filter-layout">
+
+
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar">
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+            <table class="govuk-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <th scope="col" class="govuk-table__header">Case</th>
+
+                  <th scope="col" class="govuk-table__header">Eligibility</th>
+
+                  <th scope="col" class="govuk-table__header"></th>
+
+                  <th scope="col" class="govuk-table__header"></th>
+
+                  <th scope="col" class="govuk-table__header"></th>
+
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+
+                    <a href="/legacy/sprint22/gysp-record">
+                      AA 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Full payment</td>
+
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">BB 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Full payment</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">
+                      CC 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Shared payment</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">DD 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Shared payment</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">EE 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Ineligible</td>
+
+                  <td class="govuk-table__cell">Unverified date of birth</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">
+                      FF 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Shared payment</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="gysp-record-2">GG 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Shared payment</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">HH 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Full payment</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">II 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Full payment</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">JJ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Eligible</td>
+
+                  <td class="govuk-table__cell">Shared payment</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

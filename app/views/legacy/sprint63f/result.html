@@ -1,0 +1,536 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-xl">govuk-heading-l</h2>
+
+    <a href="#" class="govuk-back-link">Back</a>
+
+    <br>
+    <br>
+
+    <div class="moj-filter-layout">
+
+      <div class="moj-filter-layout__filter">
+
+        <div class="moj-filter">
+
+          <div class="moj-filter__header">
+
+            <div class="moj-filter__header-title">
+              <h2 class="govuk-heading-m">Filter</h2>
+            </div>
+
+            <div class="moj-filter__header-action">
+
+            </div>
+
+          </div>
+
+          <div class="moj-filter__content">
+
+            <div class="moj-filter__selected">
+
+              <div class="moj-filter__selected-heading">
+
+                <div class="moj-filter__heading-title">
+                  <h2 class="govuk-heading-m">Selected filters</h2>
+                </div>
+
+                <div class="moj-filter__heading-action">
+                  <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="moj-filter__options">
+
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Apply filters
+              </button>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="keywords">
+                  Location
+                </label>
+
+                <input class="govuk-input" id="keywords" name="keywords" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      Benefit
+                  </legend>
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                      <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                        State Pension (13)
+                      </label>
+
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                      <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                        Pension Credit (2)
+                      </label>
+
+                    </div>
+
+                  </div>
+                </fieldset>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar">
+
+          <div class="moj-action-bar__filter"></div>
+
+          <div class="moj-menu">
+            <div class="moj-menu__wrapper">
+
+              <button type="submit" class="govuk-button moj-menu__item govuk-button--secondary " data-module="govuk-button">
+                View
+              </button>
+
+              <button type="submit" class="govuk-button moj-menu__item govuk-button--secondary " data-module="govuk-button">
+                Match
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+            <table class="govuk-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select all</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="col" class="govuk-table__header">Person</th>
+
+                  <th scope="col" class="govuk-table__header">Benefit</th>
+
+                  <th scope="col" class="govuk-table__header">Amount</th>
+
+                  <th scope="col" class="govuk-table__header">Address</th>
+
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+
+                    <a href="#">John Smith <br>
+                      QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£150</td>
+
+                  <td class="govuk-table__cell">25 Windsor Street<br>
+                    Gosforth<br>
+                    NE3 1YL</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select Puncak Jaya</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="/legacy/sprint22/harold-sutton">Harold Sutton <br> QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£150</td>
+
+                  <td class="govuk-table__cell">12 Amble Terrace<br>
+                    Sandyford<br>
+                    NE2 1FG</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Jennifer Langley<br>
+                      1QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£150</td>
+
+                  <td class="govuk-table__cell">2 Manor Road<br>
+                    Harrow<br>
+                    HA58 4SZ</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Susan Francis<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£200</td>
+
+                  <td class="govuk-table__cell">39 Victoria Street<br>
+                    Oldham<br>
+                    OL50 8DA</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">John Smith<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">11 Green Lane<br>
+                    Hereford<br>
+                    HR2 3YX</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header"><a href="#">
+                    Warren Sutton<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Pension Credit</td>
+
+                  <td class="govuk-table__cell">£300</td>
+
+                  <td class="govuk-table__cell">25 The Grove<br>
+                    Romford<br>
+                    RM97 8XE</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Alan Jones<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">576 The Green<br>
+                    Swansea<br>
+                    SA18 9WG</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Jennifer Langley<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">40 Broadway<br>
+                    Wolverhampton<br>
+                    WV14 4AI</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Susan Francis<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">635 King Street<br>
+                    Shrewsbury<br>
+                    SY64 1KR</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">John Smith<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Pension Credit</td>
+
+                  <td class="govuk-table__cell">£200</td>
+
+                  <td class="govuk-table__cell">86 Main Street<br>
+                    Cambridge<br>
+                    CB46 7VQ</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Margaret Blake<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">41 New Road<br>
+                    East Central London<br>
+                    EC11 5PF</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">John Smith<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">71 South Street<br>
+                    Telford<br>
+                    TF1 1JU</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Mary Sutton<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">4 Stanley Road<br>
+                    Doncaster<br>
+                    DN11 6QT</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Alan Jones<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£150</td>
+
+                  <td class="govuk-table__cell">3 Manchester Road<br>
+                    Dartford<br>
+                    DA49 9JM</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                      <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                        <span class="govuk-visually-hidden">Select</span>
+                      </label>
+                    </div>
+                  </td>
+
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">Jennifer Langley<br>QQ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">State Pension</td>
+
+                  <td class="govuk-table__cell">£100</td>
+
+                  <td class="govuk-table__cell">50 Mill Road <br>
+                    South West London <br>
+                    SW76 8ZE</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

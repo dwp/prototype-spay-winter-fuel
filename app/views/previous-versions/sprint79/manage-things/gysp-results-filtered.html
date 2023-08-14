@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+{{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+    <h2 class="govuk-heading-xl">Get your State Pension cases</h2>
+
+    <nav class="moj-pagination" id="pagination-label">
+
+      
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label"></p>
+
+  <ul class="moj-pagination__list">
+  </ul>
+  <p class="moj-pagination__results"><b>Number of cases: </b>1</p>
+  </nav>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+  <div class="moj-search">
+
+  <form action="#" method="post">
+
+  <div class="govuk-form-group">
+    <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+      Find a case
+    </label>
+
+    <span id="search-hint" class="govuk-hint moj-search__hint ">
+      Search by National Insurance number
+    </span>
+
+    <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+  </div>
+
+  <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+    Search
+  </button>
+
+  </form>
+  </div>
+</div>
+</div>
+
+  <br>
+
+  <p class="govuk-body govuk-!-font-size-19"><b>Filtered by</b> </p>
+  <p class="govuk-body govuk-!-font-size-19">   <b>Eligibility:</b> Ineligible <a href="#" class="govuk-link">Change</a><br>
+  <b>Reason ineligible:</b> Unverified date of birth <a href="#" class="govuk-link">Change</a></p>
+
+
+    <div class="moj-filter-layout">
+
+
+
+      <div class="moj-filter-layout__content">
+
+        <div class="moj-action-bar">
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+            <table class="govuk-table">
+
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <th scope="col" class="govuk-table__header">Case</th>
+
+                  <th scope="col" class="govuk-table__header">Eligibility</th>
+
+                  <th scope="col" class="govuk-table__header"></th>
+
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <th scope="row" class="govuk-table__header">
+                    <a href="#">JJ 12 34 56 X</a></th>
+
+                  <td class="govuk-table__cell">Ineligible</td>
+
+                  <td class="govuk-table__cell">Unverified date of birth</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+
+            <nav class="moj-pagination" id="pagination-label">
+
+              <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+              <ul class="moj-pagination__list">
+
+                <li class="moj-pagination__item moj-pagination__item--active"></li>
+
+                <li class="moj-pagination__item  moj-pagination__item--next">
+                  <a class="moj-pagination__link" href=""><span class="govuk-visually-hidden"></span></a>
+                </li>
+              </ul>
+              <p class="moj-pagination__results">Showing <b>1</b> of <b>1</b> of <b></b> result</p>
+            </nav>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

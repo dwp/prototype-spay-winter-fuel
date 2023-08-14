@@ -1,0 +1,63 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+ 
+  <div class="govuk-width-container">
+
+  <a href="/legacy/sprint15/international/anyone-else-sp" class="govuk-back-link">Back</a>
+
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                   
+            <h1 class="govuk-heading-xl">Does anyone else that lives with you get a Winter Fuel payment?</h1>
+
+             <span id="wf-hint" class="govuk-hint">
+                      If there are two or more people in the household who are eligible for a Winter Fuel Payment, a payment will usually be made to each eligible person. Each eligible person may need to make a separate claim
+                </span>
+                     <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="anyone-else-wf-yes" name="anyoneElseWf" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="anyone-else-wf-yes">
+                                Yes
+                                </label>
+                        </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="anyone-else-wf-no" name="anyoneElseWf" type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="anyone-else-wf">
+                                No
+                                </label>
+                            </div>
+                    </div>
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue </button>
+
+
+    </main>
+
+</form>
+</div>
+
+  {% endblock %}

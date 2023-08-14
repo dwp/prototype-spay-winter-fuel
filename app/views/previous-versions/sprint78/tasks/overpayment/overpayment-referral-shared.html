@@ -1,0 +1,202 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          {% include 'current/includes/_bar-shared.html' %}
+
+
+
+          <form method="post">
+
+
+
+            <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">
+                    Amount already paid</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">
+                    £400</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount overpaid</th>
+                  <td class="govuk-table__cell">£200</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Reason</th>
+                  <td class="govuk-table__cell">Lives with someone else who gets Winter Fuel Payment</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Updated details received</th>
+                  <td class="govuk-table__cell">17 December 2020</td>
+                </tr>
+              </tbody>
+            </table><br><br>
+ 
+            <h1 class="govuk-heading-m">Details used for winter 2020 to 2021 payment</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">Age</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">69
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell"> 	5 March 1951
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell"> 137  Wenlock Terrace
+                    <br>BEREPPER
+                    <br>TR12 4WL
+                  </td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">6 March 2016</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">Does not live with anyone else who gets Winter Fuel Payment</td>
+                </tr>
+              </thead>
+
+            </table>
+
+<br><br>
+            <h1 class="govuk-heading-m">Current details</h1>
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third">Age</th>
+                  <td class="govuk-table__cell govuk-!-width-one-half">69
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell"> 	5 March 1951
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-third">Address</th>
+                    <td class="govuk-table__cell">27 Kent Street<br>
+                     AMBLE<br>
+                     NE65 0LZ</td>
+                  </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">12 July 2020</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">Lives with someone else who gets Winter Fuel Payment</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date of occupancy change</th>
+                  <td class="govuk-table__cell">12 July 2020</td>
+                </tr>
+              </thead>
+
+            </table>
+
+
+
+            <br>
+
+            <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="recoverable-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Is this overpayment recoverable?
+      </h1>
+    </legend>
+    <div id="recoverable-hint" class="govuk-hint">
+
+    </div>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable" name="recoverable" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="recoverable">
+          Yes - download overpayment decision document
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="recoverable-2">
+          No
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="recoverable-2" name="recoverable" type="radio" value="common">
+        <label class="govuk-label govuk-radios__label" for="recoverable-3">
+          Common Law - refer decision to Debt Management
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+<br><a href="/current/tasks/overpayment/tasks-review-overpayments-returned.html" class="govuk-link">Return this case to the queue</a>
+         
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+<script>
+    nextPageRoutes = {
+        'yes': '/legacy/sprint59e/tasks-review-overpayments-complete1.html',
+        'no': '/legacy/sprint59e/tasks-review-overpayments-complete1.html',
+        'common': '/tbc.html',
+    }
+</script>
+{% endblock %}

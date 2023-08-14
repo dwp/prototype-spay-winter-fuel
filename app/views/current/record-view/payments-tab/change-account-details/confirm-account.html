@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+            {% include 'current/includes/_bar.html' %}
+
+            
+
+            <br>
+            <br>
+
+<!--            <h1 class="govuk-heading-l">Confirm bank or building society</h1>   -->
+            <h1 class="govuk-heading-l">Is it a TSB account?</h1>
+<!--            <p>TSB</p>    -->
+
+            <form method="post">
+
+              <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bank-name" name="next-page" type="radio" value="../payments">
+              <label class="govuk-label govuk-radios__label" for="bank-name">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bank-name-2" name="next-page" type="radio" value="change-account-details">
+              <label class="govuk-label govuk-radios__label" for="cbank-name-2">
+                No
+              </label>
+            </div>
+          </div>
+
+            <br>
+
+            <button type="submit" class="govuk-button">
+              Save
+              <input type="hidden" name="bank-details-changed" value="true">
+            </button>
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}

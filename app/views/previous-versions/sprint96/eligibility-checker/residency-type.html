@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-xl">Tell us if you're:
+</h1>
+
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="normal" name="where-were-you-living" type="radio" value="normal">
+                  <label class="govuk-label govuk-radios__label" for="normal">
+                    Living at home
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="nhs-hospital" name="where-were-you-living" type="radio" value="hospital">
+                  <label class="govuk-label govuk-radios__label" for="nhs-hospital">
+                    In a hospital getting free treatment
+                  </label> 
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="care-home" name="where-were-you-living" type="radio" value="carehome">
+                  <label class="govuk-label govuk-radios__label" for="care-home">
+                    In a care home
+                  </label> 
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="no-fixed-abode" name="where-were-you-living" type="radio" value="no-abode">
+                  <label class="govuk-label govuk-radios__label" for="no-fixed-abode">
+                    Currently without a fixed address
+                  </label> 
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="prison" name="where-were-you-living" type="radio" value="prison">
+                  <label class="govuk-label govuk-radios__label" for="prison">
+                    In prison
+                  </label> 
+                </div> 
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+          
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

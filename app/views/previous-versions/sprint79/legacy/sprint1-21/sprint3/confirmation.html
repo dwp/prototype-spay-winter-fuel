@@ -1,0 +1,54 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Bob Smith
+{% endblock %}
+
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %} {# Set serviceName in config.js. #}
+  {% include "includes/headsearch.html" %}
+  {% include "includes/QQ123456C_head.html" %}
+{% endblock %} 
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">A payment of £100 has been made to the claimant</h1>
+          </div>
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p>The payment will appear in their bank account within the next 14 days.</p>
+            <p>They don't need to do anything next year, they'll get the payment automatically.</p>
+
+
+             <form action="search" method="post" class="form"> 
+                <input type="submit" method="post" value="Search for a person" class="govuk-button">
+              </form>
+            
+              <p><a  href="#">View record</a></p>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

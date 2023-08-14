@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {% include 'current/includes/_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <h2 class="govuk-heading-l">No address found</h2>
+
+
+              <p><a href="temporary-key.html" class="govuk-link">Assign temporary key</a></p>
+              <p><a href="correspondence-address-search.html" class="govuk-link">Enter address manually </a></p>
+              <br>
+
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  <script>
+    nextPageRoutes = {
+        '8 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+        '18 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+         '1 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+         '2 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+         '3 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+         '4 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+         '5 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+         '6 Front Street, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+         'Made barbers, Crownhill, PL6 6WJ': '/current/record-view/contact-tab/contact-details.html',
+          'no address found': 'correspondence-address-search.html',
+    }
+  </script>
+
+
+  {% endblock %}

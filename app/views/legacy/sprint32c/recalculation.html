@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include './_header.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="check-cases">Check and update cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Cases to be recalculated</li>
+  </ol>
+</div>
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+
+  <br>
+  <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Cases to be recalculated</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <section class="key-details-bar-black" role="contentinfo" aria-label="Key details">
+          <dl class="key-details-bar-black__key-details">
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-1">492</h2>
+            <span class="govuk-caption-l">cases in error</span>
+          </dl>
+        </section>
+      </div>
+  <div class="govuk-grid-column-one-third">
+    <section class="key-details-bar-grey" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar-grey__key-details">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0"><a href="verify-address-list">492</a></h2>
+        <span class="govuk-caption-l"><a href="verify-address-list">unverified addresses</a></span>
+      </dl>
+    </section>
+  </div>
+</div>
+
+</div>
+</div>
+
+  </div>
+</div>
+
+
+{% endblock %}

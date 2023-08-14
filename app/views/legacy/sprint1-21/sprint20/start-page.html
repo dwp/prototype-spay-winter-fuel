@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="overview" method="post">
+
+          <h1 class="govuk-heading-xl">Check eligibility for Winter Fuel Payment</h1>
+
+          <p class="govuk-body">Use this service to find out if someone is
+            eligible for Winter Fuel Payment and how much they might get.</p>
+
+          <p>
+              This service checks eligibility based on qualifying week
+              16 to 22 September 2020.
+          </p>
+
+          <p class="govuk-body">Anyone who has deferred their State Pension must
+            call 0800 123 445 to make a claim for Winter Fuel Payment.</p>
+
+          <a href="/legacy/sprint1-21/legacy/sprint20/date-of-birth" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
+            Start now
+          </a>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

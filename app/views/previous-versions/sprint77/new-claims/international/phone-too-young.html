@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-international.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_name_bar.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        <br>
+        <br>
+
+        <h1 class="govuk-heading-xl">You do not qualify for a Winter Fuel Payment</h1>
+
+      <p>
+      To qualify for a Winter Fuel Payment you must have been born before 6 October 1954.
+      </p>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

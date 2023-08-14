@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+          {% include './_bar.html' %}
+
+          {% include './_tab-residency.html' %}
+
+          <br>
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Residency details</h2>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Current address</th>
+                <td class="govuk-table__cell">
+                  {% if data['address-change'] %}
+                  {{data['address-change'].split(', ').join('<br />') | safe }}
+                  {% elif data.address %}
+                  {{data.address.split(', ').join('<br />') | safe}}
+                  {% else %}
+                  78 Graham Road<br>
+                  Chelsham<br>
+                  CR6 9ND
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="address">
+                    Change
+                    <span class="govuk-visually-hidden">Change address</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date they moved in</th>
+                <td class="govuk-table__cell">
+                  6 March 2016
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="address">
+                    Change
+                    <span class="govuk-visually-hidden">Change address</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">
+                  {% if data['living-with'] %}
+                  {{data['living-with']}}
+                  {% else %}
+                  Lives with someone of State Pension age
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="address">
+                    Change
+                    <span class="govuk-visually-hidden">Change address</span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">
+          Action history
+        </h2>
+        <ol class="app-timeline">
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Removed home telephone
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                8 March 2016
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              <a href="history-details" class="govuk-link">Changed residency details</a>
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                8 March 2016
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Changed occupancy details
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                5 July 2013
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              Changed home telephone
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                19 January 2009
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              <a href="history-details" class="govuk-link">Changed address</a>
+            </h3>
+
+            <p class="app-timeline__info govuk-!-margin-bottom-0">
+              <span class="govuk-visually-hidden">Marriage verified</span>
+              <span class="app-timeline__date">
+                18 January 2009
+              </span>
+            </p>
+          </li>
+
+          <li class="app-timeline__entry">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">
+              <a href="contact-history" class="govuk-link">See full history</a>
+            </h3>
+          </li>
+
+        </ol>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

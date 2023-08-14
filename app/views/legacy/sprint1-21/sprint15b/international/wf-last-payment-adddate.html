@@ -1,0 +1,93 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+ 
+ <div class="govuk-width-container">
+
+  <a href="/legacy/sprint15b/international/anyone-else-wf" class="govuk-back-link">Back</a>
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl govuk-!-font-size-36">Household details</span>
+                    <h1 class="govuk-heading-xl">When did they get their last payment?</h1>
+
+                    <p><strong>Date 1</strong>
+                        <br>13 11 2018
+                    </p>
+
+                        <span id="dob-hint" class="govuk-hint">
+                            These dates do not have to be exact, but to the best of your knowledge
+                        </span>
+                        <span id="dob-hint" class="govuk-hint">
+                            For example, 31 11 2018
+                        </span>
+
+
+                    <div class="govuk-date-input" id="dobinput" name="dobinput">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="wf-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="wfday" name="wfday" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="wf-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="wfmonth" name="wfmonth" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="wf-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="wfyear" name="wfyear" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button govuk-!-margin-right-1">
+              Save and continue
+            </button>
+
+            <a href="#" class="govuk-button govuk-button--secondary">
+              Add another date
+            </a>
+
+
+    </main>
+
+</form>
+
+  {% endblock %}

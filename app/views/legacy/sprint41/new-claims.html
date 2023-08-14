@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-agent-claim.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">New claim</h1>
+
+        <form method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+              Type of application 
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="new-claim" name="new-claim" type="radio" value="uk">
+                <label class="govuk-label govuk-radios__label" for="changed-name">
+                  Phone
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="new-claim-2" name="new-claim" type="radio" value="international">
+                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                  Post
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+
+      </form>
+        </div>
+
+      </div>
+
+    </div>
+    {% endblock %}

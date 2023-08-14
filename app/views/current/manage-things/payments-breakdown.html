@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+{{ govukBackLink({
+                  text: "Back",
+                  href: "javascript:history.go(-1)"
+                }) }}
+                
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="/current/manage-things/manage-things">Manage things...</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="payments">Payments</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="letters">Letters</a>
+              </li>
+
+
+          </nav>
+
+
+
+        </div>
+      </div>
+
+
+      <div class="govuk-grid-row">
+
+
+
+        <div class="govuk-grid-column-full">
+
+              
+
+<br>
+<br>
+
+          <h2 class="govuk-heading-l">Payments sent</h2>
+
+        <span class="govuk-caption-m">Payment year</span>
+        <h3 class="govuk-heading-m">2020 to 2021</h3>
+
+                </div>
+
+
+        <div class="govuk-grid-column-full">
+          <hr class="govuk-section-break govuk-section-break--visible">
+          <br>
+          <br>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Day</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Payments sent</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Payments returned</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Today</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£85</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£95</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">11 October</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£75</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£55</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">10 October</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">10 October</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">10 October</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">10 October</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">10 October</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">10 October</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+{% include './_find-someone.html' %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <a href="/legacy/sprint20b/care-home" class="govuk-back-link">Back</a>
+          <br>
+          <br>
+
+          <div class="govuk-panel govuk-panel--confirmation">
+                    <div class="govuk-panel__body">
+                    <strong>You are entitled to a Winter Fuel Payment of £150</strong>
+                    </div>
+                  </div>
+
+<br>
+
+        <p>This is because you had been in a care or nursing home for 13 weeks or longer
+          during the week that we calculate eligibility for Winter Fuel Payment.
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

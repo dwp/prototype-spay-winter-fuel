@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">
+                  This claim has been submitted
+                </h1>
+                <div class="govuk-panel__body govuk-!-font-size-27">
+                  Theodora Best qualifies for a Winter Fuel Payment of £100.
+                </div>
+              </div>
+
+<br>
+
+                <h2 class="govuk-heading-m">What happens next</h2>
+
+                <p>Most payments are made in November and December, but it could
+                  take up until 13 January 2020 for this payment.</p>
+
+                <p>Once a person has received a Winter Fuel Payment they will continue to get
+                  a payment every year without having to make another claim.</p>
+<br>
+
+                <h3 class="govuk-heading-m">Changes of circumstance</h3>
+                <p>How much a person gets depends on their circumstances during the qualifying week.
+                  The qualifying week for winter 2020 was 16 to 22 September 2020.</p>
+                <p>
+                  We need to know as soon as possible if Theodora Best:
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>moves house or there is a change to who they live with</li>
+                    <li>goes into hospital for more than 52 weeks</li>
+                    <li>moves into a care home</li>
+                  </ul></p>
+
+                <p>
+                  <strong>Telephone:</strong> 0800 731 0160<br>
+                </p>
+
+
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

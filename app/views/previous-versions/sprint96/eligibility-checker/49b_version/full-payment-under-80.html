@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <div class="govuk-form-group">
+
+            <div class="govuk-panel govuk-panel--confirmation">
+              <div class="govuk-panel__body">
+                <strong>You qualify for a Winter Fuel Payment of £200</strong>
+              </div>
+            </div>
+
+            <br><br>
+
+             <button class="govuk-button" data-module="govuk-button">
+              Start again
+            </button>
+
+
+           </form>
+          </div>
+      </div>
+    </div>
+
+</main>
+</div>
+
+{% endblock %}

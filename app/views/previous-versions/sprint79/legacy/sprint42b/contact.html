@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <h1 class="govuk-heading-xl">What are your contact details?</h1>
+        <form method="post">
+
+          <p>We need at least one phone number.<br>For international numbers include the country code.</p>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="telephone-number">
+              Home phone
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="telephone-number">
+              Mobile phone
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="telephone-number">
+              Work phone
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="telephone-number">
+              Email address
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

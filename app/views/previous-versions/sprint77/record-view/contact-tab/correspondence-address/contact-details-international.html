@@ -1,0 +1,253 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include 'current/includes/_bar.html' %}
+
+          {% if data['alt-format-changed'] == 'true' %}
+          <div class="moj-banner moj-banner--success">
+
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+          </svg>
+
+          <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Details updated
+          </div>
+
+          </div>
+        {% endif %}
+
+
+          {% include 'current/includes/_tab-contact.html' %}
+          <br><br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Contact details</h2>
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header" style="width:235px">Home phone</th>
+
+                <td class="govuk-table__cell" style="width: 255px">
+                  {% if data['homephone-remove'] === 'Yes' %}
+                  {% elseif data.homephone %}
+                  {{data.homephone}}
+                  {% else %}
+                  01632 960005
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="/current/record-view/contact-tab/home-phone/homephone.html">
+                    Change<span class="govuk-visually-hidden"> home phone number</span>
+                  </a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">Mobile phone</th>
+<td class="govuk-table__cell">
+{% if data.mobilenumber %}
+{{data.mobilenumber}}
+{% endif %}
+{% if data['mobilephone-remove'] === 'Yes' %}
+{% elseif data.mobilephone %}
+{{data.mobilephone}}
+{% endif %}
+</td>
+<td class="govuk-table__cell">
+<a href="/current/record-view/contact-tab/mobile-phone/mobilephone.html">
+{% if not data.mobilenumber %}
+Add<span class="govuk-visually-hidden"> mobile number</span>
+{% else %}
+Change<span class="govuk-visually-hidden"> mobile number</span>
+{% endif %}
+</a>
+</td>
+</tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Work phone</th>
+                <td class="govuk-table__cell">
+                  {% if data.worknumber %}
+                  {{data.worknumber}}
+                  {% endif %}
+                  {% if data['workphone-remove'] === 'Yes' %}
+                  {% elseif data.workphone %}
+                  {{data.workphone}}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="/current/record-view/contact-tab/work-phone/workphone.html">
+                    {% if not data.worknumber %}
+                    Add<span class="govuk-visually-hidden"> work number</span>
+                    {% else %}
+                    Change<span class="govuk-visually-hidden"> work number</span>
+                    {% endif %}
+                  </a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Email address</th>
+                <td class="govuk-table__cell">
+
+
+                  {% if data['email'] %}
+                  {{data['email']}}
+                  {% elseif data['email3'] %}
+                  {{data['email3']}}
+                  {% endif %}
+
+
+                </td>
+                <td class="govuk-table__cell">
+                  <a href="/current/record-view/contact-tab/email/email.html">
+
+                    {% if data['email'] or data['email3'] %}
+                    Change<span class="govuk-visually-hidden">email</span>
+                    {% else %}
+                    Add<span class="govuk-visually-hidden">email</span>
+                    {% endif %}
+
+                  </a>
+                </td>
+              </tr>
+
+               <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Correspondence address</th>
+                <td class="govuk-table__cell">
+                  315 Concell De Cent<br>
+                  Eixample<br>
+                  Barcelona<br>
+                  190008<br>
+                  SPAIN<br>
+
+                </td>
+
+
+                <td class="govuk-table__cell">
+                  <a href="/current/record-view/contact-tab/correspondence-address/correspondence-address-international-update.html" class="govuk-link">Change
+                  </a>
+                </td>
+
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Alternative format</th>
+
+
+                <td class="govuk-table__cell">
+              {% if data['alternative-format'] !== 'remove' %}
+                  {% if data['alternative-format'] %}
+                  {{data['alternative-format']}}
+                {% endif %}
+
+                {% if data['alternative-format'] === 'Welsh language' %}
+                {% if data['large'] === 'Large print (default - size 16)' %}
+                  <br>Large print (default - size 16)
+                {% if data['large-2'] === 'Large print (custom size)' %}
+                  <br>Large print (custom size)
+                {% endif %}
+                {% endif %}
+                {% endif %}
+
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (custom size)' %}
+                  {% if data['large-print'] %}
+                  <br>{{data['large-print']}}
+                {% endif %}
+                {% endif %}
+
+                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (default - size 16)' or data['alternative-format'] === 'Large print (custom size)' %}
+                  {% if data['bold'] === 'yes' %}
+                  <br>Bold
+                {% endif %}
+                {% endif %}
+
+                {% if data['colour'] %}
+                  : <br>
+                  {% if data['colour'] %}
+                  {{data['colour']}}
+                {% endif %}
+                {% endif %}
+
+
+              {% endif %}
+
+                </td>
+
+
+                <td class="govuk-table__cell">
+                  <a href="/current/record-view/contact-tab/alt-formats/alt.html">
+                  {% if data['alternative-format'] !== 'remove' %}
+                    {% if data['alternative-format'] %}
+                    Change<span class="govuk-visually-hidden"> alternative format.</span>
+                    {% else %}
+                    Add<span class="govuk-visually-hidden"> alternative format.</span>
+                    {% endif %}
+                     {% else %}
+                    Add
+                  {% endif %}
+                  </a>
+                </td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Preferred language</th>
+                  <td class="govuk-table__cell">
+                    English
+                  </td>
+
+
+                  <td class="govuk-table__cell">
+                    <a href="/current/record-view/contact-tab/preferred-language/confirm-change-language">
+
+                        Change
+
+
+                    </a>
+                  </td>
+
+                </tr>
+            </tbody>
+          </table>
+
+      </div>
+      {% if data['alt-format-changed'] == 'true' %}
+        <div class="govuk-grid-column-one-third">
+          {% include 'current/includes/_history3.html' %}
+       </div>
+      {% else %}
+        <div class="govuk-grid-column-one-third">
+
+        </div>
+      {% endif %}
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

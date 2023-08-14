@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-international.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_name_bar.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="moj-banner moj-banner--success">
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+            <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+          <div class="moj-banner__message">
+            <span class="moj-banner__assistive">Success</span>Passed security</div>
+        </div>
+
+
+      <form method="post">
+
+{% include 'current/includes/_bar.html' %}
+
+            {% include 'current/includes/_tab-overview.html' %}
+
+            <br>
+            <br>
+
+            <table class="govuk-table">
+            <h2 class="govuk-heading-m">2020 payment</h2>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Payment date</th>
+                  <td class="govuk-table__cell">Monday, 4 November 2020</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">£200</td>
+                </tr>
+              </tbody>
+            </table>
+
+<br>
+
+            <table class="govuk-table">
+                  <h2 class="govuk-heading-m">Qualification details</h2>
+              <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+              </a>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Age</th>
+                  <td class="govuk-table__cell">66</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell">9 August 1953</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">
+                    {% if data['address-change'] %}
+                    {{data['address-change'].split(', ').join('<br />') | safe }}
+                    {% elif data.address %}
+                    {{data.address.split(', ').join('<br />') | safe}}
+                    {% else %}
+                  Via Croce Rossa 100<br>
+                  Tanaunella<br>
+                  Nuoro<br>
+                  Italia<br>
+                  08020
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">
+                    {% if data['living-with'] %}
+                    {{data['living-with']}}
+                      {% else %}
+                      Does not live with anyone else of State Pension age
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date they moved in</th>
+                  <td class="govuk-table__cell">
+                    6 March 2016
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

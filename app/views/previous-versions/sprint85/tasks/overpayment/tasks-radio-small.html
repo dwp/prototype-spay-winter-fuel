@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Tasks</h1>
+
+
+         
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+               
+                <div class="govuk-radios govuk-radios--small">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-1" name="tasks-radio" type="radio" value="contact-citizens">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-1">
+                      <strong>Contact citizens</strong> - 32 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-2" name="tasks-radio" type="radio" value="fix-account-details">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-2">
+                      <strong>Fix account details</strong> - 892 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-3" name="tasks-radio" type="radio" value="pay-death-arrears">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-3">
+                      <strong>Pay death arrears</strong> - 3,927 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-4" name="tasks-radio" type="radio" value="review-alternative-formats">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-4">
+                      <strong>Review alternative formats</strong> - 281 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-5" name="tasks-radio" type="radio" value="review-commercial-addresses">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-5">
+                      <strong>Review commercial addresses</strong> - 124 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-6" name="tasks-radio" type="radio" value="review-gsl-wa">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-6">
+                      <strong>Review GSL / WA</strong> - 39 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-7" name="tasks-radio" type="radio" value="review-overpayments">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-7">
+                      <strong>Review overpayments</strong> - 8,398 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-8" name="tasks-radio" type="radio" value="review-care-home">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-8">
+                      <strong>Review 13 week care home cases</strong> - 1,429 cases
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tasks-radio-9" name="tasks-radio" type="radio" value="verify-addresses">
+                    <label class="govuk-label govuk-radios__label" for="tasks-radio-9">
+                      <strong>Verify addresses</strong> - 2,842 cases
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+<button class="govuk-button"  data-module=“govuk-button”>
+Continue
+</button>
+
+
+
+        </form>
+
+
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        'contact-citizens': 'contact-citizens.html',
+        'fix-account-details': 'tasks-fix-account-details.html',
+        'pay-death-arrears': 'tasks-pay-death-arrears.html',
+        'review-alternative-formats': 'tasks-review-alternative-formats.html',
+        'review-commercial-addresses': 'tasks-review-commercial-addresses.html',
+        'review-gsl-wa': 'tasks-review-gsl-wa.html',
+        'review-overpayments': 'tasks-review-overpayments.html',
+        'review-care-home': 'tasks-review-care-home.html',
+        'verify-addresses': 'tasks-verify-addresses.html',
+    }
+</script>
+
+
+
+{% endblock %}

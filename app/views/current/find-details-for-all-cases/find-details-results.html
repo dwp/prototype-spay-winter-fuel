@@ -1,0 +1,351 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include '../includes/_header-manage-admin.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Details for all cases</h1>
+
+
+        <form method="post">
+          <div class="govuk-form-group">
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="25" aria-describedby="more-detail-hint">{
+    "totalCases": 2,
+    "cases": [
+        {
+            "id": xxxxxxxx,
+            "paymentYear": 2021,
+            "type": "ANNUAL",
+            "status": "IN_PROGRESS",
+            "benefitStatus": "DEFAULT",
+            "citizen": {
+                "nino": "xx",
+                "ninoSuffix": "D",
+                "dateOfBirth": "1946-02-04",
+                "dateOfDeath": "2021-10-15",
+                "name": {
+                    "title": "MR",
+                    "firstName": "MARIO",
+                    "middleNames": "",
+                    "surname": "xxx"
+                },
+                "alias": {
+                    "title": "",
+                    "firstName": "",
+                    "middleNames": "",
+                    "surname": ""
+                },
+                "residenceAddress": {
+                    "lines": [
+                        "xx",
+                        "CRAWLEY",
+                        "",
+                        "",
+                        "W SUSSEX"
+                    ],
+                    "postcode": "RH10 8DP",
+                    "countryCode": "GBR",
+                    "startDate": "1994-09-06",
+                    "key": "GBR-100061767399"
+                },
+                "contactDetails": {
+                    "homePhone1": "01293 402135",
+                    "homePhone1StartDate": null,
+                    "homePhone2": "",
+                    "workPhone": "",
+                    "workPhoneStartDate": null,
+                    "mobile": "",
+                    "mobileStartDate": null,
+                    "email": null,
+                    "emailStartDate": null,
+                    "preferredLanguage": "ENGLISH",
+                    "preferredPrintFormat": "STANDARD"
+                },
+                "correspondenceAddress": null,
+                "bankAccount": {
+                    "bic": null,
+                    "iban": null,
+                    "acNumber": "X",
+                    "sortCode": "x",
+                    "lastPaymentDate": "2021-09-16",
+                    "startDate": null,
+                    "accountHolder": null,
+                    "bsRollNumber": null
+                },
+                "ageAtEndQWeek": 75
+            },
+            "citizenInfo": {
+                "ninoHash": "f02809876046d7410c62d1f0083ad34117bc4f5b846692f8effd914fcfe8c13b",
+                "ageCategory": "DECEASED_POST_QWEEK"
+            },
+            "jbClaimantType": "NOT_APPLICABLE",
+            "hhOverSpaCount": 1,
+            "hhOver80Count": 0,
+            "residency": "UK",
+            "residenceAddressInfo": {
+                "locationKey": "173c16ae1857c822db44be2fab8a701fa5a03c7ffea1a56149f8717460882f54",
+                "countryCode": "GBR",
+                "startDate": "1994-09-06",
+                "source": "CIS",
+                "type": "STANDARD",
+                "validationStatus": "APPROVED",
+                "confidence": 0
+            },
+            "corrAddressInfo": null,
+            "gslStatus": "NOT_APPLICABLE",
+            "gslDecisionDate": null,
+            "calculation": {
+                "eligibility": "ELIGIBLE",
+                "eligibilityReason": "ELIGIBLE",
+                "entitlement": "FULL",
+                "entitlementReason": "SINGLE_HOUSEHOLD",
+                "over80Entitlement": "NIL",
+                "over80EntitlementReason": "UNDER_80",
+                "entitlementAmtPence": 20000
+            },
+            "currentState": {
+                "stage": "SEND_PAYMENT",
+                "status": "IN_ERROR",
+                "decisionCode": null,
+                "errorCodes": "70401"
+            },
+            "temporaryAccoStay": null,
+            "otherJbClaimantInfo": null,
+            "createdAt": "2021-09-30T11:03:34.156441",
+            "claimStartedAt": null,
+            "temporaryAcco": "NOT_APPLICABLE",
+            "dataSource": "DNA_REFRESH",
+            "withdrawalAgreementStatus": "NOT_APPLICABLE",
+            "commercialAddressStatus": "NOT_APPLICABLE",
+            "notification": {
+                "id": null,
+                "letterType": "PAYMENT_NOTIFICATION",
+                "templateVersion": 0,
+                "status": "COMPLETE",
+                "statusChangeOn": "2021-10-12T01:43:11.584652",
+                "sentOn": "2021-10-12T00:00:00"
+            },
+            "payment": {
+                "amountPence": 20000,
+                "reference": "WP13384082",
+                "status": "RETURNED",
+                "issuedOn": "2021-11-08",
+                "processedOn": "2021-11-09",
+                "failureReason": "Beneficiary deceased"
+            },
+            "adjustment": null,
+            "baseCaseId": null,
+            "payee": null,
+            "deathArrearsStatus": "NOT_ASSESSED",
+            "manualUpdateReason": null,
+            "currentTaskActivity": null,
+            "actionHistory": null,
+            "onSp": true,
+            "onUc": false,
+            "latest": true,
+            "dodVerified": true,
+            "onPc": false,
+            "onIs": false,
+            "onJsa": false,
+            "onEsa": false,
+            "onWp": false,
+            "onCa": false,
+            "onPip": false,
+            "onAadla": false,
+            "onIics": false,
+            "onWf": false,
+            "dobVerified": true,
+            "inImmigrationControl": false,
+            "onAnyBenefit": true,
+            "tasks": [
+                {
+                    "id": xxxxxx,
+                    "paymentYear": 2021,
+                    "caseId": 36978600,
+                    "activityType": "DEATH_ARREARS",
+                    "assignee": null,
+                    "taskStatus": "OPEN",
+                    "createdAt": "2021-11-11T00:06:59.769438",
+                    "deferredAt": "2021-11-11T00:06:59.769439"
+                }
+            ]
+        },
+        {
+            "id": xxxxxxxx,
+            "paymentYear": 2020,
+            "type": "ANNUAL",
+            "status": "CLOSED",
+            "benefitStatus": "DEFAULT",
+            "citizen": {
+                "nino": "x",
+                "ninoSuffix": "D",
+                "dateOfBirth": "1946-02-04",
+                "dateOfDeath": null,
+                "name": {
+                    "title": "MR",
+                    "firstName": "MARIO",
+                    "middleNames": "",
+                    "surname": "xA"
+                },
+                "alias": {
+                    "title": "",
+                    "firstName": "",
+                    "middleNames": "",
+                    "surname": ""
+                },
+                "residenceAddress": {
+                    "lines": [
+                        "x",
+                        "CRAWLEY",
+                        "",
+                        "",
+                        "W SUSSEX"
+                    ],
+                    "postcode": "RH10 8DP",
+                    "countryCode": "GBR",
+                    "startDate": "1994-09-06",
+                    "key": "GBR-100061767399"
+                },
+                "contactDetails": {
+                    "homePhone1": "01293 402135",
+                    "homePhone1StartDate": null,
+                    "homePhone2": "",
+                    "workPhone": "",
+                    "workPhoneStartDate": null,
+                    "mobile": "",
+                    "mobileStartDate": null,
+                    "email": null,
+                    "emailStartDate": null,
+                    "preferredLanguage": null,
+                    "preferredPrintFormat": null
+                },
+                "correspondenceAddress": null,
+                "bankAccount": {
+                    "bic": null,
+                    "iban": null,
+                    "acNumber": "x",
+                    "sortCode": "110216",
+                    "lastPaymentDate": "2020-09-03",
+                    "startDate": null,
+                    "accountHolder": null,
+                    "bsRollNumber": null
+                },
+                "ageAtEndQWeek": 74
+            },
+            "citizenInfo": {
+                "ninoHash": "f02809876046d7410c62d1f0083ad34117bc4f5b846692f8effd914fcfe8c13b",
+                "ageCategory": "OVER_SPA"
+            },
+            "jbClaimantType": "NOT_APPLICABLE",
+            "hhOverSpaCount": 1,
+            "hhOver80Count": 0,
+            "residency": "UK",
+            "residenceAddressInfo": {
+                "locationKey": "173c16ae1857c822db44be2fab8a701fa5a03c7ffea1a56149f8717460882f54",
+                "countryCode": "GBR",
+                "startDate": "1994-09-06",
+                "source": "CIS",
+                "type": "STANDARD",
+                "validationStatus": "APPROVED",
+                "confidence": 0
+            },
+            "corrAddressInfo": null,
+            "gslStatus": "NOT_APPLICABLE",
+            "gslDecisionDate": null,
+            "calculation": {
+                "eligibility": "ELIGIBLE",
+                "eligibilityReason": "ELIGIBLE",
+                "entitlement": "FULL",
+                "entitlementReason": "SINGLE_HOUSEHOLD",
+                "over80Entitlement": "NIL",
+                "over80EntitlementReason": "UNDER_80",
+                "entitlementAmtPence": 20000
+            },
+            "currentState": {
+                "stage": "SEND_PAYMENT",
+                "status": "COMPLETED",
+                "decisionCode": null,
+                "errorCodes": null
+            },
+            "temporaryAccoStay": null,
+            "otherJbClaimantInfo": null,
+            "createdAt": "2020-10-05T19:28:04.154966",
+            "claimStartedAt": null,
+            "temporaryAcco": "NOT_APPLICABLE",
+            "dataSource": "DNA",
+            "withdrawalAgreementStatus": "NOT_APPLICABLE",
+            "commercialAddressStatus": "NOT_APPLICABLE",
+            "notification": {
+                "id": null,
+                "letterType": "PAYMENT_NOTIFICATION",
+                "templateVersion": 0,
+                "status": "COMPLETE",
+                "statusChangeOn": "2020-11-05T00:13:01.019237",
+                "sentOn": "2020-11-05T00:00:00"
+            },
+            "payment": {
+                "amountPence": 20000,
+                "reference": "WP9579104",
+                "status": "COMPLETE",
+                "issuedOn": "2020-12-09",
+                "processedOn": "2020-12-09",
+                "failureReason": null
+            },
+            "adjustment": null,
+            "baseCaseId": null,
+            "payee": null,
+            "deathArrearsStatus": "NOT_APPLICABLE",
+            "manualUpdateReason": null,
+            "currentTaskActivity": null,
+            "actionHistory": null,
+            "onSp": true,
+            "onUc": false,
+            "latest": true,
+            "dodVerified": false,
+            "onPc": false,
+            "onIs": false,
+            "onJsa": false,
+            "onEsa": false,
+            "onWp": false,
+            "onCa": false,
+            "onPip": false,
+            "onAadla": false,
+            "onIics": false,
+            "onWf": false,
+            "dobVerified": true,
+            "inImmigrationControl": false,
+            "onAnyBenefit": true,
+            "tasks": []
+        }
+    ]
+}</textarea>
+          </div>
+
+        </form>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+    </main>
+    </div>
+
+    {% endblock %}

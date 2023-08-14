@@ -1,0 +1,80 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Was the claimant a UK resident?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+       
+                <form action="address_type" method="post" class="form"> 
+
+                      <div class="govuk-form-group"">
+                          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    Was the claimant a UK resident between 17 and 24 September 2018?
+                                </h1>
+                              </legend>
+                              <span id="changed-name-hint" class="govuk-hint">
+                              
+                              </span>
+                              <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="uk" name="changed-name" type="radio" value="uk" onChange="change_link5();">
+                                  <label class="govuk-label govuk-radios__label" for="UK">
+                                  Yes
+                                </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="international" name="changed-name" type="radio" value="international" onChange="change_link5();">
+                                  <label class="govuk-label govuk-radios__label" for="international">
+                                  No
+                                </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                           
+
+                          </fieldset>
+                      </div>
+
+              </form>
+
+    
+
+        <div id='buttonChange5'>
+          <a href = '#'><input type='submit' value='Continue' class='govuk-button'></a>
+        </div>
+
+
+
+ 
+    
+    </div>
+  </div>
+
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

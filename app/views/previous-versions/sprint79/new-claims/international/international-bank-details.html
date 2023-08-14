@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-international.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_name_bar.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+                <h1 class="govuk-heading-xl">What are your bank details?</h1>
+
+                <p>This is the account we'll pay your Winter Fuel Payment into.</p>
+
+<form>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="name-on-the-account">
+      Name on the account
+    </label>
+    <input class="govuk-input" id="name-on-the-account" name="name-on-the-account" type="text" spellcheck="false">
+  </div>
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="bic-code">
+    BIC or SWIFT code
+  </label>
+  <span id="bic-code-hint" class="govuk-hint">
+    Must be between 8 and 11 characters long. You can ask your bank or check your bank statement
+  </span>
+  <input class="govuk-input govuk-input--width-10" id="bic-code" name="bic-code" type="text" aria-describedby="bic-code-hint" spellcheck="false">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="iban">
+    IBAN
+  </label>
+  <span id="iban-hint" class="govuk-hint">
+    You can ask your bank or check your bank statement
+  </span>
+  <input class="govuk-input" id="iban" name="iban" type="text" aria-describedby="iban-hint" spellcheck="false">
+</div>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">What are their details?</h1>
+                    <p> <strong>Person 1</strong>
+                    <br>Sinead Murphy
+                    <br> TT570210A
+                    <br> 16 08 1935
+                    <label class="govuk-label govuk-!-margin-top-5" for="full-name">
+                        Full name
+                    </label>
+                    <input class="govuk-input" id="sp-full-name" name="spfullname" type="text" autocomplete="name" spellcheck="false">
+
+                    <label class="govuk-label govuk-!-margin-top-5" for="sp-ni-number">
+                        National insurance number
+                    </label>
+                    <input class="govuk-input" id="sp-ni-number" name="spninumber" type="text" autocomplete="name" spellcheck="false">
+                    
+            <label class="govuk-label govuk-!-margin-top-5" for="sp-dob">
+                Date of birth
+            </label>
+                    <span id="dob-hint" class="govuk-hint">
+                      For example, 12 11 1960
+                    </span>
+
+                            <div class="govuk-date-input" id="sp-dobinput" name="sp-dobinput">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="sp-dob-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="spdobday" name="spdobday" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="sp-dob-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="spdobmonth" name="spdobmonth" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+
+
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="sp-dob-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="spdobyear" name="spdobyear" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+
+                    
+
+                  </div>
+                  <a href="#" class="govuk-link govuk-!-font-size-19"  >Add another person</a>
+                </div>
+                
+        </div>
+           
+            <button type="submit" class="govuk-button govuk-!-margin-top-5"> Continue </button>
+
+
+    </main>
+
+</form>
+
+  {% endblock %}
+
+
+  
+  

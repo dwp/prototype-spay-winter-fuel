@@ -1,0 +1,263 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-width-container ">
+
+  <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+
+
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <form method="post">
+
+
+
+
+    <form method="post">
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="float:left; padding-right:10px">
+                Verify addresses
+              </span>
+            </h2>
+            <h4 class="govuk-heading-s" style="color:#6a6e6e; margin-bottom:0px; margin-top:4px">2,841 cases</h4>
+
+
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1_5" style="padding-top:10px;font-weight:normal;font-size:16px; text-decoration:underline; display:block">
+              Show filters
+            </span>
+          </div>
+          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1"style="margin-left:25px">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      cases needing first action
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      cases where address cannot be verified
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset><br><button class="govuk-button" data-module="govuk-button">
+                Get next unverified address
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2" style="float:left; padding-right:10px">
+                Fix account details
+              </span>
+            </h2>
+            <h4 class="govuk-heading-s" style="color:#6a6e6e; margin-bottom:0px;margin-top:4px">892 cases</h4>
+
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2_5" style="padding-top:10px;font-weight:normal;font-size:16px; text-decoration:underline; display:block">
+              Show filters
+            </span>
+          </div>
+          <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-2_5"style="margin-left:25px">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      cases needing first action
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      cases returned to queue with no new bank details
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset><br><button class="govuk-button" data-module="govuk-button">
+                Get next account details case
+              </button>
+            </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-5" style="float:left; padding-right:10px">
+                Review GSLs
+              </span>
+            </h2>
+             <h4 class="govuk-heading-s" style="color:#6a6e6e; margin-bottom:0px; margin-top:4px">39 cases</h4>
+
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-5_5" style="padding-top:10px;font-weight:normal;font-size:16px; text-decoration:underline;display:block">
+              Show filters
+            </span>
+          </div>
+          <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-3_5"style="margin-left:25px">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+
+                      <p><strong>No filters available</strong></p>
+
+
+                </div>
+
+              </fieldset><br><button class="govuk-button" data-module="govuk-button">
+                Get next GSL case
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3" style="float:left; padding-right:10px">
+                Review overpayments
+              </span>
+            </h2>
+            <h4 class="govuk-heading-s" style="color:#6a6e6e; margin-bottom:0px; margin-top:4px">8,398 cases</h4>
+
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1_5" style="padding-top:10px;font-weight:normal;font-size:16px; text-decoration:underline;; display:block">
+              Show filters
+            </span>
+          </div>
+          <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-3_5"style="margin-left:25px">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      UK cases
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      international cases
+                    </label>
+                  </div>
+
+                </div>
+
+              </fieldset><br><button class="govuk-button" data-module="govuk-button">
+                Get next overpayments case
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3" style="float:left; padding-right:10px">
+                Pay death arrears
+              </span>
+            </h2>
+           <h4 class="govuk-heading-s" style="color:#6a6e6e; margin-bottom:0px; margin-top:4px">3,927 cases</h4>
+
+            <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3_5" style="padding-top:10px;font-weight:normal;font-size:16px; text-decoration:underline; display:block">
+              Show filters
+            </span>
+          </div>
+          <div id="accordion-with-summary-sections-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-3_5"style="margin-left:25px">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                      cases needing first action
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      cases waiting for WFPF001 to be returned
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                      cases with no known DAP or NoK
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                      UK cases
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                      international cases
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset><br><button class="govuk-button" data-module="govuk-button">
+                Get next death arrears case
+              </button>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

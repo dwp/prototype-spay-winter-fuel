@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+     {{ govukBackLink({
+            text: "Back",
+            href: "letters"
+          }) }}
+          <br>
+          <br>
+          <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="/current/manage-things/manage-things">Manage things...</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="payment">Payments</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page"href="letters">Letters</a>
+              </li>
+
+
+          </nav>
+
+
+
+        </div>
+      </div>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+         
+
+          <br>
+          <br>
+
+          <h2 class="govuk-heading-l">Weekly letters</h2>
+
+          <br>
+
+          <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+              Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                <a class="govuk-tabs__tab" href="#letters-sent">
+                  <span class="govuk-caption-m"></span>
+                  <h3 class="govuk-heading-m">Letters sent</h3>
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item">
+                <a class="govuk-tabs__tab" href="#scheduled">
+                  <span class="govuk-caption-m"></span>
+                  <h3 class="govuk-heading-m">Letters scheduled</h3>
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="letters-sent" style="padding-bottom: 0px;">
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Letters sent</th>
+                    <th scope="col" class="govuk-table__header">Letters returned</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 28 October</td>
+                    <td class="govuk-table__cell">81,324</td>
+                    <td class="govuk-table__cell">392</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 4 November</td>
+                    <td class="govuk-table__cell">203,928</td>
+                    <td class="govuk-table__cell">105</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="border-bottom:none;">Wednesday 11 November</td>
+                    <td class="govuk-table__cell" style="border-bottom:none;">2</td>
+                    <td class="govuk-table__cell" style="border-bottom:none;">0</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="scheduled" style="padding-bottom: 0px;">
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Date</th>
+                    <th scope="col" class="govuk-table__header">Number of letters</th>
+
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 11 November</td>
+                    <td class="govuk-table__cell">16</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 18 November</td>
+                    <td class="govuk-table__cell">16</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 25 November</td>
+                    <td class="govuk-table__cell">24</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 1 December</td>
+                    <td class="govuk-table__cell">24</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 8 December</td>
+                    <td class="govuk-table__cell">24</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 15 December</td>
+                    <td class="govuk-table__cell">24</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 22 December</td>
+                    <td class="govuk-table__cell">24</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Wednesday 29 December</td>
+                    <td class="govuk-table__cell">24</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="border-bottom:none;">Wednesday 5 January</td>
+                    <td class="govuk-table__cell" style="border-bottom:none;">24</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

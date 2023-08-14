@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-manage.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Emergency ‘Top up’ Payments (COVID19)
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-xl">
+    Manage payments
+  </h1>
+
+  <main class="govuk-main-wrapper">
+    <div class="prototype-write-up">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <ol class="app-task-list">
+
+
+            <li>
+              <h2 class="app-task-list__section">
+                Load files
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="working-age">
+                     Working age legacy
+                    </a>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    <strong class="govuk-tag govuk-tag--green">
+                      Finished
+                    </strong>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    19 October 2019
+                  </span>
+                </li>
+            </li>
+
+<br>
+
+            <li>
+              <h2 class="app-task-list__section">
+                Calculate payments
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="calculate-payments">
+                      Calculate payments
+                    </a>
+                  </span>
+                  <span class="app-task-list__task-time">
+                    <strong class="govuk-tag govuk-tag--yellow">
+                     In progress
+                    </strong>
+                  </span>
+                  </li>
+              </ul>
+            </li>
+
+            <li>
+              <h3 class="app-task-list__section">
+                Make payments
+              </h3>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="make-payments">
+                      Make payments
+                    </a>
+                  </span>
+                </li>
+              </li>
+
+
+          </ol>
+        </div>
+  </main>
+</div>
+
+{% endblock %}

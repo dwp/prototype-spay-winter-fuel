@@ -1,0 +1,99 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<form method=post>
+<div class="govuk-width-container">
+
+<a href="/legacy/sprint15b/international/fullname" class="govuk-back-link">Back</a>
+
+
+  <main class="govuk-main-wrapper"> 
+ 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl govuk-!-font-size-36">Personal details</span>
+        <h1 class="govuk-heading-xl">What is your relationship status?</h1>
+
+        <div class="govuk-form-group">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="relationship-single" name="relationship" type="radio" value="single">
+              <label class="govuk-label govuk-radios__label" for="relationship-single">
+                Single
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="relationship-marriedorcivilpartner" name="relationship" type="radio" value="marriedorcivilpartner">
+              <label class="govuk-label govuk-radios__label" for="relationship-marriedorcivilpartner">
+                Married or civil partner
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="relationship-marriedorcivilpartnerbutseparated" name="relationship" type="radio" value="single">
+              <label class="govuk-label govuk-radios__label" for="relationship-marriedorcivilpartnerbutseparated">
+                Married or civil partner but separated
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="relationship-widowedorsurvivingcivilpartner" name="relationship" type="radio" value="single">
+              <label class="govuk-label govuk-radios__label" for="relationship-widowedorsurvivingcivilpartner">
+                Widowed or surviving civil partner
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="relationship-livingtogetherasifyouweremarried" name="relationship" type="radio" value="livingtogetherasifyouweremarried">
+              <label class="govuk-label govuk-radios__label" for="relationship-livingtogetherasifyouweremarried">
+                Living together as if you were married
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="relationship-other" name="relationship" type="radio" value="other">
+              <label class="govuk-label govuk-radios__label" for="relationship-other">
+                Other
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="govuk-form-group">
+          <button type="submit" class="govuk-button"> Save and continue </button>
+        </div>
+      
+      </div>
+    </div>
+  </main>
+</div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar-3.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+          <h1 class="govuk-heading-l">Account details</h1>
+
+
+
+          <form method="post">
+
+          <table class="govuk-table">
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">
+                 
+                 T. Best
+                 
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                <td class="govuk-table__cell">
+                  BITAITR1
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">IBAN</th>
+                <td class="govuk-table__cell">
+                  IT60X0542811101000000123456
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="reissue-account-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+Do you want to reissue to this account?
+                  </h1>
+                </legend>
+
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reissue-account" name="reissue-account" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="reissue-account">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reissue-account-2" name="reissue-account" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="reissue-account-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

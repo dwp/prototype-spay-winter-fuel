@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-new-claim.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+
+          <h1 class="govuk-heading-xl">Type of application</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="phone-post" name="phone-post" type="radio" value="phone">
+                  <label class="govuk-label govuk-radios__label" for="phone-post">
+                    Phone
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="phone-post-2" name="phone-post" type="radio" value="post">
+                  <label class="govuk-label govuk-radios__label" for="phone-post-2">
+                    Post
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+        {% if data['prototype-mode'] === 'dev' %}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              DEV info
+            </span>
+          </summary>
+
+          <div class="govuk-details__text">
+            <p><b>Error message</b><br>
+              Hello you need to select a bloody radio</p>
+        </details>
+        {% endif %}
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

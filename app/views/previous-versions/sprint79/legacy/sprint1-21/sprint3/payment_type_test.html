@@ -1,0 +1,115 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Bob Smith
+{% endblock %}
+
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %} {# Set serviceName in config.js. #}
+  {% include "includes/headsearch.html" %}
+
+      <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-bar__name">Julia Finch</dd>
+
+          <dt class="govuk-visually-hidden">National Insurance number:</dt>
+          <dd class="key-details-bar__nino">BG 12 34 56 C</dd>
+
+         <!--
+
+          <dt class="visually-hidden">Claim status:</dt>
+          <dd class="key-details-bar__status">Dead letter office (DLO)</dd> -->
+
+          
+        </div>
+
+        <div class="key-details-bar__bottom-block">
+          <dt>Date of birth:</dt>
+          <dd>19 January 1953</dd>
+
+          <!--<dt>Address:</dt>
+          <dd>1 East Allerdean, Little Hayfield, High Peak, TD15 2TB</dd>-->
+
+        </div>
+      </dl>
+    </section>
+
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+       
+                <form action="payment_type_test" method="post" class="form"> 
+
+                      <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    What type of account does the claimant have?
+                                </h1>
+                              </legend>
+                              <span id="changed-name-hint" class="govuk-hint">
+                              
+                              </span>
+                              <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="uk2" name="changed-name" type="radio" value="uk2" onChange="change_link();">
+                                  <label class="govuk-label govuk-radios__label" for="uk2">
+                                  UK bank, building society or credit union account
+                                </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="international2" name="changed-name" type="radio" value="international2" onChange="change_link();">
+                                  <label class="govuk-label govuk-radios__label" for="international2">
+                                  International bank account
+                                </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                           
+
+                          </fieldset>
+                      </div>
+
+              </form>
+
+    
+
+        <div id='buttonChange15'>
+          <a href = '#'><input type='submit' value='Continue' class='govuk-button'></a>
+        </div>
+
+
+
+ 
+    
+    </div>
+  </div>
+
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-full">
+
+            {% include './_bar.html' %}
+
+
+          </div>
+        </div>
+      </main>
+
+      <br>
+      <br>
+
+
+    <form method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-heading-l">
+              Who lives at 70 Elmgrove Terrace?
+            </h1>
+            <p>
+              Only select those that lived at the address
+              between 17 and 24 September 2018 and who are eligble
+              for Winter Fuel Payment.
+            </p>
+          </legend>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                Alex Smith
+              </label> </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Geoff Smith
+              </label> </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Harry Smith
+              </label> </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="#" class="govuk-link">Add another person</a>
+
+      <br>
+      <br>
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+
+
+  </main>
+</div>
+<!-- </div> -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

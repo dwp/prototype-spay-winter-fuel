@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Emergency ‘Top up’ Payments (COVID19)
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <h2 class="govuk-heading-l">Reissue the payment</h2>
+
+          <h2 class="govuk-heading-m">Payment details</h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount</th>
+                <td class="govuk-table__cell">£200</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Reason for payment</th>
+                <td class="govuk-table__cell">
+                    NI COVID HEATING
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 class="govuk-heading-m">Bank account details</h2>
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">
+                  {% if data['accountholder'] %}
+                  {{data['accountholder']}}
+                  {% else %}
+                  T Best
+                  {% endif %}
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">
+                  {% if data['sortcode'] %}
+                  {{data['sortcode']}}
+                  {% else %}
+                  00 11 22
+                  {% endif %}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">
+                  {% if data['accountnumber'] %}
+                  {{data['accountnumber']}}
+                  {% else %}
+                  ****5678
+                  {% endif %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Confirm",
+            href: "overview"
+          }) }}
+
+      </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

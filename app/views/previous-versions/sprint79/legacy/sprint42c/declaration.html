@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+        <form method="post">
+
+
+          <h1 class="govuk-heading-xl">Submit the application</h1>
+
+          <p>By making this claim, you agree that:<br>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the information you've given is correct and complete as far as you know</li>
+              <li>you'll tell the Department for Work and Pensions straight away if your circumstances change</li>
+              <li>you'll pay back any money you're overpaid if you're asked to</li>
+            </ul>
+          </p>
+
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <br>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Accept and submit
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

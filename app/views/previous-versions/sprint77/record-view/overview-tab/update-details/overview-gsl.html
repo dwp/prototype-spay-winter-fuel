@@ -1,0 +1,212 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      {% if data['gsl-disallowed']=='yes' %}  
+        {% include 'current/includes/_bar-gsl.html' %}
+      {% else %}
+        {% include 'current/includes/_bar.html' %}
+      {% endif %}
+        <form method="post">      
+
+
+
+{% if data['gsl-disallowed']=='yes' and data['remove-disallowed']!='no'%}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Details updated - GSL disallowed
+    </div>
+  </div>
+
+  {% elif data['remove-disallowed']=='yes'%}
+  <div class="moj-banner moj-banner--success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+  
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">Success</span>Payments restarted - GSL DISALLOWED status removed from record
+    </div>
+  </div>
+ 
+{% endif %}
+
+            {% include 'current/includes/_tab-overview.html' %}
+
+            
+            <br>
+            <br>
+
+        {% if data['alt-format-task']== 'yes' %}
+            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                This person has an outstanding alternative format task. {% if data['wf-agent']== 'yes' %}<a href="/tasks/send-alternative-format/alternative-format" class="govuk-link">Review task</a>{% endif %}
+              </strong>
+            </div>
+        {% else %}
+            <table class="govuk-table">
+            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Payment date</th>
+                  <td class="govuk-table__cell">Monday, 4 November 2021</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">£100</td>
+                </tr>
+              </tbody>
+            </table>
+        
+{% endif %}
+<br>
+
+            <table class="govuk-table">
+              <h2 class="govuk-heading-m">Current details</h2>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Age</th>
+                  <td class="govuk-table__cell">66</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date of birth</th>
+                  <td class="govuk-table__cell">9 August 1953</td>
+                </tr>
+                {% if data['mark-as-dead']=='yes' %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date of death</th>
+                  <td class="govuk-table__cell">{{data['death-day']}}
+                    {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
+                    {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
+                    {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
+                    {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
+                    {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
+                    {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
+                    {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
+                    {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
+                    {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
+                    {% elif data['death-month'] == '10' %} October 
+                    {% elif data['death-month'] == '11' %} November 
+                    {% elif data['death-month'] == '12' %} December 
+                    {% endif %}
+                {{data['death-year']}}</td>
+                </tr>
+                {% endif %}
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">
+                    {% if data['address-change'] %}
+                    {{data['address-change'].split(', ').join('<br />') | safe }}
+                    {% elif data.address %}
+                    {{data.address.split(', ').join('<br />') | safe}}
+                    {% else %}
+                    1 Victoria Road<br>
+                    FALKIRK<br>
+                    FK55 8XN
+                    {% endif %}
+                    <br><br>
+                since {% if data['move-date-changed'] == 'true' %}
+                {{data['moveday']}}
+                {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
+                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February 
+                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March 
+                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April 
+                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May 
+                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June 
+                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July 
+                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August 
+                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September 
+                {% elif data['movemonth'] == '10' %} October 
+                {% elif data['movemonth'] == '11' %} November 
+                {% elif data['movemonth'] == '12' %} December 
+                {% endif %}
+                {{data['moveyear']}}
+                      {% else %}
+                      10 March 2016
+                    {% endif %}
+                  </td>
+                </tr>
+                
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">
+                    {% if data['living-with'] %}
+                    {{data['living-with']}}
+                      {% else %}
+                      Lives with someone else of State Pension age
+                    {% endif %}
+                    <br><br>
+                since {% if data['living-with-date-changed'] == 'true' %}
+                {{data['living-with-day']}}
+                {% if (data['living-with-month'] == '1') or (data['living-with-month'] == '01') %} January 
+                {% elif (data['living-with-month'] == '2') or (data['living-with-month'] == '02') %} February 
+                {% elif (data['living-with-month'] == '3') or (data['living-with-month'] == '03') %} March 
+                {% elif (data['living-with-month'] == '4') or (data['living-with-month'] == '04') %} April 
+                {% elif (data['living-with-month'] == '5') or (data['living-with-month'] == '05') %} May 
+                {% elif (data['living-with-month'] == '6') or (data['living-with-month'] == '06') %} June 
+                {% elif (data['living-with-month'] == '7') or (data['living-with-month'] == '07') %} July 
+                {% elif (data['living-with-month'] == '8') or (data['living-with-month'] == '08') %} August 
+                {% elif (data['living-with-month'] == '9') or (data['living-with-month'] == '09') %} September 
+                {% elif data['living-with-month'] == '10' %} October 
+                {% elif data['living-with-month'] == '11' %} November 
+                {% elif data['living-with-month'] == '12' %} December 
+                {% endif %}
+                {{data['living-with-year']}}
+                      {% else %}
+                      10 March 2016
+                    {% endif %}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="/current/record-view/overview-tab/update-details/update-details-options"><span class="govuk-link govuk-!-font-size-19">Update details</span>
+            </a>
+
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {% include 'current/includes/_history.html' %}
+      </div>
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Bob Smith
+{% endblock %}
+
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %} {# Set serviceName in config.js. #}
+  {% include "includes/headsearch.html" %}
+
+  {% include "includes/QQ123456C_head.html" %}
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      
+          <form action="qq123456c_main2" method="get" class="form">
+
+                      <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    Is the claimant's date of birth 19 January 1953?
+                                </h1>
+                              </legend>
+                              <span id="changed-name-hint" class="govuk-hint">
+                              
+                              </span>
+                              <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="dob_verified" name="dob" type="radio" value="true" onChange="change_link();">
+                                  <label class="govuk-label govuk-radios__label" for="dob_verified">
+                                  Yes
+                                </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="dob_not_verified" name="dob" type="radio" value="false" onChange="change_link();">
+                                  <label class="govuk-label govuk-radios__label" for="dob_not_verified">
+                                  No
+                                </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                           
+
+                          </fieldset>
+                      </div>
+                      <button class="govuk-button">Continue</button>
+              </form>
+
+    
+
+        
+
+
+
+ 
+    
+    </div>
+  </div>
+
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

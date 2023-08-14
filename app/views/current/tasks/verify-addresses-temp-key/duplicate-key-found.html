@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.go(-1)"
+    }) }}
+
+{% include 'current/includes/_bar-name-nino.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+
+          <h2 class="govuk-heading-l">Has this address already been added to SPS?</h2>
+
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+          <form method="post">
+
+            <h2 class="govuk-heading-s">Address you want to add to SPS</h2>
+            <p class="govuk-body">
+              Flat D<br>
+              104 Boundary Lane<br>
+              Hulme<br>
+              Manchester<br>
+              M15 6FD</p>
+
+
+
+                  <h2 class="govuk-heading-m">Similar addresses in SPS</h2>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                            <label class="govuk-label govuk-radios__label" for="address">
+
+                              104C Boundary Lane<br>
+                              Manchester<br>
+                              M15 6FD<br>
+                              <strong class="govuk-tag govuk-tag--blue">
+                                Residential
+                              </strong>
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="104D Boundary Lane, Manchester, M15 6FD">
+                            <label class="govuk-label govuk-radios__label" for="address">
+                              104D Boundary Lane<br>
+                              Manchester<br>
+                              M15 6FD<br>
+                              <strong class="govuk-tag govuk-tag--blue">
+                                Residential
+                              </strong>
+                            </label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="Address not found">
+                            <label class="govuk-label govuk-radios__label" for="address-1">
+                              No - add this address into the database
+                            </label>
+                          </div>
+                        </div>
+
+                      </fieldset>
+                    </div>
+
+
+                    <br>
+                    <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
+                    <br>
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+
+          <br>
+      </div>
+
+      <script>
+        nextPageRoutes = {
+            'Apartment D, 104 Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+            '104D Boundary Lane, Manchester, M15 6FD': 'verify-address-fixed.html',
+            'Address not found': 'verify-address-added-to-sps',
+         }
+      </script>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

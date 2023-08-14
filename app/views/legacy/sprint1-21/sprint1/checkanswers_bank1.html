@@ -1,0 +1,104 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Check bank details before you make the top-up payment
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Check these details before you make the top-up payment</h1>
+
+            <dl class="app-check-your-answers app-check-your-answers--long">
+              
+               <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  UK or international bank
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  UK
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="payment_type">
+                    Change<span class="govuk-visually-hidden">UK or international bank</span>
+                  </a>
+                </dd>
+              </div>
+
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Account holder
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  Ermintrude Brown
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">Full name of the account holder</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Sort code
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  12 43 45
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">Sort code</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Account number
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  2345 6543 4321
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden">Account number</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+            <br>
+
+
+            
+
+          <form action="confirmation_topup" method="post" class="form"> 
+            <input type="submit" method="post" value="Make the payment" class="govuk-button">
+          </form>
+
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

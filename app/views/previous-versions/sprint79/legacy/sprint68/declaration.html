@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-international.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+                        <div>
+                          <h1 class="govuk-heading-xl">
+                            Dean Avery<br>
+                            <span class="govuk-body-l">
+                              {% if data['nino'] %}
+                              {{data['nino']}}
+                              {% else %}
+                              XX 12 34 56 D
+                              {% endif %}<br>
+
+                            </span>
+                          </h1>
+                        </div>
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+        <form method="post">
+
+
+          <h1 class="govuk-heading-l">Declaration</h1>
+
+          {% if data['phone-post'] === 'phone' %}
+            <div class="govuk-inset-text"><span style="font-weight: bold">Caller must agree to the following before you continue.</span></div>
+          {% endif %}
+
+
+          <p>By making this claim, you agree that:<br>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the information you've given is correct and complete as far as you know</li>
+              <li>you'll tell the Department for Work and Pensions straight away if your circumstances change</li>
+              <li>you'll pay back any money you're overpaid if you're asked to</li>
+            </ul>
+          </p>
+
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <br>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Agree and submit update
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

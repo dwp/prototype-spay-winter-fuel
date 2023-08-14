@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Emergency Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+
+        <form method="post">
+
+
+          {% include './_bar.html' %}
+
+          {% include './_tab-overview.html' %}
+
+          <br>
+          <br>
+
+          <h2 class="govuk-heading-m">Payments</h2>
+
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment date</th>
+                <th scope="col" class="govuk-table__header">Amount</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header">Benefit</th>
+                <th scope="col" class="govuk-table__header">Policy</th>
+                                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">13 June 2020</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">Sent</td>
+                <td class="govuk-table__cell">Pension credit</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--turquoise">
+                    NI COVID HEATING
+                  </strong></td>
+                  <td class="govuk-table__cell">
+                <a href="change-payment-status" class="govuk-link">Mark as returned</a> </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+      </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

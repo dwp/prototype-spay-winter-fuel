@@ -1,0 +1,27 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+your information
+{% endblock %}
+
+{% block content %}
+
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Your Information
+      </h1>
+    </legend>
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="event-name">
+   What is your title?
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+<p> </p>
+  <label class="govuk-label" for="event-name">
+   What is your full name?
+  </label>
+  <input class="govuk-input" id="event-name" name="event-name" type="text">
+</div>
+<a href="/legacy/sprint15/uk/homeaddress.html" class="govuk-button"> Continue </a>
+{% endblock %}

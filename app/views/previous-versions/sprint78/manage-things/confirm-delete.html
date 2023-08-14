@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Confirm you want to stop processing War Pension file
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ super() }}
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="/current/manage-things/manage-things">
+
+                <h1 class="govuk-heading-l">Confirm you want to stop processing War Pension file</h1>
+
+                <input type="hidden" name="hide-war-pensions" value="yes">              
+
+                {{ govukButton ({
+                    html: 'Stop processing', classes: "govuk-button--warning"
+                }) }}
+
+                <p><a href="war-pensions">Cancel</a></p>
+
+            </form>
+
+        </div>
+
+</div>
+
+{% endblock %}

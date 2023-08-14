@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+{% include './_blue_bar.html' %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+          <h2 class="govuk-heading-l">What is the first line of your address?</h2>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label class" for="sort">
+              Select new address
+            </label>
+
+            {% set addresses = [
+                  '5 addresses found',
+                  '2 Windsor Street, South Gosforth',
+                  '3a Windsor Street, South Gosforth',
+                  '3b Windsor Street, South Gosforth',
+                  '4 Windsor Street, South Gosforth',
+                  '5 Windsor Street, South Gosforth'
+                ] %}
+
+            <select class="govuk-select" id="address" name="address">
+              <option value="{{addresses[0]}}" selected>{{addresses[0]}}</option>
+              <option value="{{addresses[1]}}">{{addresses[1]}}</option>
+              <option value="{{addresses[2]}}">{{addresses[2]}}</option>
+              <option value="{{addresses[3]}}">{{addresses[3]}}</option>
+              <option value="{{addresses[4]}}">{{addresses[4]}}</option>
+              <option value="{{addresses[5]}}">{{addresses[5]}}</option>
+            </select>
+          </div>
+
+          <h2 class="govuk-heading-s">Postcode <br>
+            {{data.postcode}} <a href="address" class="govuk-link"> Change</a></h2>
+
+          <p>
+            <a href="address-postcode-manual" class="govuk-link">I can't find the address in the list</a>
+          </p>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

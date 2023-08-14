@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/current/caseload-statuses/check-cases">Check and update cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="ineligible">Cases to be recalculated</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Unverified addresses to be recalculated</li>
+  </ol>
+</div>
+
+
+
+  <br>
+  <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Unverified addresses to be recalculated</h1>
+
+
+<table class="govuk-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header">Case</th>
+      <th scope="col" class="govuk-table__header">Agent</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a href="/legacy/sprint35d/overview-carehome-benefits">
+          AA 12 34 56 X</a></th>
+          <td class="govuk-table__cell">Name</td>
+    </tr>
+
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="/legacy/sprint35d/overview-carehome-benefits">BB 12 34 56 X</a></th>
+        <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a href="/legacy/sprint35d/overview-carehome-benefits">
+          CC 12 34 56 X</a></th>
+          <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a href="#">DD 12 34 56 X</a></th>
+        <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">EE 12 34 56 X</a></th>
+        <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="#">
+          FF 12 34 56 X</a></th>
+          <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">GG 12 34 56 X</a></th>
+        <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">HH 12 34 56 X</a></th>
+        <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">II 12 34 56 X</a></th>
+        <td class="govuk-table__cell">Name</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <th scope="row" class="govuk-table__header">
+        <a href="#">JJ 12 34 56 X</a></th>
+        <td class="govuk-table__cell">Name</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<nav class="moj-pagination" id="pagination-label">
+
+<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+<ul class="moj-pagination__list">
+<li class="moj-pagination__item  moj-pagination__item--prev">
+  <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+</li>
+
+<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
+
+<li class="moj-pagination__item moj-pagination__item--active">2</li>
+
+<li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+
+<li class="moj-pagination__item  moj-pagination__item--next">
+  <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+</li>
+</ul>
+<p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>38,448</b> results</p>
+</nav>
+
+</div>
+</div>
+
+
+{% endblock %}

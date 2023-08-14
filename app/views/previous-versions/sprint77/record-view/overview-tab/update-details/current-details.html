@@ -1,0 +1,274 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+  <div class="govuk-width-container">
+    <a href="#" class="govuk-back-link">Back</a>
+
+    
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          
+          {% if data['mark-as-dead']=='yes'%}  
+            {% include 'current/includes/_bar-dead.html' %}
+          {% elif data['mark-as-dlo']=='yes'%}  
+            {% include 'current/includes/_bar-dlo.html' %}
+          {% elif data['opted-out']=='yes' %}  
+            {% include 'current/includes/_bar-optout.html' %}
+          {% else %}
+            {% include 'current/includes/_bar.html' %}
+          {% endif %}
+
+          <table class="govuk-table"> 
+            <h2 class="govuk-heading-m">Current details</h2>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-third"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                {% if data['mark-as-dead']=='yes'%}
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">
+                      Date of death
+                    </th>
+                    <td class="govuk-table__cell">{{data['death-day']}}
+                      {% if (data['death-month'] == '1') or (data['death-month'] == '01') %} January 
+                      {% elif (data['death-month'] == '2') or (data['death-month'] == '02') %} February 
+                      {% elif (data['death-month'] == '3') or (data['death-month'] == '03') %} March 
+                      {% elif (data['death-month'] == '4') or (data['death-month'] == '04') %} April 
+                      {% elif (data['death-month'] == '5') or (data['death-month'] == '05') %} May 
+                      {% elif (data['death-month'] == '6') or (data['death-month'] == '06') %} June 
+                      {% elif (data['death-month'] == '7') or (data['death-month'] == '07') %} July 
+                      {% elif (data['death-month'] == '8') or (data['death-month'] == '08') %} August 
+                      {% elif (data['death-month'] == '9') or (data['death-month'] == '09') %} September 
+                      {% elif data['death-month'] == '10' %} October 
+                      {% elif data['death-month'] == '11' %} November 
+                      {% elif data['death-month'] == '12' %} December 
+                      {% endif %}
+                      {{data['death-year']}}
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a class="govuk-link" href="date-of-death">
+                      {% if (data['death-day']) %}
+                        Change<span class="govuk-visually-hidden"> date of death</span>
+                      {% else %}
+                        Add<span class="govuk-visually-hidden"> date of death</span>
+                      {% endif %}
+                      </a>
+                    </td>
+                  </tr>
+                {% endif %}
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header" style="border-bottom:0px;">Address</th>
+                  <td class="govuk-table__cell" style="border-bottom:0px;">
+                    {% if data['address-change'] === '27 Kent Street, Amble, NE65 0LZ' %}
+                      27 Kent Street<br>Amble<br>NE65 0LZ
+                      {% else %}
+                      72 Guild Street<br>London<br>SE23 6FH
+                    {% endif %}
+                  </td>
+                  <td class="govuk-table__cell" style="border-bottom:0px;">
+                     <a class="govuk-link" href="address">
+                      Change<span class="govuk-visually-hidden"> address</span>
+                    </a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"></th>
+                  <td class="govuk-table__cell">
+                    since {% if data['move-date-changed'] == 'true' %}
+                    {{data['moveday']}}
+                    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January 
+                      {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February 
+                      {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March 
+                      {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April 
+                      {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May 
+                      {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June 
+                      {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July 
+                      {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August 
+                      {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September 
+                      {% elif data['movemonth'] == '10' %} October 
+                      {% elif data['movemonth'] == '11' %} November 
+                      {% elif data['movemonth'] == '12' %} December 
+                    {% endif %}
+                    {{data['moveyear']}}
+                    {% else %}
+                        10 March 2016
+                     {% endif %}
+                   </td>
+                   <td class="govuk-table__cell">
+                     <a class="govuk-link" href="move-date?prev-page=change-move-date">
+                      Change<span class="govuk-visually-hidden"> move date</span>
+                    </a>
+                    </td>
+                 </tr>
+                  <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Occupancy</th>
+                    <td class="govuk-table__cell">
+                      {% if data['living-with'] %}
+                      {{data['living-with']}}
+                        {% else %}
+                        Lives with someone else of State Pension age
+                      {% endif %}
+                      <br><br>
+                  since {% if data['living-with-date-changed'] == 'true' %}
+                  {{data['living-with-day']}}
+                  {% if (data['living-with-month'] == '1') or (data['living-with-month'] == '01') %} January 
+                  {% elif (data['living-with-month'] == '2') or (data['living-with-month'] == '02') %} February 
+                  {% elif (data['living-with-month'] == '3') or (data['living-with-month'] == '03') %} March 
+                  {% elif (data['living-with-month'] == '4') or (data['living-with-month'] == '04') %} April 
+                  {% elif (data['living-with-month'] == '5') or (data['living-with-month'] == '05') %} May 
+                  {% elif (data['living-with-month'] == '6') or (data['living-with-month'] == '06') %} June 
+                  {% elif (data['living-with-month'] == '7') or (data['living-with-month'] == '07') %} July 
+                  {% elif (data['living-with-month'] == '8') or (data['living-with-month'] == '08') %} August 
+                  {% elif (data['living-with-month'] == '9') or (data['living-with-month'] == '09') %} September 
+                  {% elif data['living-with-month'] == '10' %} October 
+                  {% elif data['living-with-month'] == '11' %} November 
+                  {% elif data['living-with-month'] == '12' %} December 
+                  {% endif %}
+                  {{data['living-with-year']}}
+                        {% else %}
+                        10 March 2016
+                      {% endif %}
+                   </td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="living-with">
+                    Change<span class="govuk-visually-hidden"> occupancy</span>
+                    </a>
+                  </td>
+                </tr>
+                 <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Home phone</th>
+                    <td class="govuk-table__cell">
+                      {% if (data.homephone) and data ['homephone-remove'] != 'Yes' %}
+                       {{data['homephone']}}
+                      {% endif %}
+                   </td>
+                  <td class="govuk-table__cell">
+                   <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone?update-details=yes">
+                    {% if (data.homephone) and data ['homephone-remove'] != 'Yes' %}
+                  
+                        Change<span class="govuk-visually-hidden"> home phone number</span>
+                    {% else %}
+                      Add<span class="govuk-visually-hidden"> home phone number</span>
+                    {% endif %}
+                  </a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Mobile phone</th>
+                    <td class="govuk-table__cell">
+                      {% if (data.mobilenumber) and data ['mobilephone-remove'] != 'Yes' %}
+                        {{data['mobilenumber']}}
+                      {% endif %}
+                   </td>
+                  <td class="govuk-table__cell">
+                   <a class="govuk-link" href="/current/record-view/contact-tab/mobile-phone/mobilephone?update-details=yes">
+                    {% if (data.mobilenumber) and data ['mobilephone-remove'] != 'Yes' %}
+                      Change<span class="govuk-visually-hidden"> mobile phone number</span>
+                    {% else %}
+                      Add<span class="govuk-visually-hidden"> mobile phone number</span>
+                    {% endif %}
+                  </a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Work phone</th>
+                    <td class="govuk-table__cell">
+                      {% if (data.worknumber) and data ['workphone-remove'] != 'Yes' %}
+                       {{data['worknumber']}}
+                      {% elif data ['workphone-remove'] === 'Yes' %}
+                         Not applicable
+                       {% endif %}
+                    </td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/work-phone/workphone?update-details=yes">
+                      {% if (data.worknumber) and data ['workphone-remove'] != 'Yes' %}
+                        Change<span class="govuk-visually-hidden"> work phone number</span>
+                      {% else %}
+                        Add<span class="govuk-visually-hidden"> work phone number</span>
+                      {% endif %}
+                    </a>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Email address</th>
+                    <td class="govuk-table__cell">
+                      {% if (data.email) and data ['email-remove'] != 'Yes' %}
+                       {{data['email']}}
+                      {% elif data ['email-remove'] === 'Yes' %}
+                        Not applicable
+                      {% endif %}
+                    </td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email?update-details=yes">
+                      {% if (data.email) and data ['email-remove'] != 'Yes' %}
+                       Change<span class="govuk-visually-hidden"> email address</span>
+                      {% else %}
+                       Add<span class="govuk-visually-hidden"> email address</span>
+                      {% endif %}
+                    </a>
+                  </td>
+                </tr>
+                 <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">Correspondence address</th>
+                    <td class="govuk-table__cell">
+                      {% if data['correspondence-address-change'] %}
+                       {{data['correspondence-address-change'].split(', ').join('<br />') | safe }}
+                      {% elif data.address %}
+                        {{data.address.split(', ').join('<br />') | safe}}
+                      {% endif %}
+                    </td>
+                  <td class="govuk-table__cell">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/correspondence-address/correspondence-address?update-details=yes">
+                      {% if data['correspondence-address-change'] %}
+                        Change<span class="govuk-visually-hidden"> correspondence address</span>
+                      {% else %}
+                        Add<span class="govuk-visually-hidden"> correspondence address</span>
+                      {% endif %}
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            
+  
+          
+          
+  
+          
+  
+        </div>
+      </div>
+      <form method="post" action="/current/record-view/overview-tab/overview">
+
+
+              <button class="govuk-button" data-module="govuk-button">
+                  Back to overview
+                </button>    
+        
+                </form>
+               
+    </main>
+  </div>
+  </div>
+
+  {% endblock %}

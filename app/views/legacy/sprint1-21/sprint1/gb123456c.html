@@ -1,0 +1,150 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Fred Brown
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+<div class="govuk-width-container">
+
+   <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-bar__name">Fred Brown</dd>
+
+          <dt class="govuk-visually-hidden">National Insurance number:</dt>
+          <dd class="key-details-bar__nino">GB 12 34 56 C</dd>
+
+          
+        </div>
+
+        <div class="key-details-bar__bottom-block">
+          <dt>Date of birth:</dt>
+          <dd >19 January 1953</dd>
+
+          <dt>Address:</dt>
+          <dd>123 Glossop Road, Little Hayfield, High Peak, TD15 2TB</dd>
+
+        </div>
+      </dl>
+    </section>
+
+
+   
+  <main class="">
+
+    <div class="govuk-grid-row">
+     
+      <div class="govuk-grid-column-two-thirds">
+
+         <h1 class="govuk-visually-hidden">Winter Fuel details: Fred Brown</h1>
+
+
+        <div class="tabs">
+            <div class="tabs-nav">
+              <ul class="tabs-list">
+                <li>
+                  <a href="#tab-1">
+                    Payment details
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+        <div class="tabs-content">
+          <div class="tabs-panel" id="tab-1">
+            <div class="tabs-panel-inner">
+
+                   <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment amount
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                £100
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Circumstance
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Lives with <a href="zz654321c">Ermintrude Thelma Louise Brown</a>
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment status
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Not paid
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Payment date
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                (awaiting payment)
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Benefits
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                State Pension (deferred)
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question">
+                                Reference number
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                WF12 43 65 87
+                              </dd>
+                            </div>
+                        </dl>
+
+              
+            </div>
+          </div>  
+        </div>
+
+
+      </div>
+
+   </div>
+
+      <div class="govuk-grid-column-one-third">
+          <div class="invoicesummary">
+
+              <p>
+                <strong class="app-c-tag app-c-tag--danger">not paid</strong>
+              </p>
+
+              <ul class="govuk-list">
+                <li>
+                  <a style="font-weight: 700;" class="govuk-link" href="payment_type">Add bank account details</a> and then make the payment.
+                </li>
+              </ul>
+         
+         </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+</div>
+
+
+{% endblock %}
+

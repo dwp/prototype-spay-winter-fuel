@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you have a Winter Fuel payment letter? - Cancel my Winter Fuel Payment
+{% endblock %}
+
+{% block content %}
+
+<p>
+  {{ govukBackLink({
+    href: "start"
+  }) }}
+</p>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="payment-letter-router" method="post" class="form">
+      {{ govukRadios({
+        idPrefix:"payment-letter-yn",
+        name: "payment-letter-yn",
+        fieldset: {
+          legend: {
+            text: "Do you have a Winter Fuel payment letter?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "You should have received this in the post. It will have a reference number that looks like WF-002019"
+        },
+
+        classes: "govuk-radios",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["payment-letter"] == "yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["payment-letter"] == "no")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+  </div>
+</div>
+{% endblock %}

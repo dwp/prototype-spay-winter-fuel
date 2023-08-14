@@ -1,0 +1,278 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Bob Smith
+{% endblock %}
+
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %} {# Set serviceName in config.js. #}
+  {% include "includes/headsearch.html" %}
+  {% include "includes/QQ123456C_head.html" %}
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="">
+
+    <div class="govuk-grid-row">
+
+     
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-visually-hidden">Winter Fuel details: Bob Smith</h1>
+
+        <p style="padding-bottom: 10pxr">
+                <strong class="app-c-tag app-c-tag--danger">not paid</strong>
+             </p>      
+              
+              <div class="govuk-tabs">
+            <div>
+              <ul class="govuk-tabs__tab">
+                <li>
+                  <a href="#tab-1" class="govuk-tabs__tab">
+                    Tasks to complete
+                  </a>
+                </li>
+                <li>
+                  <a href="#tab-2">
+                    Claim details
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tabs-content">
+                <div class="tabs-panel" id="tab-1">
+                  <div class="tabs-panel-inner">
+                        <ol class="app-task-list">
+                                <li>
+                                  <h2 class="app-task-list__section">
+                                    <span class="app-task-list__section-number">1. </span> Check personal details
+                                  </h2>
+                                  <ul class="app-task-list__items">
+                                    <li class="app-task-list__item">
+                                      <a class="app-task-list__task-name" href="dob_verification.html" aria-describedby="eligibility-completed">
+                                        Verify date of birth
+                                      </a>
+                                     
+                                    </li>
+                              
+                                  </ul>
+                                </li>
+                                <li>
+                                  <h2 class="app-task-list__section">
+                                    <span class="app-task-list__section-number">2. </span> Check bank details
+                                  </h2>
+                                  <ul class="app-task-list__items">
+                                    <li class="app-task-list__item">
+                                      <a class="app-task-list__task-name" href="payment_type" aria-describedby="company-information-completed">
+                                        Add bank details
+                                      </a>
+                                    
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                  <h2 class="app-task-list__section">
+                                    <span class="app-task-list__section-number">3. </span> Confirm and make payment
+                                  </h2>
+                                  <ul class="app-task-list__items">
+                                    <li class="app-task-list__item">
+                                      <span class="app-task-list__task-message">
+                                            Complete the previous tasks
+                                      </span>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ol>
+               
+            </div>
+        </div>  
+
+
+          <div class="tabs-panel" id="tab-2">
+          <div class="tabs-panel-inner">
+                <h2 class="govuk-heading-m">Personal details</h2>
+                <dl class="app-check-your-answers app-check-your-answers--long">
+                   
+                    
+                    <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                        Address
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                        1 East Allerdean<br> Little Hayfield<br> High Peak<br> TD15 2TB
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                        <a href="">Change address</a>
+                      </dd>
+                    </div>
+
+
+                  
+                    
+                  
+                
+                    
+                </dl>
+                <h2 class="govuk-heading-m">Payments</h2>
+                       <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                                Payment amount
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                £200
+                              </dd>
+                              <dd class="app-check-your-answers__change">
+                                <a href="">Stop payment</a>
+                              </dd>
+                            </div>
+                            
+                            
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                                Payment date
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                    Not known
+                              </dd>
+                              <dd class="app-check-your-answers__change">
+                               
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                                Matches at same address
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                None
+                              </dd>
+                              <dd class="app-check-your-answers__change">
+                                <a href="">Review matches</a>
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                                Relevant benefits
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                None
+                              </dd>
+                              <dd class="app-check-your-answers__change">
+                                
+                              </dd>
+                            </div>
+                            
+                        </dl>
+                        <br>
+                <br>
+                        <h2 class="govuk-heading-m">Bank details</h2>
+                        <dl class="app-check-your-answers app-check-your-answers--long">
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                                Account holder
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                Not known
+                              </dd>
+                              <dd class="app-check-your-answers__change">
+                                <a href="">Change bank account</a>
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                                Sort code
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                    Not known
+                              </dd>
+                              <dd class="app-check-your-answers__change">
+                                
+                              </dd>
+                            </div>
+                            <div class="app-check-your-answers__contents">
+                              <dt class="app-check-your-answers__question"  style="font-weight: 400">
+                                Account number
+                              </dt>
+                              <dd class="app-check-your-answers__answer">
+                                    Not known
+                              </dd>
+                              <dd class="app-check-your-answers__change">
+                             
+                              </dd>
+                            </div>
+                        </dl>
+
+                    </div>
+                </div>
+              
+            </div>
+          </div>  
+
+
+             
+               
+
+
+         
+        </div>
+
+
+      </div>
+
+   </div>
+
+     <!-- <div class="govuk-grid-column-one-third">
+          <div class="invoicesummary">
+
+              <p>
+             <strong class="app-c-tag app-c-tag--success">Paid</strong>
+           </p>
+             
+
+              <ul class="govuk-list">
+                <li>
+                  <a style="font-weight: 700;" class="govuk-link" href="topup3">Review matches</a>
+                </li>
+                <li>
+                  <a style="font-weight:700;" class="govuk-link" href="#">Change address</a>
+                </li>
+                <li>
+                  <a style="font-weight:700;" class="govuk-link" href="#">Change bank account</a>
+                </li>
+                <li>
+                  <a style="font-weight: 700;" class="govuk-link" href="#">Enter date of death</a>
+                </li>
+                <li>
+                  <a style="font-weight:700;" class="govuk-link" href="#">Stop payments</a>
+                </li>
+              </ul>
+
+            
+
+           <h3 class="govuk-heading-s">Actions</h3>
+
+              <form action="#" method="post" class="form"> 
+                <input type="submit" method="post" value="Change payment amount" class="govuk-button">
+              </form>-->
+             
+
+             
+         
+         </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+</div>
+
+
+{% endblock %}
+

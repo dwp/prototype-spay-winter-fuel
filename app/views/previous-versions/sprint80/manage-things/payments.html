@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="/current/manage-things/manage-things">Manage things...</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="payments">Payments</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="letters">Letters</a>
+              </li>
+
+
+          </nav>
+
+
+
+        </div>
+      </div>
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-l">Today</h2>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 728
+            <p class="govuk-body govuk-!-font-size-24">payments sent<br>
+          </h3>
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 4
+            <p class="govuk-body govuk-!-font-size-24">returned payments<br>
+          </h3>
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l">
+            <p class="govuk-body govuk-!-font-size-24"><br>
+          </h3>
+        </div>
+
+        </div>
+
+       
+        <p><a href="payments-breakdown-day" style="font-size: 16px;">Daily payment breakdown</a></p>
+        
+          <hr class="govuk-section-break govuk-section-break--visible">
+
+          <br>
+          <br>
+       
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-l">This year</h2>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 382,029
+            <p class="govuk-body govuk-!-font-size-24">payments sent<br>
+          </h3>
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 1,302
+            <p class="govuk-body govuk-!-font-size-24">returned payments<br>
+          </h3>
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-l"> 8.6 million
+            <p class="govuk-body govuk-!-font-size-24">payments scheduled<br>
+          </h3>
+        </div>
+
+        </div>
+
+        
+
+  <p><a href="payments-breakdown-year.html" style="font-size: 16px;">Previous years</a></p>
+        
+          <hr class="govuk-section-break govuk-section-break--visible">
+
+          <br>
+          <br>
+
+  
+
+
+
+        <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Stop payments
+          </button>
+        </div>
+
+      </div>
+
+
+
+
+
+        </div>
+      </div>
+
+
+{% endblock %}

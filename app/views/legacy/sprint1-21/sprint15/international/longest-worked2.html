@@ -1,0 +1,134 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a href="/legacy/sprint15/international/worked-outside" class="govuk-back-link">Back</a>
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">What is the longest period you worked outside the UK?</h1>
+                    
+                    <span id="dob-hint" class="govuk-hint">
+                      These dates do not have to be exact, but to the best of your knowledge
+                </span>
+
+                            <p class="govuk-heading-m govuk-!-margin-top-6">
+                        From
+                    </p>
+                  
+                                    <span id="dob-hint" class="govuk-hint">
+                                        For example, 12 11 1960
+                                    </span>
+
+
+                                    <div class="govuk-date-input" id="workedfrom" name="workedfrominput">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="workedfrom-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="workedfromday" name="workedfromday" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="workedfrom-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="workedfrommonth" name="workedfrommonth" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="workedfrom-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="workedfromyear" name="workedfromyear" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <p class="govuk-heading-m govuk-!-margin-top-3">
+                                        To
+                                    </p>
+                                    <span id="dob-hint" class="govuk-hint">
+                                        For example, 12 11 1980
+                                    </span>
+
+
+                                    <div class="govuk-date-input" id="workedto" name="workedtoinput">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="workedto-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="lworkedtoday" name="workedtoday" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="workedto-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="lworkedtomonth" name="workedtomonth" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="workedto-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="workedtoyear" name="workedtoyear" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button"> Continue </button>
+
+
+    </main>
+
+</form>
+</div>
+
+  {% endblock %}

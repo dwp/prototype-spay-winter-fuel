@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+            <br>
+            <br>
+
+            <h1 class="govuk-heading-xl">Do you get State Pension?</h1>
+
+            <p class="govuk-body">Or any of these benefits:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>War Pensions</li>
+              <li>Attendance Allowance</li>
+              <li>Personal Independence Payment (PIP)</li>
+              <li>Carers Allowance</li>
+            </ul>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="benefit" name="benefit" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="benefit-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="benefit-2" name="benefit" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="benefit-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+  </fieldset>
+</div>
+
+<button type="submit" class="govuk-button">
+  Continue
+</button>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

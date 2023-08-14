@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header-international.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_name_bar.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="other-nationalities-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Are you a national of any other countries?
+                </h1>
+              </legend>
+              <br>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other-nationalities-conditional" name="other-nationalities" type="radio" value="yes" data-aria-controls="conditional-other-nationalities-conditional">
+                  <label class="govuk-label govuk-radios__label" for="other-nationalities-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-nationalities-conditional">
+                  <p>We need the <b>nationality</b> and the <b>date the nationality started</b>.</p>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="width-20">
+                      Details
+                    </label>
+                    <textarea class="govuk-textarea" id="national" name="national" rows="5" aria-describedby="more-detail-hint"></textarea>
+                  </div>
+                </div>
+
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="other-nationalities-conditional-2" name="other-nationalities" type="radio" value="no" data-aria-controls="conditional-other-nationalities-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="other-nationalities-conditional-2">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-nationalities-conditional-2">
+
+                  {% if data['uk-national'] === 'no' %}
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="no-nationality-conditional-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      </legend>
+                      <span id="no-nationality-conditional-hint" class="govuk-hint">
+                        Select all that apply.
+                      </span>
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional" name="no-nationality" type="checkbox" value="stateless" data-aria-controls="conditional-no-nationality-conditional">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional">
+                            You're a stateless person
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional-2" name="no-nationality" type="checkbox" value="refugee" data-aria-controls="conditional-no-nationality-conditional-2">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional-2">
+                            You're a refugee
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional-3" name="no-nationality" type="checkbox" value="parter-eea" data-aria-controls="conditional-no-nationality-conditional-3">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional-3">
+                            You're partner of a EEA national
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+
+        <div>
+          <h1 class="govuk-heading-xl">
+            Theodora Best<br>
+                            <span class="govuk-body-l">
+                              {% if data['nino'] %}
+                                {{data['nino']}}
+                              {% else %}
+                                XX 12 34 56
+                              {% endif %}
+                            </span>
+
+
+          </h1>
+        </div>

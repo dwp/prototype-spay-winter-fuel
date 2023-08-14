@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+{{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+            
+        <div>
+          <h1 class="govuk-heading-xl">
+            Joyce Burris<br>
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+              {{data['nino']}}
+              {% else %}
+              XX 12 34 56
+              {% endif %}
+<br>
+              <strong class="govuk-tag govuk-tag--grey">
+                Dead
+              </strong>
+
+            </span>
+          </h1>
+        </div>
+
+            
+
+            <h1 class="govuk-heading-l">Make payment</h1>
+
+            <form method="post">
+
+            <h2 class="govuk-heading-m">Payment</h2>
+
+              <table class="govuk-table">
+                <caption class="govuk-table__caption"></caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Amount</th>
+                    <td class="govuk-table__cell">£200</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Payment date</th>
+                    <td class="govuk-table__cell">27 November 2020</td>
+                  </tr>
+                </thead>
+              </table>
+
+              <br>
+
+            <h3 class="govuk-heading-m">Bank or building society account details</h3>
+
+              <table class="govuk-table">
+                <caption class="govuk-table__caption"></caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">
+                      Bank or building society</th>
+                    <td class="govuk-table__cell">Halifax</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Name on the account</th>
+                    <td class="govuk-table__cell">Tom Burris</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Sort code</th>
+                    <td class="govuk-table__cell">11 00 22</td>
+                  </tr>
+                </thead>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Account number</th>
+                    <td class="govuk-table__cell">19204919</td>
+                  </tr>
+                </thead>
+              </table>
+
+
+    <button type="submit" class="govuk-button">
+    Make payment
+    </button>
+
+    </form>
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

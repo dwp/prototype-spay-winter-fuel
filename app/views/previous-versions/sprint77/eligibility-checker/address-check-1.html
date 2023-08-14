@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include 'current/includes/_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+          
+        <br>
+        <br>
+
+        <div class="moj-banner moj-banner--success">
+
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+        <div class="moj-banner__message">
+        <span class="moj-banner__assistive">Success</span>Security passed</div>
+
+        </div>
+
+      <form method="post">
+
+<h2 class="govuk-heading-l">What is your current address?</h2>
+
+
+<p>86 Leicester Road<br>
+Aydon<br>
+NE45 2EE
+</p>
+
+<h3 class="govuk-heading-s">Does the address match?</h3>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name" name="address-match" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="address-yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changed-name-2" name="address-match" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="address-no">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+
+
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}

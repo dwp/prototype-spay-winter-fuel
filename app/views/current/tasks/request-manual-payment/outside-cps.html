@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  {% if data['update-details'] == 'yes'%}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+{% endif %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% if data['update-details'] == 'yes'%}
+          <form method="post" action="/current/record-view/overview-tab/update-details/overview-manual-payment-processedgit push eroku">
+        {% else %}
+         <form method="post" action="get-next-task-manual-payment-intl">
+        {% endif %}
+        
+    
+          {% include 'current/includes/_bar_2.html' %}
+
+            <h1 class="govuk-heading-l">This payment will not be made by SPS</h1>
+            
+
+
+
+        
+
+            <div class="govuk-inset-text">
+              You will need to make this payment outside of this service.
+              
+            
+            </div>
+            <br><br>
+
+           
+
+
+            {% if data['update-details'] != 'yes'%}
+            <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
+<br>
+{% endif %}
+
+
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+   
+
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+
+
+{% endblock %}

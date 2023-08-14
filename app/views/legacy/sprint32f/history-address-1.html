@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-l">Changed address and occupancy</h2>
+
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date the change was made</th>
+                <td class="govuk-table__cell">6 February 2020</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <div class="govuk-inset-text">
+            A confirmation letter was sent to their new address.<br>
+            <a href="send-letter" class="govuk-link">Send the letter again</a>
+          </div>
+
+          <h3 class="govuk-heading-m">New information</h3>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">27 Kent Street<br>
+                  Amble<br>
+                  NE65 0LZ</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date they moved in</th>
+                <td class="govuk-table__cell">
+                  8 August 2019
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">Does not live with anyone of State Pension age</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4 class="govuk-heading-m">Old information</h4>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">1 Victoria Road<br>
+                  Falkirk<br>
+                  FK55 8XN</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date they moved in</th>
+                <td class="govuk-table__cell">
+                  6 March 2016
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy</th>
+                <td class="govuk-table__cell">Lives with someone of State Pension age</td>
+              </tr>
+            </tbody>
+          </table>
+
+<br>
+                    <h3 class="govuk-heading-l">Sent £100 top-up payment</h3>
+
+
+                    <table class="govuk-table">
+                      <h3 class="govuk-heading-m">Payment details</h3>
+                      <thead class="govuk-table__head">
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Amount</th>
+                          <td class="govuk-table__cell">£100</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Reference number</th>
+                          <td class="govuk-table__cell">13243546</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Date paid</th>
+                          <td class="govuk-table__cell">Monday, 10 February 2020</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+
+                    <table class="govuk-table">
+                      <h4 class="govuk-heading-m">Bank account details</h4>
+                      <thead class="govuk-table__head">
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Bank or building society</th>
+                          <td class="govuk-table__cell">TSB</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Name on the account</th>
+                          <td class="govuk-table__cell">T Best</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Sort code</th>
+                          <td class="govuk-table__cell">00 11 22</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Account number</th>
+                          <td class="govuk-table__cell">12345678</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

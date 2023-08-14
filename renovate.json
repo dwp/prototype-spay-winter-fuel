@@ -1,0 +1,17 @@
+{
+  "rebaseWhen": "behind-base-branch",
+  "commitMessagePrefix": "chore(renovate):",
+  "packageRules": [{
+    "matchPackagePatterns": "*",
+    "matchUpdateTypes": ["patch", "minor", "bump"],
+    "groupName": "minor/patch dependency updates"
+  }, {
+    "matchPackagePatterns": "*",
+    "matchUpdateTypes": ["major"],
+    "groupName": "major dependency updates"
+  }, {
+    "matchPackagePatterns": "*",
+    "matchUpdateTypes": ["pin", "digest"],
+    "groupName": "pin dependencies"
+  }]
+}

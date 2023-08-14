@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="security">
+
+    
+
+    <h1 class="govuk-heading-xl">
+      Can you confirm your full name?<br>
+    </h1>
+
+    <p class="govuk-body-l"><strong>Preferred name: </strong>{{data['preferred-first-name']}} {{data['preferred-last-name']}}</p>
+      <p class="govuk-body-l"><strong>Name in SPS: </strong>Theodora Best</p>
+
+      <br>
+
+        <button type="submit" class="govuk-button">
+          Confirm name
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

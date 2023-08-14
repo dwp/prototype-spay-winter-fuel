@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+        <br>
+        <br>
+
+        <form method="post">
+
+          <h1 class="govuk-heading-l">Agent options</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="hospital-conditional-hint">
+              
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="update-details" name="update-details-options" type="radio" value="update-details" data-aria-controls="conditional-hospital-conditional">
+                  <label class="govuk-label govuk-radios__label" for="hospital-conditional">
+                    View or update details
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    including current and previous addresses, occupancy, contact details and power of attorney details
+                  </div>
+                </div>
+              </div><br>
+           
+
+
+          <div class="govuk-radios__divider">or</div><br>
+
+ 
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dead" name="update-details-options" type="radio" value="dead" data-aria-controls="conditional-carehome-conditional">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional">
+                    Mark citizen as DEAD
+                  </label>
+                </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="opt-out" name="update-details-options" type="radio" value="opt-out" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Opt out of future payment(s)
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="immigration" name="update-details-options" type="radio" value="immigration" data-aria-controls="conditional-carehome-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional-2">
+                    Add immigration control flag
+                  </label>
+                </div>
+
+
+              </div>
+            </fieldset>
+          </div>
+
+          
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

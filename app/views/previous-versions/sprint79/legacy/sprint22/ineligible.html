@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manage-jobs2">Check and update</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="check-cases">Check cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Ineligible cases</li>
+  </ol>
+</div>
+
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+
+  <br>
+  <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Ineligible cases</h1>
+
+
+
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar-black" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar-black__key-details">
+        <span class="govuk-caption-l">Total ineligible cases</span>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0">165,245</h2>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <span class="govuk-caption-l"><a href="eligible">Care home & benefits</a></span>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0"><a href="eligible">38,448</a></h2>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <span class="govuk-caption-l"><a href="eligible">Invalid address</a></span>
+        <br>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0"><a href="eligible">37,283</a></h2>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <span class="govuk-caption-l"><a href="eligible">Hospital</a></span>
+        <br>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0"><a href="eligible">30,680</a></h2>
+      </dl>
+    </section>
+  </div>
+</div>
+
+  </div>
+
+</div>
+
+<br>
+<br>
+
+<hr class="govuk-section-break govuk-section-break--visible">
+
+<br>
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-half">
+
+  <span class="govuk-caption-l"><a href="eligible">Unverified date of birth</a></span>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-0"><a href="eligible">23,643</a></h2>
+
+<br>
+
+  <span class="govuk-caption-l"><a href="eligible">Residency other country</a></span>
+  <h3 class="govuk-heading-m govuk-!-margin-bottom-0"><a href="eligible">1,897</a></h3>
+
+<br>
+
+  <span class="govuk-caption-l"><a href="eligible">Under State Pension age</a></span>
+  <h4 class="govuk-heading-m govuk-!-margin-bottom-0"><a href="eligible">669</a></h4>
+
+</div>
+
+<div class="govuk-grid-column-one-half">
+
+  <span class="govuk-caption-l"><a href="eligible">In prison</a></span>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-0"><a href="eligible">310</a></h2>
+
+<br>
+
+  <span class="govuk-caption-l"><a href="eligible">Invalid EEA</a></span>
+  <h3 class="govuk-heading-m govuk-!-margin-bottom-0"><a href="eligible">68</a></h3>
+
+<br>
+
+  <span class="govuk-caption-l"><a href="eligible">Unknown residency</a></span>
+  <h4 class="govuk-heading-m govuk-!-margin-bottom-0"><a href="eligible">6</a></h4>
+
+</div>
+
+</div>
+
+
+{% endblock %}

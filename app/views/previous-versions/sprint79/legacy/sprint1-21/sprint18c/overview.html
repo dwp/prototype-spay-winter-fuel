@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-full">
+
+            {% include './_bar.html' %}
+
+            {% include './_tab-overview.html' %}
+
+
+          </div>
+        </div>
+      </main>
+
+      <br>
+
+      <div>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+
+          <div class="app-check-your-answers__contents">
+            <dd class="app-check-your-answers__answer">
+              <h2 class="govuk-heading-m">Last payment</h2>
+            </dd>
+            <dd class="app-check-your-answers__answer">
+              <strong></strong>
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#"></a>
+            </dd>
+          </div>
+
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              Wednesday 30 October 2018
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              £100
+            </dd>
+            <dd class="app-check-your-answers__change">
+            </dd>
+          </div>
+      </div>
+
+      <div class="govuk-inset-text">
+        This amount is based on 2 people living at the same
+        address who qualify for winter fuel payment.
+      </div>
+
+      <div>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+
+          <div class="app-check-your-answers__contents">
+            <dd class="app-check-your-answers__answer">
+              <h2 class="govuk-heading-m">Next payment</h2>
+            </dd>
+            <dd class="app-check-your-answers__answer">
+              <strong></strong>
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#"></a>
+            </dd>
+          </div>
+
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              Wednesday 30 October 2019
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              £100
+            </dd>
+            <dd class="app-check-your-answers__change">
+            </dd>
+          </div>
+      </div>
+
+      <br>
+
+      <div>
+        <h2 class="govuk-heading-m">Qualifying details</h2>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+
+          <div class="app-check-your-answers__contents">
+            <dd class="app-check-your-answers__answer">
+              <strong>Full name</strong>
+            </dd>
+            <dd class="app-check-your-answers__answer">
+              <strong>Age</strong>
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="occupants">Change</a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              Freddie Becker
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              67
+            </dd>
+            <dd class="app-check-your-answers__change">
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              Kelly Meyer
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              68
+            </dd>
+            <dd class="app-check-your-answers__change">
+            </dd>
+          </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+<!-- </div> -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

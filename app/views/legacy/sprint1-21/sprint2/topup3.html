@@ -1,0 +1,83 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Select who lived at the address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+       
+           <form action="#" method="post" class="form"> 
+
+            <!--  <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Show full address
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p>123 Glossop Road,<br>
+                      Little Hayfield,<br>
+                      High Peak,<br>
+                      TD15 2TB<p>
+                </div>
+              </details> -->
+            
+
+           <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Review matches
+                </h1>
+              </legend>
+              <span id="waste-hint" class="govuk-hint">
+                Only select those who lived at 1 East Allerdean beween 17 and 24 September 2018 and who are eligible for a Winter Fuel Payment.
+              </span>
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="john" name="waste" type="checkbox" value="John Brown">
+                  <label class="govuk-label govuk-checkboxes__label" for="john">
+                   Bob Smith
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+
+          <p><i class="fas fa-plus"></i><a href="addperson"> Add a person</a></p>
+
+             
+
+          <div >
+            <a href = '#'><input type='submit' value='Continue' class='govuk-button'></a>
+          </div>
+
+            </form>         
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+<script>
+
+
+
+</script>  
+
+{% endblock %}
+
+

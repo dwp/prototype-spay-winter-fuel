@@ -1,0 +1,95 @@
+ {% extends "layout.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">Manage things...</h1>
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Load files
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="da-file" aria-describedby="eligibility-completed">
+                  Data and analytics file
+                </a>
+              </span>
+              <span class="app-task-list__task-time">
+                  <strong class="app-c-tag app-c-tag--success app-task-list__task-completed" id="eligibility-completed">Complete</strong>
+              </span>
+              <span class="app-task-list__task-time">
+                19 October 2019
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="gysp" aria-describedby="read-declaration-completed">
+                Get your State Pension file
+                </a>
+              </span>
+              <span class="app-task-list__task-time">
+                  <strong class="app-c-tag app-c-tag--success app-task-list__task-completed" id="eligibility-completed">Complete</strong>
+              </span>
+              <span class="app-task-list__task-time">
+                19 October 2019
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="war-pensions" aria-describedby="read-declaration-completed">
+                  War pension file
+                </a>
+              </span>
+  <strong class="app-c-tag app-task-list__task-completed" id="eligibility-completed">In progress</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>Calculate entitlement
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="calculate-entitlement" aria-describedby="company-information-completed">
+                  Calculate entitlement
+                </a>
+              </span>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Send letters
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="letters" aria-describedby="company-information-completed">
+                  Send letters
+                </a>
+              </span>
+          </ul>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+
+
+
+</form>
+
+  </div>
+</div>
+
+
+{% endblock %}

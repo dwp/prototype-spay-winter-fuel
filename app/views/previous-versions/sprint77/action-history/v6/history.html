@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+{% include './_bar.html' %}
+
+            {% include './_tab-history.html' %}
+
+            <br>
+            <br>
+
+            <h2 class="govuk-heading-m">
+
+            </h2>
+
+
+
+
+             <h2 class="govuk-heading-l">
+              Current
+            </h2>
+
+              <table class="govuk-table">
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="width:29%">Date</th>
+                    <th scope="col" class="govuk-table__header" style="width:50%">Action</th>
+                    <th scope="col" class="govuk-table__header" >By</th>
+                    <th scope="col" class="govuk-table__header" ></th>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">20 December 2021</td>
+                    <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">payment returned</strong>&nbsp;<a href="//legacy/sprint52b/payment-details-2" class="govuk-link" style="padding-left: 5px;">View</a></td>
+                    <td class="govuk-table__cell">System</td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">2 September 2021</td>
+                    <td class="govuk-table__cell">Mobile phone changed<br>
+                      Home phone changed<br>
+                      Address changed</td>
+                    <td class="govuk-table__cell">Staff 73229975</td>
+
+                  </tr>
+
+                 
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" >17 August 2021</td>
+                    <td class="govuk-table__cell" >Bank account changed</td>
+                    <td class="govuk-table__cell" >Staff 73229975</td>
+
+                  </tr>
+                </tbody>
+              </table>
+<br>
+
+                 <h2 class="govuk-heading-l">
+              2020 to 2021
+            </h2>
+
+
+
+
+
+
+              <table class="govuk-table">
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="width:29%">Date</th>
+                    <th scope="col" class="govuk-table__header" style="width:50%">Action</th>
+                    <th scope="col" class="govuk-table__header">By</th>
+                    <th scope="col" class="govuk-table__header"></th>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">18 December 2020</td>
+                    <td class="govuk-table__cell">Occupancy changed</td>
+                    <td class="govuk-table__cell">
+
+                      System
+                     </td>
+
+
+
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">11 December 2020</td>
+                    <td class="govuk-table__cell">Bank details changed</td>
+                    <td class="govuk-table__cell">
+
+                      Staff 73229975
+                     </td>
+
+
+
+                  </tr>
+
+                </tbody>
+              </table>
+
+
+            <br>
+
+
+               <h2 class="govuk-heading-l">
+              2019 to 2020
+            </h2>
+
+
+
+              <table class="govuk-table">
+
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" style="width:29%">Date</th>
+                    <th scope="col" class="govuk-table__header" style="width:50%">Action</th>
+                    <th scope="col" class="govuk-table__header">By</th>
+                    <th scope="col" class="govuk-table__header"></th>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">11 December 2019</td>
+                    <td class="govuk-table__cell">Address changed</td>
+                    <td class="govuk-table__cell">
+
+                      System
+                     </td>
+
+
+
+                  </tr>
+
+                </tbody>
+              </table><br>
+
+              <br>
+              <h2 class="govuk-heading-l">
+                Start of history 14 August 2019
+              </h2>
+
+
+          </div>
+
+
+
+
+
+      </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

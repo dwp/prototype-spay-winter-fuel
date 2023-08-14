@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <div class="govuk-panel__body">
+              <strong>You qualify for a Winter Fuel Payment of £200</strong>
+            </div>
+          </div>
+
+          <br>
+
+          <p>You qualify for £200 because you:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>were born on or before 20 September 1940</li>
+            <li>live with someone else who qualifies</li>
+          </ul>
+
+          <h3 class="govuk-heading-m">What happens next</h3>
+          <p>Your payment will be made in November or December.</p>
+          <p>This will happen automatically, you do not need to make a claim.</p>
+
+          <h3 class="govuk-heading-m">Changes of circumstance</h3>
+          <p>Your entitlement may be affected if your circumstances change, such as:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>moving house or there is a change to who you live with</li>
+            <li>being in hospital for more than 52 weeks</li>
+            <li>moving into a care home</li>
+          </ul>
+
+          </form>
+
+      </div>
+
+
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}

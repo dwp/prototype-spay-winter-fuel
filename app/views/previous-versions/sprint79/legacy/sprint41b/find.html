@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {{ govukBackLink({
+            text: "Back",
+            href: "javascript:history.go(-1)"
+          }) }}
+
+  <br>
+  <br>
+
+        <h1 class="govuk-heading-xl">What is your National Insurance number?</h1>
+        <form method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="nino">
+              National Insurance number
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="nino" name="nino" type="nino" aria-describedby="nino-hint">
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Find
+          </button>
+
+        </form>
+
+        {% if data['prototype-mode'] === 'dev' %}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              DEV info
+            </span>
+          </summary>
+
+          <div class="govuk-details__text">
+            <p><b>Error message</b><br>
+              ...</p>
+        </details>
+        {% endif %}
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+    </main>
+    </div>
+
+    {% endblock %}

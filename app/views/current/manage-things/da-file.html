@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+<br>
+<br>
+
+    <h1 class="govuk-heading-xl">Data and analytics file</h1>
+
+    <p>
+      <strong class="govuk-tag govuk-tag--green">
+        Completed
+      </strong>
+    </p>
+
+    <br>
+    <br>
+
+    <form method="post">
+
+<div class="govuk-button-group">
+  <button class="govuk-button govuk-button" data-module="govuk-button">
+    Start
+  </button>
+
+  <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+    Stop
+  </button>
+</div>
+<br>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Job Status</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Stage</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Write count</th>
+            <th scope="col" class="govuk-table__header">Start time</th>
+            <th scope="col" class="govuk-table__header">End time</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Validate file</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">18,000,000</td>
+            <td class="govuk-table__cell">1 April 2021 9:13am</td>
+            <td class="govuk-table__cell">1 April 2021 11:10am</td>
+            <td class="govuk-table__cell"><span class="verified-badge verified">
+          </span></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Update case</td>
+            <td class="govuk-table__cell">Completed</td>
+            <td class="govuk-table__cell">18,000,000</td>
+            <td class="govuk-table__cell">1 April 2021 2:03pm</td>
+            <td class="govuk-table__cell">1 April 2021 4:54pm</td>
+            <td class="govuk-table__cell"><span class="verified-badge verified">
+          </tr>
+        </tbody>
+      </table>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include "current/includes/cookie-banner.html" %}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  serviceName: serviceName,
+  serviceUrl: "/"
+}) }}
+
+{% block headEnd %}
+{% include 'includes/remove-blue-bar.html' %}
+{% endblock %}
+
+
+{% include './_find-someone.html' %}
+
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <main id="content" role="main">
+        <div class="grid-row">
+          <div class="column-full">
+
+            {% include './_bar.html' %}
+
+            {% include './_tab-overview.html' %}
+
+
+          </div>
+        </div>
+      </main>
+
+      <br>
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="/legacy/sprint19b/bankdetails">Bank details error - Please update users bank details</a>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+
+
+      <div>
+        <h2 class="govuk-heading-m">Qualifying details</h2>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+
+          <div class="app-check-your-answers__contents">
+            <dd class="app-check-your-answers__answer">
+              <strong>Residental address</strong>
+            </dd>
+            <dd class="app-check-your-answers__answer">
+              <strong>Occupants</strong>
+            </dd>
+            <dd class="app-check-your-answers__change">
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__answer">
+              <br>
+                {{ data['address-line-1-default'] }}<br>
+                {{ data['address-town-default'] }}<br>
+                {{ data['address-county-default'] }}<br>
+                {{ data['address-postcode-default'] }}
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              2 people of retirement age
+            </dd>
+            <dd class="app-check-your-answers__change">
+            </dd>
+          </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+<!-- </div> -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  </div>
+</div>
+
+{% endblock %}

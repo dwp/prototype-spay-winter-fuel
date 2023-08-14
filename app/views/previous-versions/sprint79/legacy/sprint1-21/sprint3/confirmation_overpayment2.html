@@ -1,0 +1,57 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Payment complete
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h2 class="govuk-panel__title">The claimant was overpaid £100</h2>
+            <div class="govuk-panel__body">
+              <strong></strong>
+            </div>
+          </div>
+
+            <p>{{ data['overpayment'] }}</p> 
+
+
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p>The Overpayments Debt Management team has been notified and the claimant has been sent a letter about the overpayment.</p>
+
+
+            <p><a href="#">Sam Jones</a> may also have been overpaid.</p>
+       
+
+
+             <form action="search" method="post" class="form"> 
+                <input type="submit" method="post" value="Search for a person" class="govuk-button">
+              </form>
+            
+              <p><a  href="#">View record</a></p>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

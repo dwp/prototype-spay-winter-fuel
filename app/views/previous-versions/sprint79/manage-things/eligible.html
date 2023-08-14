@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/current/caseload-statuses/check-cases">Check and update cases</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Eligible cases</li>
+  </ol>
+</div>
+
+
+
+  <br>
+  <br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Eligible cases</h1>
+
+<h3 class="govuk-heading-l">10,640,000
+<p class="govuk-body govuk-!-font-size-24">cases</p></h3>
+
+<h2 class="govuk-heading-l">Aged under 80</h2>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-third">
+        <section class="key-details-bar-black" role="contentinfo" aria-label="Key details">
+          <dl class="key-details-bar-black__key-details">
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">8 million</h2>
+            <span class="govuk-caption-l"><a href="">under 80 cases</a></span>
+          </dl>
+        </section>
+      </div>
+  <div class="govuk-grid-column-one-third">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0">4.4 million</h2>
+        <span class="govuk-caption-l"><a href="">£100 shared payments</a>
+          <br></span>
+      </dl>
+    </section>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+      <dl class="key-details-bar__key-details">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-0">3.6 million</h2>
+        <span class="govuk-caption-l"><a href="">£200 full payments</a><br>
+          </span>
+      </dl>
+    </section>
+  </div>
+</div>
+
+<br>
+<br>
+
+<h3 class="govuk-heading-l">Aged 80 or over</h3>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+  <section class="key-details-bar-black" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar-black__key-details">
+      <h2 class="govuk-heading-l">3.1 million
+      <span class="govuk-caption-l govuk-!-margin-bottom-8"><a href="">80 or over cases</a></span></h2>
+      <br>
+    </dl>
+  </section>
+  </div>
+<div class="govuk-grid-column-one-quarter">
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">892,442
+    <span class="govuk-caption-l"><a href="">£150 shared '80 or over' payments</a>
+      </span></h2>
+  </dl>
+</section>
+</div>
+<div class="govuk-grid-column-one-quarter">
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-2">441,668
+    <span class="govuk-caption-l"><a href="">£200 shared 'under 80' payments</a>
+      </span></h2>
+  </dl>
+</section>
+</div>
+<div class="govuk-grid-column-one-quarter">
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-0">1.7 million</h2>
+    <span class="govuk-caption-l"><a href="">£300 full payments</a>
+      </span>
+  </dl>
+</section>
+</div>
+</div>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

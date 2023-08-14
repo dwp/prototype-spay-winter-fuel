@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post" action="address">
+
+          {% include 'current/includes/_bar_2.html' %}
+          
+
+     
+
+
+
+            
+
+            <h1 class="govuk-heading-m">Address details</h1>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption"></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">Victoria Arms
+                    <br>Tarbert Street
+                    <br>FALKIRK
+                    <br>FK55 8XN</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Date moved in</th>
+                  <td class="govuk-table__cell">6 March 1990</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Home phone</th>
+                  <td class="govuk-table__cell">01298336876</td>
+                </tr>
+              </thead>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Mobile phone</th>
+                  <td class="govuk-table__cell">07890123652</td>
+                </tr>
+              </thead>
+
+            </table>
+
+
+
+            <br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Is this also the residential address for Theodora Best?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="approve-commercial" type="radio" value="Yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <p class="govuk-label" for="contact-by-email">
+                        This will allow payments to be made even though this is a commercial address.
+                      </p>
+                     </div>
+            
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="approve-commercial" type="radio" value="No" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      No (or no information available)
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                    <div class="govuk-form-group">
+                      <p class="govuk-label" for="contact-by-email">
+                        Payments will be stopped as this is not a residential address, or there is not enough information to make a decision.
+                      </p>
+                     </div>
+            
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-3" name="approve-commercial" type="radio" value="no-update" data-aria-controls="conditional-contact-3">
+                    <label class="govuk-label govuk-radios__label" for="contact-3">
+                      I want to enter a new address
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                    <div class="govuk-form-group">
+                      <p class="govuk-label" for="contact-by-email">
+                        This will close this case and let you enter a new address on the next page.
+                      </p>
+                     </div>
+            
+                  </div>
+                </div>
+            
+              </fieldset>
+            </div>
+
+
+          
+            <a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a><br>  <br>
+           
+
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

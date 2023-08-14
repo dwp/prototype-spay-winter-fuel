@@ -1,0 +1,80 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  What type of account does the claimant have?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+<a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+       
+                <form action="payment_type" method="post" class="form"> 
+
+                      <div class="govuk-form-group"">
+                          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    What type of account does the claimant have?
+                                </h1>
+                              </legend>
+                              <span id="changed-name-hint" class="govuk-hint">
+                              
+                              </span>
+                              <div class="govuk-radios govuk-radios--inline">
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="uk" name="changed-name" type="radio" value="uk" onChange="change_link();">
+                                  <label class="govuk-label govuk-radios__label" for="UK">
+                                  UK bank, building society or credit union account
+                                </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="international" name="changed-name" type="radio" value="international" onChange="change_link();">
+                                  <label class="govuk-label govuk-radios__label" for="international">
+                                  International bank account
+                                </label>
+                                </div>
+                              </div>
+                            </fieldset>
+                           
+
+                          </fieldset>
+                      </div>
+
+              </form>
+
+    
+
+        <div id='buttonChange'>
+          <a href = '#'><input type='submit' value='Continue' class='govuk-button'></a>
+        </div>
+
+
+
+ 
+    
+    </div>
+  </div>
+
+
+</main>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+{{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+                  <form method="post">
+
+                    {% include 'current/includes/_bar.html' %}
+
+
+
+
+
+                        <form method="post">
+
+                              <h2 class="govuk-heading-l">Why could you not verify the address?</h2>
+
+                                <div class="govuk-form-group">
+                                  <fieldset class="govuk-fieldset">
+                                    <div class="govuk-radios">
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live" name="return-queue" type="radio" value="Not enough time">
+                                        <label class="govuk-label govuk-radios__label" for="address-3">
+                                          Not enough time to fix the problem
+                                        </label>
+                                      </div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live-2" name="return-queue" type="radio" value="Unable to speak to citizen">
+                                        <label class="govuk-label govuk-radios__label" for="address-3">
+                                          Unable to speak to citizen using contact numbers
+                                        </label>
+                                      </div>
+                                      <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="where-do-you-live-3" name="return-queue" type="radio" value="No valid contact details">
+                                        <label class="govuk-label govuk-radios__label" for="address-3">
+                                          No valid contact details for the citizen
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+                                </div>
+
+                          <button type="submit" class="govuk-button">
+                            Continue
+                          </button>
+
+                        </form>
+
+
+
+
+
+<br>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+<script>
+    nextPageRoutes = {
+        'Not enough time': 'verify-address-not-fixed.html',
+        'Unable to speak to citizen': 'verify-address-not-fixed',
+        'No valid contact details': 'verify-address-not-fixed',
+      }
+  </script>
+
+  {% endblock %}

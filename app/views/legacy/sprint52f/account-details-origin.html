@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+            {% include './_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          
+            <br>
+            <div class="govuk-inset-text">
+<!--            <h1 class="govuk-heading-l">Confirm bank or building society</h1>   -->
+            <h1 class="govuk-heading-l">Where are the new account details from?</h1>
+<!--            <p>TSB</p>    -->
+
+            <form method="post">
+
+              <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-name" name="change-name" type="radio" value="Citizen contact">
+              <label class="govuk-label govuk-radios__label" for="change-name">
+                Citizen contact
+              </label>
+            </div>
+           
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-name-3" name="change-name" type="radio" value="Other DWP system">
+              <label class="govuk-label govuk-radios__label" for="cbank-name-2">
+                Internal DWP system
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-name-2" name="change-name" type="radio" value="AWAC (bank provided new account details)">
+              <label class="govuk-label govuk-radios__label" for="cbank-name-2">
+                AWAC (bank provided new account details)
+              </label>
+            </div>
+          </div>
+</div>
+            <br>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}

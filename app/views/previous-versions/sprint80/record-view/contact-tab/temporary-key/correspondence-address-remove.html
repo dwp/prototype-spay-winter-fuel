@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form action="contact-details-add.html">
+
+        {% include 'current/includes/_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+              <h2 class="govuk-heading-l">Are you sure you want to remove this correspondence address?</h2>
+<p>
+              315 Concell De Cent<br>
+              Eixample<br>
+              Barcelona<br>
+              190008<br>
+              SPAIN<br>
+
+
+              <br>
+
+              <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                  Remove
+                </button>
+
+                <a class="govuk-link" href="contact-details-international">Cancel</a>
+              </div>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

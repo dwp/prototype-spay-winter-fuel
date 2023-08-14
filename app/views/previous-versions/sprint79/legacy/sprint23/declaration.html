@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <a href="/legacy/sprint22b/check" class="govuk-back-link">Back</a>
+          <br>
+          <br>
+
+          <h1 class="govuk-heading-l">Declaration</h1>
+
+          <p>By submitting this change, you agree that:<br>
+                        <ul class="govuk-list govuk-list--bullet">
+                        <li>the information you've given is complete and correct</li>
+                        <li>to tell Department for Work and Pensions (DWP) straight away if your circumstances change </li>
+                        <li>DWP can ask you to pay back any recoverable overpayment</li>
+                        </ul>
+                        </p>
+
+                        <br>
+
+            <button type="submit" class="govuk-button">
+              Caller agrees
+            </button>
+
+          </div>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

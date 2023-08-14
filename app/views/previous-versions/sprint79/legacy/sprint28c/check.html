@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include './_find-someone.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+          {% include './_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+
+                <h1 class="govuk-heading-l">Check new information</h1>
+
+
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Address
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {% if data.address %}
+                      {{data.address.split(', ').join('<br />') | safe}}
+                      <br>
+                      {{data.postcode}}
+                      {% else %}
+                      <p>27 Kent Street<br>
+                      Amble<br>
+                      NE65 0LZ
+                      </p>
+                      {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden">Address</span>
+                      </a>
+                    </dd>
+                  </div>
+
+
+                  {% if data['moveday'] %}
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Date they moved in
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    <!--  {{data.moveday}}/{{data.movemonth}}/{{data.moveyear}}  -->
+                    1 May 2019
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+
+
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Occupancy details
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      Does not live with anyone else of State Pension age
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                      </a>
+                    </dd>
+                  </div>
+                </dl>
+
+              </fieldset>
+
+              <button type="submit" class="govuk-button">
+                Save new information
+              </button>
+
+            </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

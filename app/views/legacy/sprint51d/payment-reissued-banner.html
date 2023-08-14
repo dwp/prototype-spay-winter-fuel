@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+
+
+                    <div class="moj-banner moj-banner--success">
+
+                      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+                        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+                      <div class="moj-banner__message">
+                        <span class="moj-banner__assistive">Success</span>Payment reissued</div>
+
+                    </div>
+
+          {% include './_bar.html' %}
+
+
+          {% include './_tab-payment.html' %}
+
+
+          <br>
+          <br>
+          <h2 class="govuk-heading-m" style="float:left;">Account details </h2>
+
+          <table class="govuk-table">
+            <a href="bankdetails" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 60%; float:left">Change</span>
+            </a>
+
+            <table class="govuk-table">
+  
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                {% if data['rec-bank-account-type'] == 'uk-bank'%}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Name on the account</th>
+                  <td class="govuk-table__cell">
+                    {% if data['name-on-the-account'] %}
+                      {{data['name-on-the-account']}}
+                    {% else %}
+                    Alfie Noakes
+                    {% endif %}
+                </tr>
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Sort code</th>
+                  <td class="govuk-table__cell">
+                    {% if data['sort-code'] %}
+                      {{data['sort-code']}}
+                    {% else %}
+                      001122
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Account number</th>
+                  <td class="govuk-table__cell">
+                    {% if data['account-number'] %}
+                    {{data['account-number']}}
+                  {% else %}
+                     98765432
+                  {% endif %}
+                  </td>
+                </tr>  
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Building society roll number <br>(if there is one)</th>
+                  <td class="govuk-table__cell">
+                    {% if data['roll-number'] %}
+                    {{data['roll-number']}}
+                  {% else %}
+                     2344353234234
+                  {% endif %}
+                  </td>
+                </tr>
+                  {% else %}
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Name on the account</th>
+                    <td class="govuk-table__cell">
+                      {% if data['nameaccount'] %}
+                        {{data['nameaccount']}}
+                      {% else %}
+                      Alfie Noakes
+                      {% endif %}
+                  </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                  <td class="govuk-table__cell">
+                    {% if data['swift'] %}
+                    {{data['swift']}}
+                  {% else %}
+                  CTBAAU2S
+                  {% endif %}
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">IBAN</th>
+                  <td class="govuk-table__cell">
+                    {% if data['iban'] %}
+                    {{data['iban']}}
+                  {% else %}
+                     CH93 0076 2011 6238 5295 7
+                  {% endif %}
+                  </td>
+                </tr>
+                {% endif %}
+              </tbody>
+            </table>
+
+          <br>
+
+        <h2 class="govuk-heading-m" style="margin-bottom:25px;float:left">Payments</h2>
+
+          <table class="govuk-table">
+            <a href="stop-payments" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 61%">Stop payments</span>
+            </a>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment date</th>
+                <th scope="col" class="govuk-table__header">Amount</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Wednesday 11 November 2020</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">
+                  Sent</td>
+                <td class="govuk-table__cell"><a href="payment-details-4" class="govuk-link">
+                  Details</a></td>
+              </tr>
+
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Wednesday 6 November 2020</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">
+                  Returned</td>
+                <td class="govuk-table__cell"><a href="payment-details-3" class="govuk-link">
+                  Details</a></td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Wedneday 20 November 2019</td>
+                <td class="govuk-table__cell">£100</td>
+                <td class="govuk-table__cell">Sent</td>
+                <td class="govuk-table__cell"><a href="previous-payment-1" class="govuk-link">Details</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            {% include './_history-reissue.html' %}
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    </main>
+    </div>
+  
+    {% endblock %}
+  

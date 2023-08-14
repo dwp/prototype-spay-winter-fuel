@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    
+
+        {% include 'current/includes/_bar.html' %}
+
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <h2 class="govuk-heading-l">Can you confirm the full address?</h2>
+
+              <p><b>10</b> addresses found for <b>"{% if data['correspondence-house-number'] %}
+                                  {{data['correspondence-house-number']}}
+                                {% else %}
+                                8
+                                {% endif %}"
+                              </b> and <b>"{% if data['correspondence-postcode'] %}
+                                                  {{data['correspondence-postcode']}}
+                                                {% else %}
+                                                PL6 6WJ
+                                                {% endif %}"</b></p>
+
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+
+                  
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-1" name="correspondence-address-change" type="radio" value="8 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-1">
+                        8 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-2" name="correspondence-address-change" type="radio" value="18 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-2">
+                        18 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-3" name="correspondence-address-change" type="radio" value="1 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-3">
+                        1 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-4" name="correspondence-address-change" type="radio" value="2 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-4">
+                        2 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-5" name="correspondence-address-change" type="radio" value="3 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-5">
+                        3 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-6" name="correspondence-address-change" type="radio" value="4 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-6">
+                        4 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-7" name="correspondence-address-change" type="radio" value="5 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-7">
+                        5 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-8" name="correspondence-address-change" type="radio" value="6 Front Street, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-8">
+                        6 Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-9" name="correspondence-address-change" type="radio" value="Made barbers, Crownhill, PL6 6WJ">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-9">
+                        Made Barbers, Front Street, Crownhill, PL6 6WJ<br>
+                        <strong class="govuk-tag govuk-tag--turquoise">
+                          Commercial
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="correspondence-address-10" name="correspondence-address-change" type="radio" value="no address found">
+                      <label class="govuk-label govuk-radios__label" for="correspondence-address-10">
+                        The address has not been found
+                      </label>
+                    </div>
+                  
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+               <input type="hidden" name="correspondence-address-changed" value="true">
+                <input type="hidden" name="correspondence-address-remove" value="no">
+                <input type="hidden" name="contact-details-changed" value="true">
+                <input type="hidden" name="from-contact-tab" value="true">
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% if data['update-details']=='yes' %}
+    {% set nextCorrespPage = '/current/record-view/overview-tab/update-details/update-anything-else' %}
+  {% else %}
+    {% set nextCorrespPage = '/current/record-view/contact-tab/contact-details' %}
+  {% endif %}
+  <script>
+    nextPageRoutes = {
+        '8 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+        '18 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '1 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '2 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '3 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '4 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '5 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '6 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         'Made barbers, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+          'no address found': 'correspondence-address-search.html',
+    }
+  </script>
+
+
+  {% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layoutsearch.html" %}
+
+{% block pageTitle %}
+  Bob Smith
+{% endblock %}
+
+
+{% block header %}
+  {% include "current/includes/cookie-banner.html" %} {# Set serviceName in config.js. #}
+  {% include "includes/headsearch.html" %}
+  {% include "includes/QQ123456C_head.html" %}
+{% endblock %} 
+
+{% block content %}
+<div class="govuk-width-container">
+        <a class="govuk-back-link" href='#'onclick="goBack()">Back</a>
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-panel__title">The claimant needs to send proof of their date of birth</h1>
+         
+            <h2 class="govuk-heading-m">They must send 1 of these original documents:</h3>
+            <ul class="govuk-list govuk-list--bullet">
+                    <li>Birth certificate</li>
+                    <li>Certificate of registration of birth</li>
+                    <li>Adoption order</li>
+                    <li>Certificate of adoption issued by the Registrar General</li>
+                    <li>Identity card</li>
+                </ul>
+                <h3 class="govuk-heading-s">Include their National Insurance number and send it to:</h4>
+                    <p>The Pension Service 4<br>
+                        Mail Handling Site A<br>
+                        Wolverhampton<br>
+                        WV98 1AG</p>
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p>You should complete the next tasks but the payment won't be processed until they send in proof of their date of birth.</p>
+
+
+             <form action="qq123456c_main_evidence" method="post" class="form"> 
+                <input type="submit" method="post" value="Continue" class="govuk-button">
+              </form>
+            
+              
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

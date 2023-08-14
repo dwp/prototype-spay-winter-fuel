@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_bar-telephone.html' %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-full">
+
+      <form method="post">
+          <h2 class="govuk-heading-l">Verify an address that could not be found</h2>
+
+
+              <h2 class="govuk-heading-m">Unverified address</h2>
+              <p class="govuk-body govuk-!-font-size-24">
+                Flat D<br>
+                104 Boundary Lane<br>
+                Hulme<br>
+                Manchester<br>
+                M15 6FD</p>
+
+
+
+
+
+          <h2 class="govuk-heading-m"></h2>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-1" name="address-fix-1" type="radio" value="found">
+                    <label class="govuk-label govuk-radios__label" for="address">
+                      I have searched online and found this address. Add it to our records
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="address-fix-2" name="address-fix-1" type="radio" value="Address not found">
+                    <label class="govuk-label govuk-radios__label" for="address-1">
+                      Search for another address
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+
+
+
+
+
+          <br>
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+                </form>
+      </div>
+
+
+
+    </div>
+
+</div>
+<script>
+  nextPageRoutes = {
+      'found': 'verify-address-fixed.html',
+      'Address not found': 'enter-address-pre-filled2.html',
+   }
+</script>
+</main>
+</div>
+
+
+
+
+{% endblock %}

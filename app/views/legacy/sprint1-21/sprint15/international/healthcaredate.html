@@ -1,0 +1,86 @@
+{% extends "layoutsearch.html" %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__nino"> {{data.ninumber}} </dd>
+        </div>
+    </dl>
+</section>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a href="/legacy/sprint15/international/healthcare" class="govuk-back-link">Back</a>
+ 
+ 
+ <form method=post>
+
+    <main class="govuk-main-wrapper">
+
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">What was the date of your last appointment?</h1>
+                    
+                    <span id="hospdate-hint" class="govuk-hint">
+                      These dates do not have to be exact, but to the best of your knowledge
+                         </span>
+
+                                <span id="dob-hint" class="govuk-hint">
+                                        For example, 12 11 1960
+                                    </span>
+
+
+                                    <div class="govuk-date-input" id="healthcaredate" name="healthcaredateinput">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="healthcare-day">
+                                                Day
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="healthcareday" name="healthcareday" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="healthcare-month">
+                                                Month
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="healthcaremonth" name="healthcaremonth" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="healthcare-year">
+                                                Year
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="healthcareyear" name="healthcareyear" type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                </div>
+        </div>
+            
+            <button type="submit" class="govuk-button"> Save and continue  </button>
+
+
+    </main>
+
+</form>
+</div>
+
+  {% endblock %}

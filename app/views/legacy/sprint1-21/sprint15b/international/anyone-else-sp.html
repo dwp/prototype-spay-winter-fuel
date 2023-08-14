@@ -1,0 +1,69 @@
+{% extends "layoutsearch.html" %}
+
+{% block page_title %}
+Decision
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+<section aria-label="key-details" class="key-details-bar" role="contentinfo"> 
+    <dl class="key-details-bar__key-details">
+        <div class="key-details-bar__top-block">
+            <dd class="key-details-bar__name"> {{data.fullname}} </dd>
+            <dd class="key-details-bar__DOB"> DOB: {{data.dobday}} {{data.dobmonth}} {{data.dobyear}} </dd>
+        </div>
+    </dl>
+</section>
+
+
+{% endblock %}
+{% block content %}
+ 
+ 
+ <div class="govuk-width-container">
+
+ <a href="/legacy/sprint15b/international/write-address1" class="govuk-back-link">Back</a>
+
+ <form method=post>
+
+ <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl govuk-!-font-size-36">Household details</span>
+        <h1 class="govuk-heading-xl">Is there anyone else that lives with you who was born before 6 October 1954?</h1>
+       
+
+        <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="anyone-else-sp-yes" name="anyoneElseSp" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="anyone-else-sp-yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="anyone-else-sp-no" name="anyoneElseSp" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="anyone-else-sp">
+          No
+        </label>
+      </div>
+    </div>
+        
+           <button type="submit" class="govuk-button govuk-!-margin-top-5"> Save and continue</button>
+
+
+           
+    </div>
+
+
+  </main>
+
+  </form>
+  </div>
+
+  {% endblock %}

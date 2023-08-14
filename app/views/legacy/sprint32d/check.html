@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include './_blue_bar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+              text: "Back",
+              href: "javascript:history.go(-1)"
+            }) }}
+
+          <br>
+          <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <h1 class="govuk-heading-l">You have given some new information</h1>
+
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Address
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data.address %}
+                    {{data.address.split(', ').join('<br />') | safe}}
+                    <br>
+                    {{data.postcode}}
+                    {% else %}
+                    <p>27 Kent Street<br>
+                    Crossmoor<br>
+                    PR4 9FH
+                    </p>
+                    {% endif %}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden">Address</span>
+                    </a>
+                  </dd>
+                </div>
+
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Move date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    8 August 2019
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Occupancy details
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Was not living with anyone of State Pension age.
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="govuk-inset-text">
+                <p>Based on this new information, your payment should have been £200.</p>
+          <!--      <p>Some of your answers do not match what DWP has on record.</p>   -->
+              </div>
+
+
+                            <h1 class="govuk-heading-s">Do you want DWP to save the new information you've given?</h1>
+
+
+              <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="change" name="change" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="change">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="change-2" name="change" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="change-2">
+          No
+        </label>
+      </div>
+    </div>
+
+    <br>
+
+            </fieldset>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </div>
+
+      </div>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

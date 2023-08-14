@@ -1,0 +1,211 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  {% if data['update-details'] == 'yes'%}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+{% endif %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+    
+          {% include 'current/includes/_bar_2.html' %}
+
+
+            <h1 class="govuk-heading-l">Review manual payment request</h1>
+
+            <h2 class="govuk-heading-m"> Citizen details</h2>
+
+
+            <table class="govuk-table">
+                    
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell"> {{ data ['sortcode'] or '70' }}  </td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell"> {{ data [''] or '1 Victoria Road' }} <br> {{ 'FALKIRK' }} <br> {{ 'FK55 8XN' }}  </td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Occupancy</th>
+                  <td class="govuk-table__cell">Other eligible people they live with:<br><br>{{ 'Under 80: 1' }}
+                    <br>{{'80 and over: 0' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Account details</th>
+                  <td class="govuk-table__cell"> {{ data ['sortcode'] or '01 02 03' }}  <br> {{ data ['accountnumber'] or '12345678' }}  </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Previous payment</th>
+                  <td class="govuk-table__cell">{{ "£200" }}
+                    <br>{{'2 May 2020' }}<br>{{'Exercise: 2020/2021' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Benefit type</th>
+                  <td class="govuk-table__cell"> {{ data [''] or 'Universal credit' }} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                
+    
+              </tbody>
+            </table>
+
+
+            <h2 class="govuk-heading-m">Manual payment request</h2>
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Exercise</th>
+                  <td class="govuk-table__cell">{{ data [''] or '2021/2022' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Reason</th>
+                  <td class="govuk-table__cell">{{ data[''] or 'Technical problem with SPS'}}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">{{ data [''] or '£500' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date requested</th>
+                  <td class="govuk-table__cell">{{ data [''] or '5 January 2023' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Actioned by</th>
+                  <td class="govuk-table__cell">{{ data [''] or 'Staff ID: 0098765' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+              </tbody>
+            </table>
+ 
+     <br>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Approve manual payment request?
+                  </h1>
+               
+                </legend>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact" name="approve" type="radio" value="yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                      Yes 
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact" name="approve" type="radio" value="decline-and-update" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="contact">
+                        Decline and update
+                      </label>
+                    </div>
+
+                  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="contact-2" name="approve" type="radio" value="decline-and-cancel" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                     Decline and close
+                    </label>
+                  </div>
+                 
+                 
+                </div>
+
+              </fieldset>
+            </div>
+
+
+       
+
+<br>
+
+            <button class="govuk-button govuk-!-margin-right-2" data-module="govuk-button">
+              Continue
+            </button> 
+
+            <p><a href="/current/tasks/request-manual-payment/send-case-back-to-task-list" class="govuk-link">Return this case to the queue</a></p>
+            <br>
+          <!--  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="/current/tasks/request-manual-payment/get-next-task-manual-payment-skip">
+              Return case to queue
+            </button>-->
+
+            <!--<p><a href="/current/tasks/request-manual-payment/get-next-task-manual-payment-skip" class="govuk-link">Return this case to the queue</a></p>-->
+   
+
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+{% if data['update-details'] == 'yes'%}
+   {% set nextReviewPage = '/current/record-view/overview-tab/update-details/overview-manual-payment-processed' %} 
+{% else %}
+  {% set nextReviewPage = 'get-next-task-manual-payment' %}
+{% endif %}
+
+    <script>
+        nextPageRoutes = {
+            'yes': 'review-approval',
+            'decline-and-update': 'decline-and-update-reason',
+            'decline-and-close': 'decline-and-close-reason',
+            'no': 'cancel-reason',
+        }
+    </script>
+
+
+{% endblock %}

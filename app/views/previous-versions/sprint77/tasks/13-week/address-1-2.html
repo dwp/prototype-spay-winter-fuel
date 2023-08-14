@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+        {% include 'current/includes/_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <h2 class="govuk-heading-l">Confirm correspondence address</h2>
+
+<p><b>4</b> addresses found for <b>"{% if data['house-number'] %}
+                    {{data['house-number']}}
+                  {% else %}
+                  67
+                  {% endif %}"
+                </b> and <b>"{% if data['postcode'] %}
+                                    {{data['postcode']}}
+                                  {% else %}
+                                  BS48 2LL
+                                  {% endif %}"</b></p>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="67 Station Road, NAILSEA, BS48 2LL">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        67 Station Road, NAILSEA, BS48 2LL<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="67 Station Road, NAILSEA, BS48 2LL">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        67c Station Road, NAILSEA, BS48 2LL<br>
+                        <strong class="govuk-tag govuk-tag--orange">
+                          Commercial
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="67 Station Road, NAILSEA, BS48 2LL">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        68b Station Road, NAILSEA, BS48 2LL<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live" name="address-change" type="radio" value="67 Station Road, NAILSEA, BS48 2LL">
+                      <label class="govuk-label govuk-radios__label" for="address">
+                        69f Station Road, NAILSEA, BS48 2LL<br>
+                        <strong class="govuk-tag govuk-tag--blue">
+                          Residential
+                        </strong>
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="where-do-you-live-2" name="address-change" type="radio" value="address not found">
+                      <label class="govuk-label govuk-radios__label" for="address-2">
+                        The address has not been found
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <br><a href="next-task" class="govuk-link">Return this case to the queue</a>
+              <br><br><br>
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}

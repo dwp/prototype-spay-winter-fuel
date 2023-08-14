@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage Winter Fuel Payments</h1>
+
+
+    <form method="post">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="/current/manage-things/manage-things">Manage things...</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="payments">Payments</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="letters">Letters</a>
+              </li>
+
+
+          </nav>
+
+
+
+        </div>
+      </div>
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-l">Last 7 days</h2>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 231
+            <p class="govuk-body govuk-!-font-size-24">letters sent<br>
+          </h3>
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 14
+            <p class="govuk-body govuk-!-font-size-24">returned letters<br>
+          </h3>
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-l"> 3,986
+            <p class="govuk-body govuk-!-font-size-24">letters scheduled<br>
+          </h3>
+        </div>
+
+        </div>
+
+       
+        <p><a href="letters-breakdown-week" style="font-size: 16px;">Weekly letter breakdown</a></p>
+        
+          <hr class="govuk-section-break govuk-section-break--visible">
+
+          <br>
+          <br>
+       
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+          <h2 class="govuk-heading-l">This year</h2>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 12,922
+            <p class="govuk-body govuk-!-font-size-24">letters sent<br>
+          </h3>
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+
+          <h3 class="govuk-heading-l"> 1,036
+            <p class="govuk-body govuk-!-font-size-24">returned letters<br>
+          </h3>
+
+        </div>
+
+
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-l"> 187,266
+            <p class="govuk-body govuk-!-font-size-24">letters scheduled<br>
+          </h3>
+        </div>
+
+        </div>
+
+        
+
+  <p><a href="letters-breakdown-year.html" style="font-size: 16px;">Previous years</a></p>
+        
+          <hr class="govuk-section-break govuk-section-break--visible">
+
+          <br>
+          <br>
+
+  
+
+
+
+        <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Stop letters
+          </button>
+        </div>
+
+      </div>
+
+
+
+
+
+        </div>
+      </div>
+
+
+{% endblock %}

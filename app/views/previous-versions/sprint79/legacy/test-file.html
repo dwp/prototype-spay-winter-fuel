@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <form method="post">
+                
+                {{ govukRadios({
+                    classes: 'govuk-radios',
+                    idPrefix: 'ecl',
+                    name: 'ecl',
+                    fieldset: {
+                        legend: {
+                            text: '',
+                            isPageHeading: true,
+                            classes: 'govuk-fieldset__legend--xl'
+                        }
+                    },
+                    items: [
+                        {
+                            text: 'xx',
+                            value: 'Yes'
+                        },
+                        {
+                            text: 'yy',
+                            value: 'No'
+                        }
+                    ]
+                }) }}
+
+                 <button class="govuk-button"  data-module=“govuk-button”>
+                              Continue
+            </button>
+
+            </form>
+            
+            <a href="hub" class="govuk-link govuk-!-font-size-19">Next</a>
+        </div>
+
+</div>
+
+<script>
+    nextPageRoutes = {
+        'Yes': 'yes-page.html',
+        'No': 'no-page.html',
+
+    }
+</script>
+
+{% endblock %}

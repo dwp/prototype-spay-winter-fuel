@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% if data['mark-as-dlo']=='yes'%}
+          {% include 'current/includes/_bar-dlo.html' %}
+        {% else %}
+          {% include 'current/includes/_bar.html' %}
+        {% endif %}
+
+          <br>
+          <br>
+
+          <form method="post">
+
+            <h2 class="govuk-heading-l">Can you confirm your full address?</h2>
+
+            <p><b>1</b> address found for <b>"{% if data['address-search-line-1'] %}
+                {{data['address-search-line-1']}}
+                {% else %}
+                27
+                {% endif %}"</b>,
+                <b>"{% if data['address-search-town'] %}
+                    {{data['address-search-town']}}
+                    {% else %}
+                    27
+                    {% endif %}"</b>
+               and <b>"{% if data['address-search-postcode'] %}
+                {{data['address-search-postcode']}}
+                {% else %}
+                NE65 0LZ
+                {% endif %}"</b></p>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live" name="address-search-change" type="radio" value="27 Kent Street, Amble, NE65 0LZ">
+                    <label class="govuk-label govuk-radios__label" for="address-search">
+                      27 Kent Street, Amble, NE65 0LZ
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-2" name="address-search-change" type="radio" value="address not found">
+                    <label class="govuk-label govuk-radios__label" for="address-search-2">
+                      The address has not been found
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        '27 Kent Street, Amble, NE65 0LZ': 'move-date.html',
+        'address not found': 'address-search2.html',
+    }
+</script>
+
+{% endblock %}

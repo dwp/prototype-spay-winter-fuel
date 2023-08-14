@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include './_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include './_bar.html' %}
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          
+
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="more-detail">
+                  Add more details about what happened in this period
+                  </label>
+                </h1>
+                <div id="more-detail-hint" class="govuk-hint">
+                  If there is information that could help with an overpayment decision about payments before winter 2022 to 2023, you can add it here.<br><br>If not, you can leave it blank.
+                </div>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+              </div>
+
+              <br>
+              <br>
+
+            </fieldset>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

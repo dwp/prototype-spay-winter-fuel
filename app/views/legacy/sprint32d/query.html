@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          <h1 class="govuk-heading-l">What can I help you with?</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="query" name="query" type="radio" value="eligibility">
+                  <label class="govuk-label govuk-radios__label" for="query">
+                    Check caller's eligibility
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="query-2" name="query" type="radio" value="record">
+                  <label class="govuk-label govuk-radios__label" for="query-2">
+                    Find caller's record
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

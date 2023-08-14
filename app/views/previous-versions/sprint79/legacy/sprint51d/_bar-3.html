@@ -1,0 +1,21 @@
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+        <div>
+          <h1 class="govuk-heading-xl">
+              Theodora Best
+           <br>
+            <span class="govuk-body-l">
+              {% if data['nino'] %}
+                {{data['nino']}}
+              {% else %}
+                AB 12 34 56 C
+              {% endif %}
+           </span>
+          </h1>
+        </div>
+
+  </div>
+</div>
