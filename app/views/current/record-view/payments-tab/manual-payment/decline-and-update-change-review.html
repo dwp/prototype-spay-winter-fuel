@@ -12,14 +12,13 @@ Winter Fuel Payments
 
 {% block content %}
 
-  {% if data['update-details'] == 'yes'%}
+ 
 
   {{ govukBackLink({
     text: "Back",
     href: "javascript:history.go(-1)"
   }) }}
 
-{% endif %}
 
 
 <div class="govuk-width-container">
@@ -35,6 +34,70 @@ Winter Fuel Payments
             <span class="govuk-caption-l">Request manual payment</span>
             Check manual payment request
           </h1>
+
+          <h2 class="govuk-heading-m"> Decline and update details</h2>
+          <table class="govuk-table">
+           
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Reason for update</th>
+                <td class="govuk-table__cell">{{ data[''] or 'Incorrect exercise'}} <br> {{ data[''] or 'Incorrect amount'}} <br> {{ data[''] or 'Incorrect bank details'}} </td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Actioned by</th>
+                <td class="govuk-table__cell">{{ data [''] or 'Manager staff ID: 00981237' }}</td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+
+          <h2 class="govuk-heading-m">Manual payment request</h2>
+
+          <table class="govuk-table">
+           
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Exercise</th>
+                <td class="govuk-table__cell">{{ data [''] or '2021/2022' }}</td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Reason</th>
+                <td class="govuk-table__cell">{{ data[''] or 'Technical problem with SPS'}}</td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount</th>
+                <td class="govuk-table__cell">{{ data [''] or '£200' }}</td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date requested</th>
+                <td class="govuk-table__cell">{{ data [''] or '5 March 2023' }}</td>
+                <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+
+          <h2 class="govuk-heading-m">Updated manual payment request</h2>
+
           
             <table class="govuk-table">
              
@@ -53,12 +116,17 @@ Winter Fuel Payments
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Reason</th>
-                  <td class="govuk-table__cell">{{ data['payment-reason']}}</td>
-                  <td class="govuk-table__cell"><a href="" class="govuk-link">Change</a></td>
+                  <td class="govuk-table__cell">{{ data['payment-reason'] or 'Technical problem with SPS'}}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Amount</th>
                   <td class="govuk-table__cell">{{ data ['payment-amount'] or '-' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link">Change</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ data ['confirmed-checked'] }}</td>
                   <td class="govuk-table__cell"><a href="" class="govuk-link">Change</a></td>
                 </tr>
               </tbody>
