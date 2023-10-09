@@ -10,19 +10,13 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+
 {{ govukBackLink({
   text: "Back",
   href: "javascript:history.go(-1)"
 }) }}
 
-{% if data['change'] == 'yes'%}
-  
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
 
-{% endif %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
