@@ -48,6 +48,12 @@ Winter Fuel Payments
               <tbody class="govuk-table__body">
 
                 <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Do you have payee details?</th>
+                  <td class="govuk-table__cell">{{ data ['payee-details'] }} </td>
+                  <td class="govuk-table__cell"><a href="death-arrears-task-1.html" class="govuk-link">Change</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Name</th>
                   <td class="govuk-table__cell">{{ data ['payeename'] }} {{ data ['payeelastname'] }} </td>
                   <td class="govuk-table__cell"><a href="death-arrears-task-1-dap-name.html" class="govuk-link">Change</a></td>
