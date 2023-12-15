@@ -21,14 +21,11 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        {% if data['mark-as-dlo']=='yes'%}
-        {% include 'current/includes/_bar-dlo.html' %}
-      {% else %}
+       
         {% include 'current/includes/_bar.html' %}
-      {% endif %}
 
         <h1 class="govuk-heading-l">
-          <span class="govuk-caption-l">Death arrears</span>
+          
           Which type of bank account should the payment go into?
         </h1>
         
@@ -57,13 +54,7 @@ Winter Fuel Payments
                       Countries in the Beneficiary Database
                     </label>
                   </div>
-                  <div class="govuk-radios__divider">or</div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dap-3" name="dap" type="radio" value="cancel">
-                    <label class="govuk-label govuk-radios__label" for="dap-2">
-                    None of these
-                    </label>
-                  </div>
+                  
               
                 </div>
               </fieldset>
@@ -74,7 +65,6 @@ Winter Fuel Payments
           Continue
         </button>
 
-        <p><a href="/current/tasks/fix-account-details/case-returned.html">Return this case to the queue</a></p>
 
       </div>
 

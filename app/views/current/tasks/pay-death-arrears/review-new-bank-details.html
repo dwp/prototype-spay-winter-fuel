@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  
+
+ <!-- {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}-->
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="get-next-task-account-added">
+    
+          {% include 'current/includes/_bar_2.html' %}
+
+          <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Death arrears</span>
+            Check death arrears payee details
+                    </h1>
+          
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Name</th>
+                  <td class="govuk-table__cell">{{ data ['payeename'] }} {{ data ['payeelastname'] }} </td>
+                  <td class="govuk-table__cell"><a href="death-arrears-task-1-dap-name.html" class="govuk-link">Change</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Address</th>
+                  <td class="govuk-table__cell">{{ data ['address-line-1'] }} <br> {{ data ['address-line-2'] }} <br> {{ data ['address-town'] }} <br> {{ data ['address-county'] }} <br> {{ data ['address-postcode'] }}
+                    </td>
+                  <td class="govuk-table__cell"><a href="death-arrears-task-1-dap-address.html" class="govuk-link">Change</a></td>
+                </tr>
+
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank account type</th>
+                  <td class="govuk-table__cell">{{ data ['bank-type'] }} </td>
+                  <td class="govuk-table__cell"><a href="new-bank-type" class="govuk-link">Change</a></td>
+                </tr>
+                
+                {% if data['bank-type']=='UK bank or building society account'%}  
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
+                  <td class="govuk-table__cell"><a href="change-account-details.html" class="govuk-link">Change</a></td>
+                </tr>
+                {% elseif data['bank-type']=='EEA or Swiss bank account'%}  
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
+                  <td class="govuk-table__cell"><a href="change-account-details-int.html" class="govuk-link">Change</a></td>
+                </tr>
+                {% elseif data['bank-type']=='Countries in the Beneficiary Database'%}  
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
+                  <td class="govuk-table__cell"><a href="change-account-details-ben.html" class="govuk-link">Change</a></td>
+                </tr>
+                {% endif %}
+                
+
+              </tbody>
+            </table>
+
+            <h2 class="govuk-heading-m">Payment details</h2>
+
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">{{ '£600' }} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Payment date</th>
+                  <td class="govuk-table__cell">{{ '6 November 2023' }} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+               
+                
+
+              </tbody>
+            </table>
+
+
+            <br>
+            <h2 class="govuk-heading-m">Citizen declaration for death arrears</h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Do you declare that the information you have given is correct and complete as far you know and believe?</li>
+              <li>Do you understand that if you knowingly give false information, you may be liable to prosecution or other actions?</li>
+              <li>If NOK/DAP does does not wish to provide details via telephone call; issue both WFPF001 and WFPL004 as above</li>
+            </ul>
+  
+<br>
+  
+              <button type="submit" class="govuk-button">
+                Agree and make payment
+                <input type="hidden" name="details-updated" value="yes">
+                 {% if data['mark-as-dlo']=='yes'%}  
+                  <input type="hidden" name="mark-as-dlo" value="no">
+                  <input type="hidden" name="prev-page" value="none">
+                 {% endif %}
+              </button>
+
+
+          </form>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+{% if data['update-details'] == 'yes'%}
+   {% set nextReviewPage = '/current/record-view/overview-tab/update-details/overview-manual-payment-processed' %} 
+{% else %}
+  {% set nextReviewPage = 'get-next-task-manual-payment' %}
+{% endif %}
+
+    <script>
+        nextPageRoutes = {
+            'yes': '{{nextReviewPage}}',
+            'change': 'request-manual-payment-this-year',
+            'return': '',
+            'no': 'cancel-reason',
+        }
+    </script>
+
+
+{% endblock %}

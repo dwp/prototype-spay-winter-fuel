@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  
+
+ <!-- {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}-->
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="payments-success">
+    
+          {% include 'current/includes/_bar.html' %}
+          
+          <h1 class="govuk-heading-l">
+            Check updated payment details
+                    </h1>
+          
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank account type</th>
+                  <td class="govuk-table__cell">{{ data ['bank-type'] }} </td>
+                  <td class="govuk-table__cell"><a href="new-bank-type" class="govuk-link">Change</a></td>
+                </tr>
+                
+                {% if data['bank-type']=='UK bank or building society account'%}  
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
+                  <td class="govuk-table__cell"><a href="change-account-details.html" class="govuk-link">Change</a></td>
+                </tr>
+                {% elseif data['bank-type']=='EEA or Swiss bank account'%}  
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
+                  <td class="govuk-table__cell"><a href="change-account-details-int.html" class="govuk-link">Change</a></td>
+                </tr>
+                {% elseif data['bank-type']=='Countries in the Beneficiary Database'%}  
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
+                  <td class="govuk-table__cell"><a href="change-account-details-ben.html" class="govuk-link">Change</a></td>
+                </tr>
+                {% endif %}
+                
+
+              </tbody>
+            </table>
+
+            
+
+
+            <br>
+            <h2 class="govuk-heading-m">Caller declaration</h2>
+
+            <p>By making this change, you agree that:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the information you've given is correct and complete as far as you know</li>
+              <li>you'll tell the Department for Work and Pensions straight away if your circumstances change</li>
+              <li>you'll pay back any money you're overpaid if you're asked to</li>
+            </ul>
+  
+<br>
+  
+              <button type="submit" class="govuk-button">
+                Agree and submit
+              </button>
+
+
+          </form>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+
+
+
+{% endblock %}

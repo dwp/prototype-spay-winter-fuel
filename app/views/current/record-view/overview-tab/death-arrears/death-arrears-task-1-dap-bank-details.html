@@ -21,11 +21,8 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        {% if data['mark-as-dlo']=='yes'%}
-        {% include 'current/includes/_bar-dlo.html' %}
-      {% else %}
-        {% include 'current/includes/_bar.html' %}
-      {% endif %}
+       
+        {% include 'current/includes/_bar-dead.html' %}    
 
         <h1 class="govuk-heading-l">
           <span class="govuk-caption-l">Death arrears</span>
@@ -59,7 +56,7 @@ Winter Fuel Payments
                   </div>
                   <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="dap-3" name="dap" type="radio" value="cancel">
+                    <input class="govuk-radios__input" id="dap-3" name="dap" type="radio" value="none">
                     <label class="govuk-label govuk-radios__label" for="dap-2">
                     None of these
                     </label>
@@ -74,7 +71,6 @@ Winter Fuel Payments
           Continue
         </button>
 
-        <p><a href="/current/tasks/fix-account-details/case-returned.html">Return this case to the queue</a></p>
 
       </div>
 
@@ -93,7 +89,8 @@ Winter Fuel Payments
 nextPageRoutes = {
   'UK bank or building society account': 'change-account-details',
   'EEA or Swiss bank account': 'change-account-details-int',
-  'Countries in the Beneficiary Database': 'change-account-details-ben',}
+  'Countries in the Beneficiary Database': 'change-account-details-ben',
+  'none': 'record-view-request-sop5'}
 </script>
 
 
