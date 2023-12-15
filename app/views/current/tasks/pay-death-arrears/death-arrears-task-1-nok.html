@@ -12,6 +12,10 @@ Winter Fuel Payments
 
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -48,13 +52,13 @@ Winter Fuel Payments
               </fieldset>
             </div>
 
-            <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
             <br>   
 
             <button type="submit" class="govuk-button">
               Continue
             </button>
 
+            <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
 
 
 
