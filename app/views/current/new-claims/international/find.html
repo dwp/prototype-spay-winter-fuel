@@ -25,16 +25,20 @@ Winter Fuel Payments
   <br>
 
         <h1 class="govuk-heading-xl">What is your National Insurance number?</h1>
-        <form method="post" action="confirm-name">
+       
+        <form method="post" action="find-1">
           <div class="govuk-form-group">
             <label class="govuk-label" for="nino">
               National Insurance number
             </label>
-            <input class="govuk-input govuk-!-width-one-third" id="nino" name="nino" type="nino" aria-describedby="nino-hint">
+            <div id="signIn-hint" class="govuk-hint">
+              You can find it on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’
+            </div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="nino" name="nino" type="nino" aria-describedby="nino-hint">
           </div>
 
           <button type="submit" class="govuk-button">
-            Find applicant
+            Find
           </button>
 
         </form>
