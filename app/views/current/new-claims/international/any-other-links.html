@@ -23,31 +23,26 @@ Winter Fuel Payments
 
         {% include 'current/includes/_bar.html' %} 
 
+       
 
+        <form method="post" action="check-change">
 
-        <br>
-        <br>
-
-        <form method="post" action="uk-national">
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="outside-uk-conditional-hint">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading">
-                  Including the UK, which countries have you lived or worked in?
-                </h1>
+                <h2 class="govuk-fieldset__heading">
+                Do you have any other links to the UK that might support your application?
+                </h2>
               </legend>
               <br>
-             
-              <label class="govuk-label" for="more-detail">
-                <b>Which countries</b> you have lived or worked in, and the <b>dates</b> you were there.
-              </label>
-              <br>
-            <textarea class="govuk-textarea" id="livedworked" name="livedworked" rows="20" aria-describedby="more-detail-hint"></textarea>
 
-            </fieldset>
-          </div>
-
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="more-detail">
+                  Details
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="10" aria-describedby="more-detail-hint"></textarea>
+              </div>
 
           <button class="govuk-button" data-module="govuk-button">
             Continue
