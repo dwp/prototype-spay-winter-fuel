@@ -41,7 +41,7 @@ Winter Fuel Payments
 
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Name on the account</th>
-              <td class="govuk-table__cell">{{ data ['payeename'] }} {{ data ['payeelastname'] }} </td>
+              <td class="govuk-table__cell">{{ 'Miss T Best'}} </td>
             </tr>
 
             <tr class="govuk-table__row">
@@ -71,7 +71,7 @@ Winter Fuel Payments
                 </legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="reissue" name="reissue" type="radio" value="yes">
+                    <input class="govuk-radios__input" id="reissue" name="reissue" type="radio" value="Yes">
                     <label class="govuk-label govuk-radios__label" for="new-address-uk">
                       Yes
                     </label>
@@ -109,7 +109,7 @@ Winter Fuel Payments
 
 <script>
 nextPageRoutes = {
-  'yes': '',
+  'Yes': 'review-bank-details',
   ' No, change account details': 'bank-details-type',
   }
 </script>
