@@ -57,29 +57,17 @@ Winter Fuel Payments
                 
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Bank account type</th>
-                  <td class="govuk-table__cell">{{ data ['bank-type'] }} </td>
-                  <td class="govuk-table__cell"><a href="bank-details-type" class="govuk-link">Change</a></td>
+                  <td class="govuk-table__cell">{{ 'EEA or Swiss bank account'}} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
                 </tr>
                 
-                {% if data['bank-type']=='UK bank or building society account'%}  
+                
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Bank details</th>
-                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
-                  <td class="govuk-table__cell"><a href="change-account-details.html" class="govuk-link">Change</a></td>
+                  <td class="govuk-table__cell">{{ 'Miss T Best' }} <br> {{ '0987654' }}  <br> {{ 'GB729371839472' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
                 </tr>
-                {% elseif data['bank-type']=='EEA or Swiss bank account'%}  
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Bank details</th>
-                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
-                  <td class="govuk-table__cell"><a href="change-account-details-int.html" class="govuk-link">Change</a></td>
-                </tr>
-                {% elseif data['bank-type']=='Countries in the Beneficiary Database'%}  
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Bank details</th>
-                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
-                  <td class="govuk-table__cell"><a href="change-account-details-ben.html" class="govuk-link">Change</a></td>
-                </tr>
-                {% endif %}
+               
                 
 
               </tbody>
@@ -106,7 +94,7 @@ Winter Fuel Payments
 
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Payment date</th>
-                  <td class="govuk-table__cell">{{ 'Monday, 6 November 2023' }} </td>
+                  <td class="govuk-table__cell">{{ '6 November 2023' }} </td>
                   <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
                 </tr>
                
