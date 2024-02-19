@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+
+
+
+        {% include 'current/includes/_bar.html' %} 
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <br>
+        <br>
+
+        <form method="post" action="contact">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="wf-payment-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Have you ever had a Winter Fuel Payment?
+                </h1>
+              </legend>
+              <br>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="wf-payment-conditional" name="wf-payment" type="radio" value="yes" data-aria-controls="conditional-wf-payment-conditional">
+                  <label class="govuk-label govuk-radios__label" for="wf-payment-conditional">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="wf-payment-conditional-2" name="wf-payment" type="radio" value="no" data-aria-controls="conditional-wf-payment-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="wf-payment-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          {% if data['living-with'] === 'yes' %}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="living-with-payment-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Has anyone else in the household had a Winter Fuel Payment?
+                </h1>
+              </legend>
+              <br>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="living-with-payment-conditional" name="living-with-payment" type="radio" value="yes" data-aria-controls="conditional-living-with-payment-conditional">
+                  <label class="govuk-label govuk-radios__label" for="living-with-payment-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-living-with-payment-conditional">
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="last-payment-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                          When did they last get it?
+                        </h1>
+                      </legend>
+                      <span id="last-payment-hint" class="govuk-hint">
+                        For example, 3 2017
+                      </span>
+                      <div class="govuk-date-input" id="last-payment">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="last-payment-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="lastpaymentmonth" name="lastpaymentmonth" type="text" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="last-payment-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="lastpaymentyear" name="lastpaymentyear" type="text" pattern="[0-9]*" inputmode="numeric">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="living-with-conditional-2" name="living-with" type="radio" value="phone" data-aria-controls="conditional-living-with-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="living-with-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          {% endif %}
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}
