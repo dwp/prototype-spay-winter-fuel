@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+         {% if data['mark-as-dlo']=='yes'%}
+          {% include 'current/includes/_bar-dlo.html' %}
+        {% else %}
+          {% include 'current/includes/_bar.html' %}
+        {% endif %}
+
+
+            <br>
+            <br>
+
+            <form method="post">
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-heading-l">Do you live with anyone born before 27 September 1955?</h1>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Lives with someone under 80 who qualifies">
+                      <label class="govuk-label govuk-radios__label" for="living-with-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Does not live with someone who qualifies">
+                      <label class="govuk-label govuk-radios__label" for="living-with-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+  <script>
+    nextPageRoutes = {
+        'Lives with someone under 80 who qualifies': 'living-with-over-80',
+        'Does not live with someone who qualifies': 'contact',}
+  </script>
+
+  {% endblock %}
