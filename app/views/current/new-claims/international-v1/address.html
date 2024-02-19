@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar.html' %} 
+
+        <br>
+        <br>
+
+        <h1 class="govuk-heading-xl">What is your address?</h1>
+        <form method="post" action="move-date">
+
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-1">
+                Line 1<span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-2">
+                Line 2
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-3">
+                Line 3
+                <span class="govuk-visually-hidden">Building and street line 3 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-3" name="address-line-3" type="text" autocomplete="address-line3">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-4">
+                Line 4
+                <span class="govuk-visually-hidden">Building and street line 4 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-4" name="address-line-4" type="text" autocomplete="address-line4">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-5">
+                Line 5
+                <span class="govuk-visually-hidden">Building and street line 5 of 6</span>
+              </label>
+              <input class="govuk-input" id="address-line-5" name="address-line-5" type="text" autocomplete="address-line5">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                Country
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+            </div>
+
+          </fieldset>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}
