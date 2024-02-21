@@ -31,15 +31,19 @@ Winter Fuel Payments
 
 
 
-        <br>
-        <br>
         <h1 class="govuk-heading-xl">Application summary</h1>
 
         {% if data['phone-post'] === 'phone' %}
-          <div class="govuk-inset-text"><span style="font-weight: bold">Ask the citizen if they need to change any answers they've given.<br><br>You do not need to read the answers back.</span></div>
+         <p>Ask the citizen if they need to change any answers they've given.<br><br>You do not need to read the answers back.</p>
         {% endif %}
 
+<br>
+
         <form method="post" action="declaration">
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue to declaration
+          </button>
 
           <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
             <div class="govuk-accordion__section ">
@@ -569,10 +573,6 @@ Winter Fuel Payments
               </div>
             </div>
           </div>
-
-          <button class="govuk-button" data-module="govuk-button">
-            Continue to declaration
-          </button>
 
         </form>
 
