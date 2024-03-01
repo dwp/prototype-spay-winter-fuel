@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar.html' %} 
+
+
+
+
+          <form method="post" action="benefits-outside">
+
+            <h1 class="govuk-heading-xl">What is your marital or civil partnership status?</h1>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="relationship-status" name="relationship-status" type="radio" value="single">
+                      <label class="govuk-label govuk-radios__label" for="relationship-status">
+                       Single
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="relationship-status-2" name="relationship-status-2" type="radio" value="married">
+                      <label class="govuk-label govuk-radios__label" for="relationship-status-2">
+                        Married or civil partner
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="relationship-status-3" name="relationship-status-3" type="radio" value="separated">
+                      <label class="govuk-label govuk-radios__label" for="relationship-status-3">
+                        Married or civil partner but separated
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="relationship-status-4" name="relationship-status-4" type="radio" value="widowed">
+                      <label class="govuk-label govuk-radios__label" for="relationship-status-4">
+                        Widowed or surviving civil aprtner
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="relationship-status-5" name="relationship-status-5" type="radio" value="living-together">
+                      <label class="govuk-label govuk-radios__label" for="relationship-status-5">
+                        Living together as if married
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        'yes': 'nationality-2.html',
+        'no': '2nd-no.html',
+      }
+</script>
+
+{% endblock %}
