@@ -23,20 +23,10 @@ Winter Fuel Payments
 
         {% include 'current/includes/_bar.html' %} 
 
-<style>
-  .govuk-accordion__icon {
-  display:none;
-  }
-</style>
-
-
-
         <h1 class="govuk-heading-xl">Application summary</h1>
 
-        {% if data['phone-post'] === 'phone' %}
          <p>Ask the citizen if they need to change any answers they've given.<br><br>You do not need to read the answers back.</p>
-        {% endif %}
-
+        
 <br>
 
         <form method="post" action="declaration">
@@ -89,7 +79,7 @@ Winter Fuel Payments
                       Address
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      iazza Giuseppe Garibaldi 76<br>
+                      Piazza Giuseppe Garibaldi 76<br>
                               Parma<br>
                               43010<br>
                               Italia
@@ -100,7 +90,7 @@ Winter Fuel Payments
                   </div>
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                      When did you move into that address?
+                      When did you move in?
                     </dt>
                     <dd class="govuk-summary-list__value">
                       12 October 1992
