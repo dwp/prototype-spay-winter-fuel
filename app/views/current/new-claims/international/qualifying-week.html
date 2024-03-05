@@ -31,7 +31,7 @@ Winter Fuel Payments
             <fieldset class="govuk-fieldset" aria-describedby="hospital-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <h2 class="govuk-fieldset__heading">
-                in hospital getting free treatment?
+                In hospital getting free treatment?
                 </h2>
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -46,10 +46,13 @@ Winter Fuel Payments
                   <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset" role="group" aria-describedby="hospital-details-hint">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        <h3 class="govuk-fieldset__heading">
+                         <h3 class="govuk-fieldset__heading">
                           From
                         </h3>
                       </legend>
+                      <span id="hospital-details-hint" class="govuk-hint" style="margin-bottom: 10px;">
+                        For example, 27 3 2007
+                      </span>
                       <div class="govuk-date-input" id="hospital-details">
                         <div class="govuk-date-input__item">
                           <div class="govuk-form-group">
@@ -76,10 +79,6 @@ Winter Fuel Payments
                           </div>
                         </div>
                       </div>
-                      <br>
-                      <span id="hospital-details-hint" class="govuk-hint" style="margin-bottom: 10px;">
-                        For example, 27 3 2007
-                      </span>
                     </fieldset>
                   </div>
 
@@ -90,6 +89,9 @@ Winter Fuel Payments
                           To
                         </h3>
                       </legend>
+                      <span id="hospital-details-hint" class="govuk-hint" style="margin-bottom: 10px;">
+                        For example, 27 3 2007
+                      </span>
                       <div class="govuk-date-input" id="hospital-details">
                         <div class="govuk-date-input__item">
                           <div class="govuk-form-group">
@@ -138,7 +140,7 @@ Winter Fuel Payments
             <fieldset class="govuk-fieldset" aria-describedby="carehome-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <h1 class="govuk-fieldset__heading">
-                in a care home?
+                In a care home?
                 </h1>
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -157,7 +159,9 @@ Winter Fuel Payments
                           Date you entered the care home
                         </h3>
                       </legend>
-
+                      <span id="hospital-details-hint" class="govuk-hint" style="margin-bottom: 10px;">
+                        For example, 27 3 2007
+                      </span>
                       <div class="govuk-date-input" id="healthcare">
 
                         <div class="govuk-date-input__item">
@@ -185,14 +189,11 @@ Winter Fuel Payments
                           </div>
                         </div>
                       </div>
-                      <br>
-                      <span id="healthcare-hint" class="govuk-hint">
-                        For example, 26 10 2007
-                      </span>
+                      <br>                      
                     </fieldset>
                   </div>
 
-          <h5 class="govuk-heading-s">Care home address</h5>
+          <h3 class="govuk-heading-s">Care home address</h3>
 
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="address-line-1">
@@ -260,10 +261,10 @@ Winter Fuel Payments
             <fieldset class="govuk-fieldset" aria-describedby="custody-conditional-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <h1 class="govuk-fieldset__heading">
-                in custody or serving a sentence imposed by a court?
+                In custody or serving a sentence imposed by a court?
                 </h1>
                 <span id="hint" class="govuk-hint">
-                  Either in the UK or a EEA country
+                  Either in the UK or an EEA country
                 </span>
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
@@ -277,9 +278,8 @@ Winter Fuel Payments
 
 
                   <div class="govuk-form-group">
-                    <p>We need the <b>address of the institution you were detained in</b>, and the <b>name of the authority which imposed the sentence</b></p>
                     <label class="govuk-label" for="more-detail">
-                      Details
+                      The <b>address of the institution</b> you were detained in, and the <b>name of the authority</b> which imposed the sentence.
                     </label>
                     <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="10" aria-describedby="more-detail-hint"></textarea>
                   </div>
@@ -303,7 +303,7 @@ Winter Fuel Payments
                       <fieldset class="govuk-fieldset" aria-describedby="uk-benefit-conditional-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                           <h1 class="govuk-fieldset__heading">
-                          getting UK State Pension or any other UK social security benefit?
+                          Getting UK State Pension or any other UK social security benefit?
                           </h1>
                         </legend>
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
