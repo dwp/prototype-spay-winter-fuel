@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar.html' %} 
+
+        <form method="post" action="">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="living-with-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Is there anyone else living there who was born before 6 October 1954?
+                </h1>
+              </legend>
+              <br>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="living-with-conditional" name="living-with" type="radio" value="Yes" data-aria-controls="conditional-living-with-conditional">
+                  <label class="govuk-label govuk-radios__label" for="living-with-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-living-with-conditional">
+
+                <div class="govuk-form-group">
+
+                 <label class="govuk-label" for="more-detail">
+                    <b>Full name, National Insurance number</b> and <b>date of birth</b> of anyone else in the household born before 5 October 1954.
+                  </label>
+                  <textarea class="govuk-textarea" id="livingwith" name="livingwith" rows="5" aria-describedby="more-detail-hint"></textarea>
+                </div>
+
+                    </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="living-with-conditional-2" name="living-with" type="radio" value="No" data-aria-controls="conditional-living-with-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="living-with-conditional-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" type="submit">
+            Continue
+          </button>
+  
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+<script>
+  nextPageRoutes = {
+    'Yes': 'wf-payment-yes',
+    'No': 'wf-payment-no',
+    }
+  </script>
+
+{% endblock %}
