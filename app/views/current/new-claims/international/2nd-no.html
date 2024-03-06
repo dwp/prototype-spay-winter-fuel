@@ -1,18 +1,19 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header-international.html' %}
+{% include 'current/includes/_header.html' %}
 {% endblock %}
 
-{% block beforeContent %}
-{% include 'current/includes/_name_bar.html' %}
-{% endblock %}
 
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -21,14 +22,6 @@ Winter Fuel Payments
 
         <form method="post" action="benefits-outside">
 
-
-          {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
-
-          <br>
-          <br>
 
           <form method="post">
 
@@ -49,10 +42,58 @@ Winter Fuel Payments
                           </label>
                         </div>
 
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional" name="no-nationality" type="checkbox" value="stateless" data-aria-controls="conditional-no-nationality-conditional">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional">
+                            You're a refugee
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="no-nationality-conditional" name="no-nationality" type="checkbox" value="stateless" data-aria-controls="conditional-no-nationality-conditional">
+                          <label class="govuk-label govuk-checkboxes__label" for="no-nationality-conditional">
+                            You're a partner of an EEA national
+                          </label>
+                        </div>
+
                        
                       </div>
                     </fieldset>
                   </div>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="status-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                          What is your status?
+                        </h1>
+                      </legend>
+                      <div id="waste-hint" class="govuk-hint">
+                        Select all that apply.
+                      </div>
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste">
+                           You're a stat
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                            Waste from mines or quarries
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Farm or agricultural waste
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
 
             <button type="submit" class="govuk-button">
               Continue

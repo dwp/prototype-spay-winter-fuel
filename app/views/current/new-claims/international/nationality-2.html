@@ -34,7 +34,6 @@ Winter Fuel Payments
 
 
                  <h1 class="govuk-heading-xl">Which nationality do you have?</h1>
-
         <form method="post" action="benefits-outside">
 
           <p>
@@ -281,12 +280,30 @@ Winter Fuel Payments
            
 <br><br>
 
-{% if data['uk-national'] == 'No' %} 
+{% if data['uk-national'] === 'no' %} 
 
 <div class="govuk-form-group">
-  
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+       Do you have a second nationality?
+      </h1>
+        </legend>
+
+        <br>
+    
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          </div>
      
-      <h3 class="govuk-heading-s">Second nationality (optional)</h3>
+      <h1 class="govuk-heading-s">Second nationality</h1>
         <form method="post">
 
           <fieldset class="govuk-fieldset">
@@ -530,7 +547,19 @@ Winter Fuel Payments
 </div>
 </details>
 
+<div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="contact" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          No
+        </label>
+      </div>
 
+
+            </div>
+        </div>
+    </div>
+    
     
       
       
