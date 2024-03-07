@@ -29,32 +29,41 @@ Winter Fuel Payments
         {% endif %}
 
 
-            
-            
+            <br>
+            <br>
 
             <form method="post">
 
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                    <h1 class="govuk-heading-xl">Do you live with anyone born before 27 September 1955?</h1>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Do you need any correspondence in an alternative format?
+                    </h1>
                   </legend>
-                  <div class="govuk-radios">
+                  <div id="changed-name-hint" class="govuk-hint">
+                    For example large print, Braille or audio.
+                  </div>
+                  <br>
+                  <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Lives with someone under 80 who qualifies">
+                      <input class="govuk-radios__input" id="living-with" name="need-alt-format" type="radio" value="yes">
                       <label class="govuk-label govuk-radios__label" for="living-with-1">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="living-with" name="living-with" type="radio" value="Does not live with someone who qualifies">
+                      <input class="govuk-radios__input" id="living-with" name="need-alt-format" type="radio" value="no">
                       <label class="govuk-label govuk-radios__label" for="living-with-2">
                         No
                       </label>
                     </div>
                   </div>
+              
                 </fieldset>
               </div>
+
+             
 
               <button type="submit" class="govuk-button">
                 Continue
@@ -73,8 +82,8 @@ Winter Fuel Payments
 
   <script>
     nextPageRoutes = {
-        'Lives with someone under 80 who qualifies': 'living-with-over-80',
-        'Does not live with someone who qualifies': 'contact',}
+        'yes': '/current/record-view/contact-tab/alt-formats/alt?newclaim=yes',
+        'no': 'bank-details',}
   </script>
 
   {% endblock %}
