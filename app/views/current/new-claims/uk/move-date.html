@@ -30,16 +30,17 @@ Winter Fuel Payments
                {% include 'current/includes/_bar.html' %}
              {% endif %}
 
-            <form method="post">
-
-              <h2 class="govuk-heading-xl">When did you move in?</h2>
-
-              <span id="passport-issued-hint" class="govuk-hint">
-                For example, 27 3 2007
-              </span>
-
+              
+              <form method="post">
               <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    When did you move in?
+                  </h1></legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 27 3 2007
+                  </div>
                   <div class="govuk-date-input" id="passport-issued">
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">

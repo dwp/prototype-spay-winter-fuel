@@ -1,17 +1,20 @@
-
 {% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
 
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
-
-{% block beforeContent %}
-
-{% include 'current/includes/_start_again.html' %}
-
-{% endblock %}
-
 {% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
