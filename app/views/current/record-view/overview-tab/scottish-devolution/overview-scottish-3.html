@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+          <div>
+            {% include 'current/includes/_bar-scottish-3.html' %}
+          </div>
+
+          {% include 'current/includes/_tab-overview.html' %}
+          <br>
+          <br>
+
+          <h2 class="govuk-heading-m">Payment for winter 2023 to 2024</h2>
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              This person lives in Scotland and is not eligible for Winter Fuel Payments.
+                        </strong>
+          </div>
+
+
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Current details</h2>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+                                <td class="govuk-table__cell"></td>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">67</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">5 March 1956</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  {% if data['address-change'] %}
+                    {{data['address-change'].split(', ').join('<br />') | safe }}
+                    {% elif data.address %}
+                    {{data.address.split(', ').join('<br />') | safe}}
+                    {% else %}
+                    1 Victoria Road<br>
+                    FALKIRK<br>
+                    FK55 8XN
+                    {% endif %}
+                    <br>
+                    <br>
+                    since {% if data['move-date-changed'] == 'true' %}
+                {{data['moveday']}}
+                {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January
+                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February
+                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March
+                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April
+                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May
+                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June
+                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July
+                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August
+                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September
+                {% elif data['movemonth'] == '10' %} October
+                {% elif data['movemonth'] == '11' %} November
+                {% elif data['movemonth'] == '12' %} December
+                {% endif %}
+                {{data['moveyear']}}
+                      {% else %}
+                      10 March 2016
+                    {% endif %}
+                </td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+      </div>
+
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
