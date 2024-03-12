@@ -13,16 +13,17 @@ Winter Fuel Payments
 
 
 <div class="govuk-width-container">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
         <form method="post">
 
-          {{ govukBackLink({
-                text: "Back",
-                href: "javascript:history.go(-1)"
-              }) }}
+       
 
               {% if data['mark-as-dlo']=='yes'%}
                {% include 'current/includes/_bar-dlo.html' %}
@@ -31,11 +32,13 @@ Winter Fuel Payments
              {% endif %}
 
           <form method="post">
-
-            <h1 class="govuk-heading-xl">Are you subject to immigration control?</h1>
-
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Are you subject to immigration control?
+                  </h1>
+                </legend>
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="immigration-control" name="immigration-control" type="radio" value="yes">

@@ -11,15 +11,16 @@ Winter Fuel Payments
 {% block content %}
 
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
 
 <div class="govuk-width-container">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
 
       <form method="post">
 
@@ -29,15 +30,13 @@ Winter Fuel Payments
           {% include 'current/includes/_bar.html' %}
         {% endif %}
 
-          <br>
-          <br>
-
-
-
-            <h1 class="govuk-heading-xl">Are you a UK national?</h1>
-
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Are you a UK national?
+              </h1>
+            </legend>
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="uk-national" name="uk-national" type="radio" value="yes">

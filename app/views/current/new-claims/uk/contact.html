@@ -11,29 +11,24 @@ Winter Fuel Payments
 {% block content %}
 
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
-
 <div class="govuk-width-container">
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="need-alternative-format">
+
+        <form method="post" action="bank-details">
 
          {% if data['mark-as-dlo']=='yes'%}
           {% include 'current/includes/_bar-dlo.html' %}
         {% else %}
           {% include 'current/includes/_bar.html' %}
         {% endif %}
-
-
-
-
-          <br>
-          <br>
 
 
             <h1 class="govuk-heading-xl">What are your contact details?</h1>
@@ -63,9 +58,8 @@ Winter Fuel Payments
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="telephone-number">
-  
+
                 Email address (optional)
-  
               </label>
               <input class="govuk-input govuk-input--width-20" id="email" name="email" type="tel" autocomplete="tel">
             </div>
