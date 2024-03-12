@@ -13,18 +13,20 @@ Winter Fuel Payments
 {% block content %}
 
 
-{% if data['mark-as-dlo']=='yes'%}
- {% include 'current/includes/_bar-dlo.html' %}
-{% else %}
- {% include 'current/includes/_bar.html' %}
-{% endif %}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+
         <form method="post" action="address">
+
+          {% if data['mark-as-dlo']=='yes'%}
+          {% include 'current/includes/_bar-dlo.html' %}
+         {% else %}
+          {% include 'current/includes/_bar.html' %}
+         {% endif %}
 
                   <h1 class="govuk-heading-xl">Security questions</h1>
 
