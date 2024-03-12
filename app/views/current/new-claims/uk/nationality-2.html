@@ -16,12 +16,13 @@ Winter Fuel Payments
 {% endblock %}
 {% block content %}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
+
 
 <div class="govuk-width-container">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -32,20 +33,18 @@ Winter Fuel Payments
          {% include 'current/includes/_bar.html' %}
        {% endif %}
 
-        <br>
-        <br>
 
-         <h1 class="govuk-heading-l">Which nationality do you have?</h1>
-        <form method="post" action="declaration">
-
-          <div class="govuk-inset-text">
+       <form method="post" action="declaration">
+        <div class="govuk-form-group">
+         <h1 class="govuk-heading-xl">Which nationality do you have?</h1>
+       <p class="govuk-body">
             Enter the nationality, not the country.<br><br>
             For example, 'Dutch' not 'Netherlands'.
-            </div>
+          </p>
 
           <fieldset class="govuk-fieldset">
 
-            <div class="govuk-form-group">
+            
 
                       <select id="government-organisations" name="nationality-2" class="govuk-input">
 
@@ -281,7 +280,7 @@ Winter Fuel Payments
 
 
 
-<br><br>
+
 
 {% if data['uk-national'] === 'no' %}
 
