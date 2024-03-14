@@ -88,6 +88,14 @@ Winter Fuel Payments
           </nav>
           <br><br>
 
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              This person does not qualify because they live in Scotland. Review the guidance for their circumstances.
+                                    </strong>
+          </div>
+
           <table class="govuk-table">
             <h2 class="govuk-heading-m">Contact details</h2>
 
@@ -129,11 +137,11 @@ Winter Fuel Payments
             <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header" style="border-bottom:0px;">Address</th>
                 <td class="govuk-table__cell" style="border-bottom:0px;">
-                  {% if data['address-change'] === '27 Kent Street, Amble, NE65 0LZ' %}
-                    27 Kent Street<br>Amble<br>NE65 0LZ
-                    {% else %}
-                    72 Guild Street<br>London<br>SE23 6FH
-                  {% endif %}
+                  
+                  1 Victoria Road<br>
+                  FALKIRK<br>
+                  FK55 8XN
+                 
                 </td>
                 <td class="govuk-table__cell table-links-padding-left" style="border-bottom:0px;">
                    <a class="govuk-link" href="/current/record-view/contact-tab/address/new-address">
@@ -164,7 +172,7 @@ Winter Fuel Payments
                   {% endif %}
                   {{data['moveyear']}}
                   {% else %}
-                      10 March 2016
+                      10 March 2023
                    {% endif %}
                  </td>
                  <td class="govuk-table__cell">
@@ -280,9 +288,9 @@ Winter Fuel Payments
                <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Correspondence address</th>
                 <td class="govuk-table__cell">
-                  8 Front Street<br>
-                   Crownhill<br>
-                    PL6 6WJ<br>
+                  1 Victoria Road<br>
+                    FALKIRK<br>
+                    FK55 8XN
                 </td>
 
 

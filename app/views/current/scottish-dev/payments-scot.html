@@ -97,6 +97,14 @@ Winter Fuel Payments
          <br>
          <br>
 
+         <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            This person does not qualify because they live in Scotland. Review the guidance for their circumstances.
+                                  </strong>
+        </div>
+
           <h2 class="govuk-heading-m" style="float:left;">Account details </h2>
  
           <table class="govuk-table">
@@ -194,42 +202,33 @@ Winter Fuel Payments
             </button>
           </div>
 <br>
-          <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2022/2023</h3>
+          <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2024/2025</h3>
 
           <table class="govuk-table">
-           
              
              <tbody class="govuk-table__body">
                <tr class="govuk-table__row">
-                 <th scope="col" class="govuk-table__header">Payment date</th>
-                 <th scope="col" class="govuk-table__header">Amount</th>
+               
                  <th scope="col" class="govuk-table__header">Status</th>
+                
                  <th scope="col" class="govuk-table__header"></th>
                </tr>
-              
- 
+               
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">4 November 2022</td>
-                 <td class="govuk-table__cell">£200</td>
-                 <td class="govuk-table__cell">
-                   {% if data.reissued %}
-                   Reissued
-                   {% elseif data.returnedreason or data['mark-as-returned'] == 'yes' %}
-                   Failed
-                   {% else %}
-                   Sent
-                   {% endif %}</td>
- 
- 
-                 <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment-mark-as-not-returned.html" class="govuk-link">
-                   Details</a></td>
+                
+                 <td class="govuk-table__cell">No Payment - Resident in Scotland</td>
+                
+                 
+                 <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment.html" class="govuk-link">Details</a></td>
                </tr>
  
              </tbody>
            </table>
 
+         
+
  
-           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2021/2022</h3>
+           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2023/2024</h3>
 
           <table class="govuk-table">
              
@@ -275,26 +274,39 @@ Winter Fuel Payments
 
 
 
-           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2020/2021</h3>
+           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2022/2023</h3>
 
-          <table class="govuk-table">
+           <table class="govuk-table">
+           
              
-             <tbody class="govuk-table__body">
-               <tr class="govuk-table__row">
-               
-                 <th scope="col" class="govuk-table__header">Status</th>
-                 <th scope="col" class="govuk-table__header"></th>
-               </tr>
-               
-               <tr class="govuk-table__row">
-                
-                 <td class="govuk-table__cell">No Payment - Resident in Scotland</td>
-                 
-                 <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment.html" class="govuk-link">Details</a></td>
-               </tr>
- 
-             </tbody>
-           </table>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment date</th>
+                <th scope="col" class="govuk-table__header">Amount</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+             
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">4 November 2022</td>
+                <td class="govuk-table__cell">£200</td>
+                <td class="govuk-table__cell">
+                  {% if data.reissued %}
+                  Reissued
+                  {% elseif data.returnedreason or data['mark-as-returned'] == 'yes' %}
+                  Failed
+                  {% else %}
+                  Sent
+                  {% endif %}</td>
+
+
+                <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment-mark-as-not-returned.html" class="govuk-link">
+                  Details</a></td>
+              </tr>
+
+            </tbody>
+          </table>
  
        
  
