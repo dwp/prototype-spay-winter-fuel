@@ -1,7 +1,30 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{{ govukHeader({
+  homepageUrl: "index",
+  serviceName: serviceName,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+    href: "/current/record-view/find-someone/find",
+    text: "Find someone",
+        active: true
+  },
+  {
+    href: "/current/new-claims/uk/type-of-application",
+    text: "UK new claim"
+  },
+  {
+    href: "/current/new-claims/international/find",
+    text: "International new claim"
+  },
+  {
+    href: "/current/scottish-dev/tasks-scotdevonly",
+    text: "Tasks"
+  }
+  ]
+}) }}
 {% endblock %}
 
 {% block pageTitle %}
@@ -10,10 +33,6 @@ Winter Fuel Payments
 
 {% block content %}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
 
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
@@ -25,11 +44,32 @@ Winter Fuel Payments
             {% include 'current/includes/_bar-scottish-4.html' %}
           </div>
 
-          {% include 'current/includes/_tab-overview.html' %}
+          <nav class="navigation-secondary">
+            <ul>
+              <li>
+                <a href="/current/scottish-dev/overview-scottish-6" class="active" aria-current="page">Overview</a>
+              </li>
+          
+              <li>
+                <a href="/current/scottish-dev/contact-details-scot">Contact</a>
+              </li>
+          
+              <li>
+                <a href="/current/scottish-dev/payments-scot">Payments</a>
+              </li>
+          
+              <li>
+                <a href="/current/scottish-dev/action-history-multiple-years-dl-change-scot">Full history</a>
+              </li>
+          
+            
+          
+            </ul>
+          </nav>
           <br>
           <br>
 
-          <h2 class="govuk-heading-m">Payment for winter 2023 to 2024</h2>
+          <h2 class="govuk-heading-m">Payment for winter 2024 to 2025</h2>
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
