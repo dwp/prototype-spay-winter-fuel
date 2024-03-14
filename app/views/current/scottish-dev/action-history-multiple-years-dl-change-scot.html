@@ -1,7 +1,30 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{{ govukHeader({
+  homepageUrl: "index",
+  serviceName: serviceName,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+    href: "/current/record-view/find-someone/find",
+    text: "Find someone",
+        active: true
+  },
+  {
+    href: "/current/new-claims/uk/type-of-application",
+    text: "UK new claim"
+  },
+  {
+    href: "/current/new-claims/international/find",
+    text: "International new claim"
+  },
+  {
+    href: "/current/scottish-dev/tasks-scotdevonly",
+    text: "Tasks"
+  }
+  ]
+}) }}
 {% endblock %}
 
 
@@ -15,7 +38,7 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        
+
         {% include 'current/includes/_bar-scottish-4.html' %}
 
         <form method="post">
