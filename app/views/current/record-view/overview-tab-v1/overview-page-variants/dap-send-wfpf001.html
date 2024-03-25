@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post" action="overview-dap-form-sent">
+
+         {% include 'current/includes/_bar-dead.html' %}
+
+                                  <h1 class="govuk-heading-l">Mark that WFPF001 and WFPL004 have been sent</h1>
+
+                                 
+                                    <div class="govuk-inset-text">
+                                      <p>You need to send the death arrears payee or next of kin:</p>
+                                      <ul>
+                                        <li>form WFPF001</li>
+                                        <li>letter WFPL004</li>
+                                      </ul>
+                                  </div>
+                                    
+
+
+                                  
+
+            <button type="submit" class="govuk-button">
+              Confirm both have been sent
+            </button>
+                                 
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
