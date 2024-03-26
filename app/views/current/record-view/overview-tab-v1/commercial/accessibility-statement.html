@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+          <br>
+          <br>
+
+          <h1 class="govuk-heading-xl">Accessibility statement for Winter Fuel Payment</h1>
+
+
+          <p>This accessibility statement applies to Winter Fuel Payment, an agent-facing website run by the Department of Work and Pensions (DWP).</p>
+
+          <h2 class="govuk-heading-l">Using this service</h2>
+
+          <p class="govuk-body">We want as many people as possible to be able to use this service. For example, that means you should be able to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>change colours, contrast levels and fonts</li>
+            <li>zoom in most content up to 300% without the text spilling off the screen</li>
+            <li>navigate most of the website using just a keyboard</li>
+            <li>navigate most of the website using speech recognition software</li>
+            <li>listen to most of the website using a screen reader</li>
+          </ul>
+
+          <h3 class="govuk-heading-l">How accessible this service is</h3>
+
+          <p class="govuk-body">We know some parts of this website are not fully accessible:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>you cannot modify the line height or spacing of text</li>
+            <li>the country field, on some of our address capture pages, is difficult to navigate using just a keyboard</li>
+            <li>on one page, you cannot skip to the main content when using a screen reader</li>
+            <li>some content requires horizontal scrolling when zooming in at around 300%</li>
+            <li>where a status message is displayed on screen, for example upon task completion, it is not read by the screen reader</li>
+          </ul>
+
+          <h4 class="govuk-heading-l">What to do if you cannot access parts of this service</h4>
+
+          <p>Use TechNow to raise any issues.</p>
+
+          <h5 class="govuk-heading-l">Reporting accessibility problems with this service</h5>
+
+          <p>We’re always looking to improve the accessibility of this website.
+            If you find any problems not listed on this page or think we’re not meeting accessibility requirements,
+            please reach out to a member of the Seasonal Payments development team.</p>
+
+          <h6 class="govuk-heading-l">Enforcement procedure</h6>
+
+          <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies
+            (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’).
+            If you’re not happy with how we respond to your complaint, <a href="https://www.equalityadvisoryservice.com" class="govuk-link govuk-link--no-visited-state">contact the Equality Advisory and Support Service (EASS).</a></p>
+
+          <h7 class="govuk-heading-l">Technical information about this website’s accessibility</h7>
+
+          <p>The Department for Work and Pensions is committed to making its website accessible,
+          in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.</p>
+
+          <h8 class="govuk-heading-l">Compliance status</h8>
+
+          <p>This website is partially compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1</a> AA standard, due to the non-compliances listed below.</p>
+
+          <h9 class="govuk-heading-l">Non-accessible content</h9>
+
+          <p>The content listed below is non-accessible for the following reasons.<p>
+
+          <h10 class="govuk-heading-m">Non-compliance with the accessibility regulations</h10>
+
+          <p>On a number of pages, we have form controls that do not have either of the HTML attributes aria-labelledby or aria-label, which fails WCAG success criterion 1.3.1 and 3.3.2. <br>
+            <br>
+            Though the label is visible, the WAVE browser plugin reports a missing label on the country field, due to the structure of the page. The impact on the user is that when navigating using the keyboard,
+            several keypresses are needed to move from to the country field from its label. This fails WCAG success criterion 1.3.2.<br>
+            <br>
+            WCAG success criterion 1.3.5 is failed due to a badly formatted autocomplete attribute on a number of date input fields.<br>
+            <br>
+            There are some minimum colour contrast violations, failing WCAG success criterion 1.4.3 and 1.4.11. However, these are GOV.UK approved colours.<br>
+            <br>
+            The Payment overview page has an issue whereby the Change link is floated right, and above content, when zooming at higher magnification
+            (300% during testing). This fails WCAG success criterion 1.4.10.<br>
+            <br>
+            At least one page does not have a ‘Skip to main content’ link, failing WCAG success criterion 2.4.1.<br>
+            <br>
+            Numerous pages have a back link outside of the main content, which fails WCAG success criterion 3.2.3 and 3.2.4.<br>
+            <br>
+            WCAG success criterion 4.1.1 is failed due to a number of HTML validation errors throughout the website.<br>
+            <br>
+            Two issues fail WCAG success criterion 4.1.2. Throughout the International New Claims section of the website,
+            there is an aria-expanded attribute usage that is out of place, or not in line with spec. And both the UK and International
+            Claims sections have more than one contentinfo. <br>
+            <br>
+            Some recently added pages could not be tested for accessibility due to ongoing development required for the go-live date of 7 October 2020.
+            We plan to test these pages and fix the issues listed above, once the Winter Fuel Payment website goes live. <br>
+          </p>
+          <h11 class="govuk-heading-l">What we’re doing to improve accessibility </h11>
+          <p>We will continue to iterate the design of the service and continue to test the service against the WCAG 2.1 standard.</p>
+
+          <h12 class="govuk-heading-l">Preparation of this accessibility statement</h12>
+          <p>This statement was prepared on 18 September 2020.</p>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

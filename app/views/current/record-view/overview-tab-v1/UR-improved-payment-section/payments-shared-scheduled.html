@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+          {% include 'current/includes/_bar.html' %}
+
+          {% if data.returnedreason or data['mark-as-returned'] == 'yes'%}
+          <div class="moj-banner moj-banner--success">
+
+            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+              <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+            <div class="moj-banner__message">
+              <span class="moj-banner__assistive">Success</span>Payment marked as FAILED</div>
+
+          </div>
+          {% endif %}
+
+         
+
+          {% if data['bank-details-changed'] %}
+          <div class="moj-banner moj-banner--success">
+
+            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+              <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+            <div class="moj-banner__message">
+              <span class="moj-banner__assistive">Success</span>Bank details updated</div>
+
+          </div>
+          {% endif %}
+
+          {% include 'current/record-view/overview-tab/UR-improved-payment-section/_tab-payment-shared-scheduled.html' %}
+
+          <br>
+          <br>
+          <h2 class="govuk-heading-m" style="float:left;">Account details </h2>
+ 
+          <table class="govuk-table">
+            <a href="/current/record-view/payments-tab/change-account-details/change-account-details.html" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 60%; float:left">Change</span>
+            </a>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+
+            {% if data['intl-account'] == 'yes' %}
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Name on the account</th>
+                <td class="govuk-table__cell">
+                  Mrs T D Best
+                 </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                <td class="govuk-table__cell">
+                  SBININBB425
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">IBAN</th>
+                <td class="govuk-table__cell">
+                  AT483200000012345864
+                </td>
+              </tr>
+            </tbody>
+            {% else %}
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Bank or building society</th>
+                <td class="govuk-table__cell ">TSB</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name on the account</th>
+                <td class="govuk-table__cell">
+                  {% if data['accountholder'] %}
+                  {{data['accountholder']}}
+                  {% else %}
+                  T Best
+                  {% endif %}
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">
+                  {% if data['sortcode'] %}
+                  {{data['sortcode']}}
+                  {% else %}
+                  00 11 22
+                  {% endif %}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">
+                  {% if data['accountnumber'] %}
+                  {{data['accountnumber']}}
+                  {% else %}
+                  12345678
+                  {% endif %}
+                </td>
+              </tr>
+              {% if data['rollnumber'] %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Building society roll number (if there is one)</th>
+                <td class="govuk-table__cell">
+                  {{data['rollnumber']}}
+                </td>
+              </tr>
+              {% endif %}
+            </tbody>
+            {% endif %}
+          </table>
+
+          <br>
+
+        <h2 class="govuk-heading-m" style="margin-bottom:25px;float:left">Payments</h2>
+
+          <table class="govuk-table">
+            <a href="/current/record-view/overview-tab/update-details/stop-payments-reason" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 61%">Stop payments</span>
+            </a>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Payment date</th>
+                <th scope="col" class="govuk-table__header">Amount</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+
+             
+
+            </tbody>
+          </table>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+          {% include 'current/includes/_history.html' %}
+      </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
