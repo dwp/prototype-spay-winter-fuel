@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include 'current/includes/_bar.html' %} 
+
+          <form method="post" action="/current/record-view/overview-tab/overview">
+
+            <h1 class="govuk-heading-xl">You do not need to make a new claim</h1>
+
+  <p class="govuk-body">A Winter Fuel Payment has already been calculated for you.</p>
+  <p class="govuk-body">You'll continue to get a payment every year without having to make another claim.</p>
+
+
+  <button class="govuk-button" data-module="govuk-button">
+    Return to overview
+  </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+{% include 'current/includes/_cannot-fix.html' %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+
+        <div class="hmcts-banner">
+
+          <div class="hmcts-banner__message">
+
+            <h2 class="govuk-heading-m">This PO Box needs to be reviewed</h2>
+            <p><a href="address">Update details to add a residential address or review the PO Box</a></p>
+          </div>
+
+        </div>
+
+        <br>
+
+</div>
+
+
+
+        <form method="post">
+
+  <div class="govuk-grid-column-two-thirds">
+
+          <div>
+            <h1 class="govuk-heading-xl">
+              Izabela Regan<br>
+              <span class="govuk-body-l">
+                {% if data['nino'] %}
+                {{data['nino']}}
+                {% else %}
+                XX 12 34 56
+                {% endif %}<br>
+                <strong class="govuk-tag govuk-tag--orange">
+                  PO box not approved
+                </strong>
+              </span>
+            </h1>
+          </div>
+
+          {% include 'current/includes/_tab-overview.html' %}
+
+          <br>
+          <br>
+
+            <h2 class="govuk-heading-m">2019 payment</h2>
+
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                This person cannot get a payment because they have a PO Box as their main address.
+              </strong>
+            </div>
+
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Current details</h2>
+            <a href="address" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 80%">Update details</span>
+            </a>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">66</td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">9 August 1953</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  {% if data['address-change'] %}
+                  {{data['address-change'].split(', ').join('<br />') | safe }}
+                  {% elif data.address %}
+                  {{data.address.split(', ').join('<br />') | safe}}
+                  {% else %}
+                  ABC Innovation Inc<br>
+                  PO Box 2033
+                  {% endif %}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Start date</th>
+                <td class="govuk-table__cell">
+                  12 May 2009
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        {% include 'current/includes/_history.html' %}
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

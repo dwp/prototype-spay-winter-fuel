@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  
+
+ <!-- {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}-->
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="overview-success">
+    
+          {% include 'current/includes/_bar.html' %}
+          
+          <h1 class="govuk-heading-l">
+            Check reissue payment details
+                    </h1>
+          
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Reissue to this account?</th>
+                  <td class="govuk-table__cell">{{ data ['reissue'] }} </td>
+                  <td class="govuk-table__cell"><a href="reissue-payment" class="govuk-link">Change</a></td>
+                </tr>
+                
+
+
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank account type</th>
+                  <td class="govuk-table__cell">{{ 'EEA or Swiss bank account'}} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+                
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Bank details</th>
+                  <td class="govuk-table__cell">{{ 'Miss T Best' }} <br> {{ '0987654' }}  <br> {{ 'GB729371839472' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+               
+                
+
+              </tbody>
+            </table>
+
+            <h2 class="govuk-heading-m">Reissue payment details</h2>
+
+            <table class="govuk-table">
+             
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Amount</th>
+                  <td class="govuk-table__cell">{{ '£600' }} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Payment date</th>
+                  <td class="govuk-table__cell">{{ '6 November 2023' }} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
+                </tr>
+               
+                
+
+              </tbody>
+            </table>
+
+
+            <br>
+            <h2 class="govuk-heading-m">Caller declaration</h2>
+
+            <p>By making this change, you agree that:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the information you've given is correct and complete as far as you know</li>
+              <li>you'll tell the Department for Work and Pensions straight away if your circumstances change</li>
+              <li>you'll pay back any money you're overpaid if you're asked to</li>
+            </ul>
+  
+<br>
+  
+              <button type="submit" class="govuk-button">
+                Agree and reissue payment
+              </button>
+
+
+          </form>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+
+
+
+{% endblock %}

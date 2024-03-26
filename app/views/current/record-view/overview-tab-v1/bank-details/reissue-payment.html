@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+       
+        {% include 'current/includes/_bar.html' %}
+
+        <h2 class="govuk-heading-m">
+         
+          Account
+        </h2>
+
+        <table class="govuk-table">
+             
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header"></th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name on the account</th>
+              <td class="govuk-table__cell">{{ 'Miss T Best'}} </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+              <td class="govuk-table__cell">{{ '0987654' }} 
+                </td>
+            </tr>
+
+            
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">IBAN</th>
+              <td class="govuk-table__cell">{{ 'GB729371839472' }} </td>
+              
+            </tr>
+            
+          
+          </tbody>
+        </table>
+        
+        <h2 class="govuk-heading-m">
+         Do you want to reissue payment to this account?
+        </h2>
+        <form class="govuk-form" action="" method="post">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reissue" name="reissue" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="new-address-uk">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="reissue" name="reissue" type="radio" value="No, change account details">
+                    <label class="govuk-label govuk-radios__label" for="new-address-int">
+                      No, change account details
+                    </label>
+                  </div>
+                 
+              
+                </div>
+              </fieldset>
+            </div>
+       
+
+        <button class="govuk-button" type="submit">
+          Continue
+        </button>
+
+
+      </div>
+
+      </form>
+
+
+
+</div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+nextPageRoutes = {
+  'Yes': 'review-bank-details',
+  'No, change account details': 'bank-details-type',
+  }
+</script>
+
+
+{% endblock %}
