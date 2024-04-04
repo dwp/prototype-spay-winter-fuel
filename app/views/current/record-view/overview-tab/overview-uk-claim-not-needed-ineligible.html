@@ -16,27 +16,24 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        {% include 'current/includes/_bar-gsl-not-reviewed.html' %}
+     
+        {% include 'current/includes/_bar-prison.html' %}
+     
+      <form method="post">
 
-        <form method="post">
-
-          <form method="post">
-
-            <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-              <div class="govuk-notification-banner__header">
-                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                  You do not need to make a new claim
-                </h2>
-              </div>
-              <div class="govuk-notification-banner__content">
-                <p class="govuk-notification-banner__content">
-                  You have already made a claim and we are checking if you qualify for a Winter Fuel Payment.
-
-                  Once we've checked, we will send you a letter telling you whether you qualify or not.
-                </p>
-              </div>
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                You have previously applied for a Winter Fuel Payment
+              </h2>
             </div>
-
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__content">
+                You have previously applied for a Winter Fuel Payment and did not qualify.
+                You will not qualify for a Winter Fuel Payment unless your circumstances have changed.
+              </p>
+            </div>
+          </div>
        <!-- {% if data['details-updated']=='yes' and data ['movemonth'] == '07' or data['movemonth'] == '7' or data['living-with-month'] == '07' or data['living-with-month'] == '7'%}
          <div class="moj-banner moj-banner--success">
             <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
