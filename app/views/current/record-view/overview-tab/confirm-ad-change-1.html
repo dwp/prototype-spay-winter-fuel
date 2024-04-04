@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+   
+        <form method="post" action="overview-new">
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Move in date updated
+            </h1>
+            <div class="govuk-panel__body">
+              Next payment due:<br><strong>8 May 2023<br>£250</strong>
+            </div>
+          </div>
+
+          <br>
+
+
+          <h2 class="govuk-heading-m">Next steps</h2>
+
+          <p>You need to check if the citizen has changed their contact details. You can change this information from the citizen overview.                
+          </p>
+            
+          
+        
+                <button class="govuk-button" data-module="govuk-button">
+                  Go to citizen overview
+                </button></form>
+
+      </div>
+    </div>
+    </main>
+</div>
+  
+
+{% endblock %}
