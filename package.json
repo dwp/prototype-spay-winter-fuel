@@ -12,6 +12,7 @@
     "serve": "node listen-on-port"
   },
   "dependencies": {
+    "@ministryofjustice/frontend": "1.8.1",
     "@govuk-prototype-kit/step-by-step": "2.0.0",
     "acorn": "8.5.0",
     "ansi-colors": "4.1.1",
