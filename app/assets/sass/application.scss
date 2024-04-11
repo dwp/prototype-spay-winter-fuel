@@ -984,3 +984,44 @@ clear: both;
 margin-top: 5px;
 }
 }
+
+// Custom H3 styling - tiles
+.tile-h3-medium-styling {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+// Custom H3 styling - cards
+.card-h3-medium-styling {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+ 
+// Custom card styling
+.card--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card {
+  max-width: 400px;
+  min-width: 300px;
+  border: 2px solid transparent;
+  padding: 2rem;
+  background: #efefef;
+  font-family: sans-serif;
+}
+.card__inner {
+  display: table;
+}
+.card__visual {
+  display: table-header-group;
+  font-size: 3rem;
+  font-weight: 600;
+}
+.card h2, p {
+  font-size: 1.2rem;
+  margin: 0;
+}
