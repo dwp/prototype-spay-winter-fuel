@@ -6,7 +6,22 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Add your routes here
+router.post('*', function (req, res, next) {
+  console.log(req.body);
+
+  if (req.body['next-page']) {
+    res.redirect(req.body['next-page']);
+  } else {
+    next();
+  }
+});
+
+router.use((req, res, next) => {
+  if (req.method === 'POST') {
+    console.log(JSON.stringify(req.session.data, null, 2))
+  }
+  next()
+})
 
 // Branching
 
@@ -96,5 +111,5 @@ router.post('/current/tasks/request-manual-payment/get-next-manual-payment', fun
   if (liveWith == 'no') { 
     res.redirect('/current/record-view/contact-tab/address/update-contact-dets')
   }
-}) */
+}) */
 

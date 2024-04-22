@@ -5,8 +5,6 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
 
-
-
 // Warn about official sensitive nature of this prototype
 if (window.console && window.console.info) {
   window.console.warn('*****************************************************************************************\n\nOFFICIAL SENSITIVE - You must have direct authorisation to access or share this prototype\n\n*****************************************************************************************')
