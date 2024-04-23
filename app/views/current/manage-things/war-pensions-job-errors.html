@@ -1,0 +1,75 @@
+
+
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage-admin-errors.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.go(-1)"
+      }) }}
+
+<br>
+<br>
+
+    <h1 class="govuk-heading-xl">War Pension file</h1>
+
+    <p>
+      <strong class="govuk-tag govuk-tag--red">
+        Failed
+      </strong>
+    </p> 
+
+    <br><br>
+    
+    
+    {{ govukButton ({
+      text: 'Start',
+      href: '#',
+      classes: ' '
+    }) }}
+
+</div>
+
+<br>
+
+
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">Job Status</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Stage</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header">Write count</th>
+            <th scope="col" class="govuk-table__header">Start time</th>
+            <th scope="col" class="govuk-table__header">End time</th>
+            <th scope="col" class="govuk-table__header">Failure details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Update case</td>
+            <td class="govuk-table__cell">Failed</td>
+            <td class="govuk-table__cell">0</td>
+            <td class="govuk-table__cell">19 March 2024 5:21pm</td>
+            <td class="govuk-table__cell">19 March 2024 6:21pm</td>
+            <td class="govuk-table__cell">Job has taken too long</td>
+            <td class="govuk-table__cell"><span class="not-verified-badge not-verified">
+          </span></td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

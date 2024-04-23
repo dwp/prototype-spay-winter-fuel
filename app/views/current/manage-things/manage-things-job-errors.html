@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-manage-admin-errors.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <br>
+    <br>
+
+    <h1 class="govuk-heading-xl">Manage things ...</h1>
+
+    
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+ 
+        <ol class="moj-task-list">
+                      
+            <li>
+              <h2 class="moj-task-list__section" id="loadFilesTaskListSectionHeading">
+                <span class="govuk-visually-hidden">File loading job control</span><span aria-hidden="true">
+                Load files</span></h2>
+
+              <ul class="moj-task-list__items govuk-!-padding-left-0">
+                <li class="moj-task-list__item" id="dandaDataLoadJobTaskEntry">
+                  <a class="sp-task-list__task-name" href="da-file-job-errors" aria-describedby="eligibility-completed">
+                    <span aria-hidden="true">Data and analytics file</span>
+                    <span class="govuk-visually-hidden">Open the Data and analytics file job control page</span>
+                    </a>
+                    <p class="moj-task-list__task-completed"> 
+                      <span class="sp-task-list__task-qualifier"> 
+                        <span class="govuk-visually-hidden">The Data and analytics file job last ran with errors on 15 April 2024</span> 
+                        <span aria-hidden="true">15 April 2024</span> 
+                      </span> 
+                      <strong class="govuk-tag govuk-tag--red"> 
+                        <span class="govuk-visually-hidden">Last reported status of the Data and analytics file job, Errors</span>
+                        <span aria-hidden="true">Errors</span> </strong> </p>
+                </li>
+                <li class="moj-task-list__item" id="warPenDataLoadJobTaskEntry">
+                  <a class="sp-task-list__task-name" href="war-pensions-job-errors" aria-describedby="eligibility-completed">
+                    <span aria-hidden="true">War Pensions File</span>
+                    <span class="govuk-visually-hidden">Open the War Pensions file job control page</span>
+                    </a>
+                    <p class="moj-task-list__task-completed"> 
+                      <span class="sp-task-list__task-qualifier"> 
+                        <span class="govuk-visually-hidden">The War Pensions file job failed on 19 March 2024</span> 
+                        <span aria-hidden="true">19 March 2024</span> 
+                      </span> 
+                      <strong class="govuk-tag govuk-tag--red"> 
+                        <span class="govuk-visually-hidden">Last reported status of the War Pensions file job, Failed</span>
+                        <span aria-hidden="true">Failed</span> </strong> </p>
+                </li>
+
+                <li class="moj-task-list__item" id="dandaRefreshAndCleanupJobTaskEntry">
+                  <a class="sp-task-list__task-name" href="/" aria-describedby="eligibility-completed">
+                    <span aria-hidden="true" >Data and analytics weekly <br>refresh file (which includes <br>running the clean up)</span>
+                    <span class="govuk-visually-hidden">Open the Data and analytics weekly refresh file (which includes running the clean up) job control page</span>
+                    </a>
+                    <p class="moj-task-list__task-completed"> 
+                      <span class="sp-task-list__task-qualifier"> 
+                        <span class="govuk-visually-hidden">The Data and analytics weekly refresh file (which includes running the clean up)job last ran on 28 February 2024</span> 
+                        <span aria-hidden="true">28 February 2024</span> 
+                      </span> 
+                      <strong class="govuk-tag govuk-tag--green"> 
+                        <span class="govuk-visually-hidden">Last reported status of the Data and analytics weekly refresh file (which includes running the clean up) job, Completed</span>
+                        <span aria-hidden="true">Completed</span> </strong> </p>
+                </li>
+
+                <li class="moj-task-list__item" id="gyspDataLoadJobTaskEntry">
+                  <a class="sp-task-list__task-name" href="/" aria-describedby="eligibility-completed">
+                    <span aria-hidden="true">Get your State Pension file</span>
+                    <span class="govuk-visually-hidden">Open the Get your State Pension job control page</span>
+                    </a>
+                    <p class="moj-task-list__task-completed"> 
+                      <span class="sp-task-list__task-qualifier"> 
+                        <span class="govuk-visually-hidden">The Get your State Pension file job last ran on 17 April 2024</span> 
+                        <span aria-hidden="true">17 April 2024</span> 
+                      </span> 
+                      <strong class="govuk-tag govuk-tag--green"> 
+                        <span class="govuk-visually-hidden">Last reported status of the Get your State Pension file job, Completed</span>
+                        <span aria-hidden="true">Completed</span> </strong> </p>
+                </li>
+
+              </ul>
+            </li>
+
+
+            <li>
+              <h2 class="app-task-list__section">
+                Calculate entitlement
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="calculate-entitlement" aria-describedby="company-information-completed">
+                      Calculate entitlement
+                    </a>
+                  </span>
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="sweep" aria-describedby="company-information-completed">
+                      Clean up
+                    </a>
+                  </span>
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                Manage letters and payments
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="schedule-letters-payments" aria-describedby="company-information-completed">
+                      Schedule letters and payments
+                    </a>
+                  </span>
+              </ul>
+            </li>
+
+            <li>
+              <h2 class="app-task-list__section">
+                Secure data
+              </h2>
+              <ul class="app-task-list__items govuk-!-padding-left-0">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="calculate-entitlement" aria-describedby="company-information-completed">
+                      Encrypt data
+                    </a>
+                  </span>
+
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="sweep" aria-describedby="company-information-completed">
+                      Decrypt data
+                    </a>
+                  </span>
+              </ul>
+            </li>
+
+          </ol>
+
+        </div>
+      </div>
+
+
+
+    
+
+  
+
+
+
+{% endblock %}
