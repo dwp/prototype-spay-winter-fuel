@@ -32,6 +32,9 @@
   padding-left:30px;
 }
 
+.govuk-tag {
+  max-width: none;
+}
 
 .steps {
   @include govuk-typography-common; 
