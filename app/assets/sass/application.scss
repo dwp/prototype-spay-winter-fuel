@@ -22,6 +22,43 @@
   }
 }
 
+.verified-badge {
+  color: #6f777b;
+  float: left;
+  font-size: .8em;
+  margin: .4em 0 0;
+  position: relative;
+}
+
+.verified::before {
+  background-image: url("/public/images/icon-verified.svg");
+  background-repeat: no-repeat;
+  content: '';
+  height: 1.1em;
+  left: -1.3em;
+  position: absolute;
+  top: 0;
+  width: 1em;
+}
+
+.not-verified-badge {
+  color: #6f777b;
+  float: left;
+  font-size: .8em;
+  margin: .4em 0 0;
+  position: relative;
+}
+
+.not-verified::before {
+  background-image: url("/public/images/icon-not-verified.png");
+  background-repeat: no-repeat;
+  content: '';
+  height: 1.1em;
+  left: -1.3em;
+  position: absolute;
+  top: 0;
+  width: 1em;
+}
 
 .govuk-header__content {
   padding-left: 0;
