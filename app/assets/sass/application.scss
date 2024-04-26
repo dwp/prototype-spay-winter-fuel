@@ -22,6 +22,8 @@
   }
 }
 
+// Verified & non-verified badges in admin screens
+
 .verified-badge {
   color: #6f777b;
   float: left;
@@ -68,6 +70,12 @@
 .table-links-padding-left {
   padding-left:30px;
 }
+
+.moj-primary-navigation {
+
+}
+
+// Styling to ensure status tags don't overflow over two lines
 
 .govuk-tag {
   max-width: none;
