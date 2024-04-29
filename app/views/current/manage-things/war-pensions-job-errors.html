@@ -25,15 +25,20 @@
         Failed
       </strong>
     </p> 
-
+    <p class="govuk-body">The job failed because the file is greater than 1 GB.</p> 
+    <p class="govuk-body">You should contact the file sender to resend a smaller file.</p>
     <br><br>
     
     
-    {{ govukButton ({
-      text: 'Start',
-      href: '#',
-      classes: ' '
-    }) }}
+    <div class="govuk-button-group">
+      <button class="govuk-button govuk-button" data-module="govuk-button">
+        Start
+      </button>
+    
+      <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+        Stop
+      </button>
+    </div>
 
 </div>
 
@@ -50,17 +55,17 @@
             <th scope="col" class="govuk-table__header">Write count</th>
             <th scope="col" class="govuk-table__header">Start time</th>
             <th scope="col" class="govuk-table__header">End time</th>
-            <th scope="col" class="govuk-table__header">Failure details</th>
+            <th scope="col" class="govuk-table__header">Details</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Update case</td>
+            <td class="govuk-table__cell">Validate file</td>
             <td class="govuk-table__cell">Failed</td>
             <td class="govuk-table__cell">0</td>
             <td class="govuk-table__cell">19 March 2024 5:21pm</td>
-            <td class="govuk-table__cell">19 March 2024 6:21pm</td>
-            <td class="govuk-table__cell">Job has taken too long</td>
+            <td class="govuk-table__cell">19 March 2024 5:22pm</td>
+            <td class="govuk-table__cell">Job has failed. File is greater than 1 GB.</td>
             <td class="govuk-table__cell"><span class="not-verified-badge not-verified">
           </span></td>
           </tr>
