@@ -3,6 +3,7 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 
+
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
@@ -112,4 +113,18 @@ router.post('/current/tasks/request-manual-payment/get-next-manual-payment', fun
     res.redirect('/current/record-view/contact-tab/address/update-contact-dets')
   }
 }) */
+
+router.post('/timeperiod-answer', function (req, res) { 
+  var whendata = req.session.data['whendata']  
+
+  if (whendata == 'year') { 
+    res.redirect('/current/MI/MI-V2/year-to-date')
+  } 
+  if (whendata == 'range') { 
+    res.redirect('/current/MI/MI-V2/search-date-range')
+  }
+  if (whendata == 'day') { 
+    res.redirect('/current/MI/MI-V2/search-day')
+  }
+}) 
 
