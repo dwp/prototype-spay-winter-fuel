@@ -12,15 +12,15 @@
 
         <ul class="moj-primary-navigation__list">
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1">Today</a>
+            <a class="moj-primary-navigation__link"  href="today-tasks">Today</a>
           </li>
 
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" href="#2">Wednesday's weekly summary</a>
+            <a class="moj-primary-navigation__link" href="weekly-summary">Weekly summary</a>
           </li>
 
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" href="#3">Search all data</a>
+            <a class="moj-primary-navigation__link" aria-current="page" href="search-data">Search all data</a>
           </li>
         </ul>
 
@@ -36,6 +36,15 @@
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container">
@@ -43,54 +52,134 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Summary of daily task counts</h1>
+        <h1 class="govuk-heading-xl">Summary of yearly counts</h1>
+
+        <h2 class="govuk-heading-l">Year to date
+          <span class="govuk-caption-l">Updated 4.34am Sunday 16th April</span>
+        </h2>
+      
+        <!-- Table for new claims totat-->
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Claims</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Type of claim</th>
+              <th scope="col" class="govuk-table__header">UK new claim</th>
+              <th scope="col" class="govuk-table__header">Internation new claim</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Phone</th>
+              <td class="govuk-table__cell">104</td>
+              <td class="govuk-table__cell">-</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Post</th>
+              <td class="govuk-table__cell">59</td>
+              <td class="govuk-table__cell">-</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total</th>
+              <td class="govuk-table__cell">163</td>
+              <td class="govuk-table__cell">44</td>
+            </tr>
+          </tbody>
+        </table></div>
        
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Lead tenant
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Age
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  38
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Nationality
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  UK national resident in UK
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Working situation
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Part time – less than 30 hours a week
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
+<!-- Table for tasks figures-->
+<div class="govuk-grid-column-full">
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Tasks</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Type of task</th>
+      <th scope="col" class="govuk-table__header">Intake</th>
+      <th scope="col" class="govuk-table__header">System</th>
+      <th scope="col" class="govuk-table__header">Agent</th>
+      <th scope="col" class="govuk-table__header">Outstanding</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Review manual payment requests</th>
+      <td class="govuk-table__cell">104</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">104</td>
+      <td class="govuk-table__cell">-</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Review 13 week carehome cases</th>
+      <td class="govuk-table__cell">59</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">59</td>
+      <td class="govuk-table__cell">-</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Approve commercial addresses</th>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Pay death arrears</th>
+      <td class="govuk-table__cell">104</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">104</td>
+      <td class="govuk-table__cell">-</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Review GSL/WA</th>
+      <td class="govuk-table__cell">59</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">59</td>
+      <td class="govuk-table__cell">-</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Review overpayments</th>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Verify addresses</th>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Fix account details</th>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Check submitted addresses</th>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Contact citizens</th>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+      <td class="govuk-table__cell">163</td>
+      <td class="govuk-table__cell">44</td>
+    </tr>
+  </tbody>
+</table>
 
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Download CSV
+</button></div>
 
+        
         </div>
 
       </div>
