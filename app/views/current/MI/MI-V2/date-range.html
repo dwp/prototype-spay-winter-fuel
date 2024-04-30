@@ -16,11 +16,11 @@
           </li>
 
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#2">Weekly summary</a>
+            <a class="moj-primary-navigation__link"  href="weekly-summary">Weekly summary</a>
           </li>
 
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" href="search-data">Search all data</a>
+            <a class="moj-primary-navigation__link" aria-current="page" href="search-data">Search all data</a>
           </li>
         </ul>
 
@@ -36,17 +36,26 @@
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container">
+
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Summary of weekly counts</h1>
+        <h1 class="govuk-heading-xl">Summary of tasks and claims</h1>
 
-        <h2 class="govuk-heading-l">Week commencing 8th April
-          <span class="govuk-caption-l">Updated 4.34am Sunday 16th April</span>
+        <h2 class="govuk-heading-l">February 17th to March 18th
         </h2>
       
         <!-- Table for new claims totatl-->
@@ -56,8 +65,8 @@ Winter Fuel Payments
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Type of claim</th>
-              <th scope="col" class="govuk-table__header">UK new claims</th>
-              <th scope="col" class="govuk-table__header">Internation new claims</th>
+              <th scope="col" class="govuk-table__header">UK new claim</th>
+              <th scope="col" class="govuk-table__header">Internation new claim</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">

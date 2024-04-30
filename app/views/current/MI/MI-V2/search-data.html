@@ -12,15 +12,15 @@
 
         <ul class="moj-primary-navigation__list">
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1">Today</a>
+            <a class="moj-primary-navigation__link"  href="today-tasks">Today</a>
           </li>
 
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" href="#2">Weekly summary</a>
+            <a class="moj-primary-navigation__link" href="weekly-summary">Weekly summary</a>
           </li>
 
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" href="#3">Search all data</a>
+            <a class="moj-primary-navigation__link" aria-current="page" href="#3">Search all data</a>
           </li>
         </ul>
 
@@ -43,58 +43,42 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Summary of daily task counts</h1>
-       
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Lead tenant
-            </h2>
+        <form action="/timeperiod-answer" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What time period do you want to get data for?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whendata" name="whendata" type="radio" value="year" data="whendata">
+                  <label class="govuk-label govuk-radios__label" for="whendata">
+                    Year to date
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whendata-2" name="whendata" type="radio" value="range" data="whendata">
+                  <label class="govuk-label govuk-radios__label" for="whendata-2">
+                    Specific date range
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whendata-3" name="whendata" type="radio" value="day" data="whendata">
+                  <label class="govuk-label govuk-radios__label" for="whendata-3">
+                    Specific date
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Age
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  38
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Nationality
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  UK national resident in UK
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Working situation
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Part time – less than 30 hours a week
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
 
-
-        </div>
-
-      </div>
-
+       </div>
     </div>
     </main>
     </div>
