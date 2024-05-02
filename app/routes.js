@@ -3,9 +3,10 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 
-
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
+const util = require('util')
+
 
 router.post('*', function (req, res, next) {
   console.log(req.body);
@@ -127,4 +128,5 @@ router.post('/timeperiod-answer', function (req, res) {
     res.redirect('/current/MI/MI-V2/search-day')
   }
 }) 
+
 
