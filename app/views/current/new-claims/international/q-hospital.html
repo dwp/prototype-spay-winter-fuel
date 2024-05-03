@@ -1,32 +1,106 @@
-{% extends "layouts/main.html" %}
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Winter Fuel Payments
 {% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
 {% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Heading or question goes here
+        What dates were you in hospital?
       </h1>
 
       <form class="form" action="/path/of/next/page" method="post">
 
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="hospital-details-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+               <h3 class="govuk-fieldset__heading">
+                From
+              </h3>
+            </legend>
+            <span id="hospital-details-hint" class="govuk-hint" style="margin-bottom: 10px;">
+              For example, 27 3 2007
+            </span>
+            <div class="govuk-date-input" id="hospital-details">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hospital-details-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="data.hospitalday1" name="data.hospitalday1" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hospital-details-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="data.hospitalmonth1" name="data.monthday1" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hospital-details-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hospital-details-year" name="hospital-details-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="hospital-details-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+                To
+              </h3>
+            </legend>
+            <span id="hospital-details-hint" class="govuk-hint" style="margin-bottom: 10px;">
+              For example, 27 3 2007
+            </span>
+            <div class="govuk-date-input" id="hospital-details">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hospital-details-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospital-details-day" name="hospital-details-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hospital-details-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="hospital-details-month" name="hospital-details-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="hospital-details-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="hospital-details-year" name="hospital-details-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
         {{ govukButton({
           text: "Continue"
