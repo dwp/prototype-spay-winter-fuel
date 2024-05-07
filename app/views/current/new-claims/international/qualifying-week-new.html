@@ -20,59 +20,52 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {% include 'current/includes/_bar.html' %} 
 
-        <form class="form" action="/qualifying-week" method="post">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="countries-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Between 16 September and 22 September 2020, did any of the following apply to you?
-              </h1>
-            </legend>
-            <div id="countries-hint" class="govuk-hint">
-              Select all that apply.
-            </div>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="q-week" name="qweek" type="checkbox" value="hospital">
-                <label class="govuk-label govuk-checkboxes__label" for="q-week">
-                  In hospital getting free treatment
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="q-week-2" name="qweek" type="checkbox" value="care-home">
-                <label class="govuk-label govuk-checkboxes__label" for="q-week-2">
-                  In a care home
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="q-week-3" name="qweek" type="checkbox" value="custody">
-                <label class="govuk-label govuk-checkboxes__label" for="q-week-3">
-                  In custody or serving a sentence imposed by a court
-                </label>
-                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-
-                  Either in the UK or an EEA country
-
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="q-week-4" name="qweek" type="checkbox" value="pension">
-                  <label class="govuk-label govuk-checkboxes__label" for="q-week-4">
-                    Getting UK State Pension or any other UK social security benefit
-                  </label>
-                </div>
-                <div><div class="govuk-checkboxes__divider">or</div></div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="q-week-5" name="qweek" type="checkbox" value="none" data-behaviour="exclusive">
-                <label class="govuk-label govuk-checkboxes__label" for="q-week-5">
-                  None of the above
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        {{ govukCheckboxes({
+          name: "q week",
+          fieldset: {
+            legend: {
+              text: "Between 16 September and 22 September 2020, did any of the following apply to you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+          {
+            value: "hospital",
+            text: "In hospital getting free treatment"
+          },
+          {
+            value: "care-home",
+            text: "In a care home"
+          },  
+          {
+              value: "custody",
+              text: "In custody or serving a sentence imposed by a court",
+              hint: {
+                text: "Either in the UK or an EEA Country"
+              }
+            },
+            {
+              value: "pension",
+              text: "Getting UK State Pension or any other UK social security benefit"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "None of the above",
+              checked: true,
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
            
 
 
