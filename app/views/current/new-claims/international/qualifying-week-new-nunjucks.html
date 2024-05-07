@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% include 'current/includes/_bar.html' %} 
+
+        {{ govukCheckboxes({
+          name: "q week",
+          fieldset: {
+            legend: {
+              text: "Between 16 September and 22 September 2020, did any of the following apply to you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+          {
+            value: "hospital",
+            text: "In hospital getting free treatment"
+          },
+          {
+            value: "care-home",
+            text: "In a care home"
+          },  
+          {
+              value: "custody",
+              text: "In custody or serving a sentence imposed by a court",
+              hint: {
+                text: "Either in the UK or an EEA Country"
+              }
+            },
+            {
+              value: "pension",
+              text: "Getting UK State Pension or any other UK social security benefit"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "None of the above",
+              checked: true,
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+           
+
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+
+</div>
+</main>
+</div>
+
+{% endblock %}
