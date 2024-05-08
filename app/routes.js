@@ -129,4 +129,97 @@ router.post('/timeperiod-answer', function (req, res) {
   }
 }) 
 
+// router.post('/qualifying', function(req, res) {
+    
+//   // all selections made on the country screen are sorted in session.data['countries']
 
+//   // I convert that array back to a single value string and assign it to the variable countries
+//   let qweek = req.session.data['countries'].toString();
+
+//   // use your console.log to check you're getting the values you expect. You'll see the results in your terminal window
+//   console.log(qweek);
+  
+
+//   // a switch case is another way to compare a series of values
+//   // it works in the same way as alot of else if but with a lot less code
+//   switch(qweek) {
+//       case 'hospital':
+//           // if countries equals france do this
+//           res.redirect('/current/new-claims/international/q-hospital');
+//           break;
+//       case 'care-home':
+//           // if countries equals france,portugal do this
+//           res.redirect('/current/new-claims/international/q-care-home');
+//           break;
+//           case 'custody':
+//             // if countries equals france,portugal do this
+//             res.redirect('/current/new-claims/international/q-custody');
+//             break;
+//       default:
+//           //this acts as an else and catches everything you haven't listed above
+//           res.redirect('/everything-else');
+//     }
+// })
+
+/////////// CHECKBOXES START ///////////
+// The checkRoute function compares the desired checkbox combination against the ones the user actually selected
+function checkRoute(route, data){
+  
+  /* Checks to see if the actual selection and the desired selection arrays are the same length.
+  this immediately discounts options where the user has selected a different number of checkboxes
+  than we want to compare. For example, we want to check if they selected two checkboxes but they only selected one
+  this if statement will immediately discount this route and return false */
+  if(route.length !== data.length) return false;
+  
+  /* A Set is an object that stores only unique values. The three dots is called a Spread Operator and we are using them
+  to combine two arrays, 'route' and 'data'. By adding them to a set any duplicate values will be removed */
+  var comp = new Set([...route, ...data]);
+
+  // 'For of' loops through each item in an array. In this case it's looping through the items in the 'comp' set
+  for(var i of comp){
+
+      /* We create two variables: 'a' and 'b' to store the length of two arrays. We are using the filter method to check to
+      see if the current item of the 'comp' Set is in the 'route' and 'data' arrays. If the value is found in the array, the 
+      respective variable will be equal to 1 and if it isn't found it will equal 0. */
+      var a = route.filter(cb => cb === i).length;
+      var b = data.filter(cb => cb === i).length;
+
+      /* If the length of both arrays isn't the same then this isn't the correct route. The function will return
+      false and try the next route. If the array lengths are the same it will continue on to check the next
+      item in the 'comp' Set */
+      if(a !== b) return false;
+  }
+  /* If the all of the values in the 'comp' Set return true then this route is the correct one. The function will return
+  true and the page will be redirected to the specified page */
+  return true;
+}
+
+// Checkboxe routing logic
+router.post('/qualifying', function (req, res) {
+  // Get the checkboxes that were selected on the page
+  var fromPage = req.session.data['qweek'];
+
+  /* Set up which checkbox value combinations result in a different route. The values used here should match the 'value'
+  attribute of the checkbox */
+  var route1 = ["hospital",];
+  var route2 = ["care-home", ];
+  var route3 = ["custody",];
+
+  /* This passes the values we assigned to route1 and the options the user selected onto the page into the checkRoute function */
+  if(checkRoute(route1, fromPage)){
+
+    // If the checkRoute function returns true, the page will be redirected to the one specified
+    res.redirect('/current/new-claims/international/q-hospital')
+  }
+  else if(checkRoute(route2, fromPage)){
+    res.redirect('/current/new-claims/international/q-care-home')
+  }
+  else if(checkRoute(route3, fromPage)){
+    res.redirect('/current/new-claims/international/q-custody')
+  }
+  else {
+    // If none of the routes match the selection then it will fall back and redirect to this page
+    res.redirect('/current/new-claims/international/any-other-links')
+  }  
+})
+/////////// CHECKBOXES END ///////////
