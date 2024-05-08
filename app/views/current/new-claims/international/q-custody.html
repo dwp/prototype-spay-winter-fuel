@@ -18,17 +18,17 @@ Winter Fuel Payments
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      {% include 'current/includes/_bar.html' %}
       <h1 class="govuk-heading-l">
-        What was the address of the institution you were detained in, and the name of the authority which imposed the sentence?
+        Questions about your custody or sentence
       </h1>
-
+      <h2 class="govuk-heading-m"></h2>
       <form class="form" action="/path/of/next/page" method="post">
 
         <div class="govuk-form-group">
           <p class="govuk-body">
             <label class="govuk-label" for="more-detail">
-              Enter the institution address and authority name
+              What was the address of the institution you were detained in, and the name of the authority which imposed the sentence? 
             </label>
           </p>
           <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="10" aria-describedby="more-detail-hint"></textarea>
