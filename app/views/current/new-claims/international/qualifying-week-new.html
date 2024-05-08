@@ -20,6 +20,7 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <form action="/qualifying" method="post" novalidate>
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
         {% include 'current/includes/_bar.html' %} 
 
@@ -38,14 +39,20 @@ Winter Fuel Payments
           items: [
           {
             value: "hospital",
-            text: "In hospital getting free treatment"
+            text: "In hospital getting free treatment",
+            data: "qweek",
+            name: "qweek"
           },
           {
             value: "care-home",
-            text: "In a care home"
+            text: "In a care home",
+            data: "qweek",
+            name: "qweek"
           },  
           {
               value: "custody",
+              name: "qweek",
+              data: "qweek",
               text: "In custody or serving a sentence imposed by a court",
               hint: {
                 text: "Either in the UK or an EEA Country"
@@ -53,6 +60,8 @@ Winter Fuel Payments
             },
             {
               value: "pension",
+              name: "qweek",
+              data: "qweek",
               text: "Getting UK State Pension or any other UK social security benefit"
             },
             {
@@ -60,6 +69,8 @@ Winter Fuel Payments
             },
             {
               value: "none",
+              name: "qweek",
+              data: "qweek",
               text: "None of the above",
               checked: true,
               behaviour: "exclusive"
