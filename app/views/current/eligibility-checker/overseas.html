@@ -1,57 +1,44 @@
-{% extends "layout.html" %}
-
-{% block header %}
-{% include './_header.html' %}
-{% endblock %}
-
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Winter Fuel Payments
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:history.go(-1)"
-}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        You need to contact the overseas team
+      </h1>
 
-        <form method="post">
+      <p>
+       You might still get the payment if you live in Switzerland or a European Economic Area (EEA) country.
+ 
+      </p>
 
+      <p>
+        You need to have a genuine and sufficient link to the UK though - this can include having lived and worked in the UK.
+      </p>
 
-          <h1 class="govuk-heading-xl">You might still qualify for a Winter Fuel Payment</h1>
-
-          <p class="govuk-body">You could still get the payment if you live in one of these countries:</p>
-          <p class+"govuk-body">Austria, Belgium, Bulgaria, Croatia, Czech Republic, Denmark, Estonia, Finland, Germany, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Netherlands, Norway, Poland, Romania, Slovakia, Slovenia, Sweden and Switzerland.</p>
-          
-
-
-          <div class="govuk-inset-text">
-            You will also need to have a genuine and sufficient link to the UK
-            - this can include having lived or worked in the UK, and having family in the UK.
-          </div>
-
-
-          <p>Call +44 (0) 191 218 7777 to make an overseas claim for a Winter Fuel Payment.</p>
-
-<br>
-
-<a href="/current/eligibility-checker/start-page" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">
-  Start again
-</a>
-
+      <div class="govuk-inset-text">
+        You cannot get the payment if you live in Cyprus, France, Gibraltar, Greece, Malta, Portugal or Spain because the average winter temperature there is higher than the warmest region in the UK.
       </div>
 
+      <p>
+        Call +44 0191 218 7777 to make an overseas claim for a Winter Fuel Payment.
+  
+       </p>
 
     </div>
-
-</div>
-
-</main>
-</div>
+  </div>
 
 {% endblock %}
