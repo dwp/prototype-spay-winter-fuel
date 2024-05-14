@@ -11,22 +11,15 @@ Winter Fuel Payments
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-width-container">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% include 'current/includes/_bar.html' %} 
 
       <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <form action="/form-handler" method="post" novalidate>
+            <form action="/current/eligibility-checker/living-where" method="post" novalidate>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
