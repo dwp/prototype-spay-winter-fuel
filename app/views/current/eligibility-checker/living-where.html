@@ -18,15 +18,11 @@ Winter Fuel Payments
 {% endblock %}
 
 {% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {% include 'current/includes/_bar.html' %} 
-
+      
       <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <form action="/form-handler" method="post" novalidate>
+            <form action="/living-where" method="post" novalidate>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -36,7 +32,7 @@ Winter Fuel Payments
                   </legend>
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                      <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="uk">
                       <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
                         England, Wales or Northern Ireland
                       </label>
@@ -48,7 +44,7 @@ Winter Fuel Payments
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                      <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="overseas">
                       <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
                         Overseas
                       </label>
