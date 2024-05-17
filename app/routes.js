@@ -237,3 +237,17 @@ router.post('/living-where', function (req, res) {
     res.redirect('/current/eligibility-checker/overseas')
   }
 }) 
+
+router.post('/timeperiod-answer-2', function (req, res) { 
+  var whendata = req.session.data['whendata']  
+
+  if (whendata == 'year') { 
+    res.redirect('/current/MI/MI-V3/year-to-date')
+  } 
+  if (whendata == 'range') { 
+    res.redirect('/current/MI/MI-V3/search-date-range')
+  }
+  if (whendata == 'day') { 
+    res.redirect('/current/MI/MI-V3/search-day')
+  }
+}) 
