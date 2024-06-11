@@ -224,7 +224,7 @@ router.post('/qualifying', function (req, res) {
 })
 /////////// CHECKBOXES END ///////////
 
-router.post('/living-where', function (req, res) { 
+router.post('/living-where-1', function (req, res) { 
   var whereDoYouLive = req.session.data['whereDoYouLive']  
 
   if (whereDoYouLive == 'uk') { 
@@ -234,6 +234,17 @@ router.post('/living-where', function (req, res) {
     res.redirect('/current/eligibility-checker/scotland')
   }
   if (whereDoYouLive == 'overseas') { 
+    res.redirect('/current/eligibility-checker/overseas-question')
+  }
+}) 
+
+router.post('/in-the-UK', function (req, res) { 
+  var inUk = req.session.data['inUk']  
+
+  if (inUk == 'yes') { 
+    res.redirect('/current/eligibility-checker/getting-pension')
+  } 
+  if (inUk == 'no') { 
     res.redirect('/current/eligibility-checker/overseas')
   }
 }) 
