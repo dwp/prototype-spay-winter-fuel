@@ -262,3 +262,18 @@ router.post('/timeperiod-answer-2', function (req, res) {
     res.redirect('/current/MI/MI-V3/search-day')
   }
 }) 
+
+//* 2024 international correspondence address changes//
+
+router.post('/ukaddress', function (req, res) { 
+  var ukaddress = req.session.data['ukaddress'] 
+
+  if (ukaddress == 'ukaddress-yes') { 
+    res.redirect('/current/record-view/contact-tab/correspondence-address/correspondence-address-uk')
+  } 
+  if (ukaddress == 'ukaddress-no') { 
+    res.redirect('/current/record-view/contact-tab/correspondence-address/correspondence-address-international')
+  }
+}) 
+
+//* 2024 international correspondence address changes END//
