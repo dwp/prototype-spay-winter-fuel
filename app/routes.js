@@ -277,3 +277,21 @@ router.post('/ukaddress', function (req, res) {
 }) 
 
 //* 2024 international correspondence address changes END//
+
+//* Users must have at least one phone number on file//
+
+router.post('/phoneneeded', function (req, res) { 
+  var phoneneeded = req.session.data['phoneneeded']
+
+  if (phoneneeded == 'homephoneneeded') { 
+    res.redirect('/current/record-view/contact-tab/home-phone/homephone')
+  } 
+  if (phoneneeded == 'mobilephoneneeded') { 
+    res.redirect('/current/record-view/contact-tab/mobile-phone/mobilephone')
+  }
+  if (phoneneeded == 'workphoneneeded') { 
+    res.redirect('/current/record-view/contact-tab/work-phone/workphone')
+  }
+}) 
+
+//* Users must have at least one phone number on file END//
