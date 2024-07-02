@@ -27,6 +27,10 @@ Winter Fuel Payments
       {% endif %}
             {% include 'current/includes/_bar.html' %}
 
+
+            <br>
+            <br>
+
             <h1 class="govuk-heading-l">Are you sure that you want to remove this phone number?</h1>
             <p><strong>Home phone:</strong> {{data['homephone']}}</p>
             <form method="post">
@@ -34,7 +38,7 @@ Winter Fuel Payments
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   </legend>
-                  <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="homephone-change-yes" name="homephone-remove" type="radio" value="yes">
                       <label class="govuk-label govuk-radios__label" for="changed-homephone-1">

@@ -20,17 +20,18 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      {% if data['update-details']=='yes'%}
-        <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
-      {% else %}
-        <form method="post" action="/current/record-view/contact-tab/contact-details">
-      {% endif %}
+      <form method="post">
 
             {% include 'current/includes/_bar.html' %}
 
-            
 
+            <br>
+            <br>
+
+
+            {% if not data.homephone %}
             <h1 class="govuk-heading-l">What is your home phone number?</h1>
+            {% endif %}
 
             <form method="post">
             <div class="govuk-form-group">
@@ -41,14 +42,18 @@ Winter Fuel Payments
               <input class="govuk-input govuk-input--width-20" id="homephone" name="homephone" type="tel">
             </div>
 
+              {% if data.homephone %}
+            <div>
+            <a href="homephone-remove" class="govuk-link govuk-!-font-size-19">Remove 01665 720 871</a>
+            </div>
+              {% endif %}
+
+
+            <br>
 
             <button type="submit" class="govuk-button">
               Continue
             </button>
-            <input type="hidden" name="homephone-changed" value="true">
-            <input type="hidden" name="homephone-remove" value="no">
-            <input type="hidden" name="contact-details-changed" value="true">
-            <input type="hidden" name="from-contact-tab" value="true">
             </form>
 
       </div>

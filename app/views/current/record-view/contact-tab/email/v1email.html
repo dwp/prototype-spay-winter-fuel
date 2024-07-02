@@ -28,6 +28,8 @@ Winter Fuel Payments
 
           {% include 'current/includes/_bar.html' %}
 
+          <br>
+          <br>
 
 
           {% if not data.email %}
@@ -43,6 +45,13 @@ Winter Fuel Payments
               </label>
               <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint">
             </div>
+
+            {% if data.email %}
+            <div>
+              <a href="email-remove" class="govuk-link govuk-!-font-size-19">Remove email address as a contact option</a>
+            </div>
+            {% endif %}
+            <br>
 
             <button type="submit" class="govuk-button">
               Save
