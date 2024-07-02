@@ -28,7 +28,8 @@ Winter Fuel Payments
 
             {% include 'current/includes/_bar.html' %}
 
-            
+            <br>
+            <br>
 
             {% if not data.worknumber %}
             <h1 class="govuk-heading-l">What is your work phone number?</h1>
@@ -44,6 +45,12 @@ Winter Fuel Payments
                 </label>
                 <input class="govuk-input govuk-input--width-20" id="worknumber" name="worknumber" type="tel">
               </div>
+
+              {% if (data.worknumber) and data ['workphone-remove'] != 'yes' %}
+            <div>
+            <a href="workphone-remove" class="govuk-link govuk-!-font-size-19">Remove work phone as a contact option</a><br><br>
+            </div>
+              {% endif %}
 
              
 

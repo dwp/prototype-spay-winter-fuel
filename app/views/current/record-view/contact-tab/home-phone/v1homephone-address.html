@@ -20,30 +20,34 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      {% if data ['update-details'] == 'yes' %}
-         <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
-      {% else %}
-        <form method="post" action="/current/record-view/contact-tab/contact-details">
-      {% endif %}
-            {% include 'current/includes/_bar.html' %}
+      <form method="post">
 
-            <h1 class="govuk-heading-l">Are you sure that you want to remove this phone number?</h1>
-            <p><strong>Home phone:</strong> {{data['homephone']}}</p>
+{% include 'current/includes/_bar.html' %}
+
+
+            <br>
+            <br>
+
             <form method="post">
+
+        <h1 class="govuk-heading-l">Do you want to change your home phone number?</h1>
+
+<p><strong>Home phone:</strong> 01665 720 871</p>
+
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   </legend>
-                  <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios govuk-radios--inline">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="homephone-change-yes" name="homephone-remove" type="radio" value="yes">
-                      <label class="govuk-label govuk-radios__label" for="changed-homephone-1">
+                      <input class="govuk-radios__input" id="homephone-change-yes" name="homephone-address" type="radio" value="Yes">
+                      <label class="govuk-label govuk-radios__label" for="changed-name-1">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="homephone-change-no" name="homephone-remove" type="radio" value="no">
-                      <label class="govuk-label govuk-radios__label" for="changed-homephone-2">
+                      <input class="govuk-radios__input" id="homephone-change-no" name="homephone-address" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="changed-name-2">
                         No
                       </label>
                     </div>
@@ -51,11 +55,14 @@ Winter Fuel Payments
                 </fieldset>
               </div>
 
-              <button type="submit" class="govuk-button">
-                Save
-              </button>
-            </form>
+              <p><a href="#" class="govuk-link">Remove number</a></p>
+              <br>
 
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+
+            </form>
 
       </div>
 
@@ -65,7 +72,5 @@ Winter Fuel Payments
 
   </main>
   </div>
-
-
 
   {% endblock %}

@@ -30,6 +30,9 @@ Winter Fuel Payments
             {% include 'current/includes/_bar.html' %}
 
 
+            <br>
+            <br>
+
             <h1 class="govuk-heading-l">What is your mobile phone number?</h1>
 
 
@@ -41,6 +44,13 @@ Winter Fuel Payments
               </label>
               <input class="govuk-input govuk-input--width-20" id="mobilenumber" name="mobilenumber" type="tel">
             </div>
+
+
+            {% if (data.mobilenumber) and data ['mobilephone-remove'] != 'Yes' %}
+            <div>
+            <a href="mobilephone-remove" class="govuk-link govuk-!-font-size-19">Remove mobile phone as a contact option</a><br><br>
+            </div>
+              {% endif %}
            
 
           {% if data['update-details']=='yes'%}

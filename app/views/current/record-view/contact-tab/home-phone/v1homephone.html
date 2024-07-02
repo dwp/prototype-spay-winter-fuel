@@ -20,50 +20,53 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-         {% if data['update-details']=='yes'%}
+      {% if data['update-details']=='yes'%}
         <form method="post" action="/current/record-view/overview-tab/update-details/update-anything-else">
       {% else %}
         <form method="post" action="/current/record-view/contact-tab/contact-details">
       {% endif %}
 
-          {% include 'current/includes/_bar.html' %}
+            {% include 'current/includes/_bar.html' %}
 
+            
 
+            <h1 class="govuk-heading-l">What is your home phone number?</h1>
 
-          {% if not data.email %}
-          <h1 class="govuk-heading-l">Add email address</h1>
-          {% else %}
-          <h1 class="govuk-heading-l">Change email address</h1>
-          {% endif %}
-
-         
+            <form method="post">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="email">
-                Email address
+              <label class="govuk-label" for="telephone-number">
+                Phone number
+
               </label>
-              <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint">
+              <input class="govuk-input govuk-input--width-20" id="homephone" name="homephone" type="tel">
             </div>
 
+              {% if (data.homephone) and data ['homephone-remove'] != 'Yes' %}
+            <div>
+            <a href="homephone-remove" class="govuk-link govuk-!-font-size-19">Remove home phone as a contact option</a><br><br>
+            </div>
+              {% endif %}
+
+             
+
             <button type="submit" class="govuk-button">
-              Save
+              Continue
             </button>
-            <input type="hidden" name="email-changed" value="true">
-            <input type="hidden" name="email-remove" value="no">
+            <input type="hidden" name="homephone-changed" value="true">
+            <input type="hidden" name="homephone-remove" value="no">
             <input type="hidden" name="contact-details-changed" value="true">
             <input type="hidden" name="from-contact-tab" value="true">
-
-          </form>
-
+            </form>
 
       </div>
 
     </div>
 
-</div>
+  </div>
 
-</main>
-</div>
+  </main>
+  </div>
 
 
 
-{% endblock %}
+  {% endblock %}
