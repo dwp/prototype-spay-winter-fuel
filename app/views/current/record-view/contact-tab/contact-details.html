@@ -138,22 +138,23 @@ Winter Fuel Payments
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
-                  {% if data['email'] or data['email3'] %}
+                  {% if not data.email or data['email-remove'] === 'yes'%}
                   <li class="govuk-summary-list__actions-list-item govuk-!-width-one-third">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email.html">Add<span class="govuk-visually-hidden"> email</span></a>
+                  </li>
+                  {% else %}
+                  <li class="govuk-summary-list__actions-list-item">
                     <a class="govuk-link" href="/current/record-view/contact-tab/email/email.html">Change<span class="govuk-visually-hidden">email</span></a>
                   </li>
                   <li class="govuk-summary-list__actions-list-item">
                     <a class="govuk-link" href="/current/record-view/contact-tab/email/email-remove.html">Remove<span class="govuk-visually-hidden"> email</span></a>
                   </li>
-                  {% else %}
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email.html">Add<span class="govuk-visually-hidden"> email</span></a>
-                  </li>
-                 
                   {% endif %}
                 </ul>
               </dd>
             </div>
+
+             
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
