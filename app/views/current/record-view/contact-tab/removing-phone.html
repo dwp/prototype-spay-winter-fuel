@@ -18,7 +18,7 @@ Winter Fuel Payments
 
           {% include 'current/includes/_bar.html' %}
 
-          <form action="/form-handler" method="post" novalidate>
+          <form method="post" novalidate>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -54,5 +54,12 @@ Winter Fuel Payments
 
 </main>
 </div>
+
+<script>
+  nextPageRoutes = {
+      'mobile': '/current/record-view/contact-tab/mobile-phone/mobilephone.html',
+      'work': '/current/record-view/contact-tab/work-phone/workphone.html',
+    }
+</script>
 
 {% endblock %}
