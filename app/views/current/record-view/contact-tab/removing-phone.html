@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+          {% include 'current/includes/_bar.html' %}
+
+          <form action="/form-handler" method="post" novalidate>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    You cannot remove the home phone number without adding another contact number first. Which phone number would you like to add?
+                  </h1>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="which-phone-number" name="which-phone-number" type="radio" value="mobile">
+                    <label class="govuk-label govuk-radios__label" for="which-phone-number">
+                      Mobile
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="which-phone-number-2" name="which-phone-number" type="radio" value="work">
+                    <label class="govuk-label govuk-radios__label" for="which-phone-number-2">
+                      Work
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+          </form>
+
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
