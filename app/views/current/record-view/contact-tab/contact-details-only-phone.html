@@ -50,23 +50,18 @@ Winter Fuel Payments
                 Home phone
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['homephone-remove'] === 'yes' %}
-                {% elseif data.homephone %}
-                {{data.homephone}}
-                {% endif %}
+                0141 237 8000
               </dd>
               <dd class="govuk-summary-list__actions govuk-!-width-one-third">
-                {% if not data.homephone or data['homephone-remove'] === 'yes'%}
-                <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone.html">Add<span class="govuk-visually-hidden"> home</span></a>
-                {% else %}
+          
                 <ul class="govuk-summary-list__actions-list">  
                   <li class="govuk-summary-list__actions-list-item">
                     <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone.html">Change<span class="govuk-visually-hidden"> home phone</span></a>
                   </li>
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone-remove.html">Remove<span class="govuk-visually-hidden"> home phone</span></a>
+                    <a class="govuk-link" href="/current/record-view/contact-tab/removing-phone.html">Remove<span class="govuk-visually-hidden"> home phone</span></a>
                   </li></ul>
-                {% endif %}
+                
               </dd>
             </div>
 

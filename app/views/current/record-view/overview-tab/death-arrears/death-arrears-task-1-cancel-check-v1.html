@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post">
+
+         {% include 'current/includes/_bar-dead.html' %}
+
+
+          <h1 class="govuk-heading-l">Are you sure you want to cancel the payment?</h1>
+          <p class="govuk-body">The DAP or NOK will not be paid and the task will be closed. The payee will be able to change their mind and receive a payment until [a date]</p>
+
+          <form method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                </legend>
+                <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="stop-payments-1" name="stop-payments" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="stop-payments-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="stop-payments-2" name="stop-payments" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="stop-payments-2">
+                    No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
+            <br>   
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/current/record-view/overview-tab/death-arrears/overview-dap-cancelled.html',
+        'no': '/current/record-view/overview-tab/overview-page-variants/overview-dap',
+      }
+  </script>
+
+{% endblock %}
