@@ -15,17 +15,19 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-
-          {% include 'current/includes/_bar.html' %}
+          {% include 'current/includes/_bar-phone-needed.html' %}
 
           <form method="post" novalidate>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    You cannot remove the home phone number without adding another contact number first. Which phone number would you like to add?
+                    Which phone number would you like to add? 
                   </h1>
                 </legend>
+                <div id="signIn-hint" class="govuk-hint">
+                  We need at least one phone number in case we need to contact you.
+              </div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="which-phone-number" name="which-phone-number" type="radio" value="mobile">
