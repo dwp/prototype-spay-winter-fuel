@@ -1,0 +1,252 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+
+        <!-- {% if data['preferred-name-added']=='true'%}
+             {% include 'current/includes/_bar-preferred-name.html' %}
+          {% else %}
+             {% include 'current/includes/_bar-preferred-name.html' %}
+          {% endif %}-->
+          
+          {% if data['alt-format-changed'] == 'true' or data ['contact-details-changed'] == 'true'%}
+          <div class="moj-banner moj-banner--success">
+
+
+
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+          </svg>
+
+          <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Details updated
+
+          </div>
+        {% endif %}
+
+          {% include 'current/includes/_bar.html' %}
+          <div class="govuk-error-summary" data-module="govuk-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">We need at least one phone number</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% include 'current/includes/_tab-contact.html' %}
+          <br><br>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Home phone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                0141 237 8000
+                <p id="phone-needed-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> We need at least one phone number
+                </p>
+              </dd>
+              <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+          
+                <ul class="govuk-summary-list__actions-list">  
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/home-phone/homephone.html">Change<span class="govuk-visually-hidden"> home phone</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/removing-phone.html">Remove<span class="govuk-visually-hidden"> home phone</span></a>
+                  </li></ul>
+                
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Mobile phone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['mobilephone-remove'] === 'yes' %}
+                   {% elseif data.mobilenumber %}
+                   {{data.mobilenumber}}
+                  {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  {% if not data.mobilenumber or data['mobilephone-remove'] === 'yes'%}
+                  <li class="govuk-summary-list__actions-list-item govuk-!-width-one-third">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/mobile-phone/mobilephone.html">Add<span class="govuk-visually-hidden"> mobile phone</span></a>
+                  </li>
+                  {% else %}
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/mobile-phone/mobilephone.html">Change<span class="govuk-visually-hidden"> mobile phone</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/mobile-phone/mobilephone-remove.html">Remove<span class="govuk-visually-hidden"> mobile phone</span></a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Work phone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['workphone-remove'] === 'yes' %}
+                {% elseif data.worknumber%}
+                {{data.worknumber}}
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  {% if not data.worknumber or data['workphone-remove'] === 'yes'%}
+                  <li class="govuk-summary-list__actions-list-item govuk-!-width-one-third">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/work-phone/workphone.html">Add<span class="govuk-visually-hidden"> work phone</span></a>
+                  </li>
+                  {% else %}
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/work-phone/workphone.html">Change<span class="govuk-visually-hidden">work phone</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/work-phone/workphone-remove.html">Remove<span class="govuk-visually-hidden"> work phone</span></a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['email-remove'] === 'yes' %}
+                {% elseif data.email%}
+                {{data.email}}
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  {% if not data.email or data['email-remove'] === 'yes'%}
+                  <li class="govuk-summary-list__actions-list-item govuk-!-width-one-third">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email.html">Add<span class="govuk-visually-hidden"> email</span></a>
+                  </li>
+                  {% else %}
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email.html">Change<span class="govuk-visually-hidden">email</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/email/email-remove.html">Remove<span class="govuk-visually-hidden"> email</span></a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </dd>
+            </div>
+
+             
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Requested name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['preferred-first-name']}} {{data['preferred-last-name']}}
+              </dd>
+             
+              <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+                <ul class="govuk-summary-list__actions-list">
+                  {% if data['preferred-first-name'] %}
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/overview-tab/update-details/preferred-name.html">Change<span class="govuk-visually-hidden"> preferred nmae</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> preferred name</span></a>
+                  </li>
+                  {% else %}
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/overview-tab/update-details/preferred-name.html">Add<span class="govuk-visually-hidden"> preferred name</span></a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </dd>
+              
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Correspondence address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                27 Kent Street
+                <br>Amble 
+                <br>NE65 0LZ
+              </dd>
+              <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+                <ul class="govuk-summary-list__actions-list">
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/record-view/contact-tab/correspondence-address/correspondence-address.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                  </li>
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> contact details</span></a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Preferred language
+              </dt>
+              <dd class="govuk-summary-list__value">
+                English
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="/current/record-view/contact-tab/preferred-language/confirm-change-language-welsh">Change<span class="govuk-visually-hidden"> preferred language</span></a>
+              </dd>
+            </div>
+          </dl>
+
+        
+
+      </div>
+
+
+      
+      {% if data['alt-format-changed'] == 'true' %}
+        <div class="govuk-grid-column-one-third">
+          {% include 'current/includes/_history3.html' %}
+       </div>
+      {% else %}
+        <div class="govuk-grid-column-one-third">
+
+        </div>
+      {% endif %}
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
