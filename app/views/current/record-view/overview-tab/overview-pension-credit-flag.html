@@ -121,12 +121,12 @@ Winter Fuel Payments
             <table class="govuk-table">
               <h2 class="govuk-heading-m">Qualification details 
                 </h2>
-               <a href="/current/record-view/overview-tab/update-details/choose-benefit-flag-pc"><span class="govuk-link govuk-!-font-size-19 govuk-!-margin-left-2" style="float:left">Add benefit flag</span>
-                </a>
+
                 <a href="/current/record-view/overview-tab/update-details/update-details-options"><span class="govuk-link govuk-!-font-size-19 govuk-!-margin-left-2" style="float:right">Update details</span>
                 </a>
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
                   <th scope="col" class="govuk-table__header"></th>
                   <th scope="col" class="govuk-table__header"></th>
                 </tr>
@@ -140,6 +140,7 @@ Winter Fuel Payments
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date of birth</th>
                   <td class="govuk-table__cell">1 April 1956</td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
                 {% if data['mark-as-dead']=='yes'%}
                   <tr class="govuk-table__row">
@@ -166,7 +167,8 @@ Winter Fuel Payments
                           23 June 2021
                       </td>
                       {% endif %}
-                  </tr>
+                      
+                    </tr>
                 {% endif %}
 
                  <tr class="govuk-table__row">
@@ -181,36 +183,12 @@ Winter Fuel Payments
                     FALKIRK<br>
                     FK55 8XN
                     {% endif %}
-                   <!-- <br><br>
                 
-                    <p>Other eligible people Theodora lives with:</p>
-                   
-                    <p>Age 66 to 79: 1
-                      <br> Age 80 and over: 2</p>
-
-
-                      since {% if data['move-date-changed'] == 'true' %}
-                {{data['moveday']}}
-                {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January
-                {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February
-                {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March
-                {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April
-                {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May
-                {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June
-                {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July
-                {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August
-                {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September
-                {% elif data['movemonth'] == '10' %} October
-                {% elif data['movemonth'] == '11' %} November
-                {% elif data['movemonth'] == '12' %} December
-                {% endif %}
-                {{data['moveyear']}}
-                      {% else %}
-                      10 March 2016
-                    {% endif %}
                 
                   </td>
-                </tr>-->
+                  <td class="govuk-table__cell"></td>
+                </tr>
+
              <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Occupancy</th>
                   <td class="govuk-table__cell">
@@ -239,6 +217,7 @@ Winter Fuel Payments
                       10 March 2016
                     {% endif %}-->
                   </td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Date they moved in</th>
@@ -263,10 +242,13 @@ Winter Fuel Payments
                       10 March 2016
                     {% endif %}
                   </td>
+                  <td class="govuk-table__cell"></td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Benefit type</th>
                   <td class="govuk-table__cell">Citizen is not receiving any benefits</td>
+                  <td class="govuk-table__cell"><a href="/current/record-view/overview-tab/update-details/choose-benefit-flag-pc">Add
+                  </a></td>
                 </tr>
               </tbody>
             </table>

@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+            {% include 'current/includes/_bar.html' %}
+
+            {{ govukBackLink({
+                text: "Back",
+                href: "javascript:history.go(-1)"
+              }) }}
+
+            <br>
+            <br>
+
+            <h1 class="govuk-heading-l">Are you sure that you want to remove this benefit flag?</h1>
+            <p><strong>Benefit type: </strong>Pension Credit - partner</p>
+            <form method="post">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="homephone-change-yes" name="homephone-remove" type="radio" value="Yes">
+                      <label class="govuk-label govuk-radios__label" for="changed-homephone-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="homephone-change-no" name="homephone-remove" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="changed-homephone-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <button type="submit" class="govuk-button">
+                Save
+              </button>
+            </form>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+
+
+  {% endblock %}
