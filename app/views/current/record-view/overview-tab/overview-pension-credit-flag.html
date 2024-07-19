@@ -18,9 +18,9 @@ Winter Fuel Payments
         {% if (data['benefitflag'] == 'pension-credit') %}
         {% include 'current/includes/_bar.html' %}
         {% elif data['benefitflag'] == 'pension-credit-partner' %}
+        {% include 'current/includes/_bar-partner-claimant.html' %}
         {% elif data['remove-benefit-flag'] == 'benefit-flag-removed' %}
         {% include 'current/includes/_bar.html' %}
-        {% include 'current/includes/_bar-partner-claimant.html' %}
         {% else %}
         {% include 'current/includes/_bar.html' %}
         {% endif %}
