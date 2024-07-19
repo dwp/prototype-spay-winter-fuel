@@ -295,3 +295,34 @@ router.post('/phoneneeded', function (req, res) {
 }) 
 
 //* Users must have at least one phone number on file END//
+
+//* Adding or removing pension credit / partner benefit flags //
+
+router.post('/benefitflag', function (req, res) { 
+  var benefitflag = req.session.data['benefitflag']
+
+  if (benefitflag == 'pension-credit') { 
+    res.redirect('/current/record-view/overview-tab/overview-pension-credit-flag')
+  } 
+  if (benefitflag == 'pension-credit-partner') { 
+    res.redirect('/current/record-view/overview-tab/overview-pension-credit-flag')
+  }
+  if (benefitflag == 'removed') { 
+    res.redirect('/current/record-view/overview-tab/overview-pension-credit-flag')
+  }
+
+})
+
+//* Adding or removing pension credit / partner benefit flags END//
+
+//* Not removing pension credit / partner benefit flags //
+
+router.post('/removebenefitflag', function (req, res) { 
+  var removebenefitflag = req.session.data['removebenefitflag']
+
+  if (removebenefitflag == 'benefitflagnotremoved') { 
+    res.redirect('/current/record-view/overview-tab/overview-pension-credit-flag')
+  }
+}) 
+
+//* Not removing pension credit / partner benefit flags END//
