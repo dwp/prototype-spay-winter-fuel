@@ -22,30 +22,37 @@ Winter Fuel Payments
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                   <h1 class="govuk-fieldset__heading">
-                    Would you like to add a phone number?
+                    What kind of phone number would you like to add?
                   </h1>
                 </legend>
-                <div id="signIn-hint" class="govuk-hint">
-                  We should have at least one phone number in case we need to contact you.
-              </div>
+                <p class="govuk-body">
+                  We will only use this number to contact you if we have questions about your Winter Fuel Payment.
+              </p>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="which-phone-number" name="which-phone-number" type="radio" value="mobile">
+                  <label class="govuk-label govuk-radios__label" for="which-phone-number">
+                    Home
+                  </label>
+                </div>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="which-phone-number" name="which-phone-number" type="radio" value="mobile">
                     <label class="govuk-label govuk-radios__label" for="which-phone-number">
-                      A mobile number
+                     Mobile
                     </label>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="which-phone-number-2" name="which-phone-number" type="radio" value="work">
                     <label class="govuk-label govuk-radios__label" for="which-phone-number-2">
-                      A work number
+                      Work
                     </label>
                   </div>
                   <div class="govuk-radios__divider">or</div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="which-phone-number-2" name="which-phone-number" type="radio" value="work">
                     <label class="govuk-label govuk-radios__label" for="which-phone-number-3">
-                      No
+                      No phone number
                     </label>
                   </div>
                 </div>
@@ -56,7 +63,7 @@ Winter Fuel Payments
             </button>
           </form>
 
-<p class=govuk-body><a href="#">Cancel home number removal</a></p>
+<p class=govuk-body><a href="#">Cancel phone number removal</a></p>
     </div>
 
 </div>
