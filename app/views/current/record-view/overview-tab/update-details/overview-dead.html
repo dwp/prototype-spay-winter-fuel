@@ -31,7 +31,7 @@ Winter Fuel Payments
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
   
     <div class="moj-banner__message">
-      <span class="moj-banner__assistive">Success</span>Payments stopped - citizen record marked as DEAD
+      <span class="moj-banner__assistive">Success</span>Payments stopped - citizen record marked as Dead
     </div>
   </div>
 
@@ -41,20 +41,19 @@ Winter Fuel Payments
     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
   
     <div class="moj-banner__message">
-      <span class="moj-banner__assistive">Success</span>Payments restarted - DEAD status removed from record
+      <span class="moj-banner__assistive">Success</span>Payments restarted - Dead status removed from record
     </div>
   </div>
  
 {% endif %}
 
             {% include 'current/includes/_tab-overview.html' %}
+            <br>
+            <br>
 
-            
-            <br>
-            <br>
 
         {% if data['alt-format-task']== 'yes' %}
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+        <h2 class="govuk-heading-m">Payment for winter 2022 to 2023</h2>
             <div class="govuk-warning-text">
               <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
               <strong class="govuk-warning-text__text">
@@ -64,7 +63,7 @@ Winter Fuel Payments
             </div>
         {% else %}
             <table class="govuk-table">
-            <h2 class="govuk-heading-m">Payment for winter 2021 to 2022</h2>
+              <h2 class="govuk-heading-m">Payment for winter 2022 to 2023</h2>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header"></th>
@@ -74,7 +73,7 @@ Winter Fuel Payments
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header govuk-!-width-one-third">Payment date</th>
-                  <td class="govuk-table__cell">Monday, 4 November 2021</td>
+                  <td class="govuk-table__cell">Monday, 4 November 2023</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Amount</th>
@@ -88,6 +87,8 @@ Winter Fuel Payments
 
             <table class="govuk-table">
               <h2 class="govuk-heading-m">Current details</h2>
+              <a href="/current/record-view/overview-tab/update-details/update-details-options"><span class="govuk-link govuk-!-font-size-19 govuk-!-margin-left-2" style="float:right">Update details</span>
+              </a>
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header"></th>
@@ -202,13 +203,9 @@ Winter Fuel Payments
               </tbody>
             </table>
 
-            <a href="/current/record-view/overview-tab/update-details/update-details-options"><span class="govuk-link govuk-!-font-size-19">Update details</span>
-            </a>
 
       </div>
-      <div class="govuk-grid-column-one-third">
-        {% include 'current/includes/_history.html' %}
-      </div>
+  
     </div>
 
   </div>
