@@ -20,15 +20,15 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-     
+      {% if data ['update-details'] == 'yes' %}
+         <form method="post" action="/current/record-view/contact-tab/contact-details-phone-warning">
+      {% else %}
+        <form method="post" action="/current/record-view/contact-tab/contact-details-phone-warning">
+      {% endif %}
+            {% include 'current/includes/_bar.html' %}
 
-          {% include 'current/includes/_bar-dead.html' %}
-
-
-          
-
-            <h1 class="govuk-heading-l">Are you sure you want to remove the Dead status from this citizen?</h1>
-            <p>If you select Yes, their future Winter Fuel Payments will be restarted.</p>
+            <h1 class="govuk-heading-l">Are you sure that you want to remove this phone number?</h1>
+            <p><strong>Home phone:</strong>	0141 237 8000</p>
             <form method="post">
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -36,28 +36,23 @@ Winter Fuel Payments
                   </legend>
                   <div class="govuk-radios govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="remove-dead" name="remove-dead" type="radio" value="yes">
-                      <label class="govuk-label govuk-radios__label" for="stop-payments-1">
+                      <input class="govuk-radios__input" id="homephone-change-yes" name="homephone-remove" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="changed-homephone-1">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="remove-dead" name="remove-dead" type="radio" value="no">
-                      <label class="govuk-label govuk-radios__label" for="stop-payments-2">
-                      No
+                      <input class="govuk-radios__input" id="homephone-change-no" name="homephone-remove" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="changed-homephone-2">
+                        No
                       </label>
                     </div>
                   </div>
                 </fieldset>
               </div>
-             
-                
-            
 
               <button type="submit" class="govuk-button">
-                
-                
-                Continue
+                Save
               </button>
             </form>
 
@@ -71,11 +66,6 @@ Winter Fuel Payments
   </main>
   </div>
 
-<script>
-    nextPageRoutes = {
-        'yes': '/current/record-view/overview-tab/update-details/overview-dead?mark-as-dead=no',
-        'no': '/current/record-view/overview-tab/update-details/overview-dead',
-    }   
-</script>
+
 
   {% endblock %}

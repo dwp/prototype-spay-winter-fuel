@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <form method="post" action="/current/record-view/overview-tab/death-arrears/overview-success">
+
+          {% include 'current/includes/_bar-dead.html' %}
+          <span class="govuk-caption-l">Death arrears</span>
+            <h2 class="govuk-heading-l">Name of the death arrears payee</h2>
+
+            <div class="govuk-form-group">
+      <label class="govuk-label" for="payeename">
+        First name
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="payeename" name="payeename" type="text" spellcheck="false" autocomplete="name"><br><br>
+      <label class="govuk-label" for="payeelastname">
+        Last name
+      </label>
+      <input class="govuk-input govuk-!-width-two-thirds" id="payeelastname" name="payeelastname" type="text" spellcheck="false" autocomplete="name"></div>
+
+      <br>
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+
+
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
