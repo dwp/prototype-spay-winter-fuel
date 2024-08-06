@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-eligibility.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+    
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You do not qualify for a Winter Fuel Payment
+      </h1>
+
+      <p class="govuk-body">
+        You do not qualify because you were not receiving Pension Credit or a 
+        means-tested benefit during this week.
+        
+       
+      </p>
+
+      <p class="govuk-body">
+        You can check online if you can apply. Search for 'Pension Credit' on 
+        gov.uk. Or you can call Phone number.
+      </p>
+
+    </div>
+  </div></main>
+
+{% endblock %}
+
+
