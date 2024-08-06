@@ -249,6 +249,17 @@ router.post('/in-the-UK', function (req, res) {
   }
 }) 
 
+router.post('/pc-benefits', function (req, res) { 
+  var pcbenefit = req.session.data['pcbenefit']
+
+  if (pcbenefit == 'yes') { 
+    res.redirect('/current/eligibility-checker/qweek')
+  } 
+  if (pcbenefit == 'no') { 
+    res.redirect('/current/eligibility-checker/otherbenefits')
+  }
+}) 
+
 router.post('/timeperiod-answer-2', function (req, res) { 
   var whendata = req.session.data['whendata']  
 
