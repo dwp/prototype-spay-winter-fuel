@@ -256,8 +256,27 @@ router.post('/pc-benefits', function (req, res) {
     res.redirect('/current/eligibility-checker/qweek')
   } 
   if (pcbenefit == 'no') { 
-    res.redirect('/current/eligibility-checker/otherbenefits')
+    res.redirect('/current/eligibility-checker/otherbenefits-v2')
   }
+}) 
+
+router.post('/meanstested', function (req, res) { 
+  var meanstested = req.session.data['meanstested']
+
+  if (meanstested == 'yes') { 
+    res.redirect('/current/eligibility-checker/qweek')
+  } 
+  if (meanstested == 'no') { 
+    res.redirect('/current/eligibility-checker/ineligible')
+  }
+}) 
+
+router.post('/qualifying1', function (req, res) { 
+  var qualifying1 = req.session.data['qualifying1']
+
+  if (qualifying1 == 'none') { 
+    res.redirect('/current/eligibility-checker/success-eligible')
+  } 
 }) 
 
 router.post('/timeperiod-answer-2', function (req, res) { 
