@@ -39,7 +39,7 @@ Winter Fuel Payments
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="benefitflag" name="benefitflag" type="radio" value="pension-credit-partner">
                       <label class="govuk-label govuk-radios__label" for="pension-credit-partner">
-                        Pension Credit - partner claimant
+                        Child tax credit
                       </label>
                     </div>
                     <div class="govuk-radios__item">
@@ -60,9 +60,40 @@ Winter Fuel Payments
                         Jobseeker's Allowance (IB)
                       </label>
                     </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
+                        Working tax credit
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="living-with-q-week-yes" name="living-with-q-week" type="radio" value="Lives with someone else of State Pension age">
+                      <label class="govuk-label govuk-radios__label" for="living-with-q-week-1">
+                        Universal credit
+                      </label>
+                    </div>
                   </div>
                 </fieldset>
               </div>
+
+              <div class="govuk-form-group">
+                <h1 class="govuk-heading-l" style="margin-bottom:0px;">Main claimant or partner?</h1>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="partneflag" name="partnerflag" type="radio" value="main">
+                      <label class="govuk-label govuk-radios__label" for="partnerflag">
+                        Main claimant
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="partnerflag" name="partnerflag" type="radio" value="partner">
+                      <label class="govuk-label govuk-radios__label" for="partnerflag">
+                        Partner
+                      </label>
+                    </div></div></fieldset></div>
 
               <button type="submit" class="govuk-button">
                 Add flag

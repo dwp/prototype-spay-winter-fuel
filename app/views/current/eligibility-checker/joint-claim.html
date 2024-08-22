@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-eligibility.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+    
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/jointclaim" method="post">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Did you make a joint claim with a partner?
+                    </h1>
+                  </legend>
+
+                  <p class="govuk-body">This means your partner was included on your application for Pension 
+                    Credit or a means-tested benefit.</p>
+                  <div class="govuk-inset-text">A partner is either:
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>your husband, wife or civil partner - if you live with them</li>
+                      <li>someone you live with as a couple, without being married or in a civil partnership</li>
+                    </ul>
+                  </div>
+ 
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="jointclaim" name="jointclaim" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="jointclaim">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="jointclaim" name="jointclaim" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="jointclaim-2">
+                        No
+                      </label>
+                    </div>
+                 
+                  </div>
+                </fieldset>
+              </div>
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
