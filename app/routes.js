@@ -253,7 +253,7 @@ router.post('/pc-benefits', function (req, res) {
   var pcbenefit = req.session.data['pcbenefit']
 
   if (pcbenefit == 'yes') { 
-    res.redirect('/current/eligibility-checker/qweek')
+    res.redirect('/current/eligibility-checker/joint-claim')
   } 
   if (pcbenefit == 'no') { 
     res.redirect('/current/eligibility-checker/otherbenefits-v2')
@@ -264,10 +264,21 @@ router.post('/meanstested', function (req, res) {
   var meanstested = req.session.data['meanstested']
 
   if (meanstested == 'yes') { 
-    res.redirect('/current/eligibility-checker/qweek')
+    res.redirect('/current/eligibility-checker/joint-claim')
   } 
   if (meanstested == 'no') { 
     res.redirect('/current/eligibility-checker/ineligible')
+  }
+}) 
+
+router.post('/jointclaim', function (req, res) { 
+  var jointclaim = req.session.data['jointclaim']
+
+  if (jointclaim == 'yes') { 
+    res.redirect('/current/eligibility-checker/partner-dob')
+  } 
+  if (jointclaim == 'no') { 
+    res.redirect('/current/eligibility-checker/qweek')
   }
 }) 
 
