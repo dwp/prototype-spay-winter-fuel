@@ -231,7 +231,7 @@ router.post('/living-where-1', function (req, res) {
     res.redirect('/current/eligibility-checker/getting-pension')
   } 
   if (whereDoYouLive == 'scotland') { 
-    res.redirect('/current/eligibility-checker/scotland')
+    res.redirect('/current/eligibility-checker/getting-pension')
   }
   if (whereDoYouLive == 'overseas') { 
     res.redirect('/current/eligibility-checker/overseas-question')
