@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-shutter.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Sorry, the service is currently unavailable</h1>
+          <p class="govuk-body">
+            This is because we are updating our systems to let us send out this year's payments. 
+          </p>
+          <p class="govuk-body">
+            The service will be available again from 9am on Monday 7&nbsp;October&nbsp;2024.
+          </p>
+          <h2 class="govuk-heading-m">Eligibility</h2>
+          <p class="govuk-body">
+            I can help you <a class="govuk-link" href="https://spay-eligibility.agent-service.dev.rbcdwp.net/spay-wf-eligibility-frontend/date-of-birth">check if you are eligible</a> for Winter Fuel payments. 
+          </p>
+          <h2 class="govuk-heading-m">Payments</h2>
+          <p class="govuk-body">
+            Most payments will be made automatically in November or December. You'll get a letter telling you:
+            <ul class="govuk-list govuk-list--bullet">
+                <li>how much you'll get</li>
+                <li>which bank account it will be paid into - this is usually the same account as your Pension Credit or other benefits</li>
+            </ul>
+          </p>
+          <h2 class="govuk-heading-m">More information</h2>
+          <p class="govuk-body">You can search for 'Winter Fuel' on GOV.UK for more information.
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+{% endblock %}
