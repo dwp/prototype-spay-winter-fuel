@@ -15,9 +15,9 @@ Winter Fuel Payments
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        {% if (data['benefitflag'] == 'pension-credit') %}
+        {% if (data['benefitflag'] == 'pension-credit') and (data['partnerflag'] == 'main') %}
         {% include 'current/includes/_bar.html' %}
-        {% elif data['benefitflag'] == 'pension-credit-partner' %}
+        {% elif (data['benefitflag'] == 'pension-credit') and (data['partnerflag'] == 'partner') %}
         {% include 'current/includes/_bar-partner-claimant.html' %}
         {% elif data['remove-benefit-flag'] == 'benefit-flag-removed' %}
         {% include 'current/includes/_bar.html' %}
@@ -229,7 +229,7 @@ Winter Fuel Payments
                 <dt class="govuk-summary-list__key">
                   Benefit type
                 </dt>
-                {% if (data['benefitflag'] == 'pension-credit') %}
+                {% if (data['benefitflag'] == 'pension-credit') and (data['partnerflag'] == 'main') %}
                 <dd class="govuk-summary-list__value">
                   Pension Credit
                 </dd>
@@ -243,7 +243,7 @@ Winter Fuel Payments
                     </li>
                   </ul>
                 </dd>
-                {% elif data['benefitflag'] == 'pension-credit-partner' %}
+                {% elif (data['benefitflag'] == 'pension-credit')  and (data['partnerflag'] == 'partner') %}
                 <dd class="govuk-summary-list__value">
                   Pension Credit - partner claimant
                 </dd>
