@@ -71,21 +71,27 @@ Winter Fuel Payments
               </div>
 
               <div class="govuk-form-group">
-                <h1 class="govuk-heading-l" style="margin-bottom:0px;">Main claimant or partner?</h1>
+                <h1 class="govuk-heading-l" style="margin-bottom:0px;">Claimant type</h1>
                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   </legend>
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="partnerflag" name="partnerflag" type="radio" value="sole">
+                      <label class="govuk-label govuk-radios__label" for="partnerflag">
+                        Sole claimant
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="partneflag" name="partnerflag" type="radio" value="main">
                       <label class="govuk-label govuk-radios__label" for="partnerflag">
-                        Main claimant
+                        Joint claim - Main
                       </label>
                     </div>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="partnerflag" name="partnerflag" type="radio" value="partner">
                       <label class="govuk-label govuk-radios__label" for="partnerflag">
-                        Partner
+                       Joint claim - Partner
                       </label>
                     </div></div></fieldset></div>
 

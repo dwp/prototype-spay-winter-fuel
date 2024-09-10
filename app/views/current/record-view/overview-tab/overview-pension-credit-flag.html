@@ -229,9 +229,23 @@ Winter Fuel Payments
                 <dt class="govuk-summary-list__key">
                   Benefit type
                 </dt>
-                {% if (data['benefitflag'] == 'pension-credit') and (data['partnerflag'] == 'main') %}
+                {% if (data['benefitflag'] == 'pension-credit') and (data['partnerflag'] == 'sole') %}
                 <dd class="govuk-summary-list__value">
                   Pension Credit
+                </dd>
+                <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="/current/record-view/overview-tab/update-details/choose-benefit-flag-pc">Change<span class="govuk-visually-hidden"> change benefit flag</span></a>
+                    </li>
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="/current/record-view/overview-tab/remove-benefit-flag">Remove<span class="govuk-visually-hidden"> remove benefit flag</span></a>
+                    </li>
+                  </ul>
+                </dd>
+                {% elif (data['benefitflag'] == 'pension-credit') and (data['partnerflag'] == 'main') %}
+                <dd class="govuk-summary-list__value">
+                  Pension Credit - main claimant
                 </dd>
                 <dd class="govuk-summary-list__actions govuk-!-width-one-third">
                   <ul class="govuk-summary-list__actions-list">
