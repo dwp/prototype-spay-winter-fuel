@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "index",
+  serviceName: serviceName,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+    href: "/current/record-view/find-someone/find",
+    text: "Find someone"
+  },
+  {
+    href: "/current/new-claims/uk/type-of-application",
+    text: "UK new claim"
+  },
+  {
+    href: "/current/new-claims/international/find",
+    text: "International new claim"
+  },
+  {
+    href: "/current/new-EEA/tasks",
+    text: "Tasks"
+  }
+  ]
+}) }}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+        
+                <div>
+                  <h1 class="govuk-heading-xl">
+                      Theodora Best 
+                   <br>
+                    <span class="govuk-body-l">
+                     
+                        XX 12 34 56
+                     
+                   </span><br>
+                   <strong class="govuk-tag govuk-tag--orange">
+                    No qualifying EEA benefit
+                  </strong>
+        
+                  
+                  </h1>
+                </div>
+        
+          </div>
+        </div>
+
+        <form method="post">
+
+       
+            {% include 'current/includes/_tab-overview.html' %}
+
+
+            <br>
+            <br>
+
+            <table class="govuk-table">
+            <h2 class="govuk-heading-m">Payment for winter 2022 to 2023</h2>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+                This person does not qualify because they do not get Pension Credit or a means-tested benefit.
+              </strong>
+            </div>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Next payment amount</th>
+                  <td class="govuk-table__cell">£500</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Next payment date</th>
+                  <td class="govuk-table__cell"> 28 November 2022</td>
+                </tr>
+              </tbody>
+            </table>
+
+<br>
+
+<table class="govuk-table">
+<h2 class="govuk-heading-m">Qualification details 
+  </h2>
+
+  <a href="/current/new-EEA/update-details-options"><span class="govuk-link govuk-!-font-size-19 govuk-!-margin-left-2" style="float:right">Update details</span>
+  </a>
+
+<dl class="govuk-summary-list">
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Age
+  </dt>
+  <dd class="govuk-summary-list__value">
+    66
+  </dd>
+  <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+
+
+    
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Date of birth
+  </dt>
+  <dd class="govuk-summary-list__value">
+1 April 1956
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Via Albarelle 6
+    <br>St-Pierre-de-Clages 
+    <br>1955
+    <br>Switzerland
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Occupancy
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <p>Other eligible people they live with:</p>
+    
+     <p>Under 80: 0
+       <br>80 and over: 0</p>
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    
+  </dd>
+</div>
+
+ 
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Date they moved in
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {% if data['move-date-changed'] == 'true' %}
+    {{data['moveday']}}
+    {% if (data['movemonth'] == '1') or (data['movemonth'] == '01') %} January
+    {% elif (data['movemonth'] == '2') or (data['movemonth'] == '02') %} February
+    {% elif (data['movemonth'] == '3') or (data['movemonth'] == '03') %} March
+    {% elif (data['movemonth'] == '4') or (data['movemonth'] == '04') %} April
+    {% elif (data['movemonth'] == '5') or (data['movemonth'] == '05') %} May
+    {% elif (data['movemonth'] == '6') or (data['movemonth'] == '06') %} June
+    {% elif (data['movemonth'] == '7') or (data['movemonth'] == '07') %} July
+    {% elif (data['movemonth'] == '8') or (data['movemonth'] == '08') %} August
+    {% elif (data['movemonth'] == '9') or (data['movemonth'] == '09') %} September
+    {% elif data['movemonth'] == '10' %} October
+    {% elif data['movemonth'] == '11' %} November
+    {% elif data['movemonth'] == '12' %} December
+    {% endif %}
+    {{data['moveyear']}}
+          {% else %}
+          10 March 2016
+        {% endif %}
+  </dd>
+ 
+  <dd class="govuk-summary-list__actions govuk-!-width-one-third">
+
+  </dd>
+  
+</div>
+
+</dl>
+
+<!--</div>
+<div class="govuk-grid-column-one-third">
+{% include 'current/includes/_history.html' %}
+</div>
+</div>-->
+
+</div>
+</tbody>
+</table>
+
+  </div>
+
+  </main>
+  </div>
+
+  {% endblock %}
