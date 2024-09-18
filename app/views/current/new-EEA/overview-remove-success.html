@@ -1,7 +1,29 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{{ govukHeader({
+  homepageUrl: "index",
+  serviceName: serviceName,
+  serviceUrl: "/index.html",
+  navigation: [
+  {
+    href: "/current/record-view/find-someone/find",
+    text: "Find someone"
+  },
+  {
+    href: "/current/new-claims/uk/type-of-application",
+    text: "UK new claim"
+  },
+  {
+    href: "/current/new-claims/international/find",
+    text: "International new claim"
+  },
+  {
+    href: "/current/new-EEA/tasks",
+    text: "Tasks"
+  }
+  ]
+}) }}
 {% endblock %}
 
 
@@ -16,7 +38,34 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      {% include 'current/includes/_bar.html' %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+        
+                <div>
+                  <h1 class="govuk-heading-xl">
+                      Theodora Best 
+                   <br>
+                    <span class="govuk-body-l">
+                     
+                        XX 12 34 56
+                     
+                   </span><br>
+        
+                  
+                  </h1>
+                </div>
+        
+          </div>
+        </div>
+
+        <div class="moj-banner moj-banner--success">
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+          <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+        
+          <div class="moj-banner__message">
+            <span class="moj-banner__assistive">Success</span>EEA benefit evidence mark as 'Not approved.'
+          </div>
+        </div>
 
         <form method="post">
 
@@ -27,30 +76,8 @@ Winter Fuel Payments
             <br>
             <br>
 
-            
-            
-
-        {%if data['opted-in']== 'yes' %}
-            <h2 class="govuk-heading-m">Payment for winter 2022 to 2023</h2>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-               <span class="govuk-visually-hidden">Warning</span>
-                This person has opted out of receiving Winter Fuel payment. They can <a href="start-payments" class="govuk-link">opt back in</a> at any time.
-              </strong>
-            </div>
-        {% elif data['alt-format-task']== 'yes' %}
-            <h2 class="govuk-heading-m">Payment for winter 2022 to 2023</h2>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-               <span class="govuk-visually-hidden">Warning</span>
-                This person has an outstanding alternative format task. {% if data['wf-agent']== 'yes' %}<a href="/tasks/send-alternative-format/alternative-format" class="govuk-link">Review task</a>{% endif %}
-              </strong>
-            </div>
-        {% else %}
             <table class="govuk-table">
-            <h2 class="govuk-heading-m">Payment for winter 2022 to 2023</h2>
+            <h2 class="govuk-heading-m">Payment for winter 2024 to 2025</h2>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header"></th>
@@ -58,29 +85,24 @@ Winter Fuel Payments
               </tr>
             </thead>
               <tbody class="govuk-table__body">
-                <!--<tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Current entitlement</th>
-                  <td class="govuk-table__cell"></td>
-                </tr>-->
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header govuk-!-width-one-third">Next payment amount</th>
-                  <td class="govuk-table__cell">£500</td>
+                  <td class="govuk-table__cell">£200</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Next payment date</th>
-                  <td class="govuk-table__cell"> 28 November 2022</td>
+                  <td class="govuk-table__cell"> 28 November 2024</td>
                 </tr>
               </tbody>
             </table>
 
-{% endif %}
 <br>
 
 <table class="govuk-table">
 <h2 class="govuk-heading-m">Qualification details 
   </h2>
 
-  <a href="/current/new-EEA/update-details-options"><span class="govuk-link govuk-!-font-size-19 govuk-!-margin-left-2" style="float:right">Update details</span>
+  <a href="/current/new-EEA/update-details-options-not-approve"><span class="govuk-link govuk-!-font-size-19 govuk-!-margin-left-2" style="float:right">Update details</span>
   </a>
 
 <dl class="govuk-summary-list">
@@ -89,7 +111,7 @@ Winter Fuel Payments
     Age
   </dt>
   <dd class="govuk-summary-list__value">
-    66
+    68
   </dd>
   <dd class="govuk-summary-list__actions govuk-!-width-one-third">
 
@@ -115,6 +137,17 @@ Winter Fuel Payments
   </dt>
   <dd class="govuk-summary-list__value">
     Approved
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Qualifying EEA benefit
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Not approved
   </dd>
   <dd class="govuk-summary-list__actions">
    
@@ -186,7 +219,6 @@ Winter Fuel Payments
 </div>
 
 </dl>
-
 
 <!--</div>
 <div class="govuk-grid-column-one-third">
