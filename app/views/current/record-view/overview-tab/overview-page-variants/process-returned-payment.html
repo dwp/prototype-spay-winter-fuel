@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="payment-reissued-banner">
+
+          {% include 'current/includes/_bar.html' %}
+
+         
+
+          <br>
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Account details</h2>
+            <tbody class="govuk-table__body">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Name on the account</th>
+                  <td class="govuk-table__cell">
+                    {% if data.accountholder %}
+                    {{data.accountholder}}
+                    {% else %}
+                  	Theodora Best
+                    {% endif %}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Sort code</th>
+                  <td class="govuk-table__cell">
+                    {% if data.sortcode %}
+                    {{data.sortcode}}
+                    {% else %}
+                    00 11 22
+                    {% endif %}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Account number</th>
+                  <td class="govuk-table__cell">
+                    {% if data.accountnumber %}
+                    {{data.accountnumber}}
+                    {% else %}
+                    12345678
+                    {% endif %}</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Building society roll number</th>
+                  <td class="govuk-table__cell">
+                    {% if data.rollnumber %}
+                    {{data.rollnumber}}
+                    {% else %}
+                    CXJ-K6 897/98X
+                    {% endif %}
+                    </td>
+                </tr>
+
+              </tbody>
+            </tbody>
+          </table>
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h2 class="govuk-heading-m">How do you want to process the payment?</h2>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPaymentProcess" name="returnedPaymentProcess" type="radio" value="reissue">
+                  <label class="govuk-label govuk-radios__label" for="returnedPaymentProcess">
+                    Reissue to the same account
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPaymentProcess-2" name="returnedPaymentProcess" type="radio" value="change">
+                  <label class="govuk-label govuk-radios__label" for="returnedPaymentProcess-2">
+                    Change account details
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPaymentProcess-3" name="returnedPaymentProcess" type="radio" value="no-process">
+                  <label class="govuk-label govuk-radios__label" for="returnedPaymentProcess-3">
+                    Payment cannot be processed
+                  </label>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
