@@ -5,6 +5,8 @@
 {% endblock %}
 
 
+
+
 {% block pageTitle %}
 Winter Fuel Payments
 {% endblock %}
@@ -30,24 +32,22 @@ Winter Fuel Payments
 
             <br>
 
-              <h1 class="govuk-heading-l">Has Scarlett Humphrey provided evidence that 
-                they are receiving an qualifying EEA benefit?</h1>
-                <div id="changedName-hint" class="govuk-hint">
-                  The evidence must be on CAMLite.
-                </div>
+              <h1 class="govuk-heading-l">Is Scarlett Humphrey covered by the Withdrawal Agreement?</h1>
+
+              
 
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="form" name="form" type="radio" value="yes">
-                      <label class="govuk-label govuk-radios__label" for="form">
+                      <input class="govuk-radios__input" id="WA" name="WA" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="WA">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="form-2" name="form" type="radio" value="no">
-                      <label class="govuk-label govuk-radios__label" for="form-2">
+                      <input class="govuk-radios__input" id="WA-2" name="WA" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="WA-2">
                         No
                       </label>
                     </div>
@@ -55,14 +55,14 @@ Winter Fuel Payments
                 </fieldset>
               </div>
 
-              
+
 
               <button type="submit" class="govuk-button">
                 Continue
               </button>
 
 <br><a href="tasks-wa-returned" class="govuk-link">Return this case to the queue</a>
-      
+        
             </form>
 
       </div>
@@ -76,9 +76,9 @@ Winter Fuel Payments
 
   <script>
     nextPageRoutes = {
-        'yes': 'tasks',
-        'no': 'form-no',
+        'yes': 'form',
+        'no': 'tasks-not-approved',
         }
-</script>
+</script>  
 
   {% endblock %}
