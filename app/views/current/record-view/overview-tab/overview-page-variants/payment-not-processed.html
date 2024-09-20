@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="payment-reissued-banner">
+
+          {% include 'current/includes/_bar.html' %}
+
+         
+
+          <br>
+          <br>
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-heading-l">Why has the citizen's payment been returned?</h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPayment" name="returnedPayment" type="radio" value="died">
+                  <label class="govuk-label govuk-radios__label" for="returnedPayment">
+                    Citizen has died
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPayment-2" name="returnedPayment" type="radio" value="dlo">
+                  <label class="govuk-label govuk-radios__label" for="returnedPayment-2">
+                    DLO
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPayment-3" name="returnedPayment" type="radio" value="no-dp-gen">
+                  <label class="govuk-label govuk-radios__label" for="returnedPayment-3">
+                    No response to DP Gen form
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPayment-3" name="returnedPayment" type="radio" value="overseas">
+                  <label class="govuk-label govuk-radios__label" for="returnedPayment-3">
+                    Overseas
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
