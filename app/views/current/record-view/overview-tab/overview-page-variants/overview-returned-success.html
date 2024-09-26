@@ -20,15 +20,17 @@ Winter Fuel Payments
 
         <form method="post">
 
-       
-       <div class="moj-banner moj-banner--success">
-        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
-        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+          <div class="moj-banner moj-banner--success">
 
-        <div class="moj-banner__message">
-          <span class="moj-banner__assistive">Success</span>Returned payment cannot be processed
-        </div>
-      </div>
+            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 25 25" height="25" width="25">
+              <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+
+            <div class="moj-banner__message">
+              <span class="moj-banner__assistive">Success</span>Payment reissued</div>
+
+          </div>
+
+
             {% include 'current/includes/_tab-overview.html' %}
 
 
@@ -37,30 +39,23 @@ Winter Fuel Payments
 
             
             
-
             <table class="govuk-table">
-              <h2 class="govuk-heading-m">2024 Payment</h2>
-              <thead class="govuk-table__head">
+            <h2 class="govuk-heading-m">2024 Payment</h2>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+              <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header"></th>
-                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-third">Current entitlement</th>
+                  <td class="govuk-table__cell">£200</td>
                 </tr>
-              </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header govuk-!-width-one-third">Current entitlement</th>
-                    <td class="govuk-table__cell">£200</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="govuk-warning-text">
-                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                <strong class="govuk-warning-text__text">
-                 <span class="govuk-visually-hidden">Warning</span>
-                  Returned payment cannot be processed by BLS. <br><a href="" class="govuk-link">Process returned payment.</a>
-                </strong>
-              </div>
-             
+              </tbody>
+            </table>
+
+
 <br>
 
 <table class="govuk-table">

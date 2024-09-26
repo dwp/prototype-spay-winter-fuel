@@ -20,16 +20,34 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-
         <form method="post">
-
-        <form method="post" action="payment-not-processed">
-
 
           {% include 'current/includes/_bar.html' %}
 
-          <br>
-          <br>
+          <h1 class="govuk-heading-l">Review returned payment</h1>
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Contact details</h2>
+            <tbody class="govuk-table__body">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Home phone</th>
+                  <td class="govuk-table__cell">
+                    0141 237 678</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Mobile phone</th>
+                  <td class="govuk-table__cell">
+                    07024014823</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Work phone</th>
+                  <td class="govuk-table__cell">
+                    0702401456</td>
+                </tr>
+
+              </tbody>
+            </tbody>
+          </table>
 
           <table class="govuk-table">
             <h2 class="govuk-heading-m">Account details</h2>
@@ -38,46 +56,31 @@ Winter Fuel Payments
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Name on the account</th>
                   <td class="govuk-table__cell">
-                    {% if data.accountholder %}
-                    {{data.accountholder}}
-                    {% else %}
-                  	Theodora Best
-                    {% endif %}</td>
+                    Theodora Best</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Sort code</th>
                   <td class="govuk-table__cell">
-                    {% if data.sortcode %}
-                    {{data.sortcode}}
-                    {% else %}
-                    00 11 22
-                    {% endif %}</td>
+                    101010</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Account number</th>
                   <td class="govuk-table__cell">
-                    {% if data.accountnumber %}
-                    {{data.accountnumber}}
-                    {% else %}
-                    12345678
-                    {% endif %}</td>
+                    12121212</td>
                 </tr>
-
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Building society roll number</th>
                   <td class="govuk-table__cell">
-                    {% if data.rollnumber %}
-                    {{data.rollnumber}}
-                    {% else %}
-                    CXJ-K6 897/98X
-                    {% endif %}
-                    </td>
+                    QQQ-A1 123/45X</td>
                 </tr>
-
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Reason for return of payment</th>
+                  <td class="govuk-table__cell">
+                    No response to DP Gen form</td>
+                </tr>
               </tbody>
             </tbody>
           </table>
-
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
@@ -98,9 +101,15 @@ Winter Fuel Payments
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="returnedPaymentProcess-3" name="returnedPaymentProcess" type="radio" value="no-process">
+                  <input class="govuk-radios__input" id="returnedPaymentProcess-3" name="returnedPaymentProcess" type="radio" value="dead">
                   <label class="govuk-label govuk-radios__label" for="returnedPaymentProcess-3">
-                    Payment cannot be processed
+                    Citizen is dead
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="returnedPaymentProcess-3" name="returnedPaymentProcess" type="radio" value="no-contact">
+                  <label class="govuk-label govuk-radios__label" for="returnedPaymentProcess-3">
+                    Could not contact citizen
                   </label>
                 </div>
                 
@@ -125,7 +134,8 @@ Winter Fuel Payments
   nextPageRoutes = {
       'reissue': 'review-bank-details.html',
       'change': 'change-account-details.html',
-      'no-process': 'payment-not-processed.html',
+      'dead': 'date-of-death.html',
+      'no-contact': 'could-not-contact.html',
   }
 </script>
 
