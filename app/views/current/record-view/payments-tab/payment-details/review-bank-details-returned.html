@@ -14,10 +14,10 @@ Winter Fuel Payments
 
   
 
- <!-- {{ govukBackLink({
+ {{ govukBackLink({
     text: "Back",
     href: "javascript:history.go(-1)"
-  }) }}-->
+  }) }}
 
 
 
@@ -27,7 +27,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="/current/record-view/overview-tab/overview-page-variants/overview-returned-success">
+        <form method="post" action="payment-reissued">
     
           {% include 'current/includes/_bar.html' %}
           
@@ -47,38 +47,24 @@ Winter Fuel Payments
               <tbody class="govuk-table__body">
 
 
-                
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Bank account type</th>
-                  <td class="govuk-table__cell">{{ data ['bank-type'] }} </td>
-                  <td class="govuk-table__cell"><a href="new-bank-type" class="govuk-link">Change</a></td>
+                  <td class="govuk-table__cell">{{ 'EEA or Swiss bank account'}} </td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
                 </tr>
                 
-                {% if data['bank-type']=='UK bank or building society account'%}  
+                
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Bank details</th>
-                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
-                  <td class="govuk-table__cell"><a href="change-account-details.html" class="govuk-link">Change</a></td>
+                  <td class="govuk-table__cell">{{ 'Miss T Best' }} <br> {{ '0987654' }}  <br> {{ 'GB729371839472' }}</td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
                 </tr>
-                {% elseif data['bank-type']=='EEA or Swiss bank account'%}  
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Bank details</th>
-                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
-                  <td class="govuk-table__cell"><a href="change-account-details-int.html" class="govuk-link">Change</a></td>
-                </tr>
-                {% elseif data['bank-type']=='Countries in the Beneficiary Database'%}  
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Bank details</th>
-                  <td class="govuk-table__cell">{{ data ['accountholder'] or '-' }} <br> {{ data ['sortcode'] or '-' }}  <br> {{ data ['accountnumber'] or '-' }} <br> {{ data ['ibanletters']}}</td>
-                  <td class="govuk-table__cell"><a href="change-account-details-ben.html" class="govuk-link">Change</a></td>
-                </tr>
-                {% endif %}
+               
                 
 
               </tbody>
             </table>
 
-            
             <h2 class="govuk-heading-m">Reissue payment details</h2>
 
             <table class="govuk-table">
@@ -109,6 +95,7 @@ Winter Fuel Payments
               </tbody>
             </table>
 
+
             <br>
             <h2 class="govuk-heading-m">Caller declaration</h2>
 
@@ -122,7 +109,7 @@ Winter Fuel Payments
 <br>
   
               <button type="submit" class="govuk-button">
-                Agree and submit
+                Agree and reissue payment
               </button>
 
 
