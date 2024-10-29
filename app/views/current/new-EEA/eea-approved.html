@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-tasks.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <form method="post">
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            GSL approved, citizen covered by Withdrawal Agreement and EEA benefit evidence approved - letter sent and case removed from queue       </h1>
+         
+        </div>
+     
+      
+       
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Get next case
+  </button>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="/current/new-EEA/tasks.html">
+   Return to task list
+  </button>
+</div>
+
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+<script type="text/javascript">
+
+      function handleAction(form) {
+        const cbInternational = document.querySelector('#fix-account-details');
+        const cbOther = document.querySelector('#fix-account-details-2');
+        if (cbInternational.checked || cbOther.checked) {
+          form.action =  "/current/tasks/fix-account-details/bank-task";
+        } else {
+          form.action = "/current/tasks/fix-account-details/tasks-fix-account-details-error";
+        }
+      }
+
+</script>
+{% endblock %}
