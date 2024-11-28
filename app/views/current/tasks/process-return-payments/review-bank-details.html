@@ -27,7 +27,7 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="payment-reissued">
+        <form method="post" action="payment-reissued-2">
     
           {% include 'current/includes/_bar.html' %}
           
@@ -35,35 +35,39 @@ Winter Fuel Payments
             Check reissue payment details
                     </h1>
           
-            <table class="govuk-table">
-             
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header"></th>
-                  <th scope="col" class="govuk-table__header"></th>
-                  <th scope="col" class="govuk-table__header"></th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">
-
-
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Bank account type</th>
-                  <td class="govuk-table__cell">{{ 'EEA or Swiss bank account'}} </td>
-                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
-                </tr>
-                
-                
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Bank details</th>
-                  <td class="govuk-table__cell">{{ 'Miss T Best' }} <br> {{ '0987654' }}  <br> {{ 'GB729371839472' }}</td>
-                  <td class="govuk-table__cell"><a href="" class="govuk-link"></a></td>
-                </tr>
-               
-                
-
-              </tbody>
-            </table>
+                    <table class="govuk-table">
+                      <h2 class="govuk-heading-m">Bank account details</h2>
+                      <tbody class="govuk-table__body">
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header  govuk-!-width-one-third">Bank or building society</th>
+                            <td class="govuk-table__cell">HSBC</td>
+                            <td class="govuk-table__cell"></td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Name on the account</th>
+                            <td class="govuk-table__cell">
+                             
+                              Mrs M H Morrison
+                              </td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Sort code</th>
+                            <td class="govuk-table__cell">
+                            
+                              00 11 22
+                              </td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Account number</th>
+                            <td class="govuk-table__cell">
+                             
+                              12345678
+                              </td>
+                          </tr>
+                        </tbody>
+                      </tbody>
+                    </table>
 
             <h2 class="govuk-heading-m">Reissue payment details</h2>
 

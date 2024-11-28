@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+
+        {% include 'current/includes/_bar-not-covered-wa.html' %}
+
+
+
+            <h1 class="govuk-heading-l">Are you sure you want to remove the NOT COVERED BY WITHDRAWAL AGREEMENT status from this citizen?</h1>
+
+            <form method="post">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="withdrawal" name="covered-wa" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="stop-payments-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="withdrawal" name="covered-wa" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="stop-payments-2">
+                      No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="govuk-inset-text">
+                <p>If you select Yes, their future Winter Fuel Payments may be restarted.</p>
+            </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+            </form>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+<script>
+    nextPageRoutes = {
+        'yes': '/live/record-view/overview-tab/overview-withdrawal-agreement?stop-payments=no&mark-as-dead=no&not-covered-wa=no&not-covered-wa-tag=no',
+        'no': '/live/record-view/overview-tab/overview-withdrawal-agreement?not-covered-wa-tag=yes&not-covered-wa=no',
+
+    }
+
+</script>
+
+  {% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+      <form method="post">
+
+          {% include 'current/includes/_bar.html' %}
+
+
+            <h1 class="govuk-heading-l">Are you sure you want to mark this address as DLO?</h1>
+
+            <p style="padding-bottom:10px">{% if data['address-change'] === '27 Kent Street, Amble, NE65 0LZ' %}
+                27 Kent Street<br>Amble<br>NE65 0LZ
+                      {% else %}
+                      72 Guild Street<br>London<br>SE23 6FH
+                    {% endif %}
+            </p>
+
+            <form method="post">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  </legend>
+                  <div class="govuk-radios govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="mark-as-dlo" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="stop-payments-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="mark-as-dead" name="mark-as-dlo" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="stop-payments-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="govuk-inset-text">
+                <p>If you select Yes, their future Winter Fuel Payments will be stopped.</p>
+            </div>
+
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+            </form>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </main>
+  </div>
+
+<script>
+    nextPageRoutes = {
+        'yes': 'overview-dlo.html',
+        'no': '../overview',
+
+    }
+    
+</script>
+
+  {% endblock %}
