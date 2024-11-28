@@ -25,11 +25,11 @@ Winter Fuel Payments
 
          <br>
          <br>
-         <h1 class="govuk-heading-m">Payment overview2</h1><br>
+         <h1 class="govuk-heading-l">Payment overview</h1><br>
           <div><h2 class="govuk-heading-m" style="float:left;">Account details </h2>
  
           <table class="govuk-table">
-            <a href="/current/record-view/payments-tab/change-account-details/change-account-details.html" ><span class="govuk-link govuk-!-font-size-19" style="margin-left: 60%; float:left">Change</span>
+            <a href="/live/record-view/payments-tab/change-account-details/change-account-details" ><span class="govuk-link govuk-!-font-size-19" style="margin-left: 60%; float:left">Change account details</span>
             </a>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -38,92 +38,38 @@ Winter Fuel Payments
               </tr>
             </thead></div>
 
-            {% if data['intl-account'] == 'yes' %}
             <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Name on the account</th>
-                <td class="govuk-table__cell">
-                  Mrs T D Best
-                 </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
-                <td class="govuk-table__cell">
-                  SBININBB425
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">IBAN</th>
-                <td class="govuk-table__cell">
-                  AT483200000012345864
-                </td>
-              </tr>
-            </tbody>
-            {% else %}
-            <tbody class="govuk-table__body">
-             <!-- <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Bank or building society</th>
-                <td class="govuk-table__cell ">TSB</td>
-                <td class="govuk-table__cell"></td>
-              </tr>-->
+            
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Name on the account</th>
                 <td class="govuk-table__cell">
-                  {% if data['accountholder'] %}
-                  {{data['accountholder']}}
-                  {% else %}
                   T Best
-                  {% endif %}
+                 
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Sort code</th>
                 <td class="govuk-table__cell">
-                  {% if data['sortcode'] %}
-                  {{data['sortcode']}}
-                  {% else %}
                   00 11 22
-                  {% endif %}
                 </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Account number</th>
                 <td class="govuk-table__cell">
-                  {% if data['accountnumber'] %}
-                  {{data['accountnumber']}}
-                  {% else %}
                   12345678
-                  {% endif %}
                 </td>
               </tr>
-              {% if data['rollnumber'] %}
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Building society roll number (if there is one)</th>
-                <td class="govuk-table__cell">
-                  {{data['rollnumber']}}
-                </td>
-              </tr>
-              {% endif %}
             </tbody>
-            {% endif %}
           </table>
-
-         <br>
-        
 
         <h2 class="govuk-heading-m" style="margin-bottom:25px">Payments</h2>
 
-         <!-- <a class="govuk-button" data-module="govuk-button" href="/current/record-view/payments-tab/payment-details/previous-payment.html" >
-           Add manual payment</a>-->
 
            <div class="govuk-button-group">
             <a class="govuk-button govuk-!-margin-right-2" data-module="govuk-button" href="/current/record-view/payments-tab/manual-payment/request-manual-payment-which-exercise" >
               Request manual payment</a>
-            <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="/current/record-view/overview-tab/update-details/stop-payments-reason">
-              Stop payments
-            </button> -->
           </div>
-<br>
-          <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2022/2023</h3>
+
+          <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2024/2025</h3>
 
           <table class="govuk-table">
            
@@ -138,7 +84,7 @@ Winter Fuel Payments
               
  
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">4 November 2022</td>
+                 <td class="govuk-table__cell">4 November 2024</td>
                  <td class="govuk-table__cell">£200</td>
                  <td class="govuk-table__cell">
                    {% if data.reissued %}
@@ -158,7 +104,7 @@ Winter Fuel Payments
            </table>
 
  
-           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2021/2022</h3>
+           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2023/2024</h3>
 
           <table class="govuk-table">
              
@@ -170,14 +116,14 @@ Winter Fuel Payments
                  <th scope="col" class="govuk-table__header"></th>
                </tr>
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">26 January 2022</td>
+                 <td class="govuk-table__cell">26 January 2023</td>
                  <td class="govuk-table__cell">£100</td>
                  <td class="govuk-table__cell">Sent</td>
                  <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment.html" class="govuk-link">Details</a></td>
                </tr>
  
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">4 November 2022</td>
+                 <td class="govuk-table__cell">4 November 2023</td>
                  <td class="govuk-table__cell">£200</td>
                  <td class="govuk-table__cell">
                    {% if data.reissued %}
@@ -194,7 +140,7 @@ Winter Fuel Payments
                </tr>
  
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">20 November 2021</td>
+                 <td class="govuk-table__cell">20 November 2023</td>
                  <td class="govuk-table__cell">£200</td>
                  <td class="govuk-table__cell">Sent</td>
                  <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment.html" class="govuk-link">Details</a></td>
@@ -204,7 +150,7 @@ Winter Fuel Payments
 
 
 
-           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2020/2021</h3>
+           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2022/2023</h3>
 
           <table class="govuk-table">
              
@@ -229,59 +175,7 @@ Winter Fuel Payments
 
 
 
-         <!--<table class="govuk-table">
-            <a href="/current/record-view/overview-tab/update-details/stop-payments-reason" <span class="govuk-link govuk-!-font-size-19" style="margin-left: 61%">Stop payments</span>
-            </a>
-            
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Exercise</th>
-                <th scope="col" class="govuk-table__header">Payment date</th>
-                <th scope="col" class="govuk-table__header">Amount</th>
-                <th scope="col" class="govuk-table__header">Status</th>
-                <th scope="col" class="govuk-table__header"></th>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">2022/2023</td>
-                <td class="govuk-table__cell">26 January 2022</td>
-                <td class="govuk-table__cell">£100</td>
-                <td class="govuk-table__cell">Sent</td>
-                <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment.html" class="govuk-link">Details</a></td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">2022/2023</td>
-                <td class="govuk-table__cell">4 November 2020</td>
-                <td class="govuk-table__cell">£200</td>
-                <td class="govuk-table__cell">
-                  {% if data.reissued %}
-                  Reissued
-                  {% elseif data.returnedreason or data['mark-as-returned'] == 'yes' %}
-                  Failed
-                  {% else %}
-                  Sent
-                  {% endif %}</td>
-
-
-                <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment-mark-as-not-returned.html" class="govuk-link">
-                  Details</a></td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">2022/2023</td>
-                <td class="govuk-table__cell">20 November 2019</td>
-                <td class="govuk-table__cell">£200</td>
-                <td class="govuk-table__cell">Sent</td>
-                <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment.html" class="govuk-link">Details</a></td>
-              </tr>
-            </tbody>
-          </table>
-
-      </div>-->
-
-      <!--<div class="govuk-grid-column-one-third">
-          {% include 'current/includes/_history.html' %}
-      </div>-->
+         
 
     </div>
 
