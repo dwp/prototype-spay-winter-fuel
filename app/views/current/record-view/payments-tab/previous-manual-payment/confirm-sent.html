@@ -25,9 +25,52 @@ Winter Fuel Payments
         {% include 'current/includes/_bar.html' %}
 
         <form method="post" action="payments-done">
-                <h1 class="govuk-heading-l">Confirm the payment has been submitted and sent via CPS</h1>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Enter the date the payment was submitted and sent on CPS
+                </h1>
+              </legend>
+              <div id="payment-date-hint" class="govuk-hint">
+                The payment needs to be sent and approved on CPS before being added to the Winter Fuel Service.
+              </div>
+              <div class="govuk-date-input" id="payment-date-">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="payment-date--day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="payment-date--day" name="payment-date--day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="payment-date--month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="payment-date--month" name="payment-date--month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="payment-date--year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="payment-date--year" name="passport-issued-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+
+
+                <!-- <h1 class="govuk-heading-l">Confirm the payment has been submitted and sent via CPS</h1>
                
-                <p class="govuk-body">They payment needs to be sent and approved on CPS before being added to the Winter Fuel Service.</p>
+                <p class="govuk-body">They payment needs to be sent and approved on CPS before being added to the Winter Fuel Service.</p> -->
                 
               </div>
             </div>
