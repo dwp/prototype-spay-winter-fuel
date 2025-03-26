@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+  
+
+ {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="payment-reissued-2">
+    
+          {% include 'current/includes/_bar.html' %}
+          
+          <h1 class="govuk-heading-l">
+            Check date of death detaiils
+                    </h1>
+          
+                    <table class="govuk-table">
+                      
+                      <tbody class="govuk-table__body">
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header  govuk-!-width-one-third">Reason for returned payment</th>
+                            <td class="govuk-table__cell">Citizen is dead</td>
+                            <td class="govuk-table__cell"><a href="" class="govuk-link">Change</a></td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header  govuk-!-width-one-third">Date of death</th>
+                            <td class="govuk-table__cell">16 February 2024</td>
+                            <td class="govuk-table__cell"><a href="" class="govuk-link">Change</a></td>
+                          </tr>
+                      
+                        </tbody>
+                      </tbody>
+                    </table>
+
+
+            <br>
+            <h2 class="govuk-heading-m">What happens next</h2>
+
+            <p>Depending on the date of death, a death arrears task may be created.</p>
+      
+  
+<br>
+  
+              <button type="submit" class="govuk-button">
+                Continue
+              </button>
+              <p><a href="/current/tasks/tasks" class="govuk-link">Return this case to the queue</a></p>
+
+
+          </form>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+
+
+
+
+{% endblock %}
