@@ -27,12 +27,12 @@ Winter Fuel Payments
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="payment-reissued-2">
+        <form method="post" action="marked-as-dead">
     
           {% include 'current/includes/_bar.html' %}
           
           <h1 class="govuk-heading-l">
-            Check date of death detaiils
+            Check date of death details
                     </h1>
           
                     <table class="govuk-table">
@@ -40,7 +40,7 @@ Winter Fuel Payments
                       <tbody class="govuk-table__body">
                         <tbody class="govuk-table__body">
                           <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header  govuk-!-width-one-third">Reason for returned payment</th>
+                            <th scope="row" class="govuk-table__header  govuk-!-width-one-third">Process the payment</th>
                             <td class="govuk-table__cell">Citizen is dead</td>
                             <td class="govuk-table__cell"><a href="" class="govuk-link">Change</a></td>
                           </tr>
@@ -58,10 +58,10 @@ Winter Fuel Payments
             <br>
             <h2 class="govuk-heading-m">What happens next</h2>
 
-            <p>Depending on the date of death, a death arrears task may be created.</p>
+            <p>A death arrears task will be created if the citizen was eligible for a payment during qualifying week.</p>
       
   
-<br>
+
   
               <button type="submit" class="govuk-button">
                 Continue
