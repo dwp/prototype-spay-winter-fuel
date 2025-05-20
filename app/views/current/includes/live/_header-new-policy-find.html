@@ -1,26 +1,34 @@
+
 {% include "current/includes/cookie-banner.html" %}
 {# Set serviceName in config.js. #}
-{{ govukHeader({
-  homepageUrl: "index",
-  serviceName: serviceName,
-  serviceUrl: "/index.html",
-  navigation: [
-  {
-    href: "x",
-    text: "Find someone",
-    active: true
-  },
-  {
-    href: "x",
-    text: "International new claim"
-  },
-  {
-    href: "x",
-    text: "Tasks"
-  },
-  {
-    href: "x",
-    text: "Check eligibility"
-  }
-  ]
-}) }}
+{% from "internal-service-header/macro.njk" import dwpHeader %}
+
+{{
+    dwpHeader({
+        serviceName: "Winter Fuel Service",
+        serviceHref: '/index.html',
+        container: true,
+        navigation: {
+          selectedItem: "x",
+          items: [
+              {
+                  href: "/live/record-view/overview-tab/x",
+                  text: "Find someone",
+                  selectedItem: "true"
+              },
+              {
+                  href: "x",
+                  text: "International new claim"
+              },
+              {
+                  href: "x",
+                  text: "Tasks"
+              },
+              {
+                  href: "x",
+                  text: "Check eligibility"
+              }
+          ]
+      }  
+    })
+}}

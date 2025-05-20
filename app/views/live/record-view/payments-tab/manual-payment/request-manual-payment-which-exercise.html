@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block header %}
-{% include 'current/includes/_header.html' %}
+{% include 'current/includes/live/_header-new-policy-find.html' %}
 {% endblock %}
 
 
@@ -26,29 +26,28 @@ Winter Fuel Payments
       
 
 
-          <form method="post">
+          <form method="post" action="request-manual-payment-reason">
 
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <h1 class="govuk-heading-l">
-                Which exercise is this CPS payment for?
+                Which exercise is this manual payment for?
               </h1>
                  
                 <div id="more-detail-hint" class="govuk-hint">
                 
                 </div>
 
-                <div class="govuk-radios govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="live-yes" name="last-year" type="radio" value="2022/2023">
-                    <label class="govuk-label govuk-radios__label" for="live-yes">
-                      2023/2024
-                    </label> </div>
               <div class="govuk-radios govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="live-yes" name="last-year" type="radio" value="2023/2024">
+                  <input class="govuk-radios__input" id="live-yes" name="last-year" type="radio" value="2021/2022">
                   <label class="govuk-label govuk-radios__label" for="live-yes">
+                    2023/2024
+                  </label> </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="live-no" name="last-year" type="radio" value="2022/2023">
+                  <label class="govuk-label govuk-radios__label" for="live-no">
                     2024/2025
                   </label> </div>
               </div>
@@ -71,11 +70,5 @@ Winter Fuel Payments
 </main>
 </div>
 
-<script>
-  nextPageRoutes = {
-      '2023/2024': 'payment-reason',
-      
-  }   
-</script>
 
 {% endblock %}
