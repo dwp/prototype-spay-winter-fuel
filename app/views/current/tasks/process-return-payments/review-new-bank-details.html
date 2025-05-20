@@ -12,7 +12,10 @@ Winter Fuel Payments
 
 {% block content %}
 
-
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
 
 
 <div class="govuk-width-container">
@@ -39,7 +42,11 @@ Winter Fuel Payments
               </thead>
               <tbody class="govuk-table__body">
 
-
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header  govuk-!-width-one-third">Process the payment</th>
+                  <td class="govuk-table__cell">Change account details</td>
+                  <td class="govuk-table__cell"><a href="process-returned-payment" class="govuk-link">Change</a></td>
+                </tr>
                 
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Bank account type</th>

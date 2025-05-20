@@ -1,2 +1,27 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "internal-service-footer/macro.njk" import dwpFooter %}
+
+{% block footer %}
+{{
+    dwpFooter({
+        meta: {
+            visuallyHiddenTitle: "About this website",
+            items: [
+            {
+                href: "",
+                text: "Accessibility statement"
+            },
+            {
+                href: "",
+                text: "Privacy"
+            },
+            {
+                href: "/manage-prototype/clear-data",
+                text: "Clear data"
+              }
+            ]
+        }
+    }) 
+}}
+{% endblock %}
 
