@@ -8,12 +8,12 @@
   "dependencies": {
     "@dwp/dwp-frontend": "2.8.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.2",
+    "@govuk-prototype-kit/step-by-step": "2.2.3",
     "@govuk-prototype-kit/task-list": "2.0.0",
-    "@ministryofjustice/frontend": "2.1.2",
-    "govuk-frontend": "5.3.0",
-    "govuk-prototype-kit": "13.16.2",
-    "hmrc-frontend": "6.16.0",
+    "@ministryofjustice/frontend": "2.2.5",
+    "govuk-frontend": "5.11.1",
+    "govuk-prototype-kit": "13.17.0",
+    "hmrc-frontend": "6.76.0",
     "jquery": "3.7.1",
     "notifications-node-client": "5.2.3"
   }
