@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-eligibility.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+    
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/pc-benefits" method="post" novalidate>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Which of the following are you in receipt of?
+                    </h1>
+                  </legend>
+                  <div id="benefits-hint" class="govuk-hint">
+                    Select all that apply.
+                  </div>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="SP">
+                        <label class="govuk-label govuk-checkboxes__label" for="benefits">
+                          State pension
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="benefits-2" name="benefits" type="checkbox" value="PC">
+                        <label class="govuk-label govuk-checkboxes__label" for="benefits-2">
+                          Pension credit
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="benefits-3" name="benefits" type="checkbox" value="UC">
+                        <label class="govuk-label govuk-checkboxes__label" for="benefits-3">
+                          Universal credit
+                        </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="benefits-4" name="benefits" type="checkbox" value="none">
+                          <label class="govuk-label govuk-checkboxes__label" for="benefits-4">
+                            None of the above
+                          </label>
+                          </div>
+                          
+                          <div class="govuk-checkboxes__divider">or</div>
+                          
+                      
+                        </div>
+                      </div>
+                    </div>
+                </fieldset>
+              </div>
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

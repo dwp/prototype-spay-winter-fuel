@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-eligibility.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+    
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/qualifying1" method="post" novalidate>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Which of the following describes your situation during the week of 16 to 22 September 2024?
+                    </h1>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="qualifying1" name="qualifying1" type="radio" value="hospital">
+                      <label class="govuk-label govuk-radios__label" for="qualifying">
+                        Staying in an NHS hospital
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="qualifying1" name="qualifying1" type="radio" value="carehome">
+                      <label class="govuk-label govuk-radios__label" for="qualifying">
+                        Living in a care or nursing home
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="qualifying1" name="qualifying1" type="radio" value="noabode">
+                      <label class="govuk-label govuk-radios__label" for="qualifying">
+                        No fixed abode
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="qualifying1" name="qualifying1" type="radio" value="prison">
+                      <label class="govuk-label govuk-radios__label" for="qualifying">
+                       In prison for the whole week
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="qualifying1" name="qualifying1" type="radio" value="none">
+                      <label class="govuk-label govuk-radios__label" for="qualifying">
+                       None of these
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

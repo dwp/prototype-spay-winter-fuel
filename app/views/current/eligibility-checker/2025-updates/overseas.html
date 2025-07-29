@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+{% include 'current/includes/_header-eligibility.html' %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You are not eligible for Winter Fuel Payment
+      </h1>
+
+      <p class="govuk-body">
+       You might still get the payment if you live in Switzerland or a European Economic Area (EEA) country.
+      </p>
+
+      <p class="govuk-body">
+        You need to have a genuine and sufficient link to the UK though - this can include having lived and worked in the UK.
+      </p>
+
+      <div class="govuk-inset-text">
+        You cannot get the payment if you live in Cyprus, France, Gibraltar, Greece, Malta, Portugal or Spain because the average winter temperature there is higher than the warmest region in the UK.
+      </div>
+
+      <p class="govuk-body">
+        You can call +44 0191 218 7777 to make an overseas claim for a Winter Fuel Payment.
+         </p>
+         <p class="govuk-body">
+          Alternatively, visit www.gov.uk and search for 'Winter Fuel' to download the claim forms.
+         </p>
+    </div>
+  </div>
+
+{% endblock %}

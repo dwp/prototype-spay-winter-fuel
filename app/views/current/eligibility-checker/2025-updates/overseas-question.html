@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-eligibility.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+      
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/in-the-UK" method="post" novalidate>
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      Did you live in England, Wales or Northern Ireland at any time during the week of 15 to 21 September 2024?
+                    </h1>
+                  </legend>
+                  <div class="govuk-inset-text">
+                    This means you were permanently living in the country, and not just visiting.
+                  </div>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="inUk" name="inUk" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="inUk">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="inUk-2" name="inUk" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="inUk-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+{% endblock %}
+

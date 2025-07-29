@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header-eligibility.html' %}
+{% endblock %}
+
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+    
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            You qualify for a Winter Fuel payment of £200
+          </h1>
+        </div>
+        <p class="govuk-body">
+          For winter 2024, we worked out your payment during the week of 16 to 22 September. This is called "qualifying week."
+         </p>
+
+         <p class="govuk-body">
+          Based on the information you have given us, you may qualify for £200. This is because you were under 80 years old and getting Pension Credit during this year's qualifying week.
+         </p>
+
+         <p class="govuk-body">
+          If we confirm that you qualify for a payment, you should receive a letter in the post confirming the payment details.
+         </p>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
+
+
