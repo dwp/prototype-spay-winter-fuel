@@ -22,7 +22,7 @@ Winter Fuel Payments
       <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <form action="/pc-benefits" method="post" novalidate>
+            <form action method="post" novalidate>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -59,7 +59,7 @@ Winter Fuel Payments
                           </label>
                           </div>
                           
-                          <div class="govuk-checkboxes__divider">or</div>
+                        
                           
                       
                         </div>
@@ -77,6 +77,15 @@ Winter Fuel Payments
 
     </div>
   </div>
+
+  <script>
+    nextPageRoutes = {
+        'SP': '/current/eligibility-checker/2025-updates/livingwithDOB1',
+        'PC': '/current/eligibility-checker/2025-updates/joint-claim',
+        'UC': '/current/eligibility-checker/2025-updates/joint-claim',
+        'none': '/current/eligibility-checker/2025-updates/otherbenefits-v2',}
+  </script>
+
 
 {% endblock %}
 
