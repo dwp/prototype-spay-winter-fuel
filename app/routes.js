@@ -224,6 +224,86 @@ router.post('/qualifying', function (req, res) {
 })
 /////////// CHECKBOXES END ///////////
 
+// /////////// CHECKBOXES START ///////////
+// // The checkRoute function compares the desired checkbox combination against the ones the user actually selected
+// function checkRoute(route, data){
+  
+//   /* Checks to see if the actual selection and the desired selection arrays are the same length.
+//   this immediately discounts options where the user has selected a different number of checkboxes
+//   than we want to compare. For example, we want to check if they selected two checkboxes but they only selected one
+//   this if statement will immediately discount this route and return false */
+//   if(route.length !== data.length) return false;
+  
+//   /* A Set is an object that stores only unique values. The three dots is called a Spread Operator and we are using them
+//   to combine two arrays, 'route' and 'data'. By adding them to a set any duplicate values will be removed */
+//   var comp = new Set([...route, ...data]);
+
+//   // 'For of' loops through each item in an array. In this case it's looping through the items in the 'comp' set
+//   for(var i of comp){
+
+//       /* We create two variables: 'a' and 'b' to store the length of two arrays. We are using the filter method to check to
+//       see if the current item of the 'comp' Set is in the 'route' and 'data' arrays. If the value is found in the array, the 
+//       respective variable will be equal to 1 and if it isn't found it will equal 0. */
+//       var a = route.filter(cb => cb === i).length;
+//       var b = data.filter(cb => cb === i).length;
+
+//       /* If the length of both arrays isn't the same then this isn't the correct route. The function will return
+//       false and try the next route. If the array lengths are the same it will continue on to check the next
+//       item in the 'comp' Set */
+//       if(a !== b) return false;
+//   }
+//   /* If the all of the values in the 'comp' Set return true then this route is the correct one. The function will return
+//   true and the page will be redirected to the specified page */
+//   return true;
+// }
+
+// // Checkboxe routing logic
+// router.post('/1benefits', function (req, res) {
+//   // Get the checkboxes that were selected on the page
+//   var fromPage = req.session.data['benefits1'];
+
+//   /* Set up which checkbox value combinations result in a different route. The values used here should match the 'value'
+//   attribute of the checkbox */
+//   var route1 = ["SP",];
+//   var route2 = ["PC", ];
+//   var route3 = ["UC",];
+
+//   /* This passes the values we assigned to route1 and the options the user selected onto the page into the checkRoute function */
+//   if(checkRoute(route1, fromPage)){
+
+//     // If the checkRoute function returns true, the page will be redirected to the one specified
+//     res.redirect('/current/eligibility-checker/2025-updates/livingiwthDOB1')
+//   }
+//   else if(checkRoute(route2, fromPage)){
+//     res.redirect('/current/eligibility-checker/2025-updates/joint-claim')
+//   }
+//   else if(checkRoute(route3, fromPage)){
+//     res.redirect('/current/eligibility-checker/2025-updates/joint-claim')
+//   }
+//   else {
+//     // If none of the routes match the selection then it will fall back and redirect to this page
+//     res.redirect('/current/eligibility-checker/2025-updates/otherbenefits-v2')
+//   }  
+// })
+// /////////// CHECKBOXES END ///////////
+
+router.post('/benefitsquestion', function (req, res) { 
+  var benefits = req.session.data['benefits']  
+
+  if (benefits == 'SP') { 
+    res.redirect('/current/eligibility-checker/2025-updates/livingiwthDOB1')
+  } 
+  if (benefits == 'PC') { 
+    res.redirect('/current/eligibility-checker/2025-updates/joint-claim')
+  }
+  if (benefits == 'UC') { 
+    res.redirect('/current/eligibility-checker/2025-updates/joint-claim')
+  }
+  if (benefits == 'none') { 
+    res.redirect('/current/eligibility-checker/2025-updates/otherbenefits-v2')
+  }
+}) 
+
 router.post('/living-where-1', function (req, res) { 
   var whereDoYouLive = req.session.data['whereDoYouLive']  
 

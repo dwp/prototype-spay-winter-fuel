@@ -22,27 +22,25 @@ Winter Fuel Payments
       <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
-            <form action="/in-the-UK" method="post" novalidate>
+            <form action="qweek" method="post" novalidate>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                      Did you live in England, Wales or Northern Ireland at any time during the week of 16 to 22 September 2025?
+                      Were you living with anyone born before 15 September 1945?
                     </h1>
                   </legend>
-                  <div class="govuk-inset-text">
-                    This means you were permanently living in the country, and not just visiting.
-                  </div>
+                  
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="inUk" name="inUk" type="radio" value="yes">
-                      <label class="govuk-label govuk-radios__label" for="inUk">
+                      <input class="govuk-radios__input" id="dob" name="dob" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="dob">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="inUk-2" name="inUk" type="radio" value="no">
-                      <label class="govuk-label govuk-radios__label" for="inUk-2">
+                      <input class="govuk-radios__input" id="dob-2" name="dob" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="dob">
                         No
                       </label>
                     </div>
@@ -59,12 +57,6 @@ Winter Fuel Payments
 
     </div>
   </div>
-
-  <script>
-    nextPageRoutes = {
-        'yes': '/current/eligibility-checker/2025-updates/benefits1',
-        'no': '/current/eligibility-checker/2025-updates/overseas',}
-  </script>
 
 {% endblock %}
 
