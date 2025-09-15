@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="stop-payments-sure">
+
+          {% include 'current/includes/_bar.html' %}
+
+          
+
+          <br>
+          <br>
+
+                    <table class="govuk-table">
+                      <h2 class="govuk-heading-l">Payment details</h2>
+                   
+                      <thead class="govuk-table__head">
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header govuk-!-width-one-third">Exercise</th>
+                          <td class="govuk-table__cell">2025/2026</td>
+                          <td class="govuk-table__cell"></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header govuk-!-width-one-third">Payment date</th>
+                          <td class="govuk-table__cell">Monday 4 November 2024</td>
+                          <td class="govuk-table__cell"></td>
+                        </tr>
+                      </tr><tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Payment type</th>
+                        <td class="govuk-table__cell">Manual payment</td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Amount</th>
+                          <td class="govuk-table__cell">£200</td>
+                          <td class="govuk-table__cell"></td>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">Status</th>
+                          <td class="govuk-table__cell">Scheduled</td>
+                          <td class="govuk-table__cell"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+          <p><a href="confirm-mark-payment-as-returned" class="govuk-link">Mark payment as FAILED</a></p>
+
+          <br>
+
+          <table class="govuk-table">
+            <h2 class="govuk-heading-m">Qualification details</h2>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Age</th>
+                <td class="govuk-table__cell">66</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">
+                  {% if data['address-change'] %}
+                  {{data['address-change'].split(', ').join('<br />') | safe }}
+                  {% elif data.address %}
+                  {{data.address.split(', ').join('<br />') | safe}}
+                  {% else %}
+                  1 Victoria Road<br>
+                FALKIRK<br>
+                FK55 8XN
+                  {% endif %}
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Occupancy details</th>
+                <td class="govuk-table__cell"> {% if data['living-with'] %}
+                  {{data['living-with']}}
+                  {% else %}
+                Does not live with someone else who gets Winter Fuel Payment
+                  {% endif %}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="govuk-heading-m">Account details</h3>
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-width-one-third">Name on the account</th>
+                <td class="govuk-table__cell">
+                  {% if data.accountholder %}
+                  {{data.accountholder}}
+                  {% else %}
+                  Mrs T D Best
+                  {% endif %}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">BIC or SWIFT code</th>
+                <td class="govuk-table__cell">
+                  {% if data.rollnumber %}
+                  {{data.rollnumber}}
+                  {% else %}
+                  SBININBB425
+                  {% endif %}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">IBAN</th>
+                <td class="govuk-table__cell">
+                  {% if data.accountnumber %}
+                  {{data.accountnumber}}
+                  {% else %}
+                  AT483200000012345864
+                  {% endif %}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Stop payment
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
