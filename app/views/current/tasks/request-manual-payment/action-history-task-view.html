@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+       
+
+        <form method="post">
+
+          {% include 'current/includes/_bar_2.html' %}
+
+
+          <h2 class="govuk-heading-m" id="0">
+            Exercise 2024/2025
+          </h2>
+
+            <table class="govuk-table">
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" style="width:25%">Date</th>
+                  <th scope="col" class="govuk-table__header" style="width:60%">Action</th>
+                  <th scope="col" class="govuk-table__header" >By</th>
+                  <th scope="col" class="govuk-table__header" ></th>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" >12 Oct 2024 11:01 </td>
+                  <td class="govuk-table__cell" >Annual payment - letter scheduled</td>
+                  <td class="govuk-table__cell" >WFS</td>
+                </tr>
+  
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" >12 Oct 2024 11:01 </td>
+                  <td class="govuk-table__cell" >Payment of £500 scheduled for 28 November 2024</td>
+                  <td class="govuk-table__cell" >WFS</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" >11 Oct 2024 08:20</td>
+                  <td class="govuk-table__cell" >Full entitlement / under 80 - lives with no one else over state pension age</td>
+                  <td class="govuk-table__cell" >WFS</td>
+                </tr>
+      
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" >11 Oct 2024 08:20</td>
+                  <td class="govuk-table__cell" >Eligible for 2022/2023 </td>
+                  <td class="govuk-table__cell" >WFS</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" >11 Oct 2024 03:00 </td>
+                  <td class="govuk-table__cell" >Data load: change of bank details   </td>
+                  <td class="govuk-table__cell" >GySP</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" >10 Oct 2024 15:00 </td>
+                  <td class="govuk-table__cell" >Data load: change of address </td>
+                  <td class="govuk-table__cell" >D&A</td>
+                </tr>
+
+
+
+              </tbody>
+            </table>
+            </form>
+            </div>
+            </div>
+            </main>
+            </div>
+
+{% endblock %}
