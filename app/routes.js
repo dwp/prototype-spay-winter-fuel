@@ -447,3 +447,60 @@ router.post('/removebenefitflag', function (req, res) {
 }) 
 
 //* Not removing pension credit / partner benefit flags END//
+
+// Residential addresses
+
+router.post('/live/record-view/overview-tab/update-details', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-address-uk'); 
+
+}); 
+ 
+router.post('/live/record-view/overview-tab/residential-address-uk', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-address-1'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-address-1', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-move-date'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-address-search', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-move-date'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-move-date', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-living-with'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-living-with', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-living-with-2'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-living-with-2', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-declaration'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-declaration', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-overpayment'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-overpayment', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/overview-residential-address'); 
+
+}); 
+ 

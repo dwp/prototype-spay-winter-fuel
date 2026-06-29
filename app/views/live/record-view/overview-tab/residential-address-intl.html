@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form method="post" action="/live/record-view/overview-tab/residential-address-search">
+
+          {% include 'current/includes/_bar.html' %}
+
+
+
+
+
+            <h2 class="govuk-heading-l">International address</h2>
+
+
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="correspondence-search-line-1">
+                Address line 1<span class="govuk-visually-hidden">line 1</span>
+              </label>
+              <input class="govuk-input" id="correspondence-search-line-1" name="correspondence-search-line-1" type="text">
+            </div>
+
+                        <div class="govuk-form-group">
+              <label class="govuk-label" for="correspondence-search-line-1">
+                Address line 2<span class="govuk-visually-hidden">line 2</span>
+              </label>
+              <input class="govuk-input" id="correspondence-search-line-1" name="correspondence-search-line-1" type="text">
+            </div>
+
+                        <div class="govuk-form-group">
+              <label class="govuk-label" for="correspondence-search-line-1">
+                Address line 3 (optional)<span class="govuk-visually-hidden">line 3</span>
+              </label>
+              <input class="govuk-input" id="correspondence-search-line-1" name="correspondence-search-line-1" type="text">
+            </div>
+
+                        <div class="govuk-form-group">
+              <label class="govuk-label" for="correspondence-search-line-1">
+                Address line 4 (optional)<span class="govuk-visually-hidden">line 4</span>
+              </label>
+              <input class="govuk-input" id="correspondence-search-line-1" name="correspondence-search-line-1" type="text">
+            </div>
+
+                        <div class="govuk-form-group">
+              <label class="govuk-label" for="correspondence-search-line-1">
+                Address line 5 (optional)<span class="govuk-visually-hidden">line 5</span>
+              </label>
+              <input class="govuk-input" id="correspondence-search-line-1" name="correspondence-search-line-1" type="text">
+            </div>
+
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="correspondence-search-county">
+                Country
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="correspondence-search-county" name="correspondence-search-county" type="text" autocomplete="country">
+            </div>
+
+
+
+            <button type="submit" class="govuk-button">
+              Continue
+            </button>
+
+          </form>
+
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}
