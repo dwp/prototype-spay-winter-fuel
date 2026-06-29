@@ -34,6 +34,14 @@ Winter Fuel Payments
 
               <div class="govuk-radios govuk-radios" data-module="govuk-radios-">
                 <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dead" name="update-details-options" type="radio" value="address" data-aria-controls="conditional-carehome-conditional">
+                  <label class="govuk-label govuk-radios__label" for="carehome-conditional">
+                      Update details, including current address and occupancy
+                  </label>
+                </div>
+
+                             <div class="govuk-radios govuk-radios" data-module="govuk-radios-">
+                <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="dead" name="update-details-options" type="radio" value="dead" data-aria-controls="conditional-carehome-conditional">
                   <label class="govuk-label govuk-radios__label" for="carehome-conditional">
                     {% if data['mark-as-dead']=='yes' %}
