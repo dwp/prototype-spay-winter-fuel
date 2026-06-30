@@ -18,7 +18,13 @@ Winter Fuel Payments
 
         <form method="post">
 
-          {% include 'current/includes/_bar.html' %}
+
+      {% include 'current/includes/_bar.html' %} 
+      <strong class="govuk-tag govuk-tag--orange">
+  Ineligible country
+</strong>
+
+<br><br><br><br>
           
 
           {% include 'current/includes/live/_tab-payments.html' %}
@@ -29,7 +35,7 @@ Winter Fuel Payments
           <div><h2 class="govuk-heading-m" style="float:left;">Account details </h2>
  
           <table class="govuk-table">
-            <a href="/live/record-view/payments-tab/change-account-details/change-account-details" ><span class="govuk-link govuk-!-font-size-19" style="margin-left: 60%; float:left">Change account details</span>
+            <a href="/live/record-view/payments-tab/change-account-details/change-account-details" ><span class="govuk-link govuk-!-font-size-19" style="margin-left: 60%; float:left">Change</span>
             </a>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -61,6 +67,8 @@ Winter Fuel Payments
             </tbody>
           </table>
 
+<br>
+
         <h2 class="govuk-heading-m" style="margin-bottom:25px">Payments</h2>
 
 
@@ -69,8 +77,13 @@ Winter Fuel Payments
               Request manual payment</a>
           </div>
 
+          
+          
+
           <h3 class="govuk-heading-s" style="margin-bottom:25px">Exercise 2024/2025</h3>
 
+
+          
           <table class="govuk-table">
            
              
@@ -84,19 +97,13 @@ Winter Fuel Payments
               
  
                <tr class="govuk-table__row">
-                 <td class="govuk-table__cell">4 November 2024</td>
+                 <td class="govuk-table__cell">4 November 2025</td>
                  <td class="govuk-table__cell">£200</td>
                  <td class="govuk-table__cell">
-                   {% if data.reissued %}
-                   Reissued
-                   {% elseif data.returnedreason or data['mark-as-returned'] == 'yes' %}
-                   Failed
-                   {% else %}
-                   Sent
-                   {% endif %}</td>
+                   Overpaid</td>
  
  
-                 <td class="govuk-table__cell"><a href="/current/record-view/payments-tab/payment-details/previous-payment-mark-as-not-returned.html" class="govuk-link">
+                 <td class="govuk-table__cell"><a href="/live/record-view/payments-tab/overpayment/details" class="govuk-link">
                    Details</a></td>
                </tr>
  
