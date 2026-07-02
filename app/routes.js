@@ -474,6 +474,19 @@ router.post('/live/record-view/overview-tab/residential-address-search', functio
 
 }); 
 
+
+router.post('/live/record-view/overview-tab/residential-address-intl', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-move-date-intl'); 
+
+}); 
+
+router.post('/live/record-view/overview-tab/residential-move-date-intl', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-declaration'); 
+
+}); 
+
 router.post('/live/record-view/overview-tab/residential-move-date', function (req, res) { 
 
   res.redirect('/live/record-view/overview-tab/residential-living-with'); 
