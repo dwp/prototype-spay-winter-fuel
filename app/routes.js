@@ -531,3 +531,11 @@ router.post('/live/record-view/overview-tab/residential-overpayment-intl', funct
   res.redirect('/live/record-view/overview-tab/overview-residential-address-intl'); 
 
 }); 
+
+// Tweaks to correspondence address
+
+router.post('/current/record-view/contact-tab/correspondence-address/correspondence-address-1', function (req, res) { 
+
+  res.redirect('/current/record-view/contact-tab/contact-details'); 
+
+}); 
