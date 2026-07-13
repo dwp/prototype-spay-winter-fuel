@@ -481,12 +481,6 @@ router.post('/live/record-view/overview-tab/residential-address-intl', function 
 
 }); 
 
-router.post('/live/record-view/overview-tab/residential-move-date-intl', function (req, res) { 
-
-  res.redirect('/live/record-view/overview-tab/residential-declaration'); 
-
-}); 
-
 router.post('/live/record-view/overview-tab/residential-move-date', function (req, res) { 
 
   res.redirect('/live/record-view/overview-tab/residential-living-with'); 
@@ -516,4 +510,24 @@ router.post('/live/record-view/overview-tab/residential-overpayment', function (
   res.redirect('/live/record-view/overview-tab/overview-residential-address'); 
 
 }); 
+
+// Intl journey split
+
+router.post('/live/record-view/overview-tab/residential-move-date-intl', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-declaration-intl'); 
+
+}); 
  
+
+router.post('/live/record-view/overview-tab/residential-declaration-intl', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/residential-overpayment-intl'); 
+
+}); 
+ 
+router.post('/live/record-view/overview-tab/residential-overpayment-intl', function (req, res) { 
+
+  res.redirect('/live/record-view/overview-tab/overview-residential-address-intl'); 
+
+}); 
