@@ -29,7 +29,7 @@ Winter Fuel Payments
 
             <form method="post">
 
-              <h2 class="govuk-heading-l">Can you confirm your full address?</h2>
+              <h1 class="govuk-heading-l">Can you confirm your full address?</h1>
 
               <p><b>10</b> addresses found for <b>"{% if data['correspondence-house-number'] %}
                                   {{data['correspondence-house-number']}}
@@ -129,24 +129,26 @@ Winter Fuel Payments
                         </strong>
                       </label>
                     </div>
-                    <div class="govuk-radios__item">
+                    <!-- <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="residential-address-search" name="residential-address-search" type="radio" value="no address found">
                       <label class="govuk-label govuk-radios__label" for="residential-address-search">
                         The address has not been found
                       </label>
-                    </div>
+                    </div> -->
                   
                   </div>
                 </fieldset>
               </div>
 
               <button type="submit" class="govuk-button">
-                Continue
+                Use this address
               </button>
                <input type="hidden" name="residential-address-changed" value="true">
                 <input type="hidden" name="residential-address-remove" value="no">
                 <input type="hidden" name="contact-details-changed" value="true">
                 <input type="hidden" name="from-contact-tab" value="true">
+
+<p><a href="/live/record-view/overview-tab/residential-address-search">Enter address manually</a></p>
 
             </form>
 
