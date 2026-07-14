@@ -487,12 +487,6 @@ router.post('/live/record-view/overview-tab/residential-move-date', function (re
 
 }); 
 
-router.post('/live/record-view/overview-tab/residential-living-with', function (req, res) { 
-
-  res.redirect('/live/record-view/overview-tab/residential-living-with-2'); 
-
-}); 
-
 router.post('/live/record-view/overview-tab/residential-living-with-2', function (req, res) { 
 
   res.redirect('/live/record-view/overview-tab/residential-declaration'); 
@@ -539,3 +533,13 @@ router.post('/current/record-view/contact-tab/correspondence-address/corresponde
   res.redirect('/current/record-view/contact-tab/contact-details'); 
 
 }); 
+
+router.post('/live/record-view/overview-tab/residential-living-with', function(request, response) {
+
+	var date = request.session.data['1959']
+	if (date == "1969yes"){
+		response.redirect("/live/record-view/overview-tab/residential-living-with-2")
+	} else {
+		response.redirect("/live/record-view/overview-tab/residential-declaration")
+	}
+})
