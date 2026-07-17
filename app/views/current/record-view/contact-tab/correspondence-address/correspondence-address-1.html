@@ -43,7 +43,7 @@ Winter Fuel Payments
                                                 {% endif %}"</b></p> -->
 
 <p class="govuk-body">
-              <strong>3 </strong>addresses found for <strong>"8"</strong> and <strong>"PL6 6WJ"</strong> <a href="/current/record-view/contact-tab/correspondence-address/correspondence-address-uk" class="govuk-link govuk-!-margin-left-1"> Search again</a>
+              <!-- <strong>3 </strong>addresses found for <strong>"8"</strong> and <strong>"PL6 6WJ"</strong> <a href="/current/record-view/contact-tab/correspondence-address/correspondence-address-uk" class="govuk-link govuk-!-margin-left-1"> Search again</a> -->
            
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -131,16 +131,21 @@ Winter Fuel Payments
                         </strong>
                       </label>
                     </div>
-                  
+                                      <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="residential-address-search" name="residential-address-search" type="radio" value="no address found">
+                      <label class="govuk-label govuk-radios__label" for="residential-address-search">
+                        The address has not been found
+                      </label>
+                    </div>
                   </div>
                 </fieldset>
               </div>
 
               <button type="submit" class="govuk-button">
-                Use this address
+                Continue
               </button>
 
-<p><a href="/current/record-view/contact-tab/correspondence-address/correspondence-address-search">Enter address manually</a></p>
+<!-- <p><a href="/current/record-view/contact-tab/correspondence-address/correspondence-address-search">Enter address manually</a></p> -->
 
                <input type="hidden" name="correspondence-address-changed" value="true">
                 <input type="hidden" name="correspondence-address-remove" value="no">
