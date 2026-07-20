@@ -10,7 +10,7 @@ metadata:
     gitlab.com/project-slug: dwp/user-centred-design/prototype-spay-winter-fuel
 
   labels:
-    dwp.gov.uk/version: unknown
+    dwp.gov.uk/version: 1.0.0
     dwp.gov.uk/license: unknown
 
     dwp.gov.uk/last-verified.by: gemma.chapman
