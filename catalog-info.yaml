@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: prototype.interface.prototype-spay-winter-fuel
-  title: prototype-spay-winter-fuel
+  title: Prototype-Spay-Winter-Fuel
   description: |
     TODO: add description for prototype-spay-winter-fuel.
 
