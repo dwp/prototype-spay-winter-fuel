@@ -19,7 +19,7 @@ Winter Fuel Payments
 
 
        
-          
+          <form class="form" action="/current/tasks/send-alternative-format/alternative-format-closed" method="post">
 
          <div class="govuk-width-container">
   <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
@@ -37,14 +37,21 @@ Winter Fuel Payments
 </div>
             
 
-<div class="govuk-button-group">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    View next request
-  </button>
-  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Return to task list
-  </button>
-</div>
+<button
+  type="submit"
+  class="govuk-button"
+  name="nextaction"
+  value="continue">
+  View next request
+</button>
+
+<button
+  type="submit"
+  class="govuk-button govuk-button--secondary"
+  name="nextaction"
+  value="return">
+  Return to task list
+</button>
 
           </form>
 
