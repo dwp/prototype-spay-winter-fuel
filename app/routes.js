@@ -3,6 +3,7 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 
+const { formatErrorMessage } = require('govuk-frontend/dist/govuk/common/index.mjs');
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 const util = require('util')
@@ -546,3 +547,35 @@ router.post('/residential-1959', function (request, response) {
   }
 
 })
+
+
+router.post('/residential-1959', function (request, response) {
+
+  var date = request.session.data['tasks-radio-4']
+
+  if (date === '1959yes') {
+    response.redirect('/live/record-view/overview-tab/residential-living-with-2')
+  } else {
+    response.redirect('/live/record-view/overview-tab/residential-declaration')
+  }
+
+})
+
+
+// Alternative formats
+
+router.post('/format-answer', function(request, response) {
+
+	var country = request.session.data['format']
+	if (country == "Completed"){
+		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm")
+	}
+  	if (country == "NoContact"){
+		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-postponed")
+	}
+  	if (country == "NoDetails"){
+		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-closed")
+	}
+
+})
+

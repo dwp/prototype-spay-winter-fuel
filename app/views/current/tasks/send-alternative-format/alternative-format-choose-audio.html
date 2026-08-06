@@ -22,13 +22,7 @@ Winter Fuel Payments
        
 
           {% include 'current/includes/_bar_2.html' %}
-          
-
-          <form method="post" action="next-task">
-
-
-
-            
+         
 
             <h1 class="govuk-heading-l">Alternative format task</h1>
             <table class="govuk-table">
@@ -146,48 +140,40 @@ Winter Fuel Payments
 
 <br>
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-       What is the outcome of this task?
-      </h2>
-    </legend>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact" name="TaskOutcome" type="radio" value="email" data-aria-controls="conditional-contact">
-        <label class="govuk-label govuk-radios__label" for="contact">
-          Completed order
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-by-email">
-            Order reference number
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="TaskOutcome" type="email" spellcheck="false" autocomplete="email">
-        </div>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="TaskOutcome" type="radio" value="england">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-          Could not contact citizen
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="TaskOutcome" type="radio" value="england">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-          No valid contact details for the citizen
-        </label>
-      </div>
-      </div>
-    </div>
+    <form class="form" action="/format-answer" method="post">
 
-            
+{{ govukRadios({
+  name: "format",
+  value: data['format'],
+  fieldset: {
+    legend: {
+      text: "What is the outcome of this task?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Completed",
+      text: "Completed order"
+    },
+    {
+      value: "NoContact",
+      text: "Could not contact citizen"
+    },
+    {
+      value: "NoDetails",
+      text: "No valid contact details for the citizen"
+    }
+  ]
+}) }}
 
-            <button type="submit" class="govuk-button">
-              Confirm
-            </button>
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+
 
 <br><a href="/current/tasks/tasks-returned-to-queue" class="govuk-link">Return this case to the queue</a>
    
