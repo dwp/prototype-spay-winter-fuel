@@ -579,3 +579,9 @@ router.post('/format-answer', function(request, response) {
 
 })
 
+
+router.post('/current/tasks/send-alternative-format/alternative-format-shipping-date', function (req, res) { 
+
+  res.redirect('/current/record-view/contact-tab/contact-details'); 
+
+}); 

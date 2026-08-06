@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% include 'current/includes/_header.html' %}
+{% endblock %}
+
+{% block pageTitle %}
+Winter Fuel Payments
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+            {% include 'current/includes/_bar_2.html' %}
+
+       <div class="govuk-form-group">
+
+        <form class="form" action="/current/tasks/send-alternative-format/alternative-format-shipping-date" method="post">
+
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="shipping-date">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+       What's the shipping date?
+      </h1>
+    </legend>
+    <div id="shipping-date" class="govuk-hint">
+      For example, 27 3 2024
+    </div>
+    <div class="govuk-date-input" id="shipping-date">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="shipping-date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="shipping-date-day" name="shipping-date-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="shipping-date-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="shipping-date-month" name="shipping-date-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="shipping-date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="shipping-date-year" name="shipping-date-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+      
+         <button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</form>
+      </div>
+
+    </div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

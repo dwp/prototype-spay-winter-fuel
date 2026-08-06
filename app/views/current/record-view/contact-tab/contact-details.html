@@ -204,8 +204,49 @@ Winter Fuel Payments
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/current/record-view/contact-tab/preferred-language/confirm-change-language-welsh">Change<span class="govuk-visually-hidden"> preferred language</span></a>
               </dd>
+</div>
+           <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Alternative format
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Paper
+              </dd>
             </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Last recorded shipping date
+              </dt>
+<dd class="govuk-summary-list__value">
+  {% if data['shipping-date-day'] %}
+    {{ data['shipping-date-day'] }}/{{ data['shipping-date-month'] }}/{{ data['shipping-date-year'] }}
+  {% else %}
+    No shipping date recorded
+  {% endif %}
+</dd>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-summary-list__actions-list">
+                  {% if not data.shipping-date or data['shipping-date'] === 'yes'%}
+                  <li class="govuk-summary-list__actions-list-item govuk-!-width-one-third">
+                    <a class="govuk-link" href="/current/tasks/send-alternative-format/alternative-format-shipping-date">Add<span class="govuk-visually-hidden">date</span></a>
+                  </li>
+                  {% else %}
+                  <li class="govuk-summary-list__actions-list-item">
+                    <a class="govuk-link" href="/current/tasks/send-alternative-format/alternative-format-shipping-date">Change<span class="govuk-visually-hidden">date</span></a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </dd>
+            </div>
+
+
           </dl>
+
+        
+
+      </div>
 
         
 
