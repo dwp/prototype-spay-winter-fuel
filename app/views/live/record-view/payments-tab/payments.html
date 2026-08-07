@@ -20,7 +20,18 @@ Winter Fuel Payments
           
            {% include 'current/includes/_bar.html' %}
 
+
+{% if data.ineligibleCountry == "yes" %}
+  {{ govukTag({
+    text: "Ineligible country",
+    classes: "govuk-tag--orange"
+  }) }}
+
+  <br><br><br>
+{% endif %}
+
           {% include 'current/includes/live/_tab-payments.html' %}
+
 
          <br>
          <br>

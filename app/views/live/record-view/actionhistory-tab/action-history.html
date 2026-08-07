@@ -20,10 +20,19 @@ Winter Fuel Payments
 
         <form method="post">
 
-      
+{% if data.ineligibleCountry == "yes" %}
+  {{ govukTag({
+    text: "Ineligible country",
+    classes: "govuk-tag--orange"
+  }) }}
+
+  <br><br><br>
+{% endif %}
 
             {% include 'current/includes/live/_tab-actionhistory.html' %}
 
+
+            
 <br>
 <br>
 <h1 class="govuk-heading-l">Action history</h1>

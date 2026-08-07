@@ -622,3 +622,10 @@ router.post('/current/tasks/send-alternative-format/alternative-format-confirm-p
   }
 
 })
+
+
+router.get('/live/record-view/overview-tab/residential-address-intl', function (req, res) {
+  req.session.data.ineligibleCountry = 'yes'
+  res.render('live/record-view/overview-tab/residential-address-intl')
+})
+
