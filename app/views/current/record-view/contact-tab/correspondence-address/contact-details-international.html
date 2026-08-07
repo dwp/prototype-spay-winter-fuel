@@ -28,7 +28,7 @@ Winter Fuel Payments
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Address details changed
+      Correspondence address updated
     </h3>  
   </div>
 </div>
@@ -167,64 +167,7 @@ Change<span class="govuk-visually-hidden"> mobile number</span>
 
               </tr>
 
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Alternative format</th>
-
-
-                <td class="govuk-table__cell">
-              {% if data['alternative-format'] !== 'remove' %}
-                  {% if data['alternative-format'] %}
-                  {{data['alternative-format']}}
-                {% endif %}
-
-                {% if data['alternative-format'] === 'Welsh language' %}
-                {% if data['large'] === 'Large print (default - size 16)' %}
-                  <br>Large print (default - size 16)
-                {% if data['large-2'] === 'Large print (custom size)' %}
-                  <br>Large print (custom size)
-                {% endif %}
-                {% endif %}
-                {% endif %}
-
-                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (custom size)' %}
-                  {% if data['large-print'] %}
-                  <br>{{data['large-print']}}
-                {% endif %}
-                {% endif %}
-
-                {% if data['alternative-format'] === 'Welsh language' or data['alternative-format'] === 'Large print (default - size 16)' or data['alternative-format'] === 'Large print (custom size)' %}
-                  {% if data['bold'] === 'yes' %}
-                  <br>Bold
-                {% endif %}
-                {% endif %}
-
-                {% if data['colour'] %}
-                  : <br>
-                  {% if data['colour'] %}
-                  {{data['colour']}}
-                {% endif %}
-                {% endif %}
-
-
-              {% endif %}
-
-                </td>
-
-
-                <td class="govuk-table__cell">
-                  <a href="/current/record-view/contact-tab/alt-formats/alt.html">
-                  {% if data['alternative-format'] !== 'remove' %}
-                    {% if data['alternative-format'] %}
-                    Change<span class="govuk-visually-hidden"> alternative format.</span>
-                    {% else %}
-                    Add<span class="govuk-visually-hidden"> alternative format.</span>
-                    {% endif %}
-                     {% else %}
-                    Add
-                  {% endif %}
-                  </a>
-                </td>
-                </tr>
+          
 
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">Preferred language</th>

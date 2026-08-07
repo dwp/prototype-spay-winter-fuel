@@ -527,10 +527,13 @@ router.post('/live/record-view/overview-tab/residential-overpayment-intl', funct
 
 }); 
 
+
+
+
 // Tweaks to correspondence address
 
 router.post('/current/record-view/contact-tab/correspondence-address/correspondence-address-1', function (req, res) { 
-
+req.session.data.successMessage = "Correspondence address updated"
   res.redirect('/current/record-view/contact-tab/contact-details'); 
 
 }); 
@@ -561,6 +564,13 @@ router.post('/residential-1959', function (request, response) {
 
 })
 
+router.post('/live/record-view/overview-tab/residential-address-1', function(req, res) {
+
+  delete req.session.data.ineligibleCountry
+
+  res.redirect('/live/record-view/overview-tab/residential-address-1')
+
+})
 
 // Alternative formats
 
@@ -584,7 +594,7 @@ router.post('/format-answer', function(request, response) {
 
 
 router.post('/current/tasks/send-alternative-format/alternative-format-shipping-date', function (req, res) { 
-
+req.session.data.successMessage = "Shipping date added"
   res.redirect('/current/record-view/contact-tab/contact-details'); 
 
 }); 
@@ -643,5 +653,10 @@ router.post('/current/tasks/send-alternative-format/alternative-format-confirm-n
 router.get('/live/record-view/overview-tab/residential-address-intl', function (req, res) {
   req.session.data.ineligibleCountry = 'yes'
   res.render('live/record-view/overview-tab/residential-address-intl')
+})
+
+router.get('/current/tasks/send-alternative-format/alternative-format-shipping-date-change-link', function (req, res) {
+  req.session.data.successMessage = "Shipping date updated"
+  res.redirect('/current/record-view/contact-tab/contact-details')
 })
 

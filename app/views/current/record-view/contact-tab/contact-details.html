@@ -17,18 +17,31 @@ Winter Fuel Payments
 
         <form method="post">
 
-      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+{% if data.successMessage %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success"
+     role="alert"
+     aria-labelledby="govuk-notification-banner-title"
+     data-module="govuk-notification-banner">
+
   <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    <h2 class="govuk-notification-banner__title"
+        id="govuk-notification-banner-title">
       Success
     </h2>
   </div>
+
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      Correspondence address updated
-    </h3>  
+      {{ data.successMessage }}
+    </h3>
   </div>
+
+  
+
 </div>
+
+{% endif %}
 
           {% include 'current/includes/_bar.html' %}
 
@@ -234,7 +247,7 @@ Winter Fuel Payments
                   </li>
                   {% else %}
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="/current/tasks/send-alternative-format/alternative-format-shipping-date">Change<span class="govuk-visually-hidden">date</span></a>
+                    <a class="govuk-link" href="/current/tasks/send-alternative-format/alternative-format-shipping-date-change">Change<span class="govuk-visually-hidden">date</span></a>
                   </li>
                   {% endif %}
                 </ul>
