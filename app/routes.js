@@ -571,10 +571,13 @@ router.post('/format-answer', function(request, response) {
 		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm")
 	}
   	if (country == "NoContact"){
-		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-postponed")
+		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-no-contact")
 	}
   	if (country == "NoDetails"){
-		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-closed")
+		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-no-details")
+	}
+    	if (country == "NotNeeded"){
+		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-not-needed")
 	}
 
 })

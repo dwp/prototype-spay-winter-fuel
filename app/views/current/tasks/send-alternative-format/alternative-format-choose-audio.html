@@ -142,6 +142,20 @@ Winter Fuel Payments
 
     <form class="form" action="/format-answer" method="post">
 
+{% set completedHtml %}
+  {{ govukInput({
+    id: "completedReason",
+    name: "completedReason",
+    classes: "govuk-input--width-10",
+    label: {
+      text: "Order reference number"
+    },
+    attributes: {
+      required: "required"
+    }
+  }) }}
+{% endset %}
+
 {{ govukRadios({
   name: "format",
   value: data['format'],
@@ -155,7 +169,10 @@ Winter Fuel Payments
   items: [
     {
       value: "Completed",
-      text: "Completed order"
+      text: "Completed order",
+      conditional: {
+        html: completedHtml
+      }
     },
     {
       value: "NoContact",
@@ -164,6 +181,10 @@ Winter Fuel Payments
     {
       value: "NoDetails",
       text: "No valid contact details for the citizen"
+    },
+        {
+      value: "NotNeeded",
+      text: "Citizen no longer wants an alternative format"
     }
   ]
 }) }}
