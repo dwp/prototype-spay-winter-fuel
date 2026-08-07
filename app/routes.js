@@ -590,7 +590,20 @@ router.post('/current/tasks/send-alternative-format/alternative-format-shipping-
 }); 
 
 
-router.post('/current/tasks/send-alternative-format/alternative-format-closed', function (req, res) {
+router.post('/current/tasks/send-alternative-format/alternative-format-no-details', function (req, res) {
+
+  const buttonClicked = req.body.nextaction
+
+  if (buttonClicked === 'continue') {
+    res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio')
+  } else if (buttonClicked === 'return') {
+    res.redirect('/current/tasks/tasks')
+  }
+
+})
+
+
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm-not-needed', function (req, res) {
 
   const buttonClicked = req.body.nextaction
 
@@ -614,7 +627,7 @@ router.post('/current/tasks/send-alternative-format/alternative-format-confirm',
 
 })
 
-router.post('/current/tasks/send-alternative-format/alternative-format-confirm-postponed', function (req, res) {
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact', function (req, res) {
 
   const buttonClicked = req.body.nextaction
 
