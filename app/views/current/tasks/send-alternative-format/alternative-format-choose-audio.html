@@ -191,25 +191,22 @@ Use this information to complete blank fields in the letter template.</span>
               </table>
               <br><br>
 
-    <form class="form" action="/format-answer" method="post">
+    <form class="form" action="/alternative-format-outcome" method="post">
 
 {% set completedHtml %}
   {{ govukInput({
-    id: "completedReason",
-    name: "completedReason",
+    id: "order-number",
+    name: "order-number",
     classes: "govuk-input--width-10",
     label: {
       text: "Order number"
-    },
-    attributes: {
-      required: "required"
     }
   }) }}
 {% endset %}
 
 {{ govukRadios({
-  name: "format",
-  value: data['format'],
+  name: "outcome",
+  value: data['outcome'],
   fieldset: {
     legend: {
       text: "What is the outcome of this task?",
@@ -247,9 +244,10 @@ Use this information to complete blank fields in the letter template.</span>
 </form>
 
 
-<br><a href="/current/tasks/tasks-returned-to-queue" class="govuk-link">Return this case to the queue</a>
+<br>
+<a href="/current/tasks/tasks-returned-to-queue" class="govuk-link">Return this case to the queue</a>
    
-          </form>
+ 
 
       </div>
 

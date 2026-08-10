@@ -574,23 +574,27 @@ router.post('/live/record-view/overview-tab/residential-address-1', function(req
 
 // Alternative formats
 
-router.post('/format-answer', function(request, response) {
+router.post('/alternative-format-outcome', function (req, res) {
 
-	var country = request.session.data['format']
-	if (country == "Completed"){
-		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm")
-	}
-  	if (country == "NoContact"){
-		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-no-contact")
-	}
-  	if (country == "NoDetails"){
-		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-no-details")
-	}
-    	if (country == "NotNeeded"){
-		response.redirect("/current/tasks/send-alternative-format/alternative-format-confirm-not-needed")
-	}
+  switch (req.session.data['outcome']) {
+    case 'Completed':
+      return res.redirect('/current/tasks/send-alternative-format/alternative-format-confirm')
 
+    case 'NoContact':
+      return res.redirect('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact')
+
+    case 'NoDetails':
+      return res.redirect('/current/tasks/send-alternative-format/alternative-format-confirm-no-details')
+
+    case 'NotNeeded':
+      return res.redirect('/current/tasks/send-alternative-format/alternative-format-confirm-not-needed')
+
+    default:
+      return res.redirect('back')
+  }
 })
+
+
 
 
 router.post('/current/tasks/send-alternative-format/alternative-format-shipping-date', function (req, res) { 
@@ -600,7 +604,20 @@ req.session.data.successMessage = "Shipping date added"
 }); 
 
 
-router.post('/current/tasks/send-alternative-format/alternative-format-no-details', function (req, res) {
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm-no-details', function (req, res) {
+
+  const buttonClicked = req.body.nextaction
+
+  if (buttonClicked === 'continue') {
+    res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio')
+  } else if (buttonClicked === 'return') {
+    res.redirect('/current/tasks/tasks')
+  }
+
+})
+
+
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact-three', function (req, res) {
 
   const buttonClicked = req.body.nextaction
 
