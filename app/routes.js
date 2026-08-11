@@ -13,11 +13,11 @@ router.post('*', function (req, res, next) {
   console.log(req.body);
 
   if (req.body['next-page']) {
-    res.redirect(req.body['next-page']);
-  } else {
-    next();
-  }
-});
+//     res.redirect(req.body['next-page']);
+//   } else {
+//     next();
+//   }
+// });
 
 router.use((req, res, next) => {
   if (req.method === 'POST') {
