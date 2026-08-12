@@ -18,7 +18,7 @@ router.post('*', function (req, res, next) {
     nextPage.startsWith('/') &&
     !nextPage.startsWith('//')
   ) {
-    return res.redirect(nextPage);
+    return res.redirect(encodeURI(nextPage));
   }
 
   next();
