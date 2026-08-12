@@ -24,6 +24,7 @@ router.post('*', function (req, res, next) {
   next();
 });
 
+
 router.use((req, res, next) => {
   if (req.method === 'POST') {
     console.log(JSON.stringify(req.session.data, null, 2))
