@@ -9,14 +9,19 @@ const router = govukPrototypeKit.requests.setupRouter()
 const util = require('util')
 
 
+// allow internal routes and block external
 router.post('*', function (req, res, next) {
-  console.log(req.body);
+  const nextPage = req.body['next-page'];
 
-  if (req.body['next-page']) {
-    res.redirect(req.body['next-page']);
-  } else {
-    next();
+  if (
+    typeof nextPage === 'string' &&
+    nextPage.startsWith('/') &&
+    !nextPage.startsWith('//')
+  ) {
+    return res.redirect(nextPage);
   }
+
+  next();
 });
 
 router.use((req, res, next) => {
