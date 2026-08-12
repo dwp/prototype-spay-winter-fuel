@@ -63,19 +63,14 @@ Use this information to complete blank fields in the letter template.</span>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">name</th>
       <td class="govuk-table__cell">Name</td>
-      <td class="govuk-table__cell">Theodora Best</td>
+      <td class="govuk-table__cell">THEODORA BEST</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">addressLines and postCode</th>
       <td class="govuk-table__cell">Address</td>
-      <td class="govuk-table__cell">72 Guild Street
-        <br>London
+      <td class="govuk-table__cell">72 GUILD STREET
+        <br>LONDON
         <br>SE23 6FH</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">date</th>
-      <td class="govuk-table__cell">Today's date</td>
-      <td class="govuk-table__cell">{today's date}</td>
     </tr>
         <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">nino</th>
@@ -107,12 +102,6 @@ Use this information to complete blank fields in the letter template.</span>
       <td class="govuk-table__cell">Date opt out reopens</td>
       <td class="govuk-table__cell">{date opt out reopens}</td>
     </tr>
-        <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">reason1</th>
-      <td class="govuk-table__cell">Reason for entitlement</td>
-      <td class="govuk-table__cell">they were born on or before 
-27 September 1946</td>
-    </tr>
   </tbody>
 </table>
 <br><br>
@@ -121,10 +110,7 @@ Use this information to complete blank fields in the letter template.</span>
             <div class="govuk-grid-column-two-thirds">
             <table class="govuk-table">
 <caption class="govuk-table__caption govuk-table__caption--m">
-  Other customer details<br>
-  <span class="govuk-body"; style="color:#484949; style="display:block;">
-    Use these details to work out if any statement from the Reason 2 dropdown menu are relevant.
-  </span>
+  Other customer details
 </caption>              
 <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
@@ -217,14 +203,14 @@ Use this information to complete blank fields in the letter template.</span>
   items: [
     {
       value: "Completed",
-      text: "Completed order",
+      text: "Order complete",
       conditional: {
         html: completedHtml
       }
     },
     {
       value: "NoContact",
-      text: "Unable to speak to citizen using contact numbers"
+      text: "Unable to speak to citizen"
     },
     {
       value: "NoDetails",
