@@ -10,17 +10,25 @@ const util = require('util')
 
 
 // allow internal routes and block external
-router.post('*', function (req, res, next) {
-  const nextPage = req.body['next-page'];
- 
-  if (
-    typeof nextPage === 'string' &&
-    nextPage.startsWith('/') &&
-    !nextPage.startsWith('//')
-  ) {
-    return res.redirect(nextPage);
+function getSafeRedirect(value) {
+  if (typeof value !== 'string') {
+    return null;
   }
- 
+
+  if (!/^\/(?!\/)/.test(value)) {
+    return null;
+  }
+
+  return value;
+}
+
+router.post('*', (req, res, next) => {
+  const safeRedirect = getSafeRedirect(req.body['next-page']);
+
+  if (safeRedirect) {
+    return res.redirect(safeRedirect);
+  }
+
   next();
 });
 
