@@ -702,7 +702,7 @@ router.post('/current/tasks', function (req, res) {
     'manual-payment': '/current/tasks/request-manual-payment/request-manual-payment-v2.html?update-details=no'
   };
 
-  res.redirect(routes[req.body['tasks-radio']] || '/current/tasks');
+  // res.redirect(routes[req.body['tasks-radio']] || '/current/tasks');
 
 });
 
@@ -732,6 +732,6 @@ router.post('/current/tasks/verify-addresses/address-1c', function (req, res) {
     'no address found': '/current/tasks/verify-addresses/residential-address-search.html'
   };
 
-  res.redirect(routes[selectedAddress]);
+  // res.redirect(routes[selectedAddress]);
 
 });
