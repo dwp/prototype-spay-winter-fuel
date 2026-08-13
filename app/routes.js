@@ -704,7 +704,7 @@ router.post('/current/tasks', (req, res) => {
   const selectedTask = req.body['tasks-radio']
 
   if (!routes[selectedTask]) {
-    return res.redirect('/current/tasks')
+    return safeInternalRedirect('/current/tasks')
   }
 
   res.redirect(routes[selectedTask])
@@ -730,7 +730,7 @@ router.post('/live/record-view/overview-tab/residential-address-1', (req, res) =
   const selectedTask = req.body['residential-address-1']
 
   if (!routes[selectedTask]) {
-    return res.redirect('/live/record-view/overview-tab/residential-address-1')
+    return safeInternalRedirect('/live/record-view/overview-tab/residential-address-1')
   }
 
   res.redirect(routes[selectedTask])
