@@ -9,22 +9,22 @@ const router = govukPrototypeKit.requests.setupRouter()
 const util = require('util')
 
 
-router.post('*', function (req, res, next) {
-  console.log(req.body);
+// router.post('*', function (req, res, next) {
+//   console.log(req.body);
  
-  if (req.body['next-page']) {
-    res.redirect(req.body['next-page']);
-  } else {
-    next();
-  }
-});
+//   if (req.body['next-page']) {
+//     res.redirect(req.body['next-page']);
+//   } else {
+//     next();
+//   }
+// });
  
-router.use((req, res, next) => {
-  if (req.method === 'POST') {
-    console.log(JSON.stringify(req.session.data, null, 2))
-  }
-  next()
-})
+// router.use((req, res, next) => {
+//   if (req.method === 'POST') {
+//     console.log(JSON.stringify(req.session.data, null, 2))
+//   }
+//   next()
+// })
 
 
 router.use((req, res, next) => {
