@@ -685,59 +685,53 @@ router.get('/current/tasks/send-alternative-format/alternative-format-shipping-d
 
 /// New Tasks page routing
 
-router.post('/current/tasks', (req, res) => {
+router.post('/current/tasks', function (req, res) {
+
   const routes = {
-    'contact-citizens': '/current/tasks/contact-citizens/address-1',
-    'fix-account-details': '/current/tasks/fix-account-details/bank-task',
-    'pay-death-arrears': '/current/tasks/pay-death-arrears/death-arrears-task-1',
-    'review-alternative-formats': '/current/tasks/send-alternative-format/alternative-format-choose-audio',
-    'review-commercial-addresses': '/current/tasks/commercial-address/commercial-address',
-    'review-gsl-wa': '/current/tasks/gsl/gsl-task-v2',
-    'review-overpayments': '/current/tasks/overpayment-2025-update/overpayment-referral-shared',
-    'review-care-home': '/current/tasks/13-week/13-week',
-    'verify-addresses': '/current/tasks/verify-addresses/address-1c',
-    'review-returns': '/current/tasks/process-return-payments/process-returned-payment',
-    'check-submitted-addresses': '/current/tasks/verify-addresses-temp-key/check-submitted-address',
-    'manual-payment': '/current/tasks/request-manual-payment/request-manual-payment-v2?update-details=no'
+    'contact-citizens': '/current/tasks/contact-citizens/address-1.html',
+    'fix-account-details': '/current/tasks/fix-account-details/bank-task.html',
+    'pay-death-arrears': '/current/tasks/pay-death-arrears/death-arrears-task-1.html',
+    'review-alternative-formats': '/current/tasks/send-alternative-format/alternative-format-choose-audio.html',
+    'review-commercial-addresses': '/current/tasks/commercial-address/commercial-address.html',
+    'review-gsl-wa': '/current/tasks/gsl/gsl-task-v2.html',
+    'review-overpayments': '/current/tasks/overpayment-2025-update/overpayment-referral-shared.html',
+    'review-care-home': '/current/tasks/13-week/13-week.html',
+    'verify-addresses': '/current/tasks/verify-addresses/address-1c.html',
+    'review-returns': '/current/tasks/process-return-payments/process-returned-payment.html',
+    'check-submitted-addresses': '/current/tasks/verify-addresses-temp-key/check-submitted-address.html',
+    'manual-payment': '/current/tasks/request-manual-payment/request-manual-payment-v2.html?update-details=no'
   };
 
-  const selectedTask = req.body['tasks-radio'];
+  res.redirect(routes[req.body['tasks-radio']] || '/current/tasks');
 
-  if (!routes[selectedTask]) {
-    return safeInternalRedirect(res,'/current/tasks',{
-        task, 'tasks-radio',
-        value: 'none'
-      });
-    }
+});
 
 /// New Residential Addresses-1 routing
 
-router.post('/live/record-view/overview-tab/residential-address-1', (req, res) => {
+router.post('/current/tasks/verify-addresses/address-1c', function (req, res) {
+
+  const selectedAddress =
+    req.body['residential-address-1'] ||
+    req.body['residential-address-search'];
+
+  const nextPage =
+    req.session.data['update-details'] === 'yes'
+      ? '/live/record-view/overview-tab/residential-move-date'
+      : '/live/record-view/contact-tab/contact-details';
+
   const routes = {
-    '8 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    '18 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    '1 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    '2 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    '3 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    '4 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    '5 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    '6 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    'Made barbers, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    'no address found': 'residential-address-search.html'
+    '8 Front Street, Crownhill, PL6 6WJ': nextPage,
+    '18 Front Street, Crownhill, PL6 6WJ': nextPage,
+    '1 Front Street, Crownhill, PL6 6WJ': nextPage,
+    '2 Front Street, Crownhill, PL6 6WJ': nextPage,
+    '3 Front Street, Crownhill, PL6 6WJ': nextPage,
+    '4 Front Street, Crownhill, PL6 6WJ': nextPage,
+    '5 Front Street, Crownhill, PL6 6WJ': nextPage,
+    '6 Front Street, Crownhill, PL6 6WJ': nextPage,
+    'Made barbers, Crownhill, PL6 6WJ': nextPage,
+    'no address found': '/current/tasks/verify-addresses/residential-address-search.html'
   };
 
-  const selectedTask = req.body['residential-address-1'];
+  res.redirect(routes[selectedAddress]);
 
-  if (!routes[selectedTask]) {
-    return safeInternalRedirect(
-      res,
-      '/live/record-view/overview-tab/residential-address-1',
-      {
-        task: 'residential-address-1',
-        value: 'none'
-      }
-    );
-  }
-
-  return safeInternalRedirect(res, routes[selectedTask]);
 });
