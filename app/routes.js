@@ -683,7 +683,7 @@ router.get('/current/tasks/send-alternative-format/alternative-format-shipping-d
   res.redirect('/current/record-view/contact-tab/contact-details')
 })
 
-///New Tasks page 
+/// New Tasks page routing
 
 router.post('/current/tasks', (req, res) => {
   const routes = {
@@ -705,6 +705,31 @@ router.post('/current/tasks', (req, res) => {
 
   if (!routes[selectedTask]) {
     return res.redirect('/current/tasks')
+  }
+
+  res.redirect(routes[selectedTask])
+})
+
+/// New Residential Addresses-1 routing
+
+router.post('/live/record-view/overview-tab/residential-address-1', (req, res) => {
+  const routes = {
+        '8 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+        '18 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '1 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '2 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '3 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '4 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '5 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '6 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         'Made barbers, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+          'no address found': 'residential-address-search.html',
+  }
+
+  const selectedTask = req.body['residential-address-1']
+
+  if (!routes[selectedTask]) {
+    return res.redirect('/live/record-view/overview-tab/residential-address-1')
   }
 
   res.redirect(routes[selectedTask])
