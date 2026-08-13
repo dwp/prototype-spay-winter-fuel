@@ -6,22 +6,22 @@
 const { formatErrorMessage } = require('govuk-frontend/dist/govuk/common/index.mjs');
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
-const util = require('util')
+const util = require('util');
+const { resourceLimits } = require('worker_threads');
 
 
 // allow internal routes and block external
 router.post('*', function (req, res, next) {
+
+  console.log(req.body);
   const nextPage = req.body['next-page'];
- 
-  if (
-    typeof nextPage === 'string' &&
-    nextPage.startsWith('/') &&
-    !nextPage.startsWith('//')
-  ) {
-    return res.redirect(nextPage);
+
+  if (nextPage) {
+    return safeInternalRedirect(res, nextPage);
+
   }
- 
   next();
+
 });
 
 
@@ -683,3 +683,29 @@ router.get('/current/tasks/send-alternative-format/alternative-format-shipping-d
   res.redirect('/current/record-view/contact-tab/contact-details')
 })
 
+///New Tasks page 
+
+router.post('/current/tasks', (req, res) => {
+  const routes = {
+    'contact-citizens': '/current/tasks/contact-citizens/address-1',
+    'fix-account-details': '/current/tasks/fix-account-details/bank-task',
+    'pay-death-arrears': '/current/tasks/pay-death-arrears/death-arrears-task-1',
+    'review-alternative-formats': '/current/tasks/send-alternative-format/alternative-format-choose-audio',
+    'review-commercial-addresses': '/current/tasks/commercial-address/commercial-address',
+    'review-gsl-wa': '/current/tasks/gsl/gsl-task-v2',
+    'review-overpayments': '/current/tasks/overpayment-2025-update/overpayment-referral-shared',
+    'review-care-home': '/current/tasks/13-week/13-week',
+    'verify-addresses': '/current/tasks/verify-addresses/address-1c',
+    'review-returns': '/current/tasks/process-return-payments/process-returned-payment',
+    'check-submitted-addresses': '/current/tasks/verify-addresses-temp-key/check-submitted-address',
+    'manual-payment': '/current/tasks/request-manual-payment/request-manual-payment-v2?update-details=no'
+  }
+
+  const selectedTask = req.body['tasks-radio']
+
+  if (!routes[selectedTask]) {
+    return res.redirect('/current/tasks')
+  }
+
+  res.redirect(routes[selectedTask])
+})
