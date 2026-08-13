@@ -710,6 +710,7 @@ router.post('/current/tasks', (req, res) => {
   res.redirect(routes[selectedTask])
 })
 
+
 /// New Residential Addresses-1 routing
 
 router.post('/live/record-view/overview-tab/residential-address-1', (req, res) => {
