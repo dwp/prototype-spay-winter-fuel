@@ -27,7 +27,7 @@ Winter Fuel Payments
         {% include 'current/includes/_bar.html' %}
 
 
-               <form class="form" action="/live/record-view/overview-tab/residential-address-1" method="post">
+            <form method="post">
 
               <h1 class="govuk-heading-l">Can you confirm your full address?</h1>
 
@@ -168,6 +168,20 @@ Winter Fuel Payments
   {% else %}
     {% set nextCorrespPage = '/live/record-view/contact-tab/contact-details' %}
   {% endif %}
+  <script>
+    nextPageRoutes = {
+        '8 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+        '18 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '1 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '2 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '3 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '4 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '5 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         '6 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+         'Made barbers, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
+          'no address found': 'residential-address-search.html',
+    }
+  </script>
 
 
   {% endblock %}

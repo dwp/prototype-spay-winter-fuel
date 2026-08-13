@@ -6,23 +6,25 @@
 const { formatErrorMessage } = require('govuk-frontend/dist/govuk/common/index.mjs');
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
-const util = require('util');
-const { resourceLimits } = require('worker_threads');
+const util = require('util')
 
 
-// allow internal routes and block external
-// router.post('*', function (req, res, next) {
-
-//   console.log(req.body);
-//   const nextPage = req.body['next-page'];
-
-//   if (nextPage) {
-//     return safeInternalRedirect(res, nextPage);
-
-//   }
-//   next();
-
-// });
+router.post('*', function (req, res, next) {
+  console.log(req.body);
+ 
+  if (req.body['next-page']) {
+    res.redirect(req.body['next-page']);
+  } else {
+    next();
+  }
+});
+ 
+router.use((req, res, next) => {
+  if (req.method === 'POST') {
+    console.log(JSON.stringify(req.session.data, null, 2))
+  }
+  next()
+})
 
 
 router.use((req, res, next) => {
@@ -683,55 +685,3 @@ router.get('/current/tasks/send-alternative-format/alternative-format-shipping-d
   res.redirect('/current/record-view/contact-tab/contact-details')
 })
 
-/// New Tasks page routing
-
-router.post('/current/tasks', function (req, res) {
-
-  const routes = {
-    'contact-citizens': '/current/tasks/contact-citizens/address-1.html',
-    'fix-account-details': '/current/tasks/fix-account-details/bank-task.html',
-    'pay-death-arrears': '/current/tasks/pay-death-arrears/death-arrears-task-1.html',
-    'review-alternative-formats': '/current/tasks/send-alternative-format/alternative-format-choose-audio.html',
-    'review-commercial-addresses': '/current/tasks/commercial-address/commercial-address.html',
-    'review-gsl-wa': '/current/tasks/gsl/gsl-task-v2.html',
-    'review-overpayments': '/current/tasks/overpayment-2025-update/overpayment-referral-shared.html',
-    'review-care-home': '/current/tasks/13-week/13-week.html',
-    'verify-addresses': '/current/tasks/verify-addresses/address-1c.html',
-    'review-returns': '/current/tasks/process-return-payments/process-returned-payment.html',
-    'check-submitted-addresses': '/current/tasks/verify-addresses-temp-key/check-submitted-address.html',
-    'manual-payment': '/current/tasks/request-manual-payment/request-manual-payment-v2.html?update-details=no'
-  };
-
-  res.redirect(routes[req.body['tasks-radio']] || '/current/tasks');
-
-});
-
-/// New Residential Addresses-1 routing
-
-router.post('/current/tasks/verify-addresses/address-1c', function (req, res) {
-
-  const selectedAddress =
-    req.body['residential-address-1'] ||
-    req.body['residential-address-search'];
-
-  const nextPage =
-    req.session.data['update-details'] === 'yes'
-      ? '/live/record-view/overview-tab/residential-move-date'
-      : '/live/record-view/contact-tab/contact-details';
-
-  const routes = {
-    '8 Front Street, Crownhill, PL6 6WJ': nextPage,
-    '18 Front Street, Crownhill, PL6 6WJ': nextPage,
-    '1 Front Street, Crownhill, PL6 6WJ': nextPage,
-    '2 Front Street, Crownhill, PL6 6WJ': nextPage,
-    '3 Front Street, Crownhill, PL6 6WJ': nextPage,
-    '4 Front Street, Crownhill, PL6 6WJ': nextPage,
-    '5 Front Street, Crownhill, PL6 6WJ': nextPage,
-    '6 Front Street, Crownhill, PL6 6WJ': nextPage,
-    'Made barbers, Crownhill, PL6 6WJ': nextPage,
-    'no address found': '/current/tasks/verify-addresses/residential-address-search.html'
-  };
-
-  // res.redirect(routes[selectedAddress]);
-
-});
