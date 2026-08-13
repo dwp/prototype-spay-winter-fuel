@@ -11,18 +11,18 @@ const { resourceLimits } = require('worker_threads');
 
 
 // allow internal routes and block external
-router.post('*', function (req, res, next) {
+// router.post('*', function (req, res, next) {
 
-  console.log(req.body);
-  const nextPage = req.body['next-page'];
+//   console.log(req.body);
+//   const nextPage = req.body['next-page'];
 
-  if (nextPage) {
-    return safeInternalRedirect(res, nextPage);
+//   if (nextPage) {
+//     return safeInternalRedirect(res, nextPage);
 
-  }
-  next();
+//   }
+//   next();
 
-});
+// });
 
 
 router.use((req, res, next) => {
@@ -685,7 +685,6 @@ router.get('/current/tasks/send-alternative-format/alternative-format-shipping-d
 
 /// New Tasks page routing
 
-
 router.post('/current/tasks', (req, res) => {
   const routes = {
     'contact-citizens': '/current/tasks/contact-citizens/address-1',
@@ -700,20 +699,18 @@ router.post('/current/tasks', (req, res) => {
     'review-returns': '/current/tasks/process-return-payments/process-returned-payment',
     'check-submitted-addresses': '/current/tasks/verify-addresses-temp-key/check-submitted-address',
     'manual-payment': '/current/tasks/request-manual-payment/request-manual-payment-v2?update-details=no'
-  }
+  };
 
-  const selectedTask = req.body['tasks-radio']
+  const selectedTask = req.body['tasks-radio'];
 
   if (!routes[selectedTask]) {
-    return safeInternalRedirect('/current/tasks')
-  }
-
-  res.redirect(routes[selectedTask])
-})
-
+    return safeInternalRedirect(res,'/current/tasks',{
+        task, 'tasks-radio',
+        value: 'none'
+      });
+    }
 
 /// New Residential Addresses-1 routing
-
 
 router.post('/live/record-view/overview-tab/residential-address-1', (req, res) => {
   const routes = {
@@ -726,14 +723,21 @@ router.post('/live/record-view/overview-tab/residential-address-1', (req, res) =
     '5 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
     '6 Front Street, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
     'Made barbers, Crownhill, PL6 6WJ': '{{nextCorrespPage}}',
-    'no address found': 'residential-address-search.html',
-  }
+    'no address found': 'residential-address-search.html'
+  };
 
-  const selectedTask = req.body['residential-address-1']
+  const selectedTask = req.body['residential-address-1'];
 
   if (!routes[selectedTask]) {
-    return safeInternalRedirect('/live/record-view/overview-tab/residential-address-1')
+    return safeInternalRedirect(
+      res,
+      '/live/record-view/overview-tab/residential-address-1',
+      {
+        task: 'residential-address-1',
+        value: 'none'
+      }
+    );
   }
 
-  res.redirect(routes[selectedTask])
-})
+  return safeInternalRedirect(res, routes[selectedTask]);
+});
