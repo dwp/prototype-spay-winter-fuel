@@ -685,3 +685,49 @@ router.get('/current/tasks/send-alternative-format/alternative-format-shipping-d
   res.redirect('/current/record-view/contact-tab/contact-details')
 })
 
+///New Tasks page routes
+
+
+router.post('/current/tasks/tasks', function (req, res) {
+
+  switch (req.session.data['tasks']) {
+    case 'Commercial':
+      return res.redirect('/current/tasks/commercial-address/commercial-address.html')
+
+    case 'Submitted':
+      return res.redirect('/current/tasks/verify-addresses-temp-key/check-submitted-address.html')
+
+    case 'Contact':
+      return res.redirect('/current/tasks/contact-citizens/address-1.html')
+
+    case 'Account':
+      return res.redirect('/current/tasks/fix-account-details/bank-task.html')
+
+    case 'Alternative':
+      return res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio.html')
+
+    case 'Arrears':
+      return res.redirect('/current/tasks/pay-death-arrears/death-arrears-task-1.html')
+
+          case 'GSL':
+      return res.redirect('/current/tasks/gsl/gsl-task-v2.html')
+
+          case 'Payment':
+      return res.redirect('/current/tasks/request-manual-payment/request-manual-payment-v2.html?update-details=no')
+
+          case 'Overpayments':
+      return res.redirect('/current/tasks/overpayment-2025-update/overpayment-referral-shared.html')
+
+          case 'Returned':
+      return res.redirect('/current/tasks/process-return-payments/process-returned-payment.html')
+
+                case 'Care':
+      return res.redirect('/current/tasks/13-week/13-week.html')
+
+                case 'Verify':
+      return res.redirect('/current/tasks/verify-addresses/address-1c.html')
+
+    default:
+      return res.redirect('back')
+  }
+})
