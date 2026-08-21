@@ -457,6 +457,7 @@ router.post('/removebenefitflag', function (req, res) {
 
 //* Not removing pension credit / partner benefit flags END//
 
+
 // Residential addresses
 
 router.post('/live/record-view/overview-tab/update-details', function (req, res) { 
@@ -537,7 +538,6 @@ router.post('/live/record-view/overview-tab/residential-overpayment-intl', funct
 
 
 
-
 // Tweaks to correspondence address
 
 router.post('/current/record-view/contact-tab/correspondence-address/correspondence-address-1', function (req, res) { 
@@ -580,6 +580,7 @@ router.post('/live/record-view/overview-tab/residential-address-1', function(req
 
 })
 
+
 // Alternative formats
 
 router.post('/alternative-format-outcome', function (req, res) {
@@ -591,7 +592,11 @@ router.post('/alternative-format-outcome', function (req, res) {
     case 'NoContact':
       return res.redirect('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact')
 
-    case 'NoDetails':
+    case 'NoContact3':
+      return res.redirect('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact-3')
+
+
+      case 'NoDetails':
       return res.redirect('/current/tasks/send-alternative-format/alternative-format-confirm-no-details')
 
     case 'NotNeeded':
@@ -601,8 +606,6 @@ router.post('/alternative-format-outcome', function (req, res) {
       return res.redirect('back')
   }
 })
-
-
 
 
 router.post('/current/tasks/send-alternative-format/alternative-format-shipping-date', function (req, res) { 
@@ -625,32 +628,7 @@ router.post('/current/tasks/send-alternative-format/alternative-format-confirm-n
 })
 
 
-router.post('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact-three', function (req, res) {
-
-  const buttonClicked = req.body.nextaction
-
-  if (buttonClicked === 'continue') {
-    res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio')
-  } else if (buttonClicked === 'return') {
-    res.redirect('/current/tasks/tasks')
-  }
-
-})
-
-
-router.post('/current/tasks/send-alternative-format/alternative-format-confirm-not-needed', function (req, res) {
-
-  const buttonClicked = req.body.nextaction
-
-  if (buttonClicked === 'continue') {
-    res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio')
-  } else if (buttonClicked === 'return') {
-    res.redirect('/current/tasks/tasks')
-  }
-
-})
-
-router.post('/current/tasks/send-alternative-format/alternative-format-confirm', function (req, res) {
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact-3', function (req, res) {
 
   const buttonClicked = req.body.nextaction
 
@@ -675,17 +653,58 @@ router.post('/current/tasks/send-alternative-format/alternative-format-confirm-n
 })
 
 
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm-not-needed', function (req, res) {
+
+  const buttonClicked = req.body.nextaction
+
+  if (buttonClicked === 'continue') {
+    res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio')
+  } else if (buttonClicked === 'return') {
+    res.redirect('/current/tasks/tasks')
+  }
+
+})
+
+
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm', function (req, res) {
+
+  const buttonClicked = req.body.nextaction
+
+  if (buttonClicked === 'continue') {
+    res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio')
+  } else if (buttonClicked === 'return') {
+    res.redirect('/current/tasks/tasks')
+  }
+
+})
+
+
+router.post('/current/tasks/send-alternative-format/alternative-format-confirm-no-contact', function (req, res) {
+
+  const buttonClicked = req.body.nextaction
+
+  if (buttonClicked === 'continue') {
+    res.redirect('/current/tasks/send-alternative-format/alternative-format-choose-audio')
+  } else if (buttonClicked === 'return') {
+    res.redirect('/current/tasks/tasks')
+  }
+
+})
+
+
 router.get('/live/record-view/overview-tab/residential-address-intl', function (req, res) {
   req.session.data.ineligibleCountry = 'yes'
   res.render('live/record-view/overview-tab/residential-address-intl')
 })
+
 
 router.get('/current/tasks/send-alternative-format/alternative-format-shipping-date-change-link', function (req, res) {
   req.session.data.successMessage = "Shipping date updated"
   res.redirect('/current/record-view/contact-tab/contact-details')
 })
 
-///New Tasks page routes
+
+/// New Tasks page routes
 
 
 router.post('/current/tasks/tasks', function (req, res) {
@@ -732,5 +751,5 @@ router.post('/current/tasks/tasks', function (req, res) {
   }
 })
 
-/// New residential addresses 1 routing
+
 

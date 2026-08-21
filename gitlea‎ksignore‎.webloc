@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>URL</key>
+	<string>https://gitlab.com/dwp/secure-development/security-tooling/-/blob/staging/.gitleaksignore?ref_type=heads</string>
+</dict>
+</plist>
+
+
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint79/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<101>
+
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint78/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<101>
+
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint80/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<101>
+
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint85/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<101>
+
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint96/find-details-for-all-cases/find-details.html>:
+<error-type>:<101>
+
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint96/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<101>
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint96/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<259>
+
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint77/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<101>
+<commit-sha>:</prototype-spay-winter-fuel/app/views/previous-versions/sprint77/find-details-for-all-cases/find-details-results.html>:
+<error-type>:<259>
