@@ -13,7 +13,7 @@
     "@ministryofjustice/frontend": "10.0.1",
     "accessible-autocomplete": "3.0.1",
     "govuk-frontend": "6.4.0",
-    "govuk-prototype-kit": "13.16.2",
+    "govuk-prototype-kit": "13.20.1",
     "hmrc-frontend": "7.29.0",
     "jquery": "4.0.0",
     "notifications-node-client": "8.2.1"
