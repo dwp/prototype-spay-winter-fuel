@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Heading or question goes here
+      </h1>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+ <div class="govuk-form-group">
+  <label class="govuk-label" for="first-name">
+    Full name
+  </label>
+  <input class="govuk-input" id="first-name" name="firstName" type="text" spellcheck="false" autocomplete="name">
+</div>
+
+ <div class="govuk-form-group">
+  <label class="govuk-label" for="last-name">
+    Last name
+  </label>
+  <input class="govuk-input" id="last-name" name="lastName" type="text" spellcheck="false" autocomplete="name">
+</div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
