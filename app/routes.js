@@ -835,6 +835,12 @@ router.post('/citizen/address-confirm', function (req, res) {
 
 }); 
 
+router.post('/citizen/address-manual', function (req, res) { 
+
+  res.redirect('/citizen/address-confirm'); 
+
+}); 
+
 router.post('/citizen/info-use', function (req, res) { 
 
   res.redirect('/citizen/name'); 
