@@ -753,4 +753,126 @@ router.post('/current/tasks/tasks', function (req, res) {
 
 
 
+// Citizen UI
 
+
+router.post('/citizen/start', function(request, response) { 
+ 
+	var country = request.session.data['start'] 
+  if (country === 'Yes') {
+    response.redirect('/citizen/date');
+  } else if (country === 'No') {
+    response.redirect('/citizen/dropout-start');
+  } 
+
+});
+
+
+
+router.post('/citizen/date', function (request, response) {
+
+  const day = request.session.data['date-of-birth-day']
+  const month = request.session.data['date-of-birth-month']
+  const year = request.session.data['date-of-birth-year']
+
+  const enteredDate = new Date(year, month - 1, day)
+  const cutoffDate = new Date(1960, 5, 27) // 27 June 1960
+
+  if (enteredDate > cutoffDate) {
+    response.redirect('/citizen/dropout-date')
+  } else {
+    response.redirect('/citizen/address-search')
+  }
+
+})
+
+
+router.post('/citizen/address-search', function (req, res) { 
+
+  res.redirect('/citizen/address-select'); 
+
+}); 
+
+ 
+router.post('/citizen/address-select', function(request, response) { 
+ 
+	var country = request.session.data['country'] 
+  if (country === 'England') {
+    response.redirect('/citizen/address-confirm');
+  } else if (country === 'Scotland') {
+    response.redirect('/citizen/address-confirm-scotland');
+  } else if (country === 'Spain') {
+    response.redirect('/citizen/address-confirm-elsewhere');
+  } else {
+    response.redirect('/citizen/address-confirm');
+  }
+
+});
+
+
+router.post('/citizen/address-select', function (req, res) { 
+
+  res.redirect('/citizen/address-confirm'); 
+
+}); 
+
+router.post('/citizen/address-confirm-scotland', function (req, res) { 
+
+  res.redirect('/citizen/dropout-scotland'); 
+
+}); 
+
+router.post('/citizen/address-confirm-elsewhere', function (req, res) { 
+
+  res.redirect('/citizen/dropout-elsewhere'); 
+
+}); 
+
+
+router.post('/citizen/address-confirm', function (req, res) { 
+
+  res.redirect('/citizen/info-use'); 
+
+}); 
+
+router.post('/citizen/info-use', function (req, res) { 
+
+  res.redirect('/citizen/name'); 
+
+}); 
+
+router.post('/citizen/name', function (req, res) { 
+
+  res.redirect('/citizen/nino'); 
+
+}); 
+
+router.post('/citizen/nino', function (req, res) { 
+
+  res.redirect('/citizen/bank'); 
+
+}); 
+
+router.post('/citizen/bank', function (req, res) { 
+
+  res.redirect('/citizen/phone'); 
+
+}); 
+
+router.post('/citizen/phone', function (req, res) { 
+
+  res.redirect('/citizen/email'); 
+
+}); 
+
+router.post('/citizen/email', function (req, res) { 
+
+  res.redirect('/citizen/check'); 
+
+}); 
+
+router.post('/citizen/check', function (req, res) { 
+
+  res.redirect('/citizen/confirm'); 
+
+}); 

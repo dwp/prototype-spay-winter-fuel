@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/citizen/address-confirm" method="post">
+
+           <div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Confirm address</h1>
+  <p class="govuk-body">3 addresses found for <b>XYZ XYZ</b> and <b>10</b>. <a href="/citizen/address-search" class="govuk-link">Search again</a></p>
+  <div class="govuk-inset-text">
+    10 Washington Street<br>Worcester<br>XYZ XYZ
+  </div>
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Use this address
+  </button>
+  <p class="govuk-body"><a href="/citizen/address-select" class="govuk-link">Use a different address</a></p>
+  <p class="govuk-body govuk-!-margin-bottom-0"><a href="/citizen/address-manual" class="govuk-link">Enter address manually</a></p>
+</div>
+</form>
+  </main>
+  </div>
+
+  {% endblock %}

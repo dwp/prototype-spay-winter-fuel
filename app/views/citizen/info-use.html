@@ -16,17 +16,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+            <form class="form" action="/citizen/info-use" method="post">
+
       <h1 class="govuk-heading-l">
-        Heading goes here
+        How we use your information
       </h1>
 
       <p>
-        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
-      </p>
+We will treat your information carefully. We may use it for any of our purposes. To learn about your information rights and how we use information, see our <a href="/path/of/page">personal information charter</a> (link is external).      </p>
 
-      <p>
-        Read more <a href="/path/of/page">about this topic</a>.
-      </p>
+<br>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
 
     </div>
   </div>

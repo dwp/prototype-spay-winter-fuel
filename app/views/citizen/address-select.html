@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+
+             <div class="govuk-width-container">
+  <div class="govuk-form-group">
+    <form action="/citizen/address-select" method="post">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Select an address
+        </h1>
+      </legend>
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+        <p class='govuk-body'>3 addresses found for <b>XYZ XYZ</b> and <b>10</b>. <a href='/citizen/address-search' class='govuk-link'>Search again</a></p>
+        
+        
+        {{ govukRadios({ 
+  name: "country", 
+value: data['country'], 
+  fieldset: { 
+    legend: { 
+      isPageHeading: true, 
+      classes: "govuk-fieldset__legend--l" 
+    } 
+  }, 
+  items: [ 
+    { 
+      value: "England", 
+      text: "10 Washington Street, Worcester, XYZ XYZ" 
+    }, 
+    { 
+      value: "Scotland", 
+      text: "10 Washington Street, Edinburgh, XYZ XYZ" 
+    }, 
+    { 
+      value: "Spain", 
+      text: "10 Washington Street, Barcelona, XYZ XYZ" 
+    } 
+  ] 
+}) }} 
+
+
+<br>
+{{ govukButton({ 
+  text: "Use this address" 
+}) }} 
+ 
+</form>
+
+  <p class="govuk-body govuk-!-margin-bottom-0"><a href="/citizen/address-manual" class="govuk-link">Enter address manually</a></p>
+</div>
+  </main>
+  </div>
+
+  {% endblock %}
